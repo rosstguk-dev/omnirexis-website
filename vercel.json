@@ -1,4 +1,21 @@
 {
   "framework": null,
-  "buildCommand": "npm run build"
+  "buildCommand": "npm run build",
+  "redirects": [
+    {
+      "source": "/divisions",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/divisions.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
 }
