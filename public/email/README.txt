@@ -1,0 +1,1 @@
+Official OMNIREXIS email logo assets.
