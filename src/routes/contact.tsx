@@ -19,6 +19,12 @@ import {
 
 type Search = { intent?: string };
 
+type SubmitState =
+  | { status: "idle" }
+  | { status: "loading" }
+  | { status: "success" }
+  | { status: "error"; message: string };
+
 export const Route = createFileRoute("/contact")({
   validateSearch: (s: Record<string, unknown>): Search => ({
     intent: typeof s.intent === "string" ? s.intent : undefined,
@@ -44,36 +50,56 @@ const INTENT_LABEL: Record<string, string> = {
 function ContactPage() {
   const { intent } = Route.useSearch();
   const intentLabel = intent ? INTENT_LABEL[intent] : undefined;
-  const [sent, setSent] = useState(false);
+  const [submit, setSubmit] = useState<SubmitState>({ status: "idle" });
 
   const defaultMessage = useMemo(() => {
     if (!intentLabel) return "";
     return `I would like to talk about: ${intentLabel}.\n\n`;
   }, [intentLabel]);
 
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const data = new FormData(e.currentTarget);
-    const name = String(data.get("name") ?? "").trim();
-    const company = String(data.get("company") ?? "").trim();
-    const email = String(data.get("email") ?? "").trim();
-    const phone = String(data.get("phone") ?? "").trim();
-    const message = String(data.get("message") ?? "").trim();
-    const subject = encodeURIComponent(
-      intentLabel ? `Enquiry — ${intentLabel}` : "Omnirexis enquiry",
-    );
-    const body = encodeURIComponent(
-      [
-        `Name: ${name}`,
-        `Company: ${company}`,
-        `Email: ${email}`,
-        `Phone: ${phone}`,
-        "",
-        message,
-      ].join("\n"),
-    );
-    window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
-    setSent(true);
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const payload = {
+      name: String(data.get("name") ?? "").trim(),
+      company: String(data.get("company") ?? "").trim() || undefined,
+      email: String(data.get("email") ?? "").trim(),
+      phone: String(data.get("phone") ?? "").trim() || undefined,
+      message: String(data.get("message") ?? "").trim(),
+      intent: intent || undefined,
+    };
+
+    setSubmit({ status: "loading" });
+    try {
+      const res = await fetch("/api/enquiry", {
+        method: "POST",
+        headers: { "content-type": "application/json", accept: "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const body = (await res.json().catch(() => null)) as {
+        ok?: boolean;
+        error?: string;
+      } | null;
+
+      if (!res.ok || !body?.ok) {
+        setSubmit({
+          status: "error",
+          message:
+            body?.error ??
+            "We could not send your enquiry. Please try again or email us directly.",
+        });
+        return;
+      }
+      setSubmit({ status: "success" });
+      form.reset();
+    } catch {
+      setSubmit({
+        status: "error",
+        message:
+          "Network error while sending. Please try again or email us directly.",
+      });
+    }
   }
 
   return (
@@ -86,17 +112,14 @@ function ContactPage() {
 
       <div className="mx-auto grid max-w-6xl gap-16 px-5 py-16 sm:px-8 lg:grid-cols-12 lg:py-20">
         <div className="lg:col-span-7">
-          {sent ? (
+          {submit.status === "success" ? (
             <div className="rounded-xl bg-paper-2 px-8 py-12">
               <h2 className="font-sans text-3xl tracking-tight">
-                Your email client should be open.
+                Thanks — we have your enquiry.
               </h2>
               <p className="mt-4 max-w-md text-base leading-relaxed text-muted">
-                If it did not, write to{" "}
-                <a className="text-bone underline" href={`mailto:${EMAIL}`}>
-                  {EMAIL}
-                </a>{" "}
-                or book the call directly. We read everything that comes in.
+                We read everything that comes in and will reply to the email you
+                gave us. Prefer to talk now? Book the call directly.
               </p>
               <Button asChild className="mt-8">
                 <a href={BOOK_CALL} target="_blank" rel="noreferrer">
@@ -109,15 +132,27 @@ function ContactPage() {
             <form onSubmit={onSubmit} className="space-y-5">
               {intentLabel ? (
                 <p className="rounded-md bg-paper-2 px-4 py-3 text-sm">
-                  Starting point: <span className="font-medium">{intentLabel}</span>
+                  Starting point:{" "}
+                  <span className="font-medium">{intentLabel}</span>
                 </p>
               ) : null}
               <div className="grid gap-5 sm:grid-cols-2">
                 <Field label="Name" htmlFor="name">
-                  <Input id="name" name="name" required autoComplete="name" />
+                  <Input
+                    id="name"
+                    name="name"
+                    required
+                    autoComplete="name"
+                    disabled={submit.status === "loading"}
+                  />
                 </Field>
                 <Field label="Company" htmlFor="company">
-                  <Input id="company" name="company" autoComplete="organization" />
+                  <Input
+                    id="company"
+                    name="company"
+                    autoComplete="organization"
+                    disabled={submit.status === "loading"}
+                  />
                 </Field>
               </div>
               <div className="grid gap-5 sm:grid-cols-2">
@@ -128,10 +163,17 @@ function ContactPage() {
                     type="email"
                     required
                     autoComplete="email"
+                    disabled={submit.status === "loading"}
                   />
                 </Field>
                 <Field label="Phone" htmlFor="phone">
-                  <Input id="phone" name="phone" type="tel" autoComplete="tel" />
+                  <Input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    autoComplete="tel"
+                    disabled={submit.status === "loading"}
+                  />
                 </Field>
               </div>
               <Field label="Where is the work getting stuck?" htmlFor="message">
@@ -140,11 +182,31 @@ function ContactPage() {
                   name="message"
                   required
                   defaultValue={defaultMessage}
+                  disabled={submit.status === "loading"}
                 />
               </Field>
+              {submit.status === "error" ? (
+                <div
+                  role="alert"
+                  className="rounded-md border border-line bg-paper-2 px-4 py-3 text-sm leading-relaxed"
+                >
+                  <p>{submit.message}</p>
+                  <p className="mt-2 text-muted">
+                    Fallback:{" "}
+                    <a className="text-bone underline" href={`mailto:${EMAIL}`}>
+                      email {EMAIL}
+                    </a>{" "}
+                    directly.
+                  </p>
+                </div>
+              ) : null}
               <div className="flex flex-wrap items-center gap-3 pt-2">
-                <Button type="submit" size="lg">
-                  Send enquiry
+                <Button
+                  type="submit"
+                  size="lg"
+                  disabled={submit.status === "loading"}
+                >
+                  {submit.status === "loading" ? "Sending…" : "Send enquiry"}
                 </Button>
                 <Button asChild variant="outline" size="lg">
                   <a href={BOOK_CALL} target="_blank" rel="noreferrer">
@@ -155,7 +217,8 @@ function ContactPage() {
               </div>
               <p className="text-xs leading-relaxed text-muted">
                 By submitting, you agree to be contacted about this enquiry.
-                Providers may process the details on our behalf. Read the{" "}
+                The form is sent to our enquiry endpoint and may be processed by
+                our hosting, email, or CRM providers as configured. Read the{" "}
                 <Link to="/privacy" className="underline">
                   privacy policy
                 </Link>
