@@ -22,8 +22,10 @@ export const NAV = [
   { to: "/solutions" as const, label: "Solutions" },
   { to: "/process" as const, label: "Process" },
   { to: "/pt" as const, label: "PT" },
+  { to: "/leisure" as const, label: "Leisure" },
   { to: "/rapid-services" as const, label: "Studio" },
   { to: "/about" as const, label: "About" },
+  { to: "/contact" as const, label: "Contact" },
 ];
 
 export const SOLUTIONS = [

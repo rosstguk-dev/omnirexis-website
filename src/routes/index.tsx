@@ -20,7 +20,19 @@ import {
 } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
-export const Route = createFileRoute("/")({ component: Home });
+export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Omnirexis — Practical AI for UK operators" },
+      {
+        name: "description",
+        content:
+          "Practical AI implementation for UK operators. Automation, voice receptionists, growth systems, a PT platform, and a rapid delivery studio. Manchester.",
+      },
+    ],
+  }),
+  component: Home,
+});
 
 function Home() {
   const [step, setStep] = useState(0);

@@ -6,7 +6,19 @@ import { SiteLayout } from "@/components/site/layout";
 import { PageHero } from "@/components/site/page-hero";
 import { BOOK_CALL, PROCESS } from "@/lib/site";
 
-export const Route = createFileRoute("/process")({ component: ProcessPage });
+export const Route = createFileRoute("/process")({
+  head: () => ({
+    meta: [
+      { title: "Process | Omnirexis" },
+      {
+        name: "description",
+        content:
+          "How Omnirexis works: discovery, opportunity audit, solution design, implementation, and ongoing support.",
+      },
+    ],
+  }),
+  component: ProcessPage,
+});
 
 function ProcessPage() {
   return (

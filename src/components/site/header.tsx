@@ -72,13 +72,6 @@ export function SiteHeader({ ink: _ink = false }: { ink?: boolean }) {
               {item.label}
             </Link>
           ))}
-          <Link
-            to="/contact"
-            onClick={() => setOpen(false)}
-            className="flex min-h-11 items-center text-base font-medium text-bone"
-          >
-            Contact
-          </Link>
           <a
             href={BOOK_CALL}
             target="_blank"

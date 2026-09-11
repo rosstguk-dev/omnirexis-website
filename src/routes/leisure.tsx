@@ -5,7 +5,19 @@ import { CtaBand } from "@/components/site/cta-band";
 import { SiteLayout } from "@/components/site/layout";
 import { PageHero } from "@/components/site/page-hero";
 
-export const Route = createFileRoute("/leisure")({ component: LeisurePage });
+export const Route = createFileRoute("/leisure")({
+  head: () => ({
+    meta: [
+      { title: "Leisure systems | Omnirexis" },
+      {
+        name: "description",
+        content:
+          "Practical checks, staff tasks, maintenance and reporting for gyms, spas and leisure clubs.",
+      },
+    ],
+  }),
+  component: LeisurePage,
+});
 
 const PILLARS = [
   {

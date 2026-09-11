@@ -4,7 +4,19 @@ import { SiteLayout } from "@/components/site/layout";
 import { PageHero } from "@/components/site/page-hero";
 import { VALUES } from "@/lib/site";
 
-export const Route = createFileRoute("/about")({ component: AboutPage });
+export const Route = createFileRoute("/about")({
+  head: () => ({
+    meta: [
+      { title: "About | Omnirexis" },
+      {
+        name: "description",
+        content:
+          "Omnirexis is a UK AI implementation practice led by Ross Gallagher — grounded in real operational work.",
+      },
+    ],
+  }),
+  component: AboutPage,
+});
 
 function AboutPage() {
   return (
