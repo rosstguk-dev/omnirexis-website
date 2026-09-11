@@ -16,14 +16,18 @@ function PrivacyPage() {
       <article className="mx-auto max-w-3xl space-y-8 px-5 pb-24 text-base leading-relaxed text-muted sm:px-8">
         <p>
           We collect the name, company, email, phone number and any business
-          information you choose to share, so we can respond to an enquiry or
-          book a strategy call. We do not sell this information.
+          information you choose to share on the contact form, so we can respond
+          to an enquiry or book a strategy call. We do not sell this
+          information.
         </p>
         <p>
-          Secure service providers may process details on our behalf (for
-          example email, hosting, and meeting scheduling). Access, permissions
-          and data handling for client implementations are assessed per project
-          and agreed before systems are connected.
+          When you submit the form, the details are sent to our enquiry endpoint
+          and processed by the hosting, email, and/or CRM providers we have
+          configured for delivery (for example a webhook into automation or CRM,
+          and transactional email). Secure service providers may also process
+          details on our behalf for meeting scheduling. Access, permissions and
+          data handling for client implementations are assessed per project and
+          agreed before systems are connected.
         </p>
         <p>
           To ask about the information we hold, or to request a correction or
