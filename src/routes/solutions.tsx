@@ -6,7 +6,19 @@ import { SiteLayout } from "@/components/site/layout";
 import { PageHero } from "@/components/site/page-hero";
 import { BOOK_CALL, SOLUTIONS } from "@/lib/site";
 
-export const Route = createFileRoute("/solutions")({ component: SolutionsPage });
+export const Route = createFileRoute("/solutions")({
+  head: () => ({
+    meta: [
+      { title: "Solutions | Omnirexis" },
+      {
+        name: "description",
+        content:
+          "AI opportunity audits, voice receptionists, process automation and customer experience systems for UK operators.",
+      },
+    ],
+  }),
+  component: SolutionsPage,
+});
 
 function SolutionsPage() {
   return (

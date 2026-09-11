@@ -29,6 +29,16 @@ export const Route = createFileRoute("/contact")({
   validateSearch: (s: Record<string, unknown>): Search => ({
     intent: typeof s.intent === "string" ? s.intent : undefined,
   }),
+  head: () => ({
+    meta: [
+      { title: "Contact | Omnirexis" },
+      {
+        name: "description",
+        content:
+          "Contact Omnirexis in Manchester — send an enquiry or book a free 30-minute AI strategy call.",
+      },
+    ],
+  }),
   component: ContactPage,
 });
 

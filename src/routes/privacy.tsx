@@ -3,7 +3,19 @@ import { SiteLayout } from "@/components/site/layout";
 import { PageHero } from "@/components/site/page-hero";
 import { EMAIL } from "@/lib/site";
 
-export const Route = createFileRoute("/privacy")({ component: PrivacyPage });
+export const Route = createFileRoute("/privacy")({
+  head: () => ({
+    meta: [
+      { title: "Privacy policy | Omnirexis" },
+      {
+        name: "description",
+        content:
+          "How Omnirexis collects and processes enquiry data from this website.",
+      },
+    ],
+  }),
+  component: PrivacyPage,
+});
 
 function PrivacyPage() {
   return (

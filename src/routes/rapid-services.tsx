@@ -7,6 +7,16 @@ import { PageHero } from "@/components/site/page-hero";
 import { RAPID } from "@/lib/site";
 
 export const Route = createFileRoute("/rapid-services")({
+  head: () => ({
+    meta: [
+      { title: "Rapid delivery studio | Omnirexis" },
+      {
+        name: "description",
+        content:
+          "Fixed-price content and operations documents for fitness, leisure and wellness — delivered fast.",
+      },
+    ],
+  }),
   component: RapidPage,
 });
 

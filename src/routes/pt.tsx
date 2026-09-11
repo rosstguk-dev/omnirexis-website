@@ -7,7 +7,19 @@ import { PtConsole } from "@/components/site/pt-console";
 import { PT_PLANS } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
-export const Route = createFileRoute("/pt")({ component: PtPage });
+export const Route = createFileRoute("/pt")({
+  head: () => ({
+    meta: [
+      { title: "PT platform | Omnirexis" },
+      {
+        name: "description",
+        content:
+          "Omnirexis PT — clients, programmes, sessions, check-ins, progress and payments for personal trainers.",
+      },
+    ],
+  }),
+  component: PtPage,
+});
 
 function PtPage() {
   return (
