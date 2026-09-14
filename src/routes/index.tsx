@@ -43,7 +43,7 @@ function Home() {
       <section className="relative overflow-hidden bg-ink text-bone">
         <div className="pointer-events-none absolute inset-0 bg-grid" />
         <div className="pointer-events-none absolute inset-0 bg-aurora" />
-        <div className="relative mx-auto grid min-h-svh max-w-6xl items-end gap-12 px-5 py-16 sm:px-8 lg:grid-cols-12 lg:py-20">
+        <div className="relative mx-auto grid min-h-svh max-w-6xl items-center gap-12 px-5 py-16 sm:px-8 lg:grid-cols-12 lg:py-20">
           <div className="lg:col-span-8">
             <p className="font-mono text-xs font-medium tracking-kicker text-pine uppercase">
               Manchester · Intelligence. Automated.
@@ -72,19 +72,22 @@ function Home() {
               30 minutes · Senior strategist · No obligation
             </p>
           </div>
-          <aside className="hidden border-l border-line-on-ink pl-8 lg:col-span-4 lg:block">
-            <div className="mb-8">
+          <aside className="hidden lg:col-span-4 lg:block">
+            <div className="rounded-2xl border border-line-on-ink bg-ink/40 p-7">
               <img
                 src="/brand/symbol.svg"
                 alt=""
-                className="h-14 w-auto opacity-90"
+                className="h-10 w-auto opacity-90"
               />
+              <p className="mt-6 font-mono text-xs font-medium tracking-kicker text-pine uppercase">
+                What we actually do
+              </p>
+              <ul className="mt-4 space-y-4 text-sm leading-relaxed text-muted">
+                <li>Implementation that survives Tuesday morning.</li>
+                <li>Voice, automation and growth around the stack you already have.</li>
+                <li>A PT platform and leisure ops for the businesses we know from the floor.</li>
+              </ul>
             </div>
-            <ul className="space-y-5 text-sm text-muted">
-              <li>Implementation that survives Tuesday morning.</li>
-              <li>Voice, automation and growth around the stack you already have.</li>
-              <li>A PT platform and leisure ops for the businesses we know from the floor.</li>
-            </ul>
           </aside>
         </div>
       </section>
