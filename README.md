@@ -1,5 +1,9 @@
-# Omnirexis
+# Omnirexis website — PRODUCTION
 
-Marketing site for Omnirexis — practical AI implementation for UK operators.
+This is the only live marketing site.
 
-Navy / cyan brand system, official lockup, HubSpot booking.
+- Domain: https://www.omnirexis.co.uk
+- Repo: rosstguk-dev/omnirexis-website
+- Vercel project: omnirexis-website
+
+Do not edit rosstguk-dev/Omnirexis for site changes. That repo is a leftover twin and does not serve www.
