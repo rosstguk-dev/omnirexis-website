@@ -1,7 +1,7 @@
 # OMNIREXIS MASTER BRIEF
 
 **Status:** live operating brief  
-**Last updated:** 14 September 2026, 15:50 BST  
+**Last updated:** 15 September 2026, 09:15 BST  
 **Owner:** Ross Gallagher  
 **How to use:** paste this whole file into any AI and say “this is the single source of truth. Do not invent a second stack.”
 
@@ -13,7 +13,10 @@ This document is the company operating system. If a chat, bot, or repo disagrees
 
 UK consultancy. Practical AI and connected systems for operators.
 
-Founder: Ross Gallagher. Manchester. 15+ years in fitness and operational management.
+Founder: Ross Gallagher. 15+ years in fitness and operational management.
+
+Slogan: **Intelligence. Automated.**  
+Manchester is the registered / postal address only. It is not the brand and it is not part of the slogan.
 
 Promise: the tools do the work. They do not create more of it.
 
@@ -52,6 +55,7 @@ Do not invent a fifth product line. Do not raise the daily email cap. Do not bla
 | Calendar CTA | Zoom Scheduler Basic (`ross-gallagher-ie9whv`) | HubSpot Meetings |
 | Heavy engineering | This Grok chat (Ross + Grok) | Grok bots |
 | Light recurring ops | Grok bots only if credits exist | Bots doing n8n edits, DNS, or site deploys |
+| Social scheduler | Buffer (Instagram, Facebook, LinkedIn) | Metricool |
 
 If you are about to touch the leftover `Omnirexis` repo for a site change: stop.
 
@@ -82,6 +86,10 @@ Workflow `cugi7YqiP6PjbVp5`, schedule 09:15 Europe/London.
 Gate: Status = Approved, Email Verified = Yes, DNC Clear, Approved By Ross, greeting is a real first name, not a consumer mailbox, not on HubSpot last-contacted.
 
 Cap: 10 first-touch / day. Marks sheet Sent. Logs contact in HubSpot.
+
+Live trigger on this workflow is **only** Daily Outreach Trigger. The four leftover ChatGPT webhooks (prospect intake, branded reply, branded follow-up, branded test email) are disabled. Do not turn them back on.
+
+n8n Cloud is Starter (2,500 executions/month). Do not add polling schedules. PT Automatic Reply Stop stays off while PT sequences are paused. Client onboarding closed-won check is daily at 10:10 Europe/London, not hourly.
 
 ### D. Light ops bot (only when credits exist)
 Allowed: “did today’s 10 send?”, “how many Approved left?”, “summarise replies in Outlook”.  
@@ -114,6 +122,25 @@ Forbidden: edit workflows, publish site, change DNS, send extra batches, rewrite
 - DMARC: `p=quarantine` for now  
 - Test to Gmail landed in Inbox, not spam
 
+### Social (locked 15 Sep 2026)
+
+- Scheduler is **Buffer**. Metricool is abandoned.
+- Channels: Instagram `omnirexis`, Facebook `Omnirexis`, LinkedIn `omnirexis`.
+- Grok has no Buffer connector. Read the live queue via Buffer GraphQL (`https://api.buffer.com`) when a key is available. Do not store the key in this file, GitHub, or chat memory.
+- n8n workflow `FiW8OghuYwHGs3WF` (Omnirexis Buffer — Today Queue) is a manual reader stub only. Do not add a polling schedule. Do not use it to publish.
+- Live queue as of 15 Sep 2026 morning (Europe/London), same copy across all three channels:
+
+| Day | Time (BST) | Copy |
+|---|---|---|
+| Tue 15 Sep | 12:00 | From noise to next step. Practical AI for UK operators. |
+| Wed 16 Sep | 09:00 | Useful work. Fixed price. Fast. Content Sprint £79 · Ops Doc £149 · Content Engine £349/mo. |
+| Thu 17 Sep | 09:00 | Fit, not theatre. Established tools where they fit. Our software where it's the better job. |
+| Thu 17 Sep | 12:00 | The admin that lived in someone's head. Automation around the tools you already pay for. |
+| Fri 18 Sep | 09:00 | Free 30-minute strategy call. Tell us what's taking too long. https://omnirexis.co.uk |
+| Fri 18 Sep | 12:00 | Tell us what is taking too long. Free 30-minute strategy call. https://omnirexis.co.uk |
+
+No Saturday or Sunday posts were in the Buffer queue at that check.
+
 ---
 
 ## 6. Website rules
@@ -122,7 +149,9 @@ Forbidden: edit workflows, publish site, change DNS, send extra batches, rewrite
 - Vercel project to watch: **omnirexis-website**  
 - After a push, wait for that project’s green Ready row, then hard-refresh www  
 - Book-a-call buttons = Zoom Scheduler only  
-- Keep the brand: navy / cyan, official lockup, no dumped orphan text in the hero  
+- Keep the brand: navy / cyan, official lockup, slogan **Intelligence. Automated.**  
+- Do not prefix the slogan with Manchester  
+- No dumped orphan text in the hero  
 - Hero right-hand blurbs sit in a card labelled “What we actually do” (committed 14 Sep 2026)
 
 ---
@@ -165,6 +194,7 @@ Live domain: www.omnirexis.co.uk
 Live send: n8n workflow cugi7YqiP6PjbVp5, 10 first-touch emails/day from ross@omnirexis.co.uk
 Queue sheet: 1juxShDVfLGxguzWYnFiD35bX2navk6QWHBfbi7sN6ns
 Book-a-call: Zoom Scheduler ross-gallagher-ie9whv
+Social scheduler: Buffer (not Metricool)
 Do not touch repo rosstguk-dev/Omnirexis for website work.
 Do not send HubSpot marketing email.
 Do not sell the PT platform as live.
@@ -183,6 +213,8 @@ Update this master file whenever a locked rule changes.
 | 2026-09-14 | First-touch HTML: keep og.jpg banner, add Zoom button + structured signature. Sanitise no longer flattens line breaks. |
 | 2026-09-14 | Website hero card added on production repo `omnirexis-website`. Leftover repo `Omnirexis` marked do-not-use. |
 | 2026-09-14 | This master brief created. One pathway rule locked. |
+| 2026-09-14 | Slogan locked as Intelligence. Automated. Manchester is postal only, not brand. |
+| 2026-09-15 | Social scheduler locked as Buffer. Metricool abandoned. Live week queue documented. |
 
 ---
 
@@ -205,4 +237,5 @@ If they drift, the newest dated changelog in section 10 wins, then Ross.
 3. After a week of PASS auth, consider DMARC `p=reject`.  
 4. Keep Zoom Scheduler Basic upgraded before 23 Oct 2026.  
 5. Finish PT platform before anyone sells it.  
-6. Do not hire a swarm of new bots until credits are stable.
+6. Do not hire a swarm of new bots until credits are stable.  
+7. After this week’s Buffer queue runs, refill next week in Buffer — do not invent a second scheduler.
