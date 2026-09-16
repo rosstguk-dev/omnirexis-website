@@ -27,7 +27,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Practical AI implementation for UK operators. Automation, voice receptionists, growth systems, a PT platform, and a rapid delivery studio. Manchester.",
+          "Practical AI implementation for UK operators. Automation, voice receptionists, growth systems, a PT platform, and a rapid delivery studio.",
       },
     ],
   }),
@@ -46,7 +46,7 @@ function Home() {
         <div className="relative mx-auto grid min-h-svh max-w-6xl items-center gap-12 px-5 py-16 sm:px-8 lg:grid-cols-12 lg:py-20">
           <div className="lg:col-span-8">
             <p className="font-mono text-xs font-medium tracking-kicker text-pine uppercase">
-              Manchester · Intelligence. Automated.
+              Intelligence. Automated.
             </p>
             <h1 className="mt-6 font-sans text-5xl leading-display font-medium tracking-tight text-bone sm:text-6xl lg:text-7xl">
               The tools should do the work.
