@@ -14,7 +14,7 @@ export const Route = createFileRoute("/pt")({
       {
         name: "description",
         content:
-          "Omnirexis PT — clients, programmes, sessions, check-ins, progress and payments for personal trainers.",
+          "Omnirexis PT — a focused workspace for trainers. In rebuild; register interest for early access.",
       },
     ],
   }),
@@ -37,12 +37,13 @@ function PtPage() {
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-bone/70">
               Clients, programmes, sessions, check-ins, progress and payments in
               one focused workspace. The useful depth of the big PT platforms,
-              without the cockpit of unexplained buttons.
+              without the cockpit of unexplained buttons. Still in rebuild —
+              not a live self-serve product yet.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild variant="paper" size="lg">
                 <Link to="/contact" search={{ intent: "pt-free" }}>
-                  Start on the free plan
+                  Register interest
                 </Link>
               </Button>
               <Button asChild variant="inkOutline" size="lg">
@@ -87,10 +88,10 @@ function PtPage() {
       <section id="pricing" className="scroll-mt-24 bg-paper">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 lg:py-24">
           <p className="font-mono text-xs font-medium tracking-kicker text-pine uppercase">
-            Pricing
+            Planned pricing
           </p>
           <h2 className="mt-3 font-sans text-4xl tracking-tight">
-            Start lean. Upgrade when the book does.
+            Start lean when it launches.
           </h2>
           <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             {PT_PLANS.map((plan) => (
@@ -147,7 +148,7 @@ function PtPage() {
                   variant={plan.featured ? "paper" : "solid"}
                 >
                   <Link to="/contact" search={{ intent: `pt-${plan.id}` }}>
-                    Choose {plan.name}
+                    Ask about {plan.name}
                     <ArrowUpRight />
                   </Link>
                 </Button>
@@ -155,16 +156,16 @@ function PtPage() {
             ))}
           </div>
           <p className="mt-8 text-sm text-muted">
-            Paid plans are billed securely. Use the same email for your enquiry
-            and trainer account so the plan can be activated against the right
-            desk.
+            Pricing above is planned for launch. The platform is still in
+            rebuild — register interest and we will contact you when places
+            open, or book a strategy call if you want to talk through fit first.
           </p>
         </div>
       </section>
       <CtaBand
         kicker="Independent trainers"
-        title="Two clients, on the house."
-        body="Start on Free, then move to Founding while the first fifty places last. We will set you up on a call if you would rather not do it alone."
+        title="Early access, not a live signup."
+        body="Register interest for Free or Founding when launch places open. Prefer a conversation first? Book a strategy call and we will talk through fit."
       />
     </SiteLayout>
   );

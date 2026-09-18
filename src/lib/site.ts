@@ -233,7 +233,7 @@ export const FAQS = [
   },
   {
     q: "How much does it cost?",
-    a: "Consultancy and implementation are scoped around the work. PT plans start at £0. Rapid services are fixed-price. Third-party subscriptions and ongoing support are agreed separately.",
+    a: "Consultancy and implementation are scoped around the work. Rapid services are fixed-price. Planned PT pricing is on the PT page (not live signup yet). Third-party subscriptions and ongoing support are agreed separately.",
   },
   {
     q: "Do you offer ongoing support?",
@@ -249,7 +249,7 @@ export const FAQS = [
   },
   {
     q: "Do you build your own software?",
-    a: "We implement established tools where they fit the job, and we offer our own specialist PT platform. The choice depends on the problem being solved — not on a catalogue we need to sell.",
+    a: "We implement established tools where they fit the job, and we are rebuilding our own specialist PT platform. The choice depends on the problem being solved — not on a catalogue we need to sell.",
   },
   {
     q: "Is our business data secure?",
@@ -257,7 +257,7 @@ export const FAQS = [
   },
   {
     q: "Can I try the PT platform for free?",
-    a: "Yes. The free plan supports two clients. Compare packages on the PT page, then tell us which one you want to start with.",
+    a: "A free plan for two clients is planned at launch. The platform is still in rebuild — register interest on the PT page and we will contact you when places open.",
   },
 ];
 
