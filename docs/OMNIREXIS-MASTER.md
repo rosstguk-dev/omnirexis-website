@@ -1,7 +1,7 @@
 # OMNIREXIS MASTER BRIEF
 
 **Status:** live operating brief  
-**Last updated:** 18 September 2026, 11:10 BST
+**Last updated:** 18 September 2026, 14:35 BST
 **Owner:** Ross Gallagher  
 **How to use:** fetch the live file. Do not paste a snapshot into a bot’s knowledge and treat that snapshot as current.
 
@@ -156,6 +156,9 @@ Do not wait for the next morning agenda. Do not treat “connector needs re-auth
 Hard limits that still need a Ross click: Microsoft/Google/n8n/HubSpot OAuth screens, spending money, deleting production data, legal commitments.
 
 **Continuous improvement is standing (locked 18 Sep 2026).** Ross told Chief of Staff to actively improve brand presence, website quality, usability, web SEO and commercial results without waiting for per-item approval. Still stop for money, OAuth/vendor logins, deleting production data, and legal commitments. Cap, no-twin, Zoom-only CTA, and PT-not-sold-as-live rules still apply.
+
+**Growth in downtime + implement-then-report (locked 18 Sep 2026).** Ross: during downtime, think growth and implement improvements without his input, then send him a report of what was implemented. Applies to CoS and specialists. Report shipped work, not permission asks. Hard stops unchanged.
+
 
 **Approve-and-send is standing (locked 17 Sep 2026).** Grok does not wait for “go send”. If the 09:15 run has Approved rows that pass the existing gates, send. If the Approved pile is empty, Grok may promote Draft rows that already pass the gates (real first name, business mailbox, verified, DNC clear, not HubSpot-contacted, not PT-platform pitch) up to the daily cap of 10, then send. Do not raise the cap. Do not resend a Sent row.
 
@@ -328,6 +331,7 @@ If you learn a durable fact, report it. Only Chief of Staff writes the master.
 
 | When | What |
 |---|---|
+| 2026-09-18 | Growth downtime lock: implement improvements without Ross input, then report what shipped. |
 | 2026-09-18 | First-touch copy tightened after thin Fri batch: specific leak, concrete help, no shared skeletons. |
 | 2026-09-18 | First-touch tone: more human, less sales pitch; soft human close OK; hard CTA in wrapper only. |
 | 2026-09-18 | First-touch: no hyphens that scream AI (no em/en dashes; rephrase stacked compounds). |
