@@ -1,11 +1,55 @@
 # OMNIREXIS MASTER BRIEF
 
 **Status:** live operating brief  
-**Last updated:** 15 September 2026, 09:15 BST  
+**Last updated:** 18 September 2026, 07:35 BST  
 **Owner:** Ross Gallagher  
-**How to use:** paste this whole file into any AI and say “this is the single source of truth. Do not invent a second stack.”
+**How to use:** fetch the live file. Do not paste a snapshot into a bot’s knowledge and treat that snapshot as current.
 
-This document is the company operating system. If a chat, bot, or repo disagrees with this file, this file wins until Ross changes it.
+This document is the company operating system. If a chat, bot, memory, or repo disagrees with the live file, the live file wins until Ross changes it.
+
+---
+
+## 0. Shared source of truth (locked 18 Sep 2026)
+
+There is one master. Not three. Not a copy inside each bot.
+
+**Live file every Grok and every Grok bot must fetch before acting:**
+
+https://raw.githubusercontent.com/rosstguk-dev/omnirexis-website/main/docs/OMNIREXIS-MASTER.md
+
+Human view: https://github.com/rosstguk-dev/omnirexis-website/blob/main/docs/OMNIREXIS-MASTER.md
+
+**Same text, updated in the same turn:**
+
+| Copy | Role |
+|---|---|
+| GitHub `rosstguk-dev/omnirexis-website/docs/OMNIREXIS-MASTER.md` | Live source. Bots fetch this. |
+| This Grok project `artifacts/OMNIREXIS-MASTER.md` | Working copy. Chief of Staff writes here first. |
+| Drive folder OMNIREXIS file `OMNIREXIS-MASTER.md` | Mirror for phone / Drive-connected bots. |
+| Drive Google Doc `OMNIREXIS-MASTER` (`1W_58a5hWKBoK-cE4IqaXwWtCkn_VhSmBXYmsip82Qaw`) | Human reading only. If it disagrees, GitHub wins. |
+
+**Who may write**
+
+- Writer: Grok Chief of Staff (this project chat) only.
+- Readers: every Grok bot, every new chat, Ross.
+- Bots must not keep a private brief, upload a snapshot into bot knowledge, or invent a second stack.
+
+**When a locked rule changes**
+
+1. CoS updates `artifacts/OMNIREXIS-MASTER.md` and the section 10 changelog.
+2. CoS pushes the identical file to GitHub `docs/OMNIREXIS-MASTER.md`.
+3. CoS overwrites Drive `OMNIREXIS-MASTER.md`.
+4. Only then is the rule live.
+
+**If a bot learns a durable fact**
+
+Report it. Do not fork the brief. CoS writes it into this file.
+
+**Before every bot job**
+
+Fetch the GitHub raw URL. If that fails, read Drive `OMNIREXIS-MASTER.md`. If both fail, stop and say so. Do not operate on last week’s memory.
+
+`AGENTS.md` in this project is the long voice / decision document for Chief of Staff only. Bots use this master, not `AGENTS.md`.
 
 ---
 
@@ -38,7 +82,7 @@ Phone: 0161 250 0045
 2. **Strategy call → scoped implementation** — automation, voice, growth systems. Price from the conversation.  
 3. **Rapid studio** — fixed-price content and ops docs (Content Sprint £79, Ops Doc Sprint £149, and the other packaged offers on /rapid-services).  
 4. **Leisure systems** — club ops software conversation, not a hard sell on first touch.  
-5. **PT platform** — not sold as live. Free plan exists for two clients when the new platform is ready. ChatGPT-hosted PT app is deprecated.
+5. **PT platform** — not sold as live. Rebuild lives in private GitHub `rosstguk-dev/Omnirexis-PT` (Next.js 15 + Supabase + Stripe). Live/legacy Supabase project is `mzcuztcamkvuvxjodsgy`. Do not create a second project. Do not run fresh init SQL against it until reconciled. Prices in code: Free £0 / 2 clients, Founding £14.99, Solo £17.99, Pro £24.99. ChatGPT-hosted PT app is deprecated. Site `/pt` CTAs go to `/contact?intent=pt-*`.
 
 Do not invent a fifth product line. Do not raise the daily email cap. Do not blast HubSpot marketing email.
 
@@ -77,8 +121,35 @@ Does the heavy work:
 - Architecture decisions
 - Update **this master file** whenever a rule changes
 - Challenge weak ideas
+- Surface broken auth and commercial-path failures immediately. Do not wait to be asked.
 
 Does not burn bot credits on daily busywork.
+
+### Break-glass (locked 17 Sep 2026)
+
+Ross granted standing operational permission for this chat.
+
+If anything that runs Omnirexis is broken or about to break — expired connector, n8n error on a live workflow, empty Approved queue, send path silent, Buffer/media host expiring, site deploy red, DNS/auth fail — Grok must:
+
+1. Tell Ross immediately. Lead with the break. Do not bury it in a status essay.
+2. Fix everything that can be fixed without his click.
+3. If the only remaining step is human OAuth / a vendor login / money / irreversible delete, put the reauth card or the single click in front of him in the same message and resume the moment it is done.
+
+Do not wait for the next morning agenda. Do not treat “connector needs re-authentication” as a footnote.
+
+Hard limits that still need a Ross click: Microsoft/Google/n8n/HubSpot OAuth screens, spending money, deleting production data, legal commitments.
+
+**Approve-and-send is standing (locked 17 Sep 2026).** Grok does not wait for “go send”. If the 09:15 run has Approved rows that pass the existing gates, send. If the Approved pile is empty, Grok may promote Draft rows that already pass the gates (real first name, business mailbox, verified, DNC clear, not HubSpot-contacted, not PT-platform pitch) up to the daily cap of 10, then send. Do not raise the cap. Do not resend a Sent row.
+
+### Daily fill + daily send (locked 17 Sep 2026)
+
+08:00 Europe/London — Grok automation **Omnirexis daily prospecting** `aaa42891-a2ce-4d10-9fec-7d6dc210bd8f` tops the sheet to 10 gated Approved rows.
+
+09:15 Europe/London — n8n **Omnirexis Branded Outreach** sends up to 10.
+
+09:25 — outreach pulse. If 09:15 mailed zero, Grok refills and sends the same day if cap remains.
+
+ n8n **Omnirexis Prospecting Agent** `6oSGzXqhkOTmS4Eu` stays unpublished. It is only the sheet-append machine for Grok’s named batch. Do not turn its OpenAI 08:00/14:00 schedule on.
 
 ### C. n8n “Outreach Runner” (machine, not a bot)
 Workflow `cugi7YqiP6PjbVp5`, schedule 09:15 Europe/London.
@@ -103,7 +174,7 @@ Forbidden: edit workflows, publish site, change DNS, send extra batches, rewrite
 
 ---
 
-## 5. Outreach rules (locked 14 Sep 2026)
+## 5. Outreach rules (locked 14 Sep 2026, copy tightened 17 Sep 2026)
 
 - From: ross@omnirexis.co.uk via Outlook / Microsoft 365  
 - Cap 10 / day  
@@ -113,6 +184,20 @@ Forbidden: edit workflows, publish site, change DNS, send extra batches, rewrite
 - Template (live): logo banner (`https://www.omnirexis.co.uk/og.jpg`), body from sheet, blue **Book a free strategy call** button to Zoom, structured sign-off  
 - Do not resend a batch because the footer looked ugly  
 - Sheet filter should treat “already has Sent At” as done (add empty-Sent-At filter when next editing the Get Rows node)
+
+### First-touch copy (locked 17 Sep 2026)
+
+The sheet body is the email. The HTML wrapper already adds the Zoom button and Ross’s sign-off. Do not put either in the body.
+
+Write like Ross, not like a sequence:
+
+1. Subject is a specific observation about *their* operation. Never “X enquiries”, “content/ops”, or “a practical automation idea”.
+2. Open `Hi FirstName,` then two or three short paragraphs.
+3. Paragraph 1: a fact only true of that business (named room, offer mix, who emails them, when they teach).
+4. Paragraph 2: the leak that fact creates (enquiry dies while they coach, too many doors into one inbox, class-fit question *is* the sale).
+5. Paragraph 3: what Omnirexis actually does for that leak, in plain English. No prices. No Content Sprint / Ops Doc menu. No “if useful”.
+6. Do not invent awards, staff names, or services that are not on their site.
+7. Two emails in the same batch must not share a skeleton with the town swapped.
 
 ### DNS / deliverability (14 Sep 2026)
 
@@ -126,20 +211,19 @@ Forbidden: edit workflows, publish site, change DNS, send extra batches, rewrite
 
 - Scheduler is **Buffer**. Metricool is abandoned.
 - Channels: Instagram `omnirexis`, Facebook `Omnirexis`, LinkedIn `omnirexis`.
-- Grok has no Buffer connector. Read the live queue via Buffer GraphQL (`https://api.buffer.com`) when a key is available. Do not store the key in this file, GitHub, or chat memory.
+- Buffer Grok connector is connected (16 Sep 2026). GraphQL also works when a personal key named `grok` is available. Do not store the key in this file, GitHub, or chat memory.
 - n8n workflow `FiW8OghuYwHGs3WF` (Omnirexis Buffer — Today Queue) is a manual reader stub only. Do not add a polling schedule. Do not use it to publish.
-- Live queue as of 15 Sep 2026 morning (Europe/London), same copy across all three channels:
-
-| Day | Time (BST) | Copy |
-|---|---|---|
-| Tue 15 Sep | 12:00 | From noise to next step. Practical AI for UK operators. |
-| Wed 16 Sep | 09:00 | Useful work. Fixed price. Fast. Content Sprint £79 · Ops Doc £149 · Content Engine £349/mo. |
-| Thu 17 Sep | 09:00 | Fit, not theatre. Established tools where they fit. Our software where it's the better job. |
-| Thu 17 Sep | 12:00 | The admin that lived in someone's head. Automation around the tools you already pay for. |
-| Fri 18 Sep | 09:00 | Free 30-minute strategy call. Tell us what's taking too long. https://omnirexis.co.uk |
-| Fri 18 Sep | 12:00 | Tell us what is taking too long. Free 30-minute strategy call. https://omnirexis.co.uk |
-
-No Saturday or Sunday posts were in the Buffer queue at that check.
+- Weekly social is run from **this Chief of Staff chat**, not a second Grok bot and not Metricool.
+- Cadence: **three Grok Imagine videos per week, maximum**. 10–15 seconds or longer, with sound and Omnirexis branding. Same video goes to Instagram, Facebook and LinkedIn.
+- Branding lock (15 Sep 2026): overlay **only** Drive folder `Logo Files/png/Color logo - no background.png`. Dark scenes may use `White logo - no background.png`. **Never** use `Color logo with background.png`, `og.jpg`, or any invented lockup. Imagine prompts must not draw a logo — stamp the Drive PNG after.
+- Slots (Europe/London): **Tue 12:00, Thu 12:00, Sat 09:00** feed. Do not stack a second **feed** post on the same channel the same calendar day.
+- **Duplicate lock (17 Sep 2026):** one feed item per channel per calendar day. Never still + video on the same feed day. Never `shareNow` a replacement if that caption already sent today. Quality fixes edit the scheduled row only. Live duplicates on IG/FB/LI can only be deleted in the native apps. Stories at 18:00 are a separate lane and do not count as a second feed post.
+- Asset host: public GitHub `rosstguk-dev/omnirexis-social-assets` folder `week-YYYY-MM-DD`. Buffer pulls the raw URL. No secrets in that repo.
+- This chat cannot mint Imagine video files itself. Ross generates the three clips in Grok Imagine, drops them here. Grok writes captions, pushes files, schedules Buffer, then reports the week grid.
+- Command to run the week: **“week pack”**.
+- n8n **Omnirexis PT — Weekly Consent-Led Content** `JGeQxlShSsRTfH7d` is unpublished. It sold the unfinished PT platform and the old ChatGPT PT URL. Do not turn it back on.
+- Social tone lock (15 Sep 2026): specific, dry, a bit funny. Real rooms and real problems. No cyan particle waves, no price-list posts, no “practical AI for operators.” CTA Saturday only unless Ross changes it.
+- Never use litter.catbox.moe again. Temporary video host has been uguu.se. Durable host is GitHub raw on `omnirexis-social-assets` or unprotected Vercel. Vercel `omnirexis-social` is SSO-gated — do not point Buffer at it until protection is off.
 
 ---
 
@@ -165,7 +249,7 @@ No Saturday or Sunday posts were in the Buffer queue at that check.
 | Growth systems | Live conversation |
 | Rapid studio (content / ops docs) | Live, fixed price |
 | Leisure systems | Live conversation |
-| PT platform | Not finished. Do not sell as live. Old ChatGPT app deprecated |
+| PT platform | Rebuild in `rosstguk-dev/Omnirexis-PT`. Not on Vercel. Do not sell as live. Old ChatGPT app deprecated |
 | Book SIGNAL ZERO | Separate personal brand. Do not mix into Omnirexis first-touch |
 
 ---
@@ -176,30 +260,38 @@ No Saturday or Sunday posts were in the Buffer queue at that check.
 2. Do not break a working send path.  
 3. Do not create a second system “just in case”.  
 4. Test, then document the change in section 10 of this file.  
-5. Ask before sending live email, publishing a new product, or deleting a repo.  
+5. Ask before publishing a new product or deleting a repo. Do not ask before a gated first-touch batch — standing send authority 17 Sep 2026.  
 6. Never use rosstguk@gmail.com as a business from-address.  
 7. Talk sense. No theatre.
 
 ---
 
-## 9. Handover prompt (paste into the next AI)
+## 9. Handover / bot boot (paste this — then fetch the live file)
 
 ```
-You are taking over Omnirexis for Ross Gallagher.
+You work on Omnirexis for Ross Gallagher.
 
-Read OMNIREXIS-MASTER.md first. It is the only source of truth.
+Before any job, fetch the live master and obey it:
+https://raw.githubusercontent.com/rosstguk-dev/omnirexis-website/main/docs/OMNIREXIS-MASTER.md
+
+If GitHub is blocked, read Drive file OMNIREXIS-MASTER.md in folder OMNIREXIS
+(id 1NIbvKJLFc7fdEzMCotmY0jlvoOAhA0sQ).
+
+That file is the only source of truth. Do not invent a second stack.
+Do not keep a private copy. Do not treat a pasted snapshot as current.
 
 Live site repo: rosstguk-dev/omnirexis-website
 Live domain: www.omnirexis.co.uk
 Live send: n8n workflow cugi7YqiP6PjbVp5, 10 first-touch emails/day from ross@omnirexis.co.uk
 Queue sheet: 1juxShDVfLGxguzWYnFiD35bX2navk6QWHBfbi7sN6ns
 Book-a-call: Zoom Scheduler ross-gallagher-ie9whv
-Social scheduler: Buffer (not Metricool)
+Social: Buffer, not Metricool
 Do not touch repo rosstguk-dev/Omnirexis for website work.
 Do not send HubSpot marketing email.
 Do not sell the PT platform as live.
 Do not raise the daily cap.
-Update this master file whenever a locked rule changes.
+Do not edit n8n, DNS, or the live site unless you are the Chief of Staff chat.
+If you learn a durable fact, report it. Only Chief of Staff writes the master.
 ```
 
 ---
@@ -215,24 +307,35 @@ Update this master file whenever a locked rule changes.
 | 2026-09-14 | This master brief created. One pathway rule locked. |
 | 2026-09-14 | Slogan locked as Intelligence. Automated. Manchester is postal only, not brand. |
 | 2026-09-15 | Social scheduler locked as Buffer. Metricool abandoned. Live week queue documented. |
+| 2026-09-15 | Weekly social loop locked in this chat: 3 Imagine videos, Tue 12:00 / Thu 12:00 / Sat 09:00. PT Monday content pack unpublished. |
+| 2026-09-16 | Stories locked: one IG+FB Story per feed day, same still, +15 min, Saturday Zoom sticker only. LinkedIn feed only. |
+| 2026-09-16 | Stories revised: daily 10s video Story, IG+FB, 18:00 London, separate from feed. Still-copy Stories pulled from Buffer. |
+| 2026-09-15 | Live Tue 12:00 Reel used a boxed lockup. Official Drive PNGs copied to `artifacts/brand`. Video overlay is `Color logo - no background.png` only. |
+| 2026-09-15 | Buffer emptied. New still pack + Imagine prompts in `artifacts/week-2026-09-15`. Tone: dry and specific, not corporate waves. |
+| 2026-09-17 | Break-glass locked: tell Ross immediately if auth dies or a commercial path breaks; fix what can be fixed; only bounce the unavoidable click. |
+| 2026-09-17 | Standing send authority: Grok approves and sends gated first-touch without asking. Catch-up exec 2333 sent 8. |
+| 2026-09-17 | Social video quality: noon Reels were 720×1280 so IG/FB looked downscaled. HQ 1080×1920 encodes in `artifacts/week-2026-09-15/hq`. Remaining Buffer queue swapped. Feed videos must be 1080×1920 before Buffer. |
+| 2026-09-17 | Duplicate lock: Thu feed went out three times (tmpfiles 12:46, 720p uguu 12:57, HQ 17:02). Never shareNow a caption that already sent that day. One feed post per channel per day. |
+| 2026-09-17 | Stories paused. 18:00 Story was a chopped recycle of feed footage. Fri+Sat Story rows deleted. Do not cut Stories from feed videos. Stories off until Ross supplies unused 9:16 Story clips. |
+| 2026-09-18 | Shared-source lock: one live master. GitHub raw is what every Grok and every bot fetches. CoS is the only writer. Drive and this project are mirrors updated in the same turn. Snapshots in bot knowledge are forbidden. |
 
 ---
 
 ## 11. Where this file lives
 
-Keep all three in sync when the brief changes:
+See section 0. Short version:
 
-1. Google Drive folder **OMNIREXIS** (`1NIbvKJLFc7fdEzMCotmY0jlvoOAhA0sQ`) — Google Doc copy  
-2. GitHub `rosstguk-dev/omnirexis-website/docs/OMNIREXIS-MASTER.md`  
-3. Local / chat export Ross can download
+1. GitHub raw — live fetch for every AI  
+2. This project `artifacts/OMNIREXIS-MASTER.md` — CoS writes first  
+3. Drive `OMNIREXIS-MASTER.md` — mirror  
 
-If they drift, the newest dated changelog in section 10 wins, then Ross.
+If copies drift, the GitHub file with the newest section-10 date wins, then Ross. Do not invent a fourth copy.
 
 ---
 
 ## 12. Next useful work (do not boil the ocean)
 
-1. Confirm www shows the hero card (Vercel **omnirexis-website** deploy green).  
+1. Friday 09:15 should send the 10 named rows loaded 17 Sep (NW-FIT-051–060). Keep prospecting ahead of the queue; do not reactivate the Prospecting Agent 08:00/14:00 schedule.  
 2. Add “Sent At is empty” to the sheet read so old Approved rows cannot resend.  
 3. After a week of PASS auth, consider DMARC `p=reject`.  
 4. Keep Zoom Scheduler Basic upgraded before 23 Oct 2026.  
