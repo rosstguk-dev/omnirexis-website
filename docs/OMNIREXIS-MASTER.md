@@ -1,7 +1,7 @@
 # OMNIREXIS MASTER BRIEF
 
 **Status:** live operating brief  
-**Last updated:** 18 September 2026, 18:19 BST
+**Last updated:** 18 September 2026, 18:42 BST
 **Owner:** Ross Gallagher  
 **How to use:** fetch the live file. Do not paste a snapshot into a bot’s knowledge and treat that snapshot as current.
 
@@ -25,7 +25,7 @@ Human view: https://github.com/rosstguk-dev/omnirexis-website/blob/main/docs/OMN
 |---|---|
 | GitHub `rosstguk-dev/omnirexis-website/docs/OMNIREXIS-MASTER.md` | Live source. Bots fetch this. |
 | This Grok project `artifacts/OMNIREXIS-MASTER.md` | Working copy. Chief of Staff writes here first. |
-| Drive folder OMNIREXIS file `OMNIREXIS-MASTER.md` (`19OR1nHK6jABU-NILYzfYIbB_MQNfEcm6`) | Mirror for phone / Drive-connected bots. |
+| Drive folder OMNIREXIS file `OMNIREXIS-MASTER.md` (`1kGS-ndVBTq3QHl5bm7geAyXzVOQdYfLu`) | Mirror for phone / Drive-connected bots. |
 | Drive Google Doc `OMNIREXIS-MASTER` (`1MZ_YJatwmR3a_O_xh4wTpFG-_gEqcmx2P9_PPiFFsaY`) | Human reading only. If it disagrees, GitHub wins. |
 
 **Who may write**
@@ -75,6 +75,37 @@ Postal: Bartle House, 9 Oxford Court, Manchester, M2 3WQ
 Phone: 0161 250 0045
 
 ---
+
+## 1A. Message clarity (locked 18 Sep 2026)
+
+Trusted outside feedback: people cannot tell what Omnirexis offers, who it is for, or why they should care. Social styles look mixed. Fix clarity before growing the audience.
+
+### The only public sentence
+Omnirexis helps fitness and leisure operators stop losing enquiries and time by connecting the tools they already use.
+
+### Who we talk to first
+- Primary: independent studio, gym, spa and leisure club owners and managers in the UK (North of England first).
+- Demographics of the business: small operator teams, founder often still on the floor, using WhatsApp/email/CRM poorly, missing enquiries while teaching or running sessions.
+- Not primary: the general public, random AI hobbyists, big corporate IT buyers, PT software shoppers until PT is live.
+
+### Why they should care
+Missed enquiries and follow-ups cost them customers. We make the first reply and the admin stop depending on memory.
+
+### What we ask them to do
+Book a free 30-minute Zoom: https://scheduler.zoom.us/ross-gallagher-ie9whv/30-mins-with-ross
+
+### What stays quiet on social until this is clear
+- PT platform sell
+- Price lists and Rapid menus
+- Leisure software launches
+- Abstract cyan AI art / particle waves / “practical AI for operators” filler
+- Following hundreds of random accounts to inflate following count
+
+### Social rule from this lock
+Every new feed post and Story must answer in plain words: what we do, who it is for, why it matters. One visual language: real rooms / real ops problems, official logo only, dry specific captions. If a draft fails the three questions, do not post it.
+
+### Outreach rule from this lock
+First-touch stays studio-specific. Paragraph 3 must sound like the only public sentence above applied to their leak, not a product catalogue.
 
 ## 2. How money is made (in this order)
 
@@ -216,7 +247,7 @@ Write like Ross messaging another operator, not like a sales sequence:
 2. Open `Hi FirstName,` then two or three short paragraphs.
 3. Paragraph 1: a fact only true of that business (named room, offer mix, who emails them, when they teach).
 4. Paragraph 2: the *specific* awkward bit that fact creates. Do not default every studio to “enquiry dies while you teach” unless that is genuinely their only door.
-5. Paragraph 3: one plain sentence on what Omnirexis helps with for *that* bit. No prices. No Content Sprint / Ops Doc menu. Forbidden filler: “on rails”, “template farm”, “keep the first reply moving”.
+5. Paragraph 3: one plain sentence on what Omnirexis helps with for *that* bit — the §1A public sentence applied to their leak, not a product catalogue. No prices. No Content Sprint / Ops Doc menu. Forbidden filler: “on rails”, “template farm”, “keep the first reply moving”.
 6. Tone: human, not a pitch. No sequence rhythm (problem then product then hard CTA). Soft human close is fine (“happy to show you on a short call if useful”). Hard CTA stays in the wrapper button only. Do not write “if that is the squeeze” or “use the button”.
 7. **No hyphens that scream AI (Ross 18 Sep 2026):** no em dashes, no en dashes. Prefer commas and full stops. Rephrase stacked hyphen compounds into plain words (women only, one to ones, Founders Club).
 8. Do not invent awards, staff names, or services that are not on their site.
@@ -331,6 +362,7 @@ If you learn a durable fact, report it. Only Chief of Staff writes the master.
 
 | When | What |
 |---|---|
+| 2026-09-18 | Message clarity locked: one public sentence, primary audience (UK independent studio/gym/spa/leisure owners, North first), quiet list until clear, social three-question rule, outreach §3 mirrors the public sentence. |
 | 2026-09-18 | **Rollback:** Ross changed mind. Removed one-path freeze §3A. Restored §12 to pre-ChatGPT-simplification intent with Sent At marked done. Kept n8n Sent At empty filter on Branded Outreach `cugi7YqiP6PjbVp5`. Ignore SuperGrok/ChatGPT simplification packet. |
 | 2026-09-18 | Weekend simplification lock: one-path freeze until first booked Zoom. Get Rows requires Sent At empty. Section 12 cut to five points. PT go-live founder pressure cancelled (Product told via Ops). |
 | 2026-09-18 | Growth downtime lock: implement improvements without Ross input, then report what shipped. |
