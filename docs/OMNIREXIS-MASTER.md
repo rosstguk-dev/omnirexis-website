@@ -124,24 +124,6 @@ Does the heavy work:
 - Challenge weak ideas
 - Surface broken auth and commercial-path failures immediately. Do not wait to be asked.
 
-**Role ownership (locked 18 Sep 2026, Ops room).** Ross set the authoritative split. Earlier “everyone owns delivery” claims are void.
-
-**Sales & CRM owns (before a customer commits):**
-prospecting, lead generation, outreach, qualification, sales conversations, proposals/offers, CRM and pipeline, follow-ups, closing, pricing/customer feedback, and preparation of the Sales → Delivery handover (problem + deliverable shape + commercial path).
-
-**Client Delivery owns (once a customer commits / deal is won):**
-customer onboarding, implementation planning, delivery, project coordination, customer success, ongoing customer communication, retention, renewals, delivery quality, case-study readiness, and expansion/upsell opportunities after delivery begins.
-
-**Handoff:** Before commit, Sales is primary. After commit, Sales completes the structured handover and Client Delivery becomes primary. Sales stays available for commercial context but does not keep owning delivery. Client Delivery keeps Sales informed of recurring objections, expansion opportunities, and commercially useful feedback.
-
-**Chief of Staff** owns cross-functional coordination and resolves ownership disputes. Does **not** personally own day-to-day delivery.
-
-**Product & Web** and **Automation & Systems** support Client Delivery where technical implementation is required; they do not own the overall customer relationship.
-
-**Brand & Social** may use genuine customer outcomes for marketing only once verified. Does not own delivery.
-
-n8n **Omnirexis Client Onboarding Engine** `LthjIkRjTjDADKlm` (daily 10:10 Europe/London) alerts on closed-won; Client Delivery owns follow-through with CoS coordinating if stuck.
-
 Does not burn bot credits on daily busywork.
 
 ### Break-glass (locked 17 Sep 2026)
@@ -329,7 +311,7 @@ If you learn a durable fact, report it. Only Chief of Staff writes the master.
 
 | When | What |
 |---|---|
-| 2026-09-18 | Ops ownership lock: Sales = pre-commit; Client Delivery = post-commit; CoS coordinates disputes; Product/Automation support only; Brand uses verified outcomes only. Earlier multi-owner claims void. |
+| 2026-09-18 | Continuous improve: `/pt`, homepage PT teaser and FAQs softened so PT is not sold as live. Planned pricing kept; CTAs stay `/contact?intent=pt-*`. PR #7 merged. |
 | 2026-09-18 | CoS continuous improvement standing: brand, site, SEO, usability, revenue without per-item approval. Hard stops: money, OAuth, production deletes, legal. |
 | 2026-09-14 | Morning scheduled send failed (sanitise JS). Catch-up of 10 sent 14:55 BST after Ross said “Go send”. |
 | 2026-09-14 | SPF updated to include Outlook. DKIM keys created and enabled in Microsoft 365. Gmail test landed in Inbox. |
