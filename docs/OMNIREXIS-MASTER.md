@@ -1,7 +1,7 @@
 # OMNIREXIS MASTER BRIEF
 
 **Status:** live operating brief  
-**Last updated:** 18 September 2026, 10:15 BST  
+**Last updated:** 18 September 2026, 10:20 BST
 **Owner:** Ross Gallagher  
 **How to use:** fetch the live file. Do not paste a snapshot into a bot’s knowledge and treat that snapshot as current.
 
@@ -25,7 +25,7 @@ Human view: https://github.com/rosstguk-dev/omnirexis-website/blob/main/docs/OMN
 |---|---|
 | GitHub `rosstguk-dev/omnirexis-website/docs/OMNIREXIS-MASTER.md` | Live source. Bots fetch this. |
 | This Grok project `artifacts/OMNIREXIS-MASTER.md` | Working copy. Chief of Staff writes here first. |
-| Drive folder OMNIREXIS file `OMNIREXIS-MASTER.md` (`1a03UiL6JwPDfY47HiLytv6Bl80IXlpsz`) | Mirror for phone / Drive-connected bots. |
+| Drive folder OMNIREXIS file `OMNIREXIS-MASTER.md` (`1IDYXONMiu6AEQLfs-cd4qS4HpWcpamtB`) | Mirror for phone / Drive-connected bots. |
 | Drive Google Doc `OMNIREXIS-MASTER` (`1MZ_YJatwmR3a_O_xh4wTpFG-_gEqcmx2P9_PPiFFsaY`) | Human reading only. If it disagrees, GitHub wins. |
 
 **Who may write**
@@ -124,19 +124,23 @@ Does the heavy work:
 - Challenge weak ideas
 - Surface broken auth and commercial-path failures immediately. Do not wait to be asked.
 
-**Client delivery & customer success (locked 18 Sep 2026).** Ross put Chief of Staff in ownership of Omnirexis client delivery and customer success.
+**Role ownership (locked 18 Sep 2026, Ops room).** Ross set the authoritative split. Earlier “everyone owns delivery” claims are void.
 
-Priorities:
+**Sales & CRM owns (before a customer commits):**
+prospecting, lead generation, outreach, qualification, sales conversations, proposals/offers, CRM and pipeline, follow-ups, closing, pricing/customer feedback, and preparation of the Sales → Delivery handover (problem + deliverable shape + commercial path).
 
-1. Keep Sales promises and delivery aligned — only sell what we can fulfil under product truth.
-2. Excellent customer outcomes.
-3. Repeatable delivery playbooks (Rapid packages, scoped implementation, leisure / voice / growth conversations).
-4. Retention and recurring revenue where the offer supports it.
-5. Progressively cut founder involvement per customer (checklists, templates, clear owners after close, n8n onboarding alert).
+**Client Delivery owns (once a customer commits / deal is won):**
+customer onboarding, implementation planning, delivery, project coordination, customer success, ongoing customer communication, retention, renewals, delivery quality, case-study readiness, and expansion/upsell opportunities after delivery begins.
 
-Client Delivery bot executes under CoS. Sales must note the exact outcome sold on a booked Zoom / hot lead (problem + deliverable shape + rough commercial path). Do not invent scope. Price remains Ross’s call (Level 4).
+**Handoff:** Before commit, Sales is primary. After commit, Sales completes the structured handover and Client Delivery becomes primary. Sales stays available for commercial context but does not keep owning delivery. Client Delivery keeps Sales informed of recurring objections, expansion opportunities, and commercially useful feedback.
 
-n8n **Omnirexis Client Onboarding Engine** `LthjIkRjTjDADKlm` runs daily 10:10 Europe/London: closed-won HubSpot deals → onboarding task → email Ross. CoS owns the follow-through until delivery is playbooked enough that Ross is not the bottleneck.
+**Chief of Staff** owns cross-functional coordination and resolves ownership disputes. Does **not** personally own day-to-day delivery.
+
+**Product & Web** and **Automation & Systems** support Client Delivery where technical implementation is required; they do not own the overall customer relationship.
+
+**Brand & Social** may use genuine customer outcomes for marketing only once verified. Does not own delivery.
+
+n8n **Omnirexis Client Onboarding Engine** `LthjIkRjTjDADKlm` (daily 10:10 Europe/London) alerts on closed-won; Client Delivery owns follow-through with CoS coordinating if stuck.
 
 Does not burn bot credits on daily busywork.
 
@@ -325,8 +329,7 @@ If you learn a durable fact, report it. Only Chief of Staff writes the master.
 
 | When | What |
 |---|---|
-| 2026-09-18 | Drive master mirror refreshed to `1a03UiL6JwPDfY47HiLytv6Bl80IXlpsz` (same OMNIREXIS folder). |
-| 2026-09-18 | CoS owns client delivery & customer success: Sales–delivery alignment, outcomes, repeatable playbooks, retention/recurring, less founder involvement per customer. Client Delivery under CoS; onboarding engine `LthjIkRjTjDADKlm` stays the closed-won alert. |
+| 2026-09-18 | Ops ownership lock: Sales = pre-commit; Client Delivery = post-commit; CoS coordinates disputes; Product/Automation support only; Brand uses verified outcomes only. Earlier multi-owner claims void. |
 | 2026-09-18 | CoS continuous improvement standing: brand, site, SEO, usability, revenue without per-item approval. Hard stops: money, OAuth, production deletes, legal. |
 | 2026-09-14 | Morning scheduled send failed (sanitise JS). Catch-up of 10 sent 14:55 BST after Ross said “Go send”. |
 | 2026-09-14 | SPF updated to include Outlook. DKIM keys created and enabled in Microsoft 365. Gmail test landed in Inbox. |
@@ -364,11 +367,10 @@ If copies drift, the GitHub file with the newest section-10 date wins, then Ross
 
 ## 12. Next useful work (do not boil the ocean)
 
-1. Before first paid close: draft minimum delivery kit (kickoff checklist, Rapid fulfilment steps, scoped-implementation handover note Sales → CoS) so Ross is not inventing process per customer.
-2. Keep prospecting ahead of the queue; do not reactivate the Prospecting Agent 08:00/14:00 schedule.
-3. Add “Sent At is empty” to the sheet read so old Approved rows cannot resend.
-4. After a week of PASS auth, consider DMARC `p=reject`.
-5. Keep Zoom Scheduler Basic upgraded before 23 Oct 2026.
-6. Finish PT platform before anyone sells it.
-7. Do not hire a swarm of new bots until credits are stable.
-8. After this week’s Buffer queue runs, refill next week in Buffer — do not invent a second scheduler. Put next week’s clips in `public/social/manifest.json` and dispatch `ingest-social.yml` before scheduling.
+1. Friday 09:15 should send the 10 named rows loaded 17 Sep (NW-FIT-051–060). Keep prospecting ahead of the queue; do not reactivate the Prospecting Agent 08:00/14:00 schedule.  
+2. Add “Sent At is empty” to the sheet read so old Approved rows cannot resend.  
+3. After a week of PASS auth, consider DMARC `p=reject`.  
+4. Keep Zoom Scheduler Basic upgraded before 23 Oct 2026.  
+5. Finish PT platform before anyone sells it.  
+6. Do not hire a swarm of new bots until credits are stable.  
+7. After this week’s Buffer queue runs, refill next week in Buffer — do not invent a second scheduler. Put next week’s clips in `public/social/manifest.json` and dispatch `ingest-social.yml` before scheduling.
