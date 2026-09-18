@@ -25,7 +25,7 @@ Human view: https://github.com/rosstguk-dev/omnirexis-website/blob/main/docs/OMN
 |---|---|
 | GitHub `rosstguk-dev/omnirexis-website/docs/OMNIREXIS-MASTER.md` | Live source. Bots fetch this. |
 | This Grok project `artifacts/OMNIREXIS-MASTER.md` | Working copy. Chief of Staff writes here first. |
-| Drive folder OMNIREXIS file `OMNIREXIS-MASTER.md` (`1IDYXONMiu6AEQLfs-cd4qS4HpWcpamtB`) | Mirror for phone / Drive-connected bots. |
+| Drive folder OMNIREXIS file `OMNIREXIS-MASTER.md` (`1a03UiL6JwPDfY47HiLytv6Bl80IXlpsz`) | Mirror for phone / Drive-connected bots. |
 | Drive Google Doc `OMNIREXIS-MASTER` (`1MZ_YJatwmR3a_O_xh4wTpFG-_gEqcmx2P9_PPiFFsaY`) | Human reading only. If it disagrees, GitHub wins. |
 
 **Who may write**
@@ -325,6 +325,7 @@ If you learn a durable fact, report it. Only Chief of Staff writes the master.
 
 | When | What |
 |---|---|
+| 2026-09-18 | Drive master mirror refreshed to `1a03UiL6JwPDfY47HiLytv6Bl80IXlpsz` (same OMNIREXIS folder). |
 | 2026-09-18 | CoS owns client delivery & customer success: Sales–delivery alignment, outcomes, repeatable playbooks, retention/recurring, less founder involvement per customer. Client Delivery under CoS; onboarding engine `LthjIkRjTjDADKlm` stays the closed-won alert. |
 | 2026-09-18 | CoS continuous improvement standing: brand, site, SEO, usability, revenue without per-item approval. Hard stops: money, OAuth, production deletes, legal. |
 | 2026-09-14 | Morning scheduled send failed (sanitise JS). Catch-up of 10 sent 14:55 BST after Ross said “Go send”. |
