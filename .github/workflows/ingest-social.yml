@@ -1,0 +1,44 @@
+name: Ingest social media
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - public/social/manifest.json
+      - .github/workflows/ingest-social.yml
+
+permissions:
+  contents: write
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download files from manifest
+        run: |
+          python3 << 'PY'
+          import json, os, urllib.request
+          man = json.load(open('public/social/manifest.json'))
+          os.makedirs('public/social', exist_ok=True)
+          for item in man['files']:
+              dest = item['dest']
+              url = item['source']
+              print('GET', url, '->', dest)
+              urllib.request.urlretrieve(url, dest)
+              size = os.path.getsize(dest)
+              if size < 10000:
+                  raise SystemExit(f'{dest} too small ({size})')
+              print('ok', size)
+          PY
+      - name: Commit binaries if changed
+        run: |
+          git config user.name "omnirexis-ingest"
+          git config user.email "ross@omnirexis.co.uk"
+          git add public/social/*.mp4
+          if git diff --cached --quiet; then
+            echo nochange
+            exit 0
+          fi
+          git commit -m "media: ingest Buffer clips into public/social"
+          git push

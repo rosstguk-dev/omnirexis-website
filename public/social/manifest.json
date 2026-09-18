@@ -1,0 +1,26 @@
+{
+  "host": "https://www.omnirexis.co.uk/social",
+  "updated": "2026-09-18",
+  "files": [
+    {
+      "dest": "public/social/fri-feed-v2-1080.mp4",
+      "source": "https://n.uguu.se/HqAopzxm.mp4",
+      "public": "https://www.omnirexis.co.uk/social/fri-feed-v2-1080.mp4"
+    },
+    {
+      "dest": "public/social/fri-story-later-1080.mp4",
+      "source": "https://n.uguu.se/LqsdcrZm.mp4",
+      "public": "https://www.omnirexis.co.uk/social/fri-story-later-1080.mp4"
+    },
+    {
+      "dest": "public/social/sat-feed-v3-1080.mp4",
+      "source": "https://d.uguu.se/KCkqLCST.mp4",
+      "public": "https://www.omnirexis.co.uk/social/sat-feed-v3-1080.mp4"
+    },
+    {
+      "dest": "public/social/sat-story-answered-1080.mp4",
+      "source": "https://n.uguu.se/sGjQTRPk.mp4",
+      "public": "https://www.omnirexis.co.uk/social/sat-story-answered-1080.mp4"
+    }
+  ]
+}
