@@ -46,6 +46,11 @@
       "dest": "public/social/sat-clarity-stitch-1080.mp4",
       "source": "https://raw.githubusercontent.com/rosstguk-dev/omnirexis-website/main/public/social/sat-clarity-stitch-1080.mp4",
       "public": "https://www.omnirexis.co.uk/social/sat-clarity-stitch-1080.mp4"
+    },
+    {
+      "dest": "public/social/sat-ross-pick-1080.mp4",
+      "source": "https://raw.githubusercontent.com/rosstguk-dev/omnirexis-website/main/public/social/sat-ross-pick-1080.mp4",
+      "public": "https://www.omnirexis.co.uk/social/sat-ross-pick-1080.mp4"
     }
   ]
 }
