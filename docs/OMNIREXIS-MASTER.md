@@ -1,7 +1,7 @@
 # OMNIREXIS MASTER BRIEF
 
 **Status:** live operating brief  
-**Last updated:** 18 September 2026, 10:20 BST
+**Last updated:** 18 September 2026, 10:25 BST
 **Owner:** Ross Gallagher  
 **How to use:** fetch the live file. Do not paste a snapshot into a bot’s knowledge and treat that snapshot as current.
 
@@ -123,6 +123,21 @@ Does the heavy work:
 - Update **this master file** whenever a rule changes
 - Challenge weak ideas
 - Surface broken auth and commercial-path failures immediately. Do not wait to be asked.
+
+**Customer-relationship owners (locked 18 Sep 2026, Ops room).** Ross set the split. Earlier multi-owner claims are void.
+
+- **Before commit:** Sales & CRM owns the *commercial customer relationship* (prospecting through close + Sales → Delivery handover: problem + deliverable shape + commercial path). This is relationship ownership, not every task — each specialist keeps their own domain throughout the journey (Brand, Product, Automation, etc.).
+- **After won:** Client Delivery becomes primary owner of the *customer relationship* (onboarding, delivery, success, retention, renewals, quality, case-study readiness, expansion after delivery begins). Sales stays available for commercial context only.
+
+**Handoff:** Sales completes the structured handover at commit; Client Delivery takes primary. Client Delivery keeps Sales informed of recurring objections, expansion opportunities, and commercially useful feedback.
+
+**Chief of Staff** owns cross-functional coordination and resolves ownership disputes. Does **not** personally own day-to-day delivery or the customer relationship.
+
+**Product & Web** and **Automation & Systems** support Client Delivery where technical implementation is required; they do not own the customer relationship.
+
+**Brand & Social** may use genuine customer outcomes for marketing only once verified. Does not own delivery or the customer relationship.
+
+n8n **Omnirexis Client Onboarding Engine** `LthjIkRjTjDADKlm` (daily 10:10 Europe/London) alerts on closed-won; Client Delivery owns follow-through with CoS coordinating if stuck.
 
 Does not burn bot credits on daily busywork.
 
@@ -311,6 +326,7 @@ If you learn a durable fact, report it. Only Chief of Staff writes the master.
 
 | When | What |
 |---|---|
+| 2026-09-18 | Clarified: Sales owns commercial relationship pre-commit (not every task); specialists keep domain ownership; Client Delivery owns relationship post-won. |
 | 2026-09-18 | Continuous improve: `/pt`, homepage PT teaser and FAQs softened so PT is not sold as live. Planned pricing kept; CTAs stay `/contact?intent=pt-*`. PR #7 merged. |
 | 2026-09-18 | CoS continuous improvement standing: brand, site, SEO, usability, revenue without per-item approval. Hard stops: money, OAuth, production deletes, legal. |
 | 2026-09-14 | Morning scheduled send failed (sanitise JS). Catch-up of 10 sent 14:55 BST after Ross said “Go send”. |
