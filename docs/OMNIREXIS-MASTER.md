@@ -1,7 +1,7 @@
 # OMNIREXIS MASTER BRIEF
 
 **Status:** live operating brief  
-**Last updated:** 18 September 2026, 14:35 BST
+**Last updated:** 18 September 2026, 18:11 BST
 **Owner:** Ross Gallagher  
 **How to use:** fetch the live file. Do not paste a snapshot into a bot’s knowledge and treat that snapshot as current.
 
@@ -106,6 +106,22 @@ If you are about to touch the leftover `Omnirexis` repo for a site change: stop.
 
 ---
 
+## 3A. One-path freeze until first booked Zoom (locked 18 Sep 2026)
+
+Until the first strategy call is booked on Zoom, Omnirexis runs one path only:
+
+**Sheet → n8n → Outlook → Zoom.**
+
+Everything else stays frozen:
+
+- **Stories** are paused for new creative. Existing Fri/Sat Buffer Story rows that already point at durable `www.omnirexis.co.uk/social/` URLs may run as scheduled. Do not ask Ross for new Story clips.
+- **PT founder work is paused.** No Resend DNS, no schema work, no Stripe OAuth for AI, no PT marketing push. Product was told separately via Ops. Do not put go-live pressure on Ross for PT this weekend.
+- **HubSpot** is machine suppress and send-log only. It is not a workspace.
+- **Bot roster** is Chief of Staff plus an optional light check bot only if credits exist. Do not spawn new bots.
+- **No new n8n clocks.** Do not reactivate the Prospecting Agent schedule. Cap stays 10.
+- **Rapid studio and Leisure** stay on the site but are not first-touch hooks.
+- **Success metrics only:** mailed count, human replies, Zooms booked, paid scopes. Nothing else counts as progress until the first Zoom is on the calendar.
+
 ## 4. Agent roster (roles, not a swarm)
 
 Do **not** spawn a new team of Grok bots. Credits already ran out once and outreach stopped.
@@ -204,7 +220,7 @@ Forbidden: edit workflows, publish site, change DNS, send extra batches, rewrite
 - Footer: reply stop and we will not email again  
 - Template (live): logo banner (`https://www.omnirexis.co.uk/og.jpg`), body from sheet, blue **Book a free strategy call** button to Zoom, structured sign-off  
 - Do not resend a batch because the footer looked ugly  
-- Sheet filter should treat “already has Sent At” as done (add empty-Sent-At filter when next editing the Get Rows node)
+- Sheet filter treats “already has Sent At” as done. Get Rows requires Sent At empty (locked 18 Sep 2026).
 
 ### First-touch copy (locked 17 Sep 2026, tightened 18 Sep 2026)
 
@@ -331,6 +347,7 @@ If you learn a durable fact, report it. Only Chief of Staff writes the master.
 
 | When | What |
 |---|---|
+| 2026-09-18 | Weekend simplification lock: one-path freeze until first booked Zoom. Get Rows requires Sent At empty. Section 12 cut to five points. PT go-live founder pressure cancelled (Product told via Ops). |
 | 2026-09-18 | Growth downtime lock: implement improvements without Ross input, then report what shipped. |
 | 2026-09-18 | First-touch copy tightened after thin Fri batch: specific leak, concrete help, no shared skeletons. |
 | 2026-09-18 | First-touch tone: more human, less sales pitch; soft human close OK; hard CTA in wrapper only. |
@@ -374,10 +391,8 @@ If copies drift, the GitHub file with the newest section-10 date wins, then Ross
 
 ## 12. Next useful work (do not boil the ocean)
 
-1. Friday 09:15 should send the 10 named rows loaded 17 Sep (NW-FIT-051–060). Keep prospecting ahead of the queue; do not reactivate the Prospecting Agent 08:00/14:00 schedule.  
-2. Add “Sent At is empty” to the sheet read so old Approved rows cannot resend.  
-3. After a week of PASS auth, consider DMARC `p=reject`.  
-4. Keep Zoom Scheduler Basic upgraded before 23 Oct 2026.  
-5. Finish PT platform before anyone sells it.  
-6. Do not hire a swarm of new bots until credits are stable.  
-7. After this week’s Buffer queue runs, refill next week in Buffer — do not invent a second scheduler. Put next week’s clips in `public/social/manifest.json` and dispatch `ingest-social.yml` before scheduling.
+1. Keep ten gated, named, one-studio first-touch rows ahead of 09:15. Send them. Do not reactivate the Prospecting Agent clock.
+2. Add Sent At is empty on the sheet read so Approved-but-sent rows cannot resend.
+3. Treat every human reply as a same-day job: answer from Outlook and get them on Zoom.
+4. Stories, PT rebuild, HubSpot cleanup, Rapid/Leisure packaging, and new bots stay frozen until the first booked strategy call.
+5. Before 23 Oct 2026, keep Zoom Scheduler Basic from expiring. It is the only booking path.
