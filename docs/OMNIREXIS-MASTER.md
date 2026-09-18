@@ -1,7 +1,7 @@
 # OMNIREXIS MASTER BRIEF
 
 **Status:** live operating brief  
-**Last updated:** 18 September 2026, 07:35 BST  
+**Last updated:** 18 September 2026, 07:52 BST  
 **Owner:** Ross Gallagher  
 **How to use:** fetch the live file. Do not paste a snapshot into a bot’s knowledge and treat that snapshot as current.
 
@@ -25,8 +25,8 @@ Human view: https://github.com/rosstguk-dev/omnirexis-website/blob/main/docs/OMN
 |---|---|
 | GitHub `rosstguk-dev/omnirexis-website/docs/OMNIREXIS-MASTER.md` | Live source. Bots fetch this. |
 | This Grok project `artifacts/OMNIREXIS-MASTER.md` | Working copy. Chief of Staff writes here first. |
-| Drive folder OMNIREXIS file `OMNIREXIS-MASTER.md` | Mirror for phone / Drive-connected bots. |
-| Drive Google Doc `OMNIREXIS-MASTER` (`1W_58a5hWKBoK-cE4IqaXwWtCkn_VhSmBXYmsip82Qaw`) | Human reading only. If it disagrees, GitHub wins. |
+| Drive folder OMNIREXIS file `OMNIREXIS-MASTER.md` (`1LOZoEEM72Fps8usVb0c2HvpnQAc1eOO7`) | Mirror for phone / Drive-connected bots. |
+| Drive Google Doc `OMNIREXIS-MASTER` (`1MZ_YJatwmR3a_O_xh4wTpFG-_gEqcmx2P9_PPiFFsaY`) | Human reading only. If it disagrees, GitHub wins. |
 
 **Who may write**
 
@@ -91,7 +91,7 @@ Do not invent a fifth product line. Do not raise the daily email cap. Do not bla
 ## 3. Single pathway (no twins)
 
 | Thing | Use this | Do not use |
-|---|---|---|
+|---|---|
 | Live website | GitHub `rosstguk-dev/omnirexis-website` · Vercel project **omnirexis-website** · www.omnirexis.co.uk | `rosstguk-dev/Omnirexis` · Vercel project **omnirexis** · omnirexis.vercel.app |
 | First-touch send | n8n workflow **Omnirexis Branded Outreach** `cugi7YqiP6PjbVp5` | HubSpot marketing send, Gmail, a second chat engine |
 | Prospect queue | Google Sheet `1juxShDVfLGxguzWYnFiD35bX2navk6QWHBfbi7sN6ns` tab Outreach Queue | Ad-hoc lists in chat |
@@ -100,6 +100,7 @@ Do not invent a fifth product line. Do not raise the daily email cap. Do not bla
 | Heavy engineering | This Grok chat (Ross + Grok) | Grok bots |
 | Light recurring ops | Grok bots only if credits exist | Bots doing n8n edits, DNS, or site deploys |
 | Social scheduler | Buffer (Instagram, Facebook, LinkedIn) | Metricool |
+| Social media files | `www.omnirexis.co.uk/social/<file>` from `omnirexis-website/public/social` | uguu, catbox, litter.catbox, tmpfiles, gofile, SSO-gated Vercel `omnirexis-social` / `omnirexis-cdn` |
 
 If you are about to touch the leftover `Omnirexis` repo for a site change: stop.
 
@@ -149,7 +150,7 @@ Hard limits that still need a Ross click: Microsoft/Google/n8n/HubSpot OAuth scr
 
 09:25 — outreach pulse. If 09:15 mailed zero, Grok refills and sends the same day if cap remains.
 
- n8n **Omnirexis Prospecting Agent** `6oSGzXqhkOTmS4Eu` stays unpublished. It is only the sheet-append machine for Grok’s named batch. Do not turn its OpenAI 08:00/14:00 schedule on.
+n8n **Omnirexis Prospecting Agent** `6oSGzXqhkOTmS4Eu` stays unpublished. It is only the sheet-append machine for Grok’s named batch. Do not turn its OpenAI 08:00/14:00 schedule on.
 
 ### C. n8n “Outreach Runner” (machine, not a bot)
 Workflow `cugi7YqiP6PjbVp5`, schedule 09:15 Europe/London.
@@ -218,12 +219,18 @@ Write like Ross, not like a sequence:
 - Branding lock (15 Sep 2026): overlay **only** Drive folder `Logo Files/png/Color logo - no background.png`. Dark scenes may use `White logo - no background.png`. **Never** use `Color logo with background.png`, `og.jpg`, or any invented lockup. Imagine prompts must not draw a logo — stamp the Drive PNG after.
 - Slots (Europe/London): **Tue 12:00, Thu 12:00, Sat 09:00** feed. Do not stack a second **feed** post on the same channel the same calendar day.
 - **Duplicate lock (17 Sep 2026):** one feed item per channel per calendar day. Never still + video on the same feed day. Never `shareNow` a replacement if that caption already sent today. Quality fixes edit the scheduled row only. Live duplicates on IG/FB/LI can only be deleted in the native apps. Stories at 18:00 are a separate lane and do not count as a second feed post.
-- Asset host: public GitHub `rosstguk-dev/omnirexis-social-assets` folder `week-YYYY-MM-DD`. Buffer pulls the raw URL. No secrets in that repo.
+- **Stories:** daily 10s 9:16 video, IG+FB at 18:00 Europe/London, separate creative from feed. LinkedIn feed only. Saturday IG may use the Zoom link sticker. Do not cut Stories from feed videos. Do not shareNow a Story that already exists as a scheduled row.
+- **Story media lock:** 9:16 only. Never `tonight-2026-09-11/video-tonight-fresh.mp4` (navy square top-right from a failed logo composite). Never landscape week-14 `video-v2.mp4` / `video-v3.mp4`. Never boxed og.jpg lockups. Overlay only `Color logo - no background.png` (or white on dark). Check the first frame before Buffer.
+- **Durable media host (locked 18 Sep 2026):** `https://www.omnirexis.co.uk/social/<filename>`. Files live in `omnirexis-website/public/social`. Ingest is GitHub Action `.github/workflows/ingest-social.yml` reading `public/social/manifest.json`. Add a row to the manifest and dispatch the Action — do not hand-push binaries through the GitHub connector. `omnirexis-social-assets` is a leftover text repo, not the live host.
 - This chat cannot mint Imagine video files itself. Ross generates the three clips in Grok Imagine, drops them here. Grok writes captions, pushes files, schedules Buffer, then reports the week grid.
 - Command to run the week: **“week pack”**.
 - n8n **Omnirexis PT — Weekly Consent-Led Content** `JGeQxlShSsRTfH7d` is unpublished. It sold the unfinished PT platform and the old ChatGPT PT URL. Do not turn it back on.
+- Never use `litter.catbox.moe`, `uguu.se`, `tmpfiles.org`, or `gofile.io` for Buffer. They die. Vercel project `omnirexis-social` and the 18 Sep probe project `omnirexis-cdn` are SSO-gated — Buffer cannot fetch them.
+- Live Buffer queue (18 Sep 07:50 BST) points at the durable `/social` URLs. Fri 12:00 feed `fri-feed-v2-1080.mp4`. Fri 18:00 Stories `fri-story-later-1080.mp4`. Sat 09:00 feed `sat-feed-v3-1080.mp4`. Sat 18:00 Stories `sat-story-answered-1080.mp4`. Quality: 1080×1920 High Profile +faststart before Buffer.
+- Capability-first: do not stop at a connector limit. Binaries go through the ingest Action. Buffer edits use the connector `edit_post` on the scheduled row only. Do not ask Ross to click Buffer.
 - Social tone lock (15 Sep 2026): specific, dry, a bit funny. Real rooms and real problems. No cyan particle waves, no price-list posts, no “practical AI for operators.” CTA Saturday only unless Ross changes it.
-- Never use litter.catbox.moe again. Temporary video host has been uguu.se. Durable host is GitHub raw on `omnirexis-social-assets` or unprotected Vercel. Vercel `omnirexis-social` is SSO-gated — do not point Buffer at it until protection is off.
+- This week stills (load today): Tue 15 17:30 eleven missed · Wed 16 12:00 called while working · Thu 17 12:00 not a CRM · Fri 18 12:00 follow-up is not a personality trait · Sat 19 09:00 they booked the place that answered + Zoom.
+- Next week videos: Ross generates in Imagine with the prompts in that captions file, drops raw 9:16 clips here, Grok stamps Drive colour lockup. Tue 22 / Thu 24 / Sat 26.
 
 ---
 
@@ -237,6 +244,7 @@ Write like Ross, not like a sequence:
 - Do not prefix the slogan with Manchester  
 - No dumped orphan text in the hero  
 - Hero right-hand blurbs sit in a card labelled “What we actually do” (committed 14 Sep 2026)
+- Durable Buffer media lives in `public/social/`. Do not delete that folder. After ingest, confirm `www.omnirexis.co.uk/social/<file>` returns `video/mp4` before pointing Buffer at it.
 
 ---
 
@@ -286,6 +294,7 @@ Live send: n8n workflow cugi7YqiP6PjbVp5, 10 first-touch emails/day from ross@om
 Queue sheet: 1juxShDVfLGxguzWYnFiD35bX2navk6QWHBfbi7sN6ns
 Book-a-call: Zoom Scheduler ross-gallagher-ie9whv
 Social: Buffer, not Metricool
+Social media files: https://www.omnirexis.co.uk/social/ — never uguu or catbox
 Do not touch repo rosstguk-dev/Omnirexis for website work.
 Do not send HubSpot marketing email.
 Do not sell the PT platform as live.
@@ -318,6 +327,7 @@ If you learn a durable fact, report it. Only Chief of Staff writes the master.
 | 2026-09-17 | Duplicate lock: Thu feed went out three times (tmpfiles 12:46, 720p uguu 12:57, HQ 17:02). Never shareNow a caption that already sent that day. One feed post per channel per day. |
 | 2026-09-17 | Stories paused. 18:00 Story was a chopped recycle of feed footage. Fri+Sat Story rows deleted. Do not cut Stories from feed videos. Stories off until Ross supplies unused 9:16 Story clips. |
 | 2026-09-18 | Shared-source lock: one live master. GitHub raw is what every Grok and every bot fetches. CoS is the only writer. Drive and this project are mirrors updated in the same turn. Snapshots in bot knowledge are forbidden. |
+| 2026-09-18 | Durable social host locked: `www.omnirexis.co.uk/social`. Ingest Action `ingest-social.yml` + `public/social/manifest.json` commits the binaries. Buffer Fri/Sat feed + Stories swapped off dead uguu onto those URLs. Never uguu / catbox / litter / tmpfiles / gofile. Vercel `omnirexis-social` and `omnirexis-cdn` stay SSO-gated. |
 
 ---
 
@@ -341,4 +351,4 @@ If copies drift, the GitHub file with the newest section-10 date wins, then Ross
 4. Keep Zoom Scheduler Basic upgraded before 23 Oct 2026.  
 5. Finish PT platform before anyone sells it.  
 6. Do not hire a swarm of new bots until credits are stable.  
-7. After this week’s Buffer queue runs, refill next week in Buffer — do not invent a second scheduler.
+7. After this week’s Buffer queue runs, refill next week in Buffer — do not invent a second scheduler. Put next week’s clips in `public/social/manifest.json` and dispatch `ingest-social.yml` before scheduling.
