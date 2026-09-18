@@ -206,12 +206,13 @@ function Home() {
             <p className="mt-5 text-base leading-relaxed text-bone/70">
               Clients, programmes, sessions, check-ins, progress and payments in
               one workspace. Built for independent trainers who do not want a
-              cockpit of unexplained buttons.
+              cockpit of unexplained buttons. In rebuild — register interest on
+              the PT page; not a live signup yet.
             </p>
             <ul className="mt-6 space-y-2 text-sm text-bone/70">
               <li>Client profiles and check-ins</li>
               <li>Programme builder and progress</li>
-              <li>Sessions and payments · free plan for two clients</li>
+              <li>Sessions and payments · free plan planned for two clients</li>
             </ul>
             <div className="mt-8">
               <Button asChild variant="paper">
