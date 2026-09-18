@@ -11,7 +11,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Omnirexis is a UK AI implementation practice led by Ross Gallagher — grounded in real operational work.",
+          "Omnirexis helps fitness and leisure operators use AI properly. Led by Ross Gallagher, from years on the gym and leisure floor.",
       },
     ],
   }),
@@ -23,8 +23,8 @@ function AboutPage() {
     <SiteLayout>
       <PageHero
         kicker="The firm"
-        title="Good technology. Grounded in real work."
-        lede="Omnirexis is a UK AI implementation practice. We help operators save time, improve the customer’s next step, and turn more enquiries into conversations — without replacing the systems that already earn their keep."
+        title="We educate owners. Then the tools act like staff."
+        lede="Omnirexis helps fitness and leisure operators use AI properly. Independent studio, gym, spa and leisure club owners and managers in the UK, starting with the North of England."
       />
 
       <section className="border-b border-line">

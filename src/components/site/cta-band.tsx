@@ -3,9 +3,9 @@ import { Button } from "@/components/ui/button";
 import { BOOK_CALL } from "@/lib/site";
 
 export function CtaBand({
-  kicker = "A useful first hour",
-  title = "Tell us what is taking too long.",
-  body = "Thirty minutes. Your systems, your bottlenecks, a clear view of the first move — whether we work together or not.",
+  kicker = "Free strategy call",
+  title = "Book a free 30 minute Zoom strategy call.",
+  body = "Tell us what is taking too long. We will talk through the tools, the gaps, and a first move.",
 }: {
   kicker?: string;
   title?: string;
@@ -27,14 +27,19 @@ export function CtaBand({
           </p>
         </div>
         <div className="flex flex-col items-start gap-3 lg:col-span-5 lg:items-end">
-          <Button asChild variant="solid" size="lg">
+          <Button
+            asChild
+            variant="solid"
+            size="lg"
+            className="h-auto min-h-12 whitespace-normal py-3 text-center"
+          >
             <a href={BOOK_CALL} target="_blank" rel="noreferrer">
-              Book a strategy call
+              Book a free 30 minute Zoom strategy call
               <ArrowUpRight />
             </a>
           </Button>
           <p className="font-mono text-xs tracking-wide text-subtle">
-            30 minutes · Senior strategist · No obligation
+            Free. 30 minutes. Zoom. No obligation.
           </p>
         </div>
       </div>

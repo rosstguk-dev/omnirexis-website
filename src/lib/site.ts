@@ -98,7 +98,7 @@ export const PROCESS = [
     index: "02",
     name: "Opportunity audit",
     time: "Mapped, not guessed",
-    body: "We map the work and identify the highest-value starting point — with a clear view of cost, benefit and fit.",
+    body: "We map the work and name the highest-value starting point. Cost, benefit and fit, in writing.",
   },
   {
     index: "03",
@@ -116,7 +116,7 @@ export const PROCESS = [
     index: "05",
     name: "Optimise & support",
     time: "As scoped",
-    body: "Review what moved, improve what works, and keep the support you actually agreed — not an open-ended retainer by stealth.",
+    body: "Review what moved, improve what works, and keep the support you actually agreed. Not an open-ended retainer by stealth.",
   },
 ];
 
@@ -221,19 +221,19 @@ export const RAPID = [
 export const FAQS = [
   {
     q: "Where should I start?",
-    a: "A free 30-minute strategy call. We talk through the work taking up your time, the systems you use, and whether there is a sensible first project. You leave with a view either way.",
+    a: "A free 30 minute Zoom strategy call. We talk through the work taking up your time, the systems you use, and whether there is a sensible first project. You leave with a view either way.",
   },
   {
-    q: "Is Omnirexis just for fitness businesses?",
-    a: "No. Automation, voice and growth work across a range of operators. Leisure Systems and the PT platform are dedicated offerings for fitness and leisure — because that is where the practice was built.",
+    q: "Who is this for?",
+    a: "Independent studio, gym, spa and leisure club owners and managers in the UK, starting with the North of England. People who still work on the floor and do not have a big tech team.",
   },
   {
     q: "Do I need to replace my existing software?",
-    a: "Not if it still earns its place. We start with what you already use and which integrations it supports. Any proposed change is discussed before implementation.",
+    a: "Not if it still earns its place. We start with what you already use and which connections it supports. Any proposed change is discussed before we set anything up.",
   },
   {
     q: "How much does it cost?",
-    a: "Consultancy and implementation are scoped around the work. Rapid services are fixed-price. Planned PT pricing is on the PT page (not live signup yet). Third-party subscriptions and ongoing support are agreed separately.",
+    a: "The main work is scoped around the job. Rapid packs are fixed price. Planned PT pricing is on the PT page (not live signup yet). Third-party subscriptions and ongoing support are agreed separately.",
   },
   {
     q: "Do you offer ongoing support?",
@@ -241,23 +241,23 @@ export const FAQS = [
   },
   {
     q: "Will AI replace my staff?",
-    a: "The starting point is the repetitive work and the slow response — not the people who currently carry it. You stay in control of where automation fits and where judgement is required.",
+    a: "No. The tools should become the workforce for the repeatable jobs, so the humans keep the work that needs a person. You stay in control of where that line sits.",
   },
   {
-    q: "How long does implementation take?",
-    a: "It depends on the systems, access, data and scope. We agree a realistic plan before starting. Rapid service turnaround times are listed with each package.",
+    q: "How long does it take?",
+    a: "It depends on the systems, access, data and scope. We agree a realistic plan before starting. Rapid pack turnaround times are listed with each package.",
   },
   {
-    q: "Do you build your own software?",
-    a: "We implement established tools where they fit the job, and we are rebuilding our own specialist PT platform. The choice depends on the problem being solved — not on a catalogue we need to sell.",
+    q: "Do you just install tools and leave?",
+    a: "No. We educate the owner on how to use AI effectively, what each tool is for, and how the tools connect so they act like staff. Same way Ross has built his own setup.",
   },
   {
     q: "Is our business data secure?",
-    a: "Access, permissions and data handling are assessed for each implementation. We discuss your requirements and the providers involved before anything is connected.",
+    a: "Access, permissions and data handling are assessed for each setup. We discuss your requirements and the providers involved before anything is connected.",
   },
   {
     q: "Can I try the PT platform for free?",
-    a: "A free plan for two clients is planned at launch. The platform is still in rebuild — register interest on the PT page and we will contact you when places open.",
+    a: "A free plan for two clients is planned at launch. The platform is still in rebuild. Register interest on the PT page and we will contact you when places open.",
   },
 ];
 

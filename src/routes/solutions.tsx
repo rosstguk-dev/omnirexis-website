@@ -13,7 +13,7 @@ export const Route = createFileRoute("/solutions")({
       {
         name: "description",
         content:
-          "AI opportunity audits, voice receptionists, process automation and customer experience systems for UK operators.",
+          "Omnirexis helps fitness and leisure operators use AI properly. We show which tools do what, how they work together, and how that setup becomes part of the workforce.",
       },
     ],
   }),
@@ -24,14 +24,17 @@ function SolutionsPage() {
   return (
     <SiteLayout>
       <PageHero
-        kicker="Solutions"
-        title="Solve the work that slows you down."
-        lede="Four services, configured around the way your business already runs. Pick a starting point, or talk it through on a call — you do not need a technical brief."
+        kicker="How we set it up"
+        title="Tools that become part of the workforce."
+        lede="We show which tools do what, how they work together, and how that setup becomes part of the team. Start with a free 30 minute Zoom strategy call."
       >
         <div className="mt-8">
-          <Button asChild>
+          <Button
+            asChild
+            className="h-auto min-h-12 whitespace-normal py-3 text-center"
+          >
             <a href={BOOK_CALL} target="_blank" rel="noreferrer">
-              Discuss a starting point
+              Book a free 30 minute Zoom strategy call
               <ArrowUpRight />
             </a>
           </Button>

@@ -11,9 +11,9 @@ import appCss from "../styles.css?url";
 const APP_NAME = "Omnirexis";
 
 const SITE_URL = "https://www.omnirexis.co.uk";
-const DEFAULT_TITLE = "Omnirexis — Intelligence. Automated.";
+const DEFAULT_TITLE = "Omnirexis | Intelligence. Automated.";
 const DEFAULT_DESCRIPTION =
-  "Omnirexis implements practical AI for UK operators — so the phone is answered, the enquiry is followed, and the CRM stays current. Book a free 30-minute strategy call.";
+  "Omnirexis helps fitness and leisure operators use AI properly. We show which tools do what, how they work together, and how that setup becomes part of the workforce. Book a free 30 minute Zoom strategy call.";
 
 export const Route = createRootRoute({
   head: () => ({

@@ -29,9 +29,12 @@ function ProcessPage() {
         lede="Five stages, a defined scope, and a practical handover. You always know what happens next. You do not need a technical brief to start."
       >
         <div className="mt-8">
-          <Button asChild>
+          <Button
+            asChild
+            className="h-auto min-h-12 whitespace-normal py-3 text-center"
+          >
             <a href={BOOK_CALL} target="_blank" rel="noreferrer">
-              Book the first conversation
+              Book a free 30 minute Zoom strategy call
               <ArrowUpRight />
             </a>
           </Button>

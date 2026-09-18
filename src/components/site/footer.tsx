@@ -17,8 +17,8 @@ export function SiteFooter() {
         <div className="lg:col-span-4">
           <Wordmark invert />
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-bone/65">
-            Practical AI implementation for operators who have outgrown
-            busywork.
+            We help fitness and leisure operators use AI properly, so it
+            becomes part of the workforce.
           </p>
           <p className="mt-6 text-xs tracking-mark text-subtle uppercase">
             Intelligence. Automated.
