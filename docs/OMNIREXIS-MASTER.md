@@ -1,7 +1,7 @@
 # OMNIREXIS MASTER BRIEF
 
 **Status:** live operating brief  
-**Last updated:** 18 September 2026, 07:52 BST  
+**Last updated:** 18 September 2026, 08:45 BST  
 **Owner:** Ross Gallagher  
 **How to use:** fetch the live file. Do not paste a snapshot into a bot’s knowledge and treat that snapshot as current.
 
@@ -139,6 +139,8 @@ If anything that runs Omnirexis is broken or about to break — expired connecto
 Do not wait for the next morning agenda. Do not treat “connector needs re-authentication” as a footnote.
 
 Hard limits that still need a Ross click: Microsoft/Google/n8n/HubSpot OAuth screens, spending money, deleting production data, legal commitments.
+
+**Continuous improvement is standing (locked 18 Sep 2026).** Ross told Chief of Staff to actively improve brand presence, website quality, usability, web SEO and commercial results without waiting for per-item approval. Still stop for money, OAuth/vendor logins, deleting production data, and legal commitments. Cap, no-twin, Zoom-only CTA, and PT-not-sold-as-live rules still apply.
 
 **Approve-and-send is standing (locked 17 Sep 2026).** Grok does not wait for “go send”. If the 09:15 run has Approved rows that pass the existing gates, send. If the Approved pile is empty, Grok may promote Draft rows that already pass the gates (real first name, business mailbox, verified, DNC clear, not HubSpot-contacted, not PT-platform pitch) up to the daily cap of 10, then send. Do not raise the cap. Do not resend a Sent row.
 
@@ -309,6 +311,7 @@ If you learn a durable fact, report it. Only Chief of Staff writes the master.
 
 | When | What |
 |---|---|
+| 2026-09-18 | CoS continuous improvement standing: brand, site, SEO, usability, revenue without per-item approval. Hard stops: money, OAuth, production deletes, legal. |
 | 2026-09-14 | Morning scheduled send failed (sanitise JS). Catch-up of 10 sent 14:55 BST after Ross said “Go send”. |
 | 2026-09-14 | SPF updated to include Outlook. DKIM keys created and enabled in Microsoft 365. Gmail test landed in Inbox. |
 | 2026-09-14 | First-touch HTML: keep og.jpg banner, add Zoom button + structured signature. Sanitise no longer flattens line breaks. |
