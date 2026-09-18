@@ -23,13 +23,24 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Omnirexis — Practical AI for UK operators" },
+      { title: "Omnirexis — Intelligence. Automated." },
       {
         name: "description",
         content:
-          "Practical AI implementation for UK operators. Automation, voice receptionists, growth systems, a PT platform, and a rapid delivery studio.",
+          "The tools should do the work, not create more of it. Practical AI implementation for UK operators — voice, automation, growth systems, leisure ops, and a rapid delivery studio.",
       },
+      {
+        property: "og:title",
+        content: "Omnirexis — Intelligence. Automated.",
+      },
+      {
+        property: "og:description",
+        content:
+          "The tools should do the work, not create more of it. Book a free 30-minute strategy call.",
+      },
+      { property: "og:url", content: "https://www.omnirexis.co.uk/" },
     ],
+    links: [{ rel: "canonical", href: "https://www.omnirexis.co.uk/" }],
   }),
   component: Home,
 });
@@ -76,7 +87,7 @@ function Home() {
             <div className="rounded-2xl border border-line-on-ink bg-ink/40 p-7">
               <img
                 src="/brand/symbol.svg"
-                alt=""
+                alt="Omnirexis"
                 className="h-10 w-auto opacity-90"
               />
               <p className="mt-6 font-mono text-xs font-medium tracking-kicker text-pine uppercase">
