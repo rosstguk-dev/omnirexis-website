@@ -1,7 +1,7 @@
 # OMNIREXIS MASTER BRIEF
 
 **Status:** live operating brief  
-**Last updated:** 18 September 2026, 11:00 BST
+**Last updated:** 18 September 2026, 10:25 BST
 **Owner:** Ross Gallagher  
 **How to use:** fetch the live file. Do not paste a snapshot into a bot’s knowledge and treat that snapshot as current.
 
@@ -203,7 +203,7 @@ Forbidden: edit workflows, publish site, change DNS, send extra batches, rewrite
 - Do not resend a batch because the footer looked ugly  
 - Sheet filter should treat “already has Sent At” as done (add empty-Sent-At filter when next editing the Get Rows node)
 
-### First-touch copy (locked 17 Sep 2026, tightened 18 Sep 2026)
+### First-touch copy (locked 17 Sep 2026)
 
 The sheet body is the email. The HTML wrapper already adds the Zoom button and Ross’s sign-off. Do not put either in the body.
 
@@ -212,10 +212,10 @@ Write like Ross, not like a sequence:
 1. Subject is a specific observation about *their* operation. Never “X enquiries”, “content/ops”, or “a practical automation idea”.
 2. Open `Hi FirstName,` then two or three short paragraphs.
 3. Paragraph 1: a fact only true of that business (named room, offer mix, who emails them, when they teach).
-4. Paragraph 2: the *specific* leak that fact creates. Do not default every studio to “enquiry dies while you teach” unless that is genuinely their only door. Name the mix (founders vs class, consult vs timetable, one-shot rural enquiry, dual owners, etc.).
-5. Paragraph 3: what Omnirexis actually does for *that* leak in one concrete sentence. Forbidden filler: “on rails”, “template farm”, “keep the first reply moving”, “I set that follow-up up for operators in the same spot”. No prices. No Content Sprint / Ops Doc menu. No soft closes (“if useful”, “if that is the squeeze”, “if the inbox waits”).
+4. Paragraph 2: the leak that fact creates (enquiry dies while they coach, too many doors into one inbox, class-fit question *is* the sale).
+5. Paragraph 3: what Omnirexis actually does for that leak, in plain English. No prices. No Content Sprint / Ops Doc menu. No “if useful”.
 6. Do not invent awards, staff names, or services that are not on their site.
-7. Two emails in the same batch must not share a skeleton with the town swapped. Fri 18 Sep batch failed this bar — openings were specific; middle/close were clones. Sales must not Approve thin copy. Rewrite Monday’s queue before 09:15.
+7. Two emails in the same batch must not share a skeleton with the town swapped.
 
 ### DNS / deliverability (14 Sep 2026)
 
@@ -326,7 +326,6 @@ If you learn a durable fact, report it. Only Chief of Staff writes the master.
 
 | When | What |
 |---|---|
-| 2026-09-18 | First-touch copy tightened after Ross flagged thin context: ban generic teach/inbox skeleton, filler phrases, soft closes; Monday queue must pass bar before send. |
 | 2026-09-18 | Clarified: Sales owns commercial relationship pre-commit (not every task); specialists keep domain ownership; Client Delivery owns relationship post-won. |
 | 2026-09-18 | Continuous improve: `/pt`, homepage PT teaser and FAQs softened so PT is not sold as live. Planned pricing kept; CTAs stay `/contact?intent=pt-*`. PR #7 merged. |
 | 2026-09-18 | CoS continuous improvement standing: brand, site, SEO, usability, revenue without per-item approval. Hard stops: money, OAuth, production deletes, legal. |
