@@ -1,7 +1,7 @@
 # OMNIREXIS MASTER BRIEF
 
 **Status:** live operating brief  
-**Last updated:** 18 September 2026, 18:46 BST
+**Last updated:** 18 September 2026, 18:47 BST
 **Owner:** Ross Gallagher  
 **How to use:** fetch the live file. Do not paste a snapshot into a bot’s knowledge and treat that snapshot as current.
 
@@ -25,7 +25,7 @@ Human view: https://github.com/rosstguk-dev/omnirexis-website/blob/main/docs/OMN
 |---|---|
 | GitHub `rosstguk-dev/omnirexis-website/docs/OMNIREXIS-MASTER.md` | Live source. Bots fetch this. |
 | This Grok project `artifacts/OMNIREXIS-MASTER.md` | Working copy. Chief of Staff writes here first. |
-| Drive folder OMNIREXIS file `OMNIREXIS-MASTER.md` (`1PH9106HKPiGxmzgkHBgcwkCJ5Vbf0uFZ`) | Mirror for phone / Drive-connected bots. |
+| Drive folder OMNIREXIS file `OMNIREXIS-MASTER.md` (`1rkS9J71jGQhPo2Eb_XM08FaL1cmjyDZB`) | Mirror for phone / Drive-connected bots. |
 | Drive Google Doc `OMNIREXIS-MASTER` (`1MZ_YJatwmR3a_O_xh4wTpFG-_gEqcmx2P9_PPiFFsaY`) | Human reading only. If it disagrees, GitHub wins. |
 
 **Who may write**
