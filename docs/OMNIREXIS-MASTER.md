@@ -1,7 +1,7 @@
 # OMNIREXIS MASTER BRIEF
 
 **Status:** live operating brief  
-**Last updated:** 18 September 2026, 18:49 BST
+**Last updated:** 18 September 2026, 18:50 BST
 **Owner:** Ross Gallagher  
 **How to use:** fetch the live file. Do not paste a snapshot into a bot’s knowledge and treat that snapshot as current.
 
@@ -81,7 +81,8 @@ Phone: 0161 250 0045
 Trusted outside feedback: people cannot tell what Omnirexis offers, who it is for, or why they should care. Social styles look mixed. Fix clarity before growing the audience.
 
 ### The only public sentence
-Omnirexis helps fitness and leisure operators stop losing enquiries and time by connecting the tools they already use.
+Omnirexis helps fitness and leisure operators use AI properly. We show which tools do what, how they work together, and how that setup becomes part of the workforce so enquiries and admin stop falling through the cracks.
+- We educate the owner, not just install tools. Same way Ross runs his own setup.
 
 ### Who we talk to first
 - Primary: independent studio, gym, spa and leisure club owners and managers in the UK (North of England first).
@@ -362,6 +363,7 @@ If you learn a durable fact, report it. Only Chief of Staff writes the master.
 
 | When | What |
 |---|---|
+| 2026-09-18 | Message clarity updated to Ross USP version: AI properly, connected tools, and owner education as part of the workforce. |
 | 2026-09-18 | Message clarity locked: one public sentence, primary audience (UK independent studio/gym/spa/leisure owners, North first), quiet list until clear, social three-question rule, outreach §3 mirrors the public sentence. |
 | 2026-09-18 | **Rollback:** Ross changed mind. Removed one-path freeze §3A. Restored §12 to pre-ChatGPT-simplification intent with Sent At marked done. Kept n8n Sent At empty filter on Branded Outreach `cugi7YqiP6PjbVp5`. Ignore SuperGrok/ChatGPT simplification packet. |
 | 2026-09-18 | Weekend simplification lock: one-path freeze until first booked Zoom. Get Rows requires Sent At empty. Section 12 cut to five points. PT go-live founder pressure cancelled (Product told via Ops). |
