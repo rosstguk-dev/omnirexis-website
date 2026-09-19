@@ -35,10 +35,10 @@ jobs:
         run: |
           git config user.name "omnirexis-ingest"
           git config user.email "ross@omnirexis.co.uk"
-          git add public/social/*.mp4
+          git add public/social/*.mp4 public/social/*.jpg public/social/*.png || true
           if git diff --cached --quiet; then
             echo nochange
             exit 0
           fi
-          git commit -m "media: ingest Buffer clips into public/social"
+          git commit -m "media: ingest Buffer assets into public/social"
           git push
