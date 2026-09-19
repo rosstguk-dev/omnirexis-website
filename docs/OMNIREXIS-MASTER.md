@@ -269,9 +269,10 @@ Write like Ross messaging another operator, not like a sales sequence:
 - Buffer Grok connector is connected (16 Sep 2026). GraphQL also works when a personal key named `grok` is available. Do not store the key in this file, GitHub, or chat memory.
 - n8n workflow `FiW8OghuYwHGs3WF` (Omnirexis Buffer — Today Queue) is a manual reader stub only. Do not add a polling schedule. Do not use it to publish.
 - Weekly social is run from **this Chief of Staff chat**, not a second Grok bot and not Metricool.
-- Cadence: **three Grok Imagine videos per week, maximum**. 10–15 seconds or longer, with sound and Omnirexis branding. Same video goes to Instagram, Facebook and LinkedIn.
+- Cadence (locked 19 Sep 2026 evening): **3 robot feed videos + 3 robot feed stills per week**. Videos maximum three unless Ross supplies more clips. Same asset goes to Instagram, Facebook and LinkedIn. Never stack still + video on the same channel the same calendar day.
+- **Visual lock (19 Sep 2026):** futuristic sleek white robot + dark navy / cyan hologram. Official Omnirexis logo stamp only (`Color logo - no background.png`). Captions answer What / Who / Why. Soft Zoom CTA **Saturday only**.
 - Branding lock (15 Sep 2026): overlay **only** Drive folder `Logo Files/png/Color logo - no background.png`. Dark scenes may use `White logo - no background.png`. **Never** use `Color logo with background.png`, `og.jpg`, or any invented lockup. Imagine prompts must not draw a logo — stamp the Drive PNG after.
-- Slots (Europe/London): **Tue 12:00, Thu 12:00, Sat 09:00** feed. Do not stack a second **feed** post on the same channel the same calendar day.
+- Video slots (Europe/London): **Tue 12:00, Thu 12:00, Sat 09:00** feed. Still slots on three other weekdays (default **Mon 12:00, Wed 12:00, Fri 12:00**). Do not put a second **feed** post on the same channel the same calendar day. Aborted 19 Sep: seven daily feed stills.
 - **Duplicate lock (17 Sep 2026):** one feed item per channel per calendar day. Never still + video on the same feed day. Never `shareNow` a replacement if that caption already sent today. Quality fixes edit the scheduled row only. Live duplicates on IG/FB/LI can only be deleted in the native apps. Stories at 18:00 are a separate lane and do not count as a second feed post.
 - **Stories:** daily 10s 9:16 video, IG+FB at 18:00 Europe/London, separate creative from feed. LinkedIn feed only. Saturday IG may use the Zoom link sticker. Do not cut Stories from feed videos. Do not shareNow a Story that already exists as a scheduled row.
 - **Story media lock:** 9:16 only. Never `tonight-2026-09-11/video-tonight-fresh.mp4` (navy square top-right from a failed logo composite). Never landscape week-14 `video-v2.mp4` / `video-v3.mp4`. Never boxed og.jpg lockups. Overlay only `Color logo - no background.png` (or white on dark). Check the first frame before Buffer.
@@ -283,8 +284,8 @@ Write like Ross messaging another operator, not like a sales sequence:
 - Live Buffer queue (18 Sep 07:50 BST) points at the durable `/social` URLs. Fri 12:00 feed `fri-feed-v2-1080.mp4`. Fri 18:00 Stories `fri-story-later-1080.mp4`. Sat 09:00 feed `sat-feed-v3-1080.mp4`. Sat 18:00 Stories `sat-story-answered-1080.mp4`. Quality: 1080×1920 High Profile +faststart before Buffer.
 - Capability-first: do not stop at a connector limit. Binaries go through the ingest Action. Buffer edits use the connector `edit_post` on the scheduled row only. Do not ask Ross to click Buffer.
 - Social tone lock (15 Sep 2026): specific, dry, a bit funny. Real rooms and real problems. No cyan particle waves, no price-list posts, no “practical AI for operators.” CTA Saturday only unless Ross changes it.
-- This week stills (load today): Tue 15 17:30 eleven missed · Wed 16 12:00 called while working · Thu 17 12:00 not a CRM · Fri 18 12:00 follow-up is not a personality trait · Sat 19 09:00 they booked the place that answered + Zoom.
-- Next week videos: Ross generates in Imagine with the prompts in that captions file, drops raw 9:16 clips here, Grok stamps Drive colour lockup. Tue 22 / Thu 24 / Sat 26.
+- **Robot week pack (19 Sep 2026):** feed stills Mon/Wed/Fri; feed videos Tue/Thu/Sat; Stories daily IG+FB 18:00. Assets under `www.omnirexis.co.uk/social/*robot*`. Prefer Grok Imagine clips when `XAI_API_KEY` works; otherwise stamp robot refs / motion holds. Buffer Free plan `scheduledPosts:10` — refill after sends; never `shareNow` duplicates.
+- Pulled 19 Sep evening: Sat 26 `sat-ross-pick-plus-cards-logo-1080.mp4` FB/IG/LI rows.
 
 ---
 
@@ -364,6 +365,7 @@ If you learn a durable fact, report it. Only Chief of Staff writes the master.
 | When | What |
 |---|---|
 | 2026-09-18 | Message clarity updated to Ross USP version: AI properly, connected tools, and owner education as part of the workforce. |
+| 2026-09-19 | Social cadence: abort 7 daily feed stills. Lock 3 robot videos (Tue/Thu/Sat) + 3 robot stills (Mon/Wed/Fri) + daily IG+FB Stories. Robot visual lock. Pull Sat 26 ross-pick-plus-cards. |
 | 2026-09-18 | Message clarity locked: one public sentence, primary audience (UK independent studio/gym/spa/leisure owners, North first), quiet list until clear, social three-question rule, outreach §3 mirrors the public sentence. |
 | 2026-09-18 | **Rollback:** Ross changed mind. Removed one-path freeze §3A. Restored §12 to pre-ChatGPT-simplification intent with Sent At marked done. Kept n8n Sent At empty filter on Branded Outreach `cugi7YqiP6PjbVp5`. Ignore SuperGrok/ChatGPT simplification packet. |
 | 2026-09-18 | Weekend simplification lock: one-path freeze until first booked Zoom. Get Rows requires Sent At empty. Section 12 cut to five points. PT go-live founder pressure cancelled (Product told via Ops). |
