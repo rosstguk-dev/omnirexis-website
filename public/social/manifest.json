@@ -151,6 +151,85 @@
       "dest": "public/social/sat-26-robot-story-1080.mp4",
       "source": "https://raw.githubusercontent.com/rosstguk-dev/omnirexis-website/main/public/social/sat-26-robot-story-1080.mp4",
       "public": "https://www.omnirexis.co.uk/social/sat-26-robot-story-1080.mp4"
+    },
+    {
+      "dest": "public/social/mon-21-imagine-desk-1080.jpg",
+      "source": "https://raw.githubusercontent.com/rosstguk-dev/omnirexis-website/main/public/social/mon-21-imagine-desk-1080.jpg",
+      "public": "https://www.omnirexis.co.uk/social/mon-21-imagine-desk-1080.jpg",
+      "cdn": "https://cdn.jsdelivr.net/gh/rosstguk-dev/omnirexis-website@main/public/social/mon-21-imagine-desk-1080.jpg"
+    },
+    {
+      "dest": "public/social/wed-23-imagine-sessions-1080.jpg",
+      "source": "https://raw.githubusercontent.com/rosstguk-dev/omnirexis-website/main/public/social/wed-23-imagine-sessions-1080.jpg",
+      "public": "https://www.omnirexis.co.uk/social/wed-23-imagine-sessions-1080.jpg",
+      "cdn": "https://cdn.jsdelivr.net/gh/rosstguk-dev/omnirexis-website@main/public/social/wed-23-imagine-sessions-1080.jpg"
+    },
+    {
+      "dest": "public/social/fri-25-imagine-ops-1080.jpg",
+      "source": "https://raw.githubusercontent.com/rosstguk-dev/omnirexis-website/main/public/social/fri-25-imagine-ops-1080.jpg",
+      "public": "https://www.omnirexis.co.uk/social/fri-25-imagine-ops-1080.jpg",
+      "cdn": "https://cdn.jsdelivr.net/gh/rosstguk-dev/omnirexis-website@main/public/social/fri-25-imagine-ops-1080.jpg"
+    },
+    {
+      "dest": "public/social/tue-22-imagine-feed-1080.mp4",
+      "source": "https://raw.githubusercontent.com/rosstguk-dev/omnirexis-website/main/public/social/tue-22-imagine-feed-1080.mp4",
+      "public": "https://www.omnirexis.co.uk/social/tue-22-imagine-feed-1080.mp4",
+      "cdn": "https://cdn.jsdelivr.net/gh/rosstguk-dev/omnirexis-website@main/public/social/tue-22-imagine-feed-1080.mp4"
+    },
+    {
+      "dest": "public/social/thu-24-imagine-feed-1080.mp4",
+      "source": "https://raw.githubusercontent.com/rosstguk-dev/omnirexis-website/main/public/social/thu-24-imagine-feed-1080.mp4",
+      "public": "https://www.omnirexis.co.uk/social/thu-24-imagine-feed-1080.mp4",
+      "cdn": "https://cdn.jsdelivr.net/gh/rosstguk-dev/omnirexis-website@main/public/social/thu-24-imagine-feed-1080.mp4"
+    },
+    {
+      "dest": "public/social/sat-26-imagine-feed-1080.mp4",
+      "source": "https://raw.githubusercontent.com/rosstguk-dev/omnirexis-website/main/public/social/sat-26-imagine-feed-1080.mp4",
+      "public": "https://www.omnirexis.co.uk/social/sat-26-imagine-feed-1080.mp4",
+      "cdn": "https://cdn.jsdelivr.net/gh/rosstguk-dev/omnirexis-website@main/public/social/sat-26-imagine-feed-1080.mp4"
+    },
+    {
+      "dest": "public/social/mon-21-imagine-story-1080.jpg",
+      "source": "https://raw.githubusercontent.com/rosstguk-dev/omnirexis-website/main/public/social/mon-21-imagine-story-1080.jpg",
+      "public": "https://www.omnirexis.co.uk/social/mon-21-imagine-story-1080.jpg",
+      "cdn": "https://cdn.jsdelivr.net/gh/rosstguk-dev/omnirexis-website@main/public/social/mon-21-imagine-story-1080.jpg"
+    },
+    {
+      "dest": "public/social/tue-22-imagine-story-1080.jpg",
+      "source": "https://raw.githubusercontent.com/rosstguk-dev/omnirexis-website/main/public/social/tue-22-imagine-story-1080.jpg",
+      "public": "https://www.omnirexis.co.uk/social/tue-22-imagine-story-1080.jpg",
+      "cdn": "https://cdn.jsdelivr.net/gh/rosstguk-dev/omnirexis-website@main/public/social/tue-22-imagine-story-1080.jpg"
+    },
+    {
+      "dest": "public/social/wed-23-imagine-story-1080.jpg",
+      "source": "https://raw.githubusercontent.com/rosstguk-dev/omnirexis-website/main/public/social/wed-23-imagine-story-1080.jpg",
+      "public": "https://www.omnirexis.co.uk/social/wed-23-imagine-story-1080.jpg",
+      "cdn": "https://cdn.jsdelivr.net/gh/rosstguk-dev/omnirexis-website@main/public/social/wed-23-imagine-story-1080.jpg"
+    },
+    {
+      "dest": "public/social/thu-24-imagine-story-1080.jpg",
+      "source": "https://raw.githubusercontent.com/rosstguk-dev/omnirexis-website/main/public/social/thu-24-imagine-story-1080.jpg",
+      "public": "https://www.omnirexis.co.uk/social/thu-24-imagine-story-1080.jpg",
+      "cdn": "https://cdn.jsdelivr.net/gh/rosstguk-dev/omnirexis-website@main/public/social/thu-24-imagine-story-1080.jpg"
+    },
+    {
+      "dest": "public/social/fri-25-imagine-story-1080.jpg",
+      "source": "https://raw.githubusercontent.com/rosstguk-dev/omnirexis-website/main/public/social/fri-25-imagine-story-1080.jpg",
+      "public": "https://www.omnirexis.co.uk/social/fri-25-imagine-story-1080.jpg",
+      "cdn": "https://cdn.jsdelivr.net/gh/rosstguk-dev/omnirexis-website@main/public/social/fri-25-imagine-story-1080.jpg"
+    },
+    {
+      "dest": "public/social/sat-26-imagine-story-1080.jpg",
+      "source": "https://raw.githubusercontent.com/rosstguk-dev/omnirexis-website/main/public/social/sat-26-imagine-story-1080.jpg",
+      "public": "https://www.omnirexis.co.uk/social/sat-26-imagine-story-1080.jpg",
+      "cdn": "https://cdn.jsdelivr.net/gh/rosstguk-dev/omnirexis-website@main/public/social/sat-26-imagine-story-1080.jpg"
+    },
+    {
+      "dest": "public/social/sun-27-imagine-story-1080.jpg",
+      "source": "https://raw.githubusercontent.com/rosstguk-dev/omnirexis-website/main/public/social/sun-27-imagine-story-1080.jpg",
+      "public": "https://www.omnirexis.co.uk/social/sun-27-imagine-story-1080.jpg",
+      "cdn": "https://cdn.jsdelivr.net/gh/rosstguk-dev/omnirexis-website@main/public/social/sun-27-imagine-story-1080.jpg"
     }
-  ]
+  ],
+  "week": "2026-09-21-imagine"
 }
