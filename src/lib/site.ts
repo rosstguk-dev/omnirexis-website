@@ -1,7 +1,7 @@
 export const BOOK_CALL =
   "https://scheduler.zoom.us/ross-gallagher-ie9whv/30-mins-with-ross";
 
-export const EMAIL = "ross@omnirexis.co.uk";
+export const EMAIL = "hello@omnirexis.co.uk";
 export const PHONE = "0161 250 0045";
 export const PHONE_HREF = "tel:+441612500045";
 export const LINKEDIN = "https://www.linkedin.com/company/omnirexis";

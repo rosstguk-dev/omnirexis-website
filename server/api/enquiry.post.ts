@@ -98,6 +98,7 @@ export default defineEventHandler(async (event) => {
 
   const webhookUrl = env("CONTACT_ENQUIRY_WEBHOOK_URL");
   const resendKey = env("RESEND_API_KEY");
+  // Delivery / From stay on ross@ (authenticated mailbox). hello@ is public alias.
   const contactTo = env("CONTACT_TO_EMAIL") ?? "ross@omnirexis.co.uk";
 
   if (!webhookUrl && !resendKey) {
@@ -105,7 +106,7 @@ export default defineEventHandler(async (event) => {
     return {
       ok: false,
       error:
-        "Enquiry delivery is not configured. Please email ross@omnirexis.co.uk or book a call.",
+        "Enquiry delivery is not configured. Please email hello@omnirexis.co.uk or book a call.",
     };
   }
 
