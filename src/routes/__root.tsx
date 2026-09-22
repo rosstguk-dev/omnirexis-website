@@ -20,7 +20,7 @@ const ORG_JSON_LD = {
   name: SITE_NAME,
   slogan: "Intelligence. Automated.",
   url: SITE_URL,
-  email: "ross@omnirexis.co.uk",
+  email: "hello@omnirexis.co.uk",
   telephone: "+44-161-250-0045",
   description: DEFAULT_DESCRIPTION,
   areaServed: "GB",
