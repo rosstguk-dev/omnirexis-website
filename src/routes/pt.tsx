@@ -5,19 +5,17 @@ import { CtaBand } from "@/components/site/cta-band";
 import { SiteLayout } from "@/components/site/layout";
 import { PtConsole } from "@/components/site/pt-console";
 import { PT_PLANS } from "@/lib/site";
+import { pageSeo } from "@/lib/page-seo";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/pt")({
-  head: () => ({
-    meta: [
-      { title: "PT platform | Omnirexis" },
-      {
-        name: "description",
-        content:
-          "Omnirexis PT — a focused workspace for trainers. In rebuild; register interest for early access.",
-      },
-    ],
-  }),
+  head: () =>
+    pageSeo({
+      title: "PT platform | Omnirexis",
+      description:
+        "Omnirexis PT is a focused workspace for trainers. In rebuild; register interest for early access.",
+      path: "/pt",
+    }),
   component: PtPage,
 });
 

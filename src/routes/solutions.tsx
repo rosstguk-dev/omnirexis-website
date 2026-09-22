@@ -5,18 +5,16 @@ import { CtaBand } from "@/components/site/cta-band";
 import { SiteLayout } from "@/components/site/layout";
 import { PageHero } from "@/components/site/page-hero";
 import { BOOK_CALL, SOLUTIONS } from "@/lib/site";
+import { pageSeo } from "@/lib/page-seo";
 
 export const Route = createFileRoute("/solutions")({
-  head: () => ({
-    meta: [
-      { title: "Solutions | Omnirexis" },
-      {
-        name: "description",
-        content:
-          "Omnirexis helps fitness and leisure operators use AI properly. We show which tools do what, how they work together, and how that setup becomes part of the workforce.",
-      },
-    ],
-  }),
+  head: () =>
+    pageSeo({
+      title: "Solutions | Omnirexis",
+      description:
+        "Omnirexis helps fitness and leisure operators use AI properly. We show which tools do what, how they work together, and how that setup becomes part of the workforce.",
+      path: "/solutions",
+    }),
   component: SolutionsPage,
 });
 

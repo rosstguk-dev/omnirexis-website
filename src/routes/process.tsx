@@ -5,18 +5,16 @@ import { CtaBand } from "@/components/site/cta-band";
 import { SiteLayout } from "@/components/site/layout";
 import { PageHero } from "@/components/site/page-hero";
 import { BOOK_CALL, PROCESS } from "@/lib/site";
+import { pageSeo } from "@/lib/page-seo";
 
 export const Route = createFileRoute("/process")({
-  head: () => ({
-    meta: [
-      { title: "Process | Omnirexis" },
-      {
-        name: "description",
-        content:
-          "How Omnirexis works: discovery, opportunity audit, solution design, implementation, and ongoing support.",
-      },
-    ],
-  }),
+  head: () =>
+    pageSeo({
+      title: "Process | Omnirexis",
+      description:
+        "How Omnirexis works: discovery, opportunity audit, solution design, implementation, and ongoing support.",
+      path: "/process",
+    }),
   component: ProcessPage,
 });
 

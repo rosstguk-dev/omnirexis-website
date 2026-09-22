@@ -3,18 +3,16 @@ import { CtaBand } from "@/components/site/cta-band";
 import { SiteLayout } from "@/components/site/layout";
 import { PageHero } from "@/components/site/page-hero";
 import { VALUES } from "@/lib/site";
+import { pageSeo } from "@/lib/page-seo";
 
 export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About | Omnirexis" },
-      {
-        name: "description",
-        content:
-          "Omnirexis helps fitness and leisure operators use AI properly. Led by Ross Gallagher, from years on the gym and leisure floor.",
-      },
-    ],
-  }),
+  head: () =>
+    pageSeo({
+      title: "About | Omnirexis",
+      description:
+        "Omnirexis helps fitness and leisure operators use AI properly. Led by Ross Gallagher, from years on the gym and leisure floor.",
+      path: "/about",
+    }),
   component: AboutPage,
 });
 

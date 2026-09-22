@@ -5,18 +5,16 @@ import { CtaBand } from "@/components/site/cta-band";
 import { SiteLayout } from "@/components/site/layout";
 import { PageHero } from "@/components/site/page-hero";
 import { RAPID } from "@/lib/site";
+import { pageSeo } from "@/lib/page-seo";
 
 export const Route = createFileRoute("/rapid-services")({
-  head: () => ({
-    meta: [
-      { title: "Rapid delivery studio | Omnirexis" },
-      {
-        name: "description",
-        content:
-          "Fixed-price content and operations documents for fitness, leisure and wellness — delivered fast.",
-      },
-    ],
-  }),
+  head: () =>
+    pageSeo({
+      title: "Rapid delivery studio | Omnirexis",
+      description:
+        "Fixed-price content and operations documents for fitness, leisure and wellness, delivered fast.",
+      path: "/rapid-services",
+    }),
   component: RapidPage,
 });
 

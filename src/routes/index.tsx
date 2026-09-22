@@ -11,30 +11,17 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { BOOK_CALL, FAQS, PROCESS } from "@/lib/site";
+import { pageSeo } from "@/lib/page-seo";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Omnirexis | Intelligence. Automated." },
-      {
-        name: "description",
-        content:
-          "Omnirexis helps fitness and leisure operators use AI properly. Independent studio, gym, spa and leisure club owners in the UK. Book a free 30 minute Zoom strategy call.",
-      },
-      {
-        property: "og:title",
-        content: "Omnirexis | Intelligence. Automated.",
-      },
-      {
-        property: "og:description",
-        content:
-          "Omnirexis helps fitness and leisure operators use AI properly. Book a free 30 minute Zoom strategy call.",
-      },
-      { property: "og:url", content: "https://www.omnirexis.co.uk/" },
-    ],
-    links: [{ rel: "canonical", href: "https://www.omnirexis.co.uk/" }],
-  }),
+  head: () =>
+    pageSeo({
+      title: "Omnirexis | Intelligence. Automated.",
+      description:
+        "Omnirexis helps fitness and leisure operators use AI properly. Independent studio, gym, spa and leisure club owners in the UK. Book a free 30 minute Zoom strategy call.",
+      path: "/",
+    }),
   component: Home,
 });
 
