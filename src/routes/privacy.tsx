@@ -2,18 +2,16 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/layout";
 import { PageHero } from "@/components/site/page-hero";
 import { EMAIL } from "@/lib/site";
+import { pageSeo } from "@/lib/page-seo";
 
 export const Route = createFileRoute("/privacy")({
-  head: () => ({
-    meta: [
-      { title: "Privacy policy | Omnirexis" },
-      {
-        name: "description",
-        content:
-          "How Omnirexis collects and processes enquiry data from this website.",
-      },
-    ],
-  }),
+  head: () =>
+    pageSeo({
+      title: "Privacy policy | Omnirexis",
+      description:
+        "How Omnirexis collects and processes enquiry data from this website.",
+      path: "/privacy",
+    }),
   component: PrivacyPage,
 });
 

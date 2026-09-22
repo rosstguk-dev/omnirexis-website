@@ -4,18 +4,16 @@ import { CtaBand } from "@/components/site/cta-band";
 import { SiteLayout } from "@/components/site/layout";
 import { PageHero } from "@/components/site/page-hero";
 import { FAQS } from "@/lib/site";
+import { pageSeo } from "@/lib/page-seo";
 
 export const Route = createFileRoute("/faq")({
-  head: () => ({
-    meta: [
-      { title: "FAQ | Omnirexis" },
-      {
-        name: "description",
-        content:
-          "Straight answers about Omnirexis AI implementation, the PT platform, pricing, security, and how to start.",
-      },
-    ],
-  }),
+  head: () =>
+    pageSeo({
+      title: "FAQ | Omnirexis",
+      description:
+        "Straight answers about Omnirexis AI implementation, the PT platform, pricing, security, and how to start.",
+      path: "/faq",
+    }),
   component: FaqPage,
 });
 

@@ -6,14 +6,33 @@ import {
 } from "@tanstack/react-router";
 import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
+import {
+  DEFAULT_DESCRIPTION,
+  DEFAULT_TITLE,
+  SITE_NAME,
+  SITE_URL,
+} from "@/lib/page-seo";
 import appCss from "../styles.css?url";
 
-const APP_NAME = "Omnirexis";
-
-const SITE_URL = "https://www.omnirexis.co.uk";
-const DEFAULT_TITLE = "Omnirexis | Intelligence. Automated.";
-const DEFAULT_DESCRIPTION =
-  "Omnirexis helps fitness and leisure operators use AI properly. We show which tools do what, how they work together, and how that setup becomes part of the workforce. Book a free 30 minute Zoom strategy call.";
+const ORG_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: SITE_NAME,
+  slogan: "Intelligence. Automated.",
+  url: SITE_URL,
+  email: "ross@omnirexis.co.uk",
+  telephone: "+44-161-250-0045",
+  description: DEFAULT_DESCRIPTION,
+  areaServed: "GB",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Bartle House, 9 Oxford Court",
+    addressLocality: "Manchester",
+    postalCode: "M2 3WQ",
+    addressCountry: "GB",
+  },
+  image: `${SITE_URL}/og.jpg`,
+};
 
 export const Route = createRootRoute({
   head: () => ({
@@ -23,9 +42,9 @@ export const Route = createRootRoute({
       { title: DEFAULT_TITLE },
       { name: "description", content: DEFAULT_DESCRIPTION },
       { name: "theme-color", content: "#081826" },
-      { name: "apple-mobile-web-app-title", content: APP_NAME },
+      { name: "apple-mobile-web-app-title", content: SITE_NAME },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: APP_NAME },
+      { property: "og:site_name", content: SITE_NAME },
       { property: "og:title", content: DEFAULT_TITLE },
       { property: "og:description", content: DEFAULT_DESCRIPTION },
       { property: "og:url", content: SITE_URL },
@@ -52,6 +71,12 @@ export const Route = createRootRoute({
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap",
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(ORG_JSON_LD),
       },
     ],
   }),

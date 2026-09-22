@@ -16,6 +16,7 @@ import {
   PHONE,
   PHONE_HREF,
 } from "@/lib/site";
+import { pageSeo } from "@/lib/page-seo";
 
 type Search = { intent?: string };
 
@@ -29,16 +30,13 @@ export const Route = createFileRoute("/contact")({
   validateSearch: (s: Record<string, unknown>): Search => ({
     intent: typeof s.intent === "string" ? s.intent : undefined,
   }),
-  head: () => ({
-    meta: [
-      { title: "Contact | Omnirexis" },
-      {
-        name: "description",
-        content:
-          "Contact Omnirexis in Manchester — send an enquiry or book a free 30-minute AI strategy call.",
-      },
-    ],
-  }),
+  head: () =>
+    pageSeo({
+      title: "Contact | Omnirexis",
+      description:
+        "Contact Omnirexis in Manchester. Send an enquiry or book a free 30-minute AI strategy call.",
+      path: "/contact",
+    }),
   component: ContactPage,
 });
 

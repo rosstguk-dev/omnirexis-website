@@ -61,7 +61,7 @@ async function deliverResend(
       "content-type": "application/json",
     },
     body: JSON.stringify({
-      from: env("CONTACT_FROM_EMAIL") ?? "Omnirexis <hello@omnirexis.co.uk>",
+      from: env("CONTACT_FROM_EMAIL") ?? "Omnirexis <ross@omnirexis.co.uk>",
       to: [to],
       reply_to: payload.email,
       subject,
@@ -98,14 +98,14 @@ export default defineEventHandler(async (event) => {
 
   const webhookUrl = env("CONTACT_ENQUIRY_WEBHOOK_URL");
   const resendKey = env("RESEND_API_KEY");
-  const contactTo = env("CONTACT_TO_EMAIL") ?? "hello@omnirexis.co.uk";
+  const contactTo = env("CONTACT_TO_EMAIL") ?? "ross@omnirexis.co.uk";
 
   if (!webhookUrl && !resendKey) {
     setResponseStatus(event, 503);
     return {
       ok: false,
       error:
-        "Enquiry delivery is not configured. Please email hello@omnirexis.co.uk or book a call.",
+        "Enquiry delivery is not configured. Please email ross@omnirexis.co.uk or book a call.",
     };
   }
 
