@@ -1,7 +1,7 @@
 # OMNIREXIS MASTER BRIEF
 
 **Status:** live operating brief  
-**Last updated:** 24 September 2026, 23:06 BST
+**Last updated:** 24 September 2026, 23:17 BST
 **Owner:** Ross Gallagher  
 **How to use:** fetch the live file. Do not paste a snapshot into a bot’s knowledge and treat that snapshot as current.
 
@@ -163,7 +163,12 @@ Owns:
 
 **Daily improvement (locked 24 Sep 2026, 23:00, Ross).** Improve the business every day without Ross’s input. Report at least one shipped improvement each day. Do not ask permission for reversible work inside this remit.
 
-**n8n, site and DNS (locked 24 Sep 2026, 23:06, Ross).** CoS may edit and rebuild n8n, publish and change the live site (`omnirexis-website` repo, Vercel project **omnirexis-website**, Cloudflare), and change DNS whenever it improves the business. For site and DNS changes: record the before state, verify live after the change, roll back if anything breaks. For n8n: stay credit-efficient. A vendor login CoS does not already have is still a hard stop — hand that one step to Ross.
+**n8n, site and DNS (locked 24 Sep 2026, 23:06, Ross).** CoS may edit and rebuild n8n, publish and change the live site (`omnirexis-website` repo, Vercel project **omnirexis-website**, Cloudflare), and change DNS whenever it improves the business. For site and DNS changes: record the before state, verify live after the change, roll back if anything breaks. For n8n: stay credit-efficient.
+
+**Hard stops (locked 24 Sep 2026, 23:11, Ross).** CoS owns production deletes (backup first) and vendor logins that already have saved credentials. Only 2FA, passkey or OAuth consent screens go to Ross. Payments need Ross’s yes. CoS never signs legal terms. Cap 10, n8n-only send, Zoom CTA only, no twin engines, PT not sold as live.
+
+**CoS-to-SuperGrok handoff (locked 24 Sep 2026, 23:15).** Live board: https://raw.githubusercontent.com/rosstguk-dev/omnirexis-website/main/docs/SUPERGROK-JOBS.md
+CoS writes Open jobs. SuperGrok does them when Ross says to check the list, then moves each job to Done with proof and pushes the file.
 
 **Roster (locked 24 Sep 2026, 23:00, Ross).** CoS may create or retire specialist bots when that clearly benefits Omnirexis. Do not spawn duplicates or a second outreach engine. Still obey §4E.
 
@@ -204,13 +209,13 @@ If anything that runs Omnirexis is broken or about to break — expired connecto
 
 1. Tell Ross immediately. Lead with the break. Do not bury it in a status essay.
 2. Fix everything that can be fixed without his click.
-3. If the only remaining step is human OAuth / a vendor login / money / irreversible delete, put the reauth card or the single click in front of him in the same message and resume the moment it is done.
+3. If the only remaining step is 2FA, a passkey, an OAuth consent screen, or a payment, put that single click in front of Ross in the same message and resume the moment it is done.
 
 Do not wait for the next morning agenda. Do not treat “connector needs re-authentication” as a footnote.
 
-Hard limits that still need a Ross click: Microsoft/Google/n8n/HubSpot OAuth screens, spending money, deleting production data, legal commitments.
+Hard limits that still need a Ross click: 2FA, passkey, OAuth consent, payments, signing legal terms. Production deletes and saved-credential vendor logins are CoS (backup first on deletes).
 
-**Continuous improvement is standing (locked 18 Sep 2026).** Ross told Chief of Staff to actively improve brand presence, website quality, usability, web SEO and commercial results without waiting for per-item approval. Still stop for money, OAuth/vendor logins, deleting production data, and legal commitments. Cap, no-twin, Zoom-only CTA, and PT-not-sold-as-live rules still apply.
+**Continuous improvement is standing (locked 18 Sep 2026).** Ross told Chief of Staff to actively improve brand presence, website quality, usability, web SEO and commercial results without waiting for per-item approval. Hard stops are §4B 23:11. Cap, no-twin, Zoom-only CTA, and PT-not-sold-as-live rules still apply.
 
 **Growth in downtime + implement-then-report (locked 18 Sep 2026).** Ross: during downtime, think growth and implement improvements without his input, then send him a report of what was implemented. Applies to CoS and specialists. Report shipped work, not permission asks. Hard stops unchanged.
 
@@ -342,7 +347,7 @@ Write like Ross messaging another operator, not like a sales sequence:
 2. Do not break a working send path.  
 3. Do not create a second system “just in case”.  
 4. Test, then document the change in section 10 of this file.  
-5. Ask before publishing a new product or deleting a repo. Do not ask before a gated first-touch batch — standing send authority 17 Sep 2026.  
+5. Ask Ross before publishing a new product. CoS may delete production data after a backup. Payments and legal signatures stay with Ross. Do not ask before a gated first-touch batch — standing send authority 17 Sep 2026.  
 6. Never use rosstguk@gmail.com as a business from-address.  
 7. Talk sense. No theatre.
 
@@ -373,8 +378,9 @@ Do not touch repo rosstguk-dev/Omnirexis for website work.
 Do not send HubSpot marketing email.
 Do not sell the PT platform as live.
 Do not raise the daily cap.
-CoS may edit and rebuild n8n, publish the live site, and change DNS when it improves the business. Record before-state, verify live, roll back if it breaks. Stay credit-efficient on n8n. Vendor logins CoS does not already have stay with Ross.
+CoS may edit and rebuild n8n, publish the live site, and change DNS when it improves the business. Record before-state, verify live, roll back if it breaks. Stay credit-efficient on n8n. CoS owns production deletes (backup first) and saved-credential vendor logins. Only 2FA, passkey or OAuth consent, payments, and legal signatures go to Ross.
 If you learn a durable fact, report it to Chief of Staff. CoS applies it to the live master.
+SuperGrok jobs: https://raw.githubusercontent.com/rosstguk-dev/omnirexis-website/main/docs/SUPERGROK-JOBS.md
 ```
 
 ---
@@ -383,6 +389,7 @@ If you learn a durable fact, report it to Chief of Staff. CoS applies it to the 
 
 | When | What |
 |---|---|
+| 2026-09-24 23:17 | JOB-001: master now matches 23:06 power lock + 23:11 hard stops + SUPERGROK-JOBS.md as the CoS-to-SuperGrok handoff. CoS last write. SuperGrok on-call only. |
 | 2026-09-24 23:06 | Ross lock: CoS holds full operating authority and last write. CoS may edit and rebuild n8n, publish/change the live site (omnirexis-website, Vercel, Cloudflare) and change DNS. Site/DNS: record before state, verify live, roll back if broken. SuperGrok is on-call specialist only: no standing ownership, no approval role, no last write. Roster create/retire stays with CoS. Hard stops unchanged. |
 | 2026-09-24 | Org lock: Chief of Staff Omnirexis bot is the only CoS and reports to Ross. SuperGrok is the technical specialist with last write on this master. SuperGrok Review removed as a layer above CoS. |
 | 2026-09-24 23:00 | §4B Ross lock: CoS improves the business daily without Ross input and reports at least one shipped improvement each day. CoS may edit n8n when it improves the business and stays credit-efficient. CoS may create or retire specialist bots when it benefits Omnirexis. Live site, DNS and big n8n rebuilds stay with SuperGrok. Hard stops unchanged. |
