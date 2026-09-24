@@ -133,7 +133,8 @@ Do not invent a fifth product line. Do not raise the daily email cap. Do not bla
 | CRM / suppress / send log | HubSpot | HubSpot as a mailer |
 | Calendar CTA | Zoom Scheduler Basic (`ross-gallagher-ie9whv`) | HubSpot Meetings |
 | Coordination / standing ops | Chief of Staff Omnirexis bot | Treating SuperGrok as CoS, or a second coordinator |
-| Heavy engineering | SuperGrok (this project chat) | CoS bot editing n8n, DNS, or site deploys |
+| Heavy engineering | SuperGrok: live site, DNS, big n8n rebuilds | CoS publishing the site, changing DNS, or rebuilding n8n from scratch |
+| Incremental n8n | CoS, if it improves the business and stays credit-efficient | Extra sends, cap raises, twin engines |
 | Master last write | SuperGrok applies GitHub + Drive | A draft or bot snapshot treated as live |
 | Social scheduler | Buffer (Instagram, Facebook, LinkedIn) | Metricool |
 | Social media files | `www.omnirexis.co.uk/social/<file>` from `omnirexis-website/public/social` | uguu, catbox, litter.catbox, tmpfiles, gofile, SSO-gated Vercel `omnirexis-social` / `omnirexis-cdn` |
@@ -144,7 +145,7 @@ If you are about to touch the leftover `Omnirexis` repo for a site change: stop.
 
 ## 4. Agent roster (roles, not a swarm)
 
-Do **not** spawn a new team of Grok bots. Credits already ran out once and outreach stopped.
+Do **not** spawn a swarm. Credits already ran out once and outreach stopped. CoS may still create or retire a specialist when it clearly benefits Omnirexis. No duplicates. No second outreach engine.
 
 ### A. Ross
 Approves copy when needed. Owns price. Owns “go send” if the scheduled run failed. Final call on products.
@@ -160,17 +161,23 @@ Owns:
 - Drafting changes to this master
 - Light recurring checks when credits exist (did today’s 10 send, Approved remaining, summarise Outlook replies)
 
+**Daily improvement (locked 24 Sep 2026, 23:00, Ross).** Improve the business every day without Ross’s input. Report at least one shipped improvement each day. Do not ask permission for reversible work inside this remit.
+
+**n8n (locked 24 Sep 2026, 23:00, Ross).** CoS may edit n8n when the change improves the business and stays credit-efficient. Big n8n rebuilds stay with SuperGrok.
+
+**Roster (locked 24 Sep 2026, 23:00, Ross).** CoS may create or retire specialist bots when that clearly benefits Omnirexis. Do not spawn duplicates or a second outreach engine. Still obey §4E.
+
 Does **not** personally own day-to-day delivery or the customer relationship.
-Does **not** edit n8n, publish the site, change DNS, send extra batches, or rewrite first-touch copy.
+Does **not** publish the live site, change DNS, send extra batches, or rewrite first-touch copy. Sales owns copy.
 
 ### C. SuperGrok (this project chat)
 Technical specialist. Not CoS. Not a review layer above CoS.
 
 Does the heavy work when Ross or CoS assigns it:
 
-- Diagnose and fix n8n
-- Website changes on `omnirexis-website` only
-- DNS / deliverability guidance
+- Live site changes on `omnirexis-website` only
+- DNS / deliverability
+- Big n8n rebuilds
 - Architecture implementation
 - Last write of **this master file**
 - Challenge weak ideas
@@ -370,7 +377,7 @@ Do not touch repo rosstguk-dev/Omnirexis for website work.
 Do not send HubSpot marketing email.
 Do not sell the PT platform as live.
 Do not raise the daily cap.
-Do not edit n8n, DNS, or the live site unless you are SuperGrok (the project chat).
+Do not change DNS or the live site unless you are SuperGrok. CoS may edit n8n only when it improves the business and stays credit-efficient. Big n8n rebuilds stay with SuperGrok.
 If you learn a durable fact, report it to Chief of Staff. SuperGrok applies it to the live master.
 ```
 
@@ -381,6 +388,7 @@ If you learn a durable fact, report it to Chief of Staff. SuperGrok applies it t
 | When | What |
 |---|---|
 | 2026-09-24 | Org lock: Chief of Staff Omnirexis bot is the only CoS and reports to Ross. SuperGrok is the technical specialist with last write on this master. SuperGrok Review removed as a layer above CoS. |
+| 2026-09-24 23:00 | §4B Ross lock: CoS improves the business daily without Ross input and reports at least one shipped improvement each day. CoS may edit n8n when it improves the business and stays credit-efficient. CoS may create or retire specialist bots when it benefits Omnirexis. Live site, DNS and big n8n rebuilds stay with SuperGrok. Hard stops unchanged. |
 | 2026-09-18 | Message clarity updated to Ross USP version: AI properly, connected tools, and owner education as part of the workforce. |
 | 2026-09-19 | Social cadence: abort 7 daily feed stills. Lock 3 robot videos (Tue/Thu/Sat) + 3 robot stills (Mon/Wed/Fri) + daily IG+FB Stories. Robot visual lock. Pull Sat 26 ross-pick-plus-cards. |
 | 2026-09-18 | Message clarity locked: one public sentence, primary audience (UK independent studio/gym/spa/leisure owners, North first), quiet list until clear, social three-question rule, outreach §3 mirrors the public sentence. |
