@@ -1,7 +1,7 @@
 # OMNIREXIS MASTER BRIEF
 
 **Status:** live operating brief  
-**Last updated:** 24 September 2026, 23:00 BST
+**Last updated:** 24 September 2026, 23:06 BST
 **Owner:** Ross Gallagher  
 **How to use:** fetch the live file. Do not paste a snapshot into a bot’s knowledge and treat that snapshot as current.
 
@@ -24,29 +24,28 @@ Human view: https://github.com/rosstguk-dev/omnirexis-website/blob/main/docs/OMN
 | Copy | Role |
 |---|---|
 | GitHub `rosstguk-dev/omnirexis-website/docs/OMNIREXIS-MASTER.md` | Live source. Bots fetch this. |
-| This Grok project `artifacts/OMNIREXIS-MASTER.md` | Working copy. SuperGrok applies the last write here first. |
+| This Grok project `artifacts/OMNIREXIS-MASTER.md` | Working copy / SuperGrok workspace. Not the live source. |
 | Drive folder OMNIREXIS file `OMNIREXIS-MASTER.md` (`1SqlWBm6JJ6cR9HIBofCaxlL9DeacRIIP`) | Mirror for phone / Drive-connected bots. |
 | Drive Google Doc `OMNIREXIS-MASTER` (`1MZ_YJatwmR3a_O_xh4wTpFG-_gEqcmx2P9_PPiFFsaY`) | Human reading only. If it disagrees, GitHub wins. |
 
-**Who may write** (locked 24 Sep 2026)
+**Who may write** (locked 24 Sep 2026, 23:06, Ross)
 
-- Draft: Chief of Staff Omnirexis bot, or SuperGrok (this project chat).
-- Last write / apply: SuperGrok (this project chat) only. It writes `artifacts/OMNIREXIS-MASTER.md`, pushes GitHub, and overwrites the Drive markdown mirror.
-- A draft is not live until SuperGrok has applied it.
-- Readers: every Grok bot, every new chat, Ross.
+- Last write / apply: Chief of Staff Omnirexis bot. It may write GitHub `docs/OMNIREXIS-MASTER.md` and the Drive markdown mirror directly.
+- Draft: CoS, or SuperGrok when CoS or Ross asks it to draft.
+- A SuperGrok draft is not live until CoS applies it.
+- Readers: every Grok bot, every new chat, Ross, SuperGrok.
 - Bots must not keep a private brief, upload a snapshot into bot knowledge, or invent a second stack.
 
 **When a locked rule changes**
 
-1. CoS or SuperGrok drafts the change and a section 10 changelog row.
-2. SuperGrok writes `artifacts/OMNIREXIS-MASTER.md`.
-3. SuperGrok pushes the identical file to GitHub `docs/OMNIREXIS-MASTER.md`.
-4. SuperGrok overwrites Drive `OMNIREXIS-MASTER.md`.
-5. Only then is the rule live.
+1. CoS drafts the change and a section 10 changelog row. SuperGrok may draft if CoS or Ross asks.
+2. CoS applies the identical file to GitHub `docs/OMNIREXIS-MASTER.md`.
+3. CoS overwrites Drive `OMNIREXIS-MASTER.md`.
+4. Only then is the rule live.
 
 **If a bot learns a durable fact**
 
-Report it to Chief of Staff. Do not fork the brief. CoS drafts the line. SuperGrok applies it.
+Report it to Chief of Staff. Do not fork the brief. CoS writes it into this file.
 
 **Before every bot job**
 
@@ -133,9 +132,10 @@ Do not invent a fifth product line. Do not raise the daily email cap. Do not bla
 | CRM / suppress / send log | HubSpot | HubSpot as a mailer |
 | Calendar CTA | Zoom Scheduler Basic (`ross-gallagher-ie9whv`) | HubSpot Meetings |
 | Coordination / standing ops | Chief of Staff Omnirexis bot | Treating SuperGrok as CoS, or a second coordinator |
-| Heavy engineering | SuperGrok: live site, DNS, big n8n rebuilds | CoS publishing the site, changing DNS, or rebuilding n8n from scratch |
-| Incremental n8n | CoS, if it improves the business and stays credit-efficient | Extra sends, cap raises, twin engines |
-| Master last write | SuperGrok applies GitHub + Drive | A draft or bot snapshot treated as live |
+| n8n | CoS may edit and rebuild when it improves the business and stays credit-efficient | Extra sends, cap raises, twin engines |
+| Live site / DNS | CoS: `omnirexis-website`, Vercel project **omnirexis-website**, Cloudflare DNS | Leftover repo `Omnirexis`, Vercel project **omnirexis**, a change without before-state / live verify / rollback |
+| Master last write | CoS applies GitHub + Drive | A SuperGrok draft or bot snapshot treated as live |
+| SuperGrok | High-credit or heavy jobs only when CoS or Ross calls it | Standing ownership, approval role, or last write |
 | Social scheduler | Buffer (Instagram, Facebook, LinkedIn) | Metricool |
 | Social media files | `www.omnirexis.co.uk/social/<file>` from `omnirexis-website/public/social` | uguu, catbox, litter.catbox, tmpfiles, gofile, SSO-gated Vercel `omnirexis-social` / `omnirexis-cdn` |
 
@@ -151,37 +151,33 @@ Do **not** spawn a swarm. Credits already ran out once and outreach stopped. CoS
 Approves copy when needed. Owns price. Owns “go send” if the scheduled run failed. Final call on products.
 
 ### B. Chief of Staff Omnirexis (Grok bot)
-The only Chief of Staff. Reports to Ross. Does not report through SuperGrok.
+The only Chief of Staff. Full operating authority for Omnirexis. Reports only to Ross. Does not report through SuperGrok.
 
 Owns:
 
 - Cross-functional coordination and ownership disputes
 - Standing ops, specialist routing, and routines while Ross is away
 - Founder briefs and “what happened / decided / next”
-- Drafting changes to this master
+- Last write on this master (GitHub + Drive apply)
 - Light recurring checks when credits exist (did today’s 10 send, Approved remaining, summarise Outlook replies)
 
 **Daily improvement (locked 24 Sep 2026, 23:00, Ross).** Improve the business every day without Ross’s input. Report at least one shipped improvement each day. Do not ask permission for reversible work inside this remit.
 
-**n8n (locked 24 Sep 2026, 23:00, Ross).** CoS may edit n8n when the change improves the business and stays credit-efficient. Big n8n rebuilds stay with SuperGrok.
+**n8n, site and DNS (locked 24 Sep 2026, 23:06, Ross).** CoS may edit and rebuild n8n, publish and change the live site (`omnirexis-website` repo, Vercel project **omnirexis-website**, Cloudflare), and change DNS whenever it improves the business. For site and DNS changes: record the before state, verify live after the change, roll back if anything breaks. For n8n: stay credit-efficient. A vendor login CoS does not already have is still a hard stop — hand that one step to Ross.
 
 **Roster (locked 24 Sep 2026, 23:00, Ross).** CoS may create or retire specialist bots when that clearly benefits Omnirexis. Do not spawn duplicates or a second outreach engine. Still obey §4E.
 
 Does **not** personally own day-to-day delivery or the customer relationship.
-Does **not** publish the live site, change DNS, send extra batches, or rewrite first-touch copy. Sales owns copy.
+Does **not** send extra batches or rewrite first-touch copy. Sales owns copy.
 
 ### C. SuperGrok (this project chat)
-Technical specialist. Not CoS. Not a review layer above CoS.
+Specialist only. No standing ownership. No approval role. No last write.
 
-Does the heavy work when Ross or CoS assigns it:
+Does high-credit or heavy jobs only when CoS or Ross calls on it. Then:
 
-- Live site changes on `omnirexis-website` only
-- DNS / deliverability
-- Big n8n rebuilds
-- Architecture implementation
-- Last write of **this master file**
 - Challenge weak ideas
-- Surface broken auth and commercial-path failures immediately. Do not wait to be asked.
+- Surface broken auth and commercial-path failures immediately if it sees them
+- Execute the specific job it was called for
 
 **Customer-relationship owners (locked 18 Sep 2026, Ops room).** Ross set the split. Earlier multi-owner claims are void.
 
@@ -202,9 +198,9 @@ Does not burn bot credits on daily busywork.
 
 ### Break-glass (locked 17 Sep 2026)
 
-Ross granted standing operational permission for this chat.
+Ross granted standing operational permission to Chief of Staff. SuperGrok may use the same break-glass only when CoS or Ross calls it in.
 
-If anything that runs Omnirexis is broken or about to break — expired connector, n8n error on a live workflow, empty Approved queue, send path silent, Buffer/media host expiring, site deploy red, DNS/auth fail — Grok must:
+If anything that runs Omnirexis is broken or about to break — expired connector, n8n error on a live workflow, empty Approved queue, send path silent, Buffer/media host expiring, site deploy red, DNS/auth fail — Chief of Staff must:
 
 1. Tell Ross immediately. Lead with the break. Do not bury it in a status essay.
 2. Fix everything that can be fixed without his click.
@@ -291,7 +287,7 @@ Write like Ross messaging another operator, not like a sales sequence:
 - Channels: Instagram `omnirexis`, Facebook `Omnirexis`, LinkedIn `omnirexis`.
 - Buffer Grok connector is connected (16 Sep 2026). GraphQL also works when a personal key named `grok` is available. Do not store the key in this file, GitHub, or chat memory.
 - n8n workflow `FiW8OghuYwHGs3WF` (Omnirexis Buffer — Today Queue) is a manual reader stub only. Do not add a polling schedule. Do not use it to publish.
-- Weekly social is coordinated by Chief of Staff. SuperGrok executes Buffer ingest / site-host work. Not Metricool.
+- Weekly social is owned by Chief of Staff, including Buffer ingest and site-host work. Not Metricool.
 - Cadence (locked 19 Sep 2026 evening): **3 robot feed videos + 3 robot feed stills per week**. Videos maximum three unless Ross supplies more clips. Same asset goes to Instagram, Facebook and LinkedIn. Never stack still + video on the same channel the same calendar day.
 - **Visual lock (19 Sep 2026):** futuristic sleek white robot + dark navy / cyan hologram. Official Omnirexis logo stamp only (`Color logo - no background.png`). Captions answer What / Who / Why. Soft Zoom CTA **Saturday only**.
 - Branding lock (15 Sep 2026): overlay **only** Drive folder `Logo Files/png/Color logo - no background.png`. Dark scenes may use `White logo - no background.png`. **Never** use `Color logo with background.png`, `og.jpg`, or any invented lockup. Imagine prompts must not draw a logo — stamp the Drive PNG after.
@@ -377,8 +373,8 @@ Do not touch repo rosstguk-dev/Omnirexis for website work.
 Do not send HubSpot marketing email.
 Do not sell the PT platform as live.
 Do not raise the daily cap.
-Do not change DNS or the live site unless you are SuperGrok. CoS may edit n8n only when it improves the business and stays credit-efficient. Big n8n rebuilds stay with SuperGrok.
-If you learn a durable fact, report it to Chief of Staff. SuperGrok applies it to the live master.
+CoS may edit and rebuild n8n, publish the live site, and change DNS when it improves the business. Record before-state, verify live, roll back if it breaks. Stay credit-efficient on n8n. Vendor logins CoS does not already have stay with Ross.
+If you learn a durable fact, report it to Chief of Staff. CoS applies it to the live master.
 ```
 
 ---
@@ -387,6 +383,7 @@ If you learn a durable fact, report it to Chief of Staff. SuperGrok applies it t
 
 | When | What |
 |---|---|
+| 2026-09-24 23:06 | Ross lock: CoS holds full operating authority and last write. CoS may edit and rebuild n8n, publish/change the live site (omnirexis-website, Vercel, Cloudflare) and change DNS. Site/DNS: record before state, verify live, roll back if broken. SuperGrok is on-call specialist only: no standing ownership, no approval role, no last write. Roster create/retire stays with CoS. Hard stops unchanged. |
 | 2026-09-24 | Org lock: Chief of Staff Omnirexis bot is the only CoS and reports to Ross. SuperGrok is the technical specialist with last write on this master. SuperGrok Review removed as a layer above CoS. |
 | 2026-09-24 23:00 | §4B Ross lock: CoS improves the business daily without Ross input and reports at least one shipped improvement each day. CoS may edit n8n when it improves the business and stays credit-efficient. CoS may create or retire specialist bots when it benefits Omnirexis. Live site, DNS and big n8n rebuilds stay with SuperGrok. Hard stops unchanged. |
 | 2026-09-18 | Message clarity updated to Ross USP version: AI properly, connected tools, and owner education as part of the workforce. |
