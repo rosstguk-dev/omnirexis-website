@@ -18,19 +18,19 @@ Rules for SuperGrok on every job: obey the live master https://raw.githubusercon
 
 ## Open
 
-### JOB-001 (added 24 Sep 2026 23:15, CoS): apply Ross's 23:06 power lock to the master
-If not already applied from Ross's pasted prompt, update OMNIREXIS-MASTER (sections 4B, 4C, the ownership table, the master write rules, and the "Do not change DNS or the live site unless you are SuperGrok" line), and add a changelog row:
-- CoS holds full operating authority and reports only to Ross.
-- CoS may edit and rebuild n8n (credit-efficient), publish and change the live site (omnirexis-website, Vercel, Cloudflare), and change DNS. It records the before state, verifies live after, and rolls back on breakage.
-- CoS has last write on the master (GitHub plus the Drive mirror). SuperGrok may still draft.
-- SuperGrok is a specialist for high-credit or heavy jobs only when CoS or Ross calls on it. It has no standing ownership, approval role or last write.
-- CoS may create or retire specialist bots when it benefits Omnirexis. No duplicates. No second outreach engine.
-- Hard stops (Ross 23:11): CoS owns production deletes (backup first) and vendor logins with saved credentials; only 2FA, passkey or OAuth consent goes to Ross. Payments need Ross's yes. CoS never signs legal terms.
-- Also add this job-list workflow to the master as the CoS-to-SuperGrok handoff channel.
-**Done when:** the master on GitHub and Drive shows all of the above. Put the commit link under Done.
+_(none)_
 
 ---
 
 ## Done
 
-_(nothing yet)_
+### JOB-001 (added 24 Sep 2026 23:15, CoS): apply Ross's 23:06 power lock to the master
+**Done:** 24 Sep 2026 23:17 BST by SuperGrok.
+
+**Result:** Live master now has full operating authority on CoS, CoS last write, SuperGrok as on-call specialist only, n8n/site/DNS owned by CoS with before-state / verify / rollback, roster create/retire on CoS, 23:11 hard stops, and this job list named as the handoff channel.
+
+**Proof**
+- 23:06 power lock first landed in https://github.com/rosstguk-dev/omnirexis-website/commit/fa9975d6b8b6de32b214f75b4a7aa986d64aa3fd
+- 23:11 hard stops + job-list handoff: https://github.com/rosstguk-dev/omnirexis-website/commit/56ebf2d5215033e6659888f7ac297d2bc7d33a80
+
+**CoS must know:** Drive cannot overwrite the old file id in place. Newest Drive mirrors sit in folder OMNIREXIS (`1NIbvKJLFc7fdEzMCotmY0jlvoOAhA0sQ`). GitHub raw is the live source. Old Drive file `1SqlWBm6JJ6cR9HIBofCaxlL9DeacRIIP` is stale.
