@@ -19,7 +19,7 @@ export const Route = createFileRoute("/")({
     pageSeo({
       title: "Omnirexis | Intelligence. Automated.",
       description:
-        "Omnirexis helps fitness and leisure operators use AI properly. Independent studio, gym, spa and leisure club owners in the UK. Book a free 30 minute Zoom strategy call.",
+        "Omnirexis gives fitness and leisure businesses their time back. Independent studio, gym, spa and leisure club owners in the UK. Book a free 30 minute Zoom strategy call.",
       path: "/",
     }),
   component: Home,
@@ -40,13 +40,13 @@ function Home() {
               Intelligence. Automated.
             </p>
             <h1 className="mt-6 font-sans text-4xl leading-display font-medium tracking-tight text-bone sm:text-5xl lg:text-6xl">
-              Omnirexis helps fitness and leisure operators{" "}
-              <span className="text-cyan">use AI properly.</span>
+              Omnirexis gives fitness and leisure businesses{" "}
+              <span className="text-cyan">their time back.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
-              We show which tools do what, how they work together, and how that
-              setup becomes part of the workforce so enquiries and admin stop
-              falling through the cracks.
+              Every enquiry answered, every lead followed up, every booking
+              made, so you can focus on your clients while your business keeps
+              growing.
             </p>
             <div className="mt-8">
               <Button
