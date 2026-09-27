@@ -10,7 +10,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { BOOK_CALL, FAQS, PROCESS } from "@/lib/site";
+import { BOOK_CALL, FAQS, PROCESS, PT_SIGNUP } from "@/lib/site";
 import { pageSeo } from "@/lib/page-seo";
 import { cn } from "@/lib/utils";
 
@@ -209,19 +209,29 @@ function Home() {
                 Omnirexis PT
               </p>
               <h3 className="mt-3 text-xl font-medium tracking-tight">
-                Rebuild. Interest only.
+                Live. Start free.
               </h3>
               <p className="mt-4 flex-1 text-sm leading-relaxed text-muted">
-                A quieter desk for independent trainers. Still in rebuild.
-                Register interest on the PT page. Not a live signup.
+                A quieter desk for independent trainers. Clients, programmes,
+                sessions and check-ins in one place. Start free with your first
+                two clients.
               </p>
-              <Link
-                to="/pt"
-                className="mt-6 inline-flex min-h-11 items-center gap-2 text-sm font-medium"
-              >
-                See the PT platform
-                <ArrowUpRight className="size-4" />
-              </Link>
+              <div className="mt-6 flex flex-wrap gap-x-6">
+                <a
+                  href={PT_SIGNUP}
+                  className="inline-flex min-h-11 items-center gap-2 text-sm font-medium"
+                >
+                  Start free
+                  <ArrowUpRight className="size-4" />
+                </a>
+                <Link
+                  to="/pt"
+                  className="inline-flex min-h-11 items-center gap-2 text-sm font-medium"
+                >
+                  See the PT platform
+                  <ArrowUpRight className="size-4" />
+                </Link>
+              </div>
             </article>
             <article className="flex flex-col rounded-xl border border-line bg-paper-2/40 p-7">
               <p className="font-mono text-xs font-medium tracking-kicker text-pine uppercase">

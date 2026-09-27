@@ -1,6 +1,8 @@
 export const BOOK_CALL =
   "https://scheduler.zoom.us/ross-gallagher-ie9whv/30-mins-with-ross";
 
+export const PT_SIGNUP = "https://omnirexis-pt.vercel.app/signup";
+
 export const EMAIL = "hello@omnirexis.co.uk";
 export const PHONE = "0161 250 0045";
 export const PHONE_HREF = "tel:+441612500045";
@@ -127,12 +129,11 @@ export const PT_PLANS = [
     price: "£0",
     cadence: "to start",
     audience: "Your first two clients",
-    blurb: "Core client CRM, sessions and payments, and a weekly action view.",
+    blurb: "Programmes, sessions and check-ins for your first two clients.",
     points: [
       "Up to 2 active clients",
-      "Core client CRM",
-      "Sessions and payments",
-      "Weekly action view",
+      "Programmes and sessions",
+      "Check-ins and macros",
     ],
     featured: false,
   },
@@ -145,9 +146,8 @@ export const PT_PLANS = [
     blurb: "Founding price locked while membership stays continuously active.",
     points: [
       "Founding price locked at £14.99",
-      "All Solo features",
-      "Direct feature input",
-      "First 50 paying trainers",
+      "Up to 15 active clients",
+      "Same toolkit as Solo",
     ],
     featured: true,
   },
@@ -157,12 +157,11 @@ export const PT_PLANS = [
     price: "£17.99",
     cadence: "/ month",
     audience: "Independent trainers",
-    blurb: "Programme builder, check-ins, progress and scheduling for a working book.",
+    blurb: "The full coaching toolkit for a working book of clients.",
     points: [
       "Up to 15 active clients",
-      "Programme and workout builder",
-      "Check-ins and progress",
-      "Scheduling and reminders",
+      "Full coaching toolkit",
+      "Billing portal",
     ],
     featured: false,
   },
@@ -172,12 +171,11 @@ export const PT_PLANS = [
     price: "£24.99",
     cadence: "/ month",
     audience: "A growing coaching business",
-    blurb: "Everything in Solo, plus a business view and priority support.",
+    blurb: "Everything in Solo, with room for 50 clients.",
     points: [
       "Up to 50 active clients",
       "Everything in Solo",
-      "Business and revenue overview",
-      "Priority support",
+      "Priority for new features",
     ],
     featured: false,
   },
@@ -233,7 +231,7 @@ export const FAQS = [
   },
   {
     q: "How much does it cost?",
-    a: "The main work is scoped around the job. Rapid packs are fixed price. Planned PT pricing is on the PT page (not live signup yet). Third-party subscriptions and ongoing support are agreed separately.",
+    a: "The main work is scoped around the job. Rapid packs are fixed price. PT platform pricing is on the PT page, and you can start free. Third-party subscriptions and ongoing support are agreed separately.",
   },
   {
     q: "Do you offer ongoing support?",
@@ -257,7 +255,7 @@ export const FAQS = [
   },
   {
     q: "Can I try the PT platform for free?",
-    a: "A free plan for two clients is planned at launch. The platform is still in rebuild. Register interest on the PT page and we will contact you when places open.",
+    a: "Yes. The PT platform is live and the Free plan covers your first two active clients, with programmes, sessions and check-ins. Press Start free on the PT page to create a trainer account, and upgrade from Billing inside the app when you need more clients.",
   },
 ];
 

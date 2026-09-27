@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { CtaBand } from "@/components/site/cta-band";
 import { SiteLayout } from "@/components/site/layout";
 import { PtConsole } from "@/components/site/pt-console";
-import { PT_PLANS } from "@/lib/site";
+import { BOOK_CALL, PT_PLANS, PT_SIGNUP } from "@/lib/site";
 import { pageSeo } from "@/lib/page-seo";
 import { cn } from "@/lib/utils";
 
@@ -13,7 +13,7 @@ export const Route = createFileRoute("/pt")({
     pageSeo({
       title: "PT platform | Omnirexis",
       description:
-        "Omnirexis PT is a focused workspace for trainers. In rebuild; register interest for early access.",
+        "Omnirexis PT is a focused workspace for trainers. Start free with your first two clients.",
       path: "/pt",
     }),
   component: PtPage,
@@ -35,14 +35,17 @@ function PtPage() {
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-bone/70">
               Clients, programmes, sessions, check-ins, progress and payments in
               one focused workspace. The useful depth of the big PT platforms,
-              without the cockpit of unexplained buttons. Still in rebuild —
-              not a live self-serve product yet.
+              without the cockpit of unexplained buttons. Start free with your
+              first two clients.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild variant="paper" size="lg">
-                <Link to="/contact" search={{ intent: "pt-free" }}>
-                  Register interest
-                </Link>
+                <a href={PT_SIGNUP}>Start free</a>
+              </Button>
+              <Button asChild variant="inkOutline" size="lg">
+                <a href={BOOK_CALL} target="_blank" rel="noreferrer">
+                  Book a call
+                </a>
               </Button>
               <Button asChild variant="inkOutline" size="lg">
                 <a href="#pricing">Compare plans</a>
@@ -86,10 +89,10 @@ function PtPage() {
       <section id="pricing" className="scroll-mt-24 bg-paper">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 lg:py-24">
           <p className="font-mono text-xs font-medium tracking-kicker text-pine uppercase">
-            Planned pricing
+            Pricing
           </p>
           <h2 className="mt-3 font-sans text-4xl tracking-tight">
-            Start lean when it launches.
+            Start lean. Upgrade when you grow.
           </h2>
           <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             {PT_PLANS.map((plan) => (
@@ -145,25 +148,34 @@ function PtPage() {
                   className="mt-8"
                   variant={plan.featured ? "paper" : "solid"}
                 >
-                  <Link to="/contact" search={{ intent: `pt-${plan.id}` }}>
-                    Ask about {plan.name}
+                  <a href={PT_SIGNUP}>
+                    {plan.id === "free"
+                      ? "Start free"
+                      : `Sign up for ${plan.name}`}
                     <ArrowUpRight />
-                  </Link>
+                  </a>
                 </Button>
               </article>
             ))}
           </div>
           <p className="mt-8 text-sm text-muted">
-            Pricing above is planned for launch. The platform is still in
-            rebuild — register interest and we will contact you when places
-            open, or book a strategy call if you want to talk through fit first.
+            Every account starts on Free. Choose a paid plan from Billing
+            inside the app when you need more clients. Questions first?{" "}
+            <Link
+              to="/contact"
+              search={{ intent: "pt-free" }}
+              className="underline"
+            >
+              Send an enquiry
+            </Link>{" "}
+            or book a strategy call.
           </p>
         </div>
       </section>
       <CtaBand
         kicker="Independent trainers"
-        title="Early access, not a live signup."
-        body="Register interest for Free or Founding when launch places open. Prefer a conversation first? Book a strategy call and we will talk through fit."
+        title="Start free. Talk to us if you want a hand."
+        body="Create a free trainer account in a couple of minutes. Prefer a conversation first? Book a strategy call and we will talk through fit."
       />
     </SiteLayout>
   );
