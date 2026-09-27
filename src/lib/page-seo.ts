@@ -2,7 +2,7 @@ export const SITE_URL = "https://www.omnirexis.co.uk";
 export const SITE_NAME = "Omnirexis";
 export const DEFAULT_TITLE = "Omnirexis | Intelligence. Automated.";
 export const DEFAULT_DESCRIPTION =
-  "Omnirexis helps fitness and leisure operators use AI properly. We show which tools do what, how they work together, and how that setup becomes part of the workforce. Book a free 30 minute Zoom strategy call.";
+  "Omnirexis gives fitness and leisure businesses their time back. Every enquiry answered, every lead followed up, every booking made. Book a free 30 minute Zoom strategy call.";
 
 /** Per-page title, description, Open Graph, Twitter, and canonical. */
 export function pageSeo(opts: {
