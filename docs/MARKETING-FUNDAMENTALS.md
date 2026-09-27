@@ -4,6 +4,8 @@
 
 **Rule of precedence:** the live master wins over this file. Fetch it before any job: https://raw.githubusercontent.com/rosstguk-dev/omnirexis-website/main/docs/OMNIREXIS-MASTER.md. If a price, CTA or rule here disagrees with the master or the live site, the live source is right and this file is out of date.
 
+**Mission update (27 Sep 2026):** the public mission line changed to Ross's approved line (see §1 and the brief).
+
 **Open items:** none. Every item that was waiting on Ross was settled by Brand & Social on 27 Sep 2026 from the evidence cited next to it (live site, master, PT app code). If new evidence contradicts a line here, the live source wins.
 
 ---
@@ -12,7 +14,8 @@
 
 ```
 You are making content for OMNIREXIS (UK). Slogan: "Intelligence. Automated."
-Omnirexis helps fitness and leisure operators use AI properly: which tools do what, how they work together, and how that setup becomes part of the workforce so enquiries and admin stop falling through the cracks. Sell outcomes, not AI.
+Mission (public, Ross-approved 27 Sep 2026): "Omnirexis gives fitness and leisure businesses their time back. Every enquiry answered, every lead followed up, every booking made, so you can focus on your clients while your business keeps growing."
+How: we help fitness and leisure operators use AI properly: which tools do what, how they work together, and how that setup becomes part of the workforce. Sell outcomes, not AI.
 
 TWO OFFERS
 1. OMNIREXIS PT, a live platform for independent personal trainers. Clients, programmes, sessions, check-ins, progress and payments in one workspace. "More coaching. Less admin."
@@ -33,17 +36,19 @@ NEVER: invent stats, results, testimonials, client names or percentages; say "gu
 Nothing is posted or scheduled until Ross approves that exact asset.
 ```
 
-*(Word count: 321 words, counted with a whitespace split of the block above. Keep it under 400.)*
+*(Word count: 350 words, counted with a whitespace split of the block above, 27 Sep 2026. Keep it under 400.)*
 
 ---
 
 ## 1. What Omnirexis is
 
 - **Tagline:** Intelligence. Automated. (Never prefix it with Manchester. Manchester is the postal address only.)
-- **Public sentence (verified, master §1A and homepage):** Omnirexis helps fitness and leisure operators use AI properly. We show which tools do what, how they work together, and how that setup becomes part of the workforce so enquiries and admin stop falling through the cracks.
+- **Public mission line (Ross-approved, 27 Sep 2026; master §1A and homepage hero):** Omnirexis gives fitness and leisure businesses their time back. Every enquiry answered, every lead followed up, every booking made, so you can focus on your clients while your business keeps growing.
+- **Supporting explainer line (optional, may follow the mission):** Omnirexis helps fitness and leisure operators use AI properly. We show which tools do what, how they work together, and how that setup becomes part of the workforce so enquiries and admin stop falling through the cracks.
 - **Promise (master §1):** the tools do the work. They do not create more of it.
-- **Which line is public (settled 27 Sep 2026):** the public sentence above is the only public mission line. It is word for word the master's "The only public sentence" (§1A) and the homepage hero. Short form used in the live site footer: "We help fitness and leisure operators use AI properly, so it becomes part of the workforce."
-- **Internal positioning summary (not public copy):** "Help businesses save time, increase revenue and improve customer experience by implementing practical AI solutions." Kept for internal briefs only. It is consistent with the public copy (time: admin that stops depending on memory; revenue: "missed enquiries and admin lose them customers", homepage; customer experience: the Customer experience service on /solutions), but it is not on the site or in the master, "practical AI" is on the avoid list, and "increase revenue" reads as a results claim. Never put it in a caption, post, bio or on the site.
+- **Which line is public (Ross-approved 27 Sep 2026):** the public mission line above is the only public mission line, chosen by Ross on 27 Sep 2026. It is word for word the master's "The only public sentence" (§1A) and the homepage hero. Use it exactly; do not paraphrase the mission. The old homepage sentence ("helps fitness and leisure operators use AI properly...") is now the supporting explainer line, not the mission. Short form used in the live site footer: "We give fitness and leisure businesses their time back, so you can focus on your clients."
+- **Outcome wording in the mission is allowed (Ross, 27 Sep 2026):** the mission line deliberately describes outcomes ("their time back", "every enquiry answered", "your business keeps growing"). That is approved. The banned-claims list in §4 still bans invented stats, percentages, testimonials and case studies; it does not apply to the approved mission line.
+- **Internal positioning summary (not public copy):** "Help businesses save time, increase revenue and improve customer experience by implementing practical AI solutions." Kept for internal briefs only. It is consistent with the public copy (time: admin that stops depending on memory; revenue: "missed enquiries and admin lose them customers", homepage; customer experience: the Customer experience service on /solutions), but it is not on the site or in the master, "practical AI" is on the avoid list, and it is not the approved mission line. Never put it in a caption, post, bio or on the site.
 - **Founder:** Ross Gallagher, 15+ years in fitness and operational management (master §1).
 - **One-liner:** Omnirexis sets up AI tools for gyms, studios and personal trainers so enquiries and admin stop falling through the cracks.
 - **30-second version:** Most small gyms, studios and PTs lose customers in the gaps: the enquiry that arrived mid-class, the follow-up nobody sent, the admin that lives in one person's head. Omnirexis fixes those gaps. For gym and studio owners we set up and connect the tools so the repeatable jobs get done without relying on memory, and we teach you how it all works. For personal trainers there is OMNIREXIS PT, a simple workspace for clients, programmes, sessions and check-ins, free for your first two clients. Book a free 30-minute Zoom or start free on the PT app.
@@ -138,10 +143,11 @@ Not our audience: the general public, AI hobbyists, corporate IT buyers.
 ## 4. Key messages, proof points, banned claims
 
 **Key messages**
-1. Enquiries and admin stop falling through the cracks.
-2. The tools do the work. They do not create more of it.
-3. PTs: more coaching, less admin. Start free with your first two clients.
-4. Owners: we show which tools do what, how they connect, and set them up so they act like staff.
+1. Omnirexis gives fitness and leisure businesses their time back (the Ross-approved mission line, §1).
+2. Enquiries and admin stop falling through the cracks.
+3. The tools do the work. They do not create more of it.
+4. PTs: more coaching, less admin. Start free with your first two clients.
+5. Owners: we show which tools do what, how they connect, and set them up so they act like staff.
 
 **Allowed proof points (verifiable on the live site/master)**
 - PT platform is live, with a free plan for up to 2 active clients
