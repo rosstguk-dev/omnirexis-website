@@ -17,8 +17,8 @@ export function SiteFooter() {
         <div className="lg:col-span-4">
           <Wordmark invert />
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-bone/65">
-            We help fitness and leisure operators use AI properly, so it
-            becomes part of the workforce.
+            We give fitness and leisure businesses their time back, so you can
+            focus on your clients.
           </p>
           <p className="mt-6 text-xs tracking-mark text-subtle uppercase">
             Intelligence. Automated.
