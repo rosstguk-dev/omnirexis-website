@@ -89,7 +89,7 @@ Omnirexis helps fitness and leisure operators use AI properly. We show which too
 ### Who we talk to first
 - Primary: independent studio, gym, spa and leisure club owners and managers in the UK (North of England first).
 - Demographics of the business: small operator teams, founder often still on the floor, using WhatsApp/email/CRM poorly, missing enquiries while teaching or running sessions.
-- Not primary: the general public, random AI hobbyists, big corporate IT buyers, PT software shoppers until PT is live.
+- Not primary: the general public, random AI hobbyists, big corporate IT buyers. PT software shoppers are no longer excluded: PT is live and may be pitched in first-touch outreach (Ross, 27 Sep 2026 09:18).
 
 ### Why they should care
 Missed enquiries and follow-ups cost them customers. We make the first reply and the admin stop depending on memory.
@@ -116,7 +116,7 @@ First-touch stays studio-specific. Paragraph 3 must sound like the only public s
 2. **Strategy call → scoped implementation** — automation, voice, growth systems. Price from the conversation.  
 3. **Rapid studio** — fixed-price content and ops docs (Content Sprint £79, Ops Doc Sprint £149, and the other packaged offers on /rapid-services).  
 4. **Leisure systems** — club ops software conversation, not a hard sell on first touch.  
-5. **PT platform** — PT is LIVE for self-serve signup (Ross override, 27 Sep 2026 09:14). /pt CTAs (Start free / Sign up) go to https://omnirexis-pt.vercel.app/signup. PT may be promoted by Sales and Brand. PT prices: Solo £17.99/mo, Pro £24.99/mo, Founding £14.99/mo. Known risks: payments run on LIVE Stripe and are not yet tested end to end; app email confirmation is off; grace-period change is draft PR #2 in rosstguk-dev/Omnirexis-PT. Stripe entitlements come only from the Vercel webhook we_1UEDUBP51EWsDMYrr5PmWw9x; the old Supabase webhook we_1UCQxYP51EWsDMYrHmmKwodP is disabled (not deleted). Code lives in private GitHub `rosstguk-dev/Omnirexis-PT` (Next.js 15 + Supabase + Stripe). Live/legacy Supabase project is `mzcuztcamkvuvxjodsgy`. Do not create a second project. Do not run fresh init SQL against it until reconciled. Free tier in code: £0 / 2 clients. ChatGPT-hosted PT app is deprecated.
+5. **PT platform** — PT is LIVE for self-serve signup (Ross override, 27 Sep 2026 09:14). /pt CTAs (Start free / Sign up) go to https://omnirexis-pt.vercel.app/signup. PT may be promoted by Sales and Brand. PT prices: Solo £17.99/mo, Pro £24.99/mo, Founding £14.99/mo. Known risks: payments run on LIVE Stripe and are not yet tested end to end; app email confirmation is off; grace-period change is draft PR #2 in rosstguk-dev/Omnirexis-PT. Stripe entitlements come only from the Vercel webhook we_1UEDUBP51EWsDMYrr5PmWw9x; the old Supabase webhook we_1UCQxYP51EWsDMYrHmmKwodP is disabled (not deleted). Code lives in private GitHub `rosstguk-dev/Omnirexis-PT` (Next.js 15 + Supabase + Stripe). Live/legacy Supabase project is `mzcuztcamkvuvxjodsgy`. Do not create a second project. Do not run fresh init SQL against it until reconciled. Free tier in code: £0 / 2 clients. ChatGPT-hosted PT app is deprecated. App email confirmation stays off until omnirexis.co.uk is verified on Resend (auth mail currently sends from onboarding@resend.dev). Website rollback target: Vercel deployment dpl_6tGKepoNP7vAvGLh27EjfKJozbt7 (PR #10 live, merge 67caee4).
 
 Do not invent a fifth product line. Do not raise the daily email cap. Do not blast HubSpot marketing email.
 
@@ -220,7 +220,7 @@ Hard limits that still need a Ross click: 2FA, passkey, OAuth consent, payments,
 **Growth in downtime + implement-then-report (locked 18 Sep 2026).** Ross: during downtime, think growth and implement improvements without his input, then send him a report of what was implemented. Applies to CoS and specialists. Report shipped work, not permission asks. Hard stops unchanged.
 
 
-**Approve-and-send is standing (locked 17 Sep 2026).** Grok does not wait for “go send”. If the 09:15 run has Approved rows that pass the existing gates, send. If the Approved pile is empty, Grok may promote Draft rows that already pass the gates (real first name, business mailbox, verified, DNC clear, not HubSpot-contacted, not PT-platform pitch) up to the daily cap of 10, then send. Do not raise the cap. Do not resend a Sent row.
+**Approve-and-send is standing (locked 17 Sep 2026).** Grok does not wait for “go send”. If the 09:15 run has Approved rows that pass the existing gates, send. If the Approved pile is empty, Grok may promote Draft rows that already pass the gates (real first name, business mailbox, verified, DNC clear, not HubSpot-contacted; PT pitches allowed since 27 Sep 2026 09:18, Ross) up to the daily cap of 10, then send. Do not raise the cap. Do not resend a Sent row.
 
 ### Daily fill + daily send (locked 17 Sep 2026)
 
@@ -256,7 +256,7 @@ n8n Cloud is Starter (2,500 executions/month). Do not add polling schedules. PT 
 - From: ross@omnirexis.co.uk via Outlook / Microsoft 365  
 - Cap 10 / day  
 - Real first names only  
-- PT-product outreach paused  
+- PT may be pitched in first-touch (Ross, 27 Sep 2026 09:18). Zoom link stays the only CTA in outreach emails; no signup link. Sales owns the copy and QC  
 - Footer: reply stop and we will not email again  
 - Template (live): logo banner (`https://www.omnirexis.co.uk/og.jpg`), body from sheet, blue **Book a free strategy call** button to Zoom, structured sign-off  
 - Do not resend a batch because the footer looked ugly  
@@ -392,6 +392,7 @@ SuperGrok jobs: https://raw.githubusercontent.com/rosstguk-dev/omnirexis-website
 |---|---|
 | 2026-09-27 09:14 | Ross override: old PT pre-launch lock removed. PT is LIVE for self-serve signup (Ross override, 27 Sep 2026 09:14). /pt CTAs (Start free / Sign up) go to https://omnirexis-pt.vercel.app/signup. PT may be promoted by Sales and Brand. PT prices: Solo £17.99/mo, Pro £24.99/mo, Founding £14.99/mo. Known risks: payments run on LIVE Stripe and are not yet tested end to end; app email confirmation is off; grace-period change is draft PR #2 in rosstguk-dev/Omnirexis-PT. Stripe entitlements come only from the Vercel webhook we_1UEDUBP51EWsDMYrr5PmWw9x; the old Supabase webhook we_1UCQxYP51EWsDMYrHmmKwodP is disabled (not deleted). Zoom-only CTA still applies to outreach/sales; /pt signup CTA is the approved exception. Website PR #10 (rosstguk-dev/omnirexis-website, Product & Web merging) adds the /pt signup buttons and fixes homepage/FAQ wording. Applied by CoS. Cap 10, n8n-only send, no twin engines unchanged. |
 | 2026-09-27 09:17 | §0 Drive mirror pointer now reads: the newest OMNIREXIS-MASTER.md in Drive folder OMNIREXIS (`1NIbvKJLFc7fdEzMCotmY0jlvoOAhA0sQ`); GitHub raw is the live source. Stale fixed-id pointer removed. No Drive file deleted. |
+| 2026-09-27 09:18 | Ross: PT may be pitched in first-touch outreach. §5 "PT-product outreach paused" removed, §4 approve-and-send gate no longer blocks PT pitches, §1A no longer excludes PT software shoppers. Unchanged: cap 10/day, n8n-only send, Zoom link is the only CTA in outreach emails, Sales owns copy and QC. §2 item 5: email confirmation stays off until omnirexis.co.uk is verified on Resend (auth mail from onboarding@resend.dev); website rollback target dpl_6tGKepoNP7vAvGLh27EjfKJozbt7 (PR #10 live, merge 67caee4). |
 | 2026-09-26 | Ross lock (§4B Hard stops): never schedule or post AI-generated social images or video without Ross approving that exact asset first. If no approved content exists, leave the slot empty. |
 | 2026-09-24 23:17 | JOB-001: master now matches 23:06 power lock + 23:11 hard stops + SUPERGROK-JOBS.md as the CoS-to-SuperGrok handoff. CoS last write. SuperGrok on-call only. |
 | 2026-09-24 23:06 | Ross lock: CoS holds full operating authority and last write. CoS may edit and rebuild n8n, publish/change the live site (omnirexis-website, Vercel, Cloudflare) and change DNS. Site/DNS: record before state, verify live, roll back if broken. SuperGrok is on-call specialist only: no standing ownership, no approval role, no last write. Roster create/retire stays with CoS. Hard stops unchanged. |
