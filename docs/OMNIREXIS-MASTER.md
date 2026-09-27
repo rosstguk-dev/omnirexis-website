@@ -69,7 +69,8 @@ Promise: the tools do the work. They do not create more of it.
 We do not sell vapour. The PT platform is live for self-serve signup (Ross override, 27 Sep 2026 09:14). We do not run two outreach engines. We do not edit the leftover website repo.
 
 **Live site:** https://www.omnirexis.co.uk  
-**Business email only:** ross@omnirexis.co.uk  
+**Public contact email:** hello@omnirexis.co.uk (Ross, 27 Sep 2026; use on site, socials and marketing)  
+**Outreach sending address:** ross@omnirexis.co.uk (outbound email only; not published as the general contact)  
 **Book a call only:** https://scheduler.zoom.us/ross-gallagher-ie9whv/30-mins-with-ross  
 Never HubSpot Meetings in CTAs or on the site.
 
