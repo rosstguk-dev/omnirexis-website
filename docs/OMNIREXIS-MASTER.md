@@ -25,7 +25,7 @@ Human view: https://github.com/rosstguk-dev/omnirexis-website/blob/main/docs/OMN
 |---|---|
 | GitHub `rosstguk-dev/omnirexis-website/docs/OMNIREXIS-MASTER.md` | Live source. Bots fetch this. |
 | This Grok project `artifacts/OMNIREXIS-MASTER.md` | Working copy / SuperGrok workspace. Not the live source. |
-| Drive folder OMNIREXIS file `OMNIREXIS-MASTER.md` (`1SqlWBm6JJ6cR9HIBofCaxlL9DeacRIIP`) | Mirror for phone / Drive-connected bots. |
+| The newest OMNIREXIS-MASTER.md in Drive folder OMNIREXIS (`1NIbvKJLFc7fdEzMCotmY0jlvoOAhA0sQ`); GitHub raw is the live source | Mirror for phone / Drive-connected bots. |
 | Drive Google Doc `OMNIREXIS-MASTER` (`1MZ_YJatwmR3a_O_xh4wTpFG-_gEqcmx2P9_PPiFFsaY`) | Human reading only. If it disagrees, GitHub wins. |
 
 **Who may write** (locked 24 Sep 2026, 23:06, Ross)
@@ -165,7 +165,7 @@ Owns:
 
 **n8n, site and DNS (locked 24 Sep 2026, 23:06, Ross).** CoS may edit and rebuild n8n, publish and change the live site (`omnirexis-website` repo, Vercel project **omnirexis-website**, Cloudflare), and change DNS whenever it improves the business. For site and DNS changes: record the before state, verify live after the change, roll back if anything breaks. For n8n: stay credit-efficient.
 
-**Hard stops (locked 24 Sep 2026, 23:11, Ross).** CoS owns production deletes (backup first) and vendor logins that already have saved credentials. Only 2FA, passkey or OAuth consent screens go to Ross. Payments need Ross’s yes. CoS never signs legal terms. Cap 10, n8n-only send, Zoom CTA only for outreach/sales (the /pt signup CTA is the approved exception), no twin engines. PT is live for self-serve signup (Ross override, 27 Sep 2026 09:14; see §2).
+**Hard stops (locked 24 Sep 2026, 23:11, Ross).** CoS owns production deletes (backup first) and vendor logins that already have saved credentials. Only 2FA, passkey or OAuth consent screens go to Ross. Payments need Ross’s yes. CoS never signs legal terms. Cap 10, n8n-only send, Zoom CTA only for outreach/sales (the /pt signup CTA is the approved exception), no twin engines. PT is live for self-serve signup (Ross override, 27 Sep 2026 09:14; see §2). Never schedule or post AI-generated social images or video without Ross approving that exact asset first. If no approved content exists, leave the slot empty.
 
 **CoS-to-SuperGrok handoff (locked 24 Sep 2026, 23:15).** Live board: https://raw.githubusercontent.com/rosstguk-dev/omnirexis-website/main/docs/SUPERGROK-JOBS.md
 CoS writes Open jobs. SuperGrok does them when Ross says to check the list, then moves each job to Done with proof and pushes the file.
@@ -391,6 +391,8 @@ SuperGrok jobs: https://raw.githubusercontent.com/rosstguk-dev/omnirexis-website
 | When | What |
 |---|---|
 | 2026-09-27 09:14 | Ross override: old PT pre-launch lock removed. PT is LIVE for self-serve signup (Ross override, 27 Sep 2026 09:14). /pt CTAs (Start free / Sign up) go to https://omnirexis-pt.vercel.app/signup. PT may be promoted by Sales and Brand. PT prices: Solo £17.99/mo, Pro £24.99/mo, Founding £14.99/mo. Known risks: payments run on LIVE Stripe and are not yet tested end to end; app email confirmation is off; grace-period change is draft PR #2 in rosstguk-dev/Omnirexis-PT. Stripe entitlements come only from the Vercel webhook we_1UEDUBP51EWsDMYrr5PmWw9x; the old Supabase webhook we_1UCQxYP51EWsDMYrHmmKwodP is disabled (not deleted). Zoom-only CTA still applies to outreach/sales; /pt signup CTA is the approved exception. Website PR #10 (rosstguk-dev/omnirexis-website, Product & Web merging) adds the /pt signup buttons and fixes homepage/FAQ wording. Applied by CoS. Cap 10, n8n-only send, no twin engines unchanged. |
+| 2026-09-27 09:17 | §0 Drive mirror pointer now reads: the newest OMNIREXIS-MASTER.md in Drive folder OMNIREXIS (`1NIbvKJLFc7fdEzMCotmY0jlvoOAhA0sQ`); GitHub raw is the live source. Stale fixed-id pointer removed. No Drive file deleted. |
+| 2026-09-26 | Ross lock (§4B Hard stops): never schedule or post AI-generated social images or video without Ross approving that exact asset first. If no approved content exists, leave the slot empty. |
 | 2026-09-24 23:17 | JOB-001: master now matches 23:06 power lock + 23:11 hard stops + SUPERGROK-JOBS.md as the CoS-to-SuperGrok handoff. CoS last write. SuperGrok on-call only. |
 | 2026-09-24 23:06 | Ross lock: CoS holds full operating authority and last write. CoS may edit and rebuild n8n, publish/change the live site (omnirexis-website, Vercel, Cloudflare) and change DNS. Site/DNS: record before state, verify live, roll back if broken. SuperGrok is on-call specialist only: no standing ownership, no approval role, no last write. Roster create/retire stays with CoS. Hard stops unchanged. |
 | 2026-09-24 | Org lock: Chief of Staff Omnirexis bot is the only CoS and reports to Ross. SuperGrok is the technical specialist with last write on this master. SuperGrok Review removed as a layer above CoS. |
