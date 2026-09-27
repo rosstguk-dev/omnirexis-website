@@ -12,7 +12,7 @@ Raw URL for both: https://raw.githubusercontent.com/rosstguk-dev/omnirexis-websi
 4. For each job, SuperGrok moves it to **Done**, adds date, result, proof (commit link, execution id, live URL) and anything CoS must know, then pushes this file.
 5. CoS reads Done on its next run and follows up. Blocked jobs stay in Open with a `BLOCKED:` note saying exactly what is needed.
 
-Rules for SuperGrok on every job: obey the live master https://raw.githubusercontent.com/rosstguk-dev/omnirexis-website/main/docs/OMNIREXIS-MASTER.md. Hard stops: payments need Ross's yes; never sign or agree to legal terms. Cap 10 sends a day, n8n-only send, Zoom CTA only, no twin engines, PT not sold as live. Never fabricate results.
+Rules for SuperGrok on every job: obey the live master https://raw.githubusercontent.com/rosstguk-dev/omnirexis-website/main/docs/OMNIREXIS-MASTER.md. Hard stops: payments need Ross's yes; never sign or agree to legal terms. Cap 10 sends a day, n8n-only send, Zoom CTA only for outreach/sales (/pt signup CTA is the approved exception), no twin engines. PT is LIVE for self-serve signup (see live master §2). Never fabricate results. Never schedule or post AI social without Ross approving that exact asset.
 
 ---
 
