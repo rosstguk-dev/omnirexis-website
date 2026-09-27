@@ -77,7 +77,7 @@ Nothing is posted or scheduled until Ross approves that exact asset.
 - Weekly action view: who is overdue, who is running out of sessions, who needs a nudge
 - Check-ins, macros and nutrition targets
 - Progress tracking
-- Billing portal (Solo and above); upgrade from Billing inside the app
+- Billing portal (Solo and above); upgrade from Billing inside the app. Do not show a live checkout or claim payments are proven: Stripe payments are live but not yet tested end to end (master §2).
 
 **Features in earlier approved captions but not on the live site** (unverified: confirm with Ross before using): client portal/login for clients, exercise library, Mifflin-St Jeor macro calculator, sleep/steps/mood check-in fields.
 
@@ -143,6 +143,7 @@ Not our audience: the general public, AI hobbyists, corporate IT buyers.
 - "Guaranteed", "risk-free", "instant results"
 - "Trial", "free trial", "14-day" or any time limit for the PT free plan
 - "No card needed" (not stated on site)
+- Claims that paid checkout or payments are proven or tested ("tried and tested payments", "seamless checkout"). Stripe is live but not yet tested end to end (master §2).
 - The legacy host omnirexis-pt.omnirexis-4519.chatgpt.site or any chatgpt.site link, ever
 - HubSpot by name or HubSpot meeting links
 - Parked ideas: gym CRM, gym team plan / multiple PT logins
