@@ -1,7 +1,7 @@
 # OMNIREXIS MASTER BRIEF
 
 **Status:** live operating brief  
-**Last updated:** 27 September 2026, 10:12 BST
+**Last updated:** 27 September 2026, 13:48 BST
 **Owner:** Ross Gallagher  
 **How to use:** fetch the live file. Do not paste a snapshot into a bot’s knowledge and treat that snapshot as current.
 
@@ -96,6 +96,7 @@ Missed enquiries and follow-ups cost them customers. We make the first reply and
 
 ### What we ask them to do
 Book a free 30-minute Zoom: https://scheduler.zoom.us/ross-gallagher-ie9whv/30-mins-with-ross
+PTs: start free on the PT app (free plan, 2 clients): https://omnirexis-pt.vercel.app/signup?src=outreach (Ross, 27 Sep 2026 13:48).
 
 ### What stays quiet on social until this is clear
 - (PT platform sell lifted 27 Sep 2026: PT is live and Sales and Brand may promote it. See §2.)
@@ -112,13 +113,15 @@ First-touch stays studio-specific. Paragraph 3 must sound like the only public s
 
 ## 2. How money is made (in this order)
 
-1. **First-touch outreach** — 10 personal emails a day from Outlook. Book a 30-min Zoom.  
+1. **First-touch outreach** — personal emails from Outlook via n8n, cap 10 / day until Fri 2 Oct 2026, then 20 / day from Mon 5 Oct 2026 (Ross, 27 Sep 2026 13:48). Gym/studio owners: book a 30-min Zoom. PTs: free PT signup. Every email carries the PT free signup link (§5).  
 2. **Strategy call → scoped implementation** — automation, voice, growth systems. Price from the conversation.  
 3. **Rapid studio** — fixed-price content and ops docs (Content Sprint £79, Ops Doc Sprint £149, and the other packaged offers on /rapid-services).  
 4. **Leisure systems** — club ops software conversation, not a hard sell on first touch.  
-5. **PT platform** — PT is LIVE for self-serve signup (Ross override, 27 Sep 2026 09:14). /pt CTAs (Start free / Sign up) go to https://omnirexis-pt.vercel.app/signup. PT may be promoted by Sales and Brand. PT prices: Solo £17.99/mo, Pro £24.99/mo, Founding £14.99/mo. Known risks: payments run on LIVE Stripe and are not yet tested end to end; grace-period change is draft PR #2 in rosstguk-dev/Omnirexis-PT. App email confirmation is ON (Product & Web, 27 Sep 2026): Resend domain omnirexis.co.uk Verified; Supabase Auth sends from noreply@omnirexis.co.uk (Omnirexis PT) via smtp.resend.com; signup smoke PASS (confirm mail arrived and link landed in app; Outlook proof 27 Sep 2026 10:00 BST to ross+ptconfirm20260927a@omnirexis.co.uk from Omnirexis PT <noreply@omnirexis.co.uk>). Stripe entitlements come only from the Vercel webhook we_1UEDUBP51EWsDMYrr5PmWw9x; the old Supabase webhook we_1UCQxYP51EWsDMYrHmmKwodP is disabled (not deleted). Code lives in private GitHub `rosstguk-dev/Omnirexis-PT` (Next.js 15 + Supabase + Stripe). Live/legacy Supabase project is `mzcuztcamkvuvxjodsgy`. Do not create a second project. Do not run fresh init SQL against it until reconciled. Free tier in code: £0 / 2 clients. ChatGPT-hosted PT app is deprecated. Website rollback target: Vercel deployment dpl_6tGKepoNP7vAvGLh27EjfKJozbt7 (PR #10 live, merge 67caee4).
+5. **PT platform** — PT is LIVE for self-serve signup (Ross override, 27 Sep 2026 09:14). /pt CTAs (Start free / Sign up) go to https://omnirexis-pt.vercel.app/signup. PT may be promoted by Sales and Brand. PT prices: Solo £17.99/mo, Pro £24.99/mo, Founding £14.99/mo. Known risks: payments run on LIVE Stripe and are not yet tested end to end; grace-period change is draft PR #2 in rosstguk-dev/Omnirexis-PT. App email confirmation is ON (Product & Web, 27 Sep 2026): Resend domain omnirexis.co.uk Verified; Supabase Auth sends from noreply@omnirexis.co.uk (Omnirexis PT) via smtp.resend.com; signup smoke PASS (confirm mail arrived and link landed in app; Outlook proof 27 Sep 2026 10:00 BST to ross+ptconfirm20260927a@omnirexis.co.uk from Omnirexis PT <noreply@omnirexis.co.uk>). Stripe entitlements come only from the Vercel webhook we_1UEDUBP51EWsDMYrr5PmWw9x; the old Supabase webhook we_1UCQxYP51EWsDMYrHmmKwodP is disabled (not deleted). Code lives in private GitHub `rosstguk-dev/Omnirexis-PT` (Next.js 15 + Supabase + Stripe). Live/legacy Supabase project is `mzcuztcamkvuvxjodsgy`. Do not create a second project. Do not run fresh init SQL against it until reconciled. Free tier in code: £0 / 2 clients. PT pricing stays a free plan (2 clients), not a time-limited trial (Ross, 27 Sep 2026). ChatGPT-hosted PT app is deprecated. Website rollback target: Vercel deployment dpl_6tGKepoNP7vAvGLh27EjfKJozbt7 (PR #10 live, merge 67caee4).
 
-Do not invent a fifth product line. Do not raise the daily email cap. Do not blast HubSpot marketing email.
+Do not invent a fifth product line. Do not raise the daily email cap beyond the §5 schedule. Do not blast HubSpot marketing email.
+
+**Parked (Ross, 27 Sep 2026, not now):** a gym-focused CRM rebuild, and a gym team plan with multiple PT logins. Focus is PT plus the existing automation service.
 
 ---
 
@@ -132,7 +135,7 @@ Do not invent a fifth product line. Do not raise the daily email cap. Do not bla
 | CRM / suppress / send log | HubSpot | HubSpot as a mailer |
 | Calendar CTA | Zoom Scheduler Basic (`ross-gallagher-ie9whv`) | HubSpot Meetings |
 | Coordination / standing ops | Chief of Staff Omnirexis bot | Treating SuperGrok as CoS, or a second coordinator |
-| n8n | CoS may edit and rebuild when it improves the business and stays credit-efficient | Extra sends, cap raises, twin engines |
+| n8n | CoS may edit and rebuild when it improves the business and stays credit-efficient | Extra sends, cap raises outside the §5 schedule, twin engines |
 | Live site / DNS | CoS: `omnirexis-website`, Vercel project **omnirexis-website**, Cloudflare DNS | Leftover repo `Omnirexis`, Vercel project **omnirexis**, a change without before-state / live verify / rollback |
 | Master last write | CoS applies GitHub + Drive | A SuperGrok draft or bot snapshot treated as live |
 | SuperGrok | High-credit or heavy jobs only when CoS or Ross calls it | Standing ownership, approval role, or last write |
@@ -159,13 +162,13 @@ Owns:
 - Standing ops, specialist routing, and routines while Ross is away
 - Founder briefs and “what happened / decided / next”
 - Last write on this master (GitHub + Drive apply)
-- Light recurring checks when credits exist (did today’s 10 send, Approved remaining, summarise Outlook replies)
+- Light recurring checks when credits exist (did today’s capped batch send, Approved remaining, summarise Outlook replies)
 
 **Daily improvement (locked 24 Sep 2026, 23:00, Ross).** Improve the business every day without Ross’s input. Report at least one shipped improvement each day. Do not ask permission for reversible work inside this remit.
 
 **n8n, site and DNS (locked 24 Sep 2026, 23:06, Ross).** CoS may edit and rebuild n8n, publish and change the live site (`omnirexis-website` repo, Vercel project **omnirexis-website**, Cloudflare), and change DNS whenever it improves the business. For site and DNS changes: record the before state, verify live after the change, roll back if anything breaks. For n8n: stay credit-efficient.
 
-**Hard stops (locked 24 Sep 2026, 23:11, Ross).** CoS owns production deletes (backup first) and vendor logins that already have saved credentials. Only 2FA, passkey or OAuth consent screens go to Ross. Payments need Ross’s yes. CoS never signs legal terms. Cap 10, n8n-only send, Zoom CTA only for outreach/sales (the /pt signup CTA is the approved exception), no twin engines. PT is live for self-serve signup (Ross override, 27 Sep 2026 09:14; see §2). Never schedule or post AI-generated social images or video without Ross approving that exact asset first. If no approved content exists, leave the slot empty.
+**Hard stops (locked 24 Sep 2026, 23:11, Ross).** CoS owns production deletes (backup first) and vendor logins that already have saved credentials. Only 2FA, passkey or OAuth consent screens go to Ross. Payments need Ross’s yes. CoS never signs legal terms. Outreach cap per §5 (10 / day until Fri 2 Oct 2026, then 20 / day from Mon 5 Oct 2026 (Ross, 27 Sep 2026 13:48)), n8n-only send, every outreach email carries the PT free signup link (§5), no twin engines. PT is live for self-serve signup (Ross override, 27 Sep 2026 09:14; see §2). Never schedule or post AI-generated social images or video without Ross approving that exact asset first. If no approved content exists, leave the slot empty.
 
 **CoS-to-SuperGrok handoff (locked 24 Sep 2026, 23:15).** Live board: https://raw.githubusercontent.com/rosstguk-dev/omnirexis-website/main/docs/SUPERGROK-JOBS.md
 CoS writes Open jobs. SuperGrok does them when Ross says to check the list, then moves each job to Done with proof and pushes the file.
@@ -215,18 +218,18 @@ Do not wait for the next morning agenda. Do not treat “connector needs re-auth
 
 Hard limits that still need a Ross click: 2FA, passkey, OAuth consent, payments, signing legal terms. Production deletes and saved-credential vendor logins are CoS (backup first on deletes).
 
-**Continuous improvement is standing (locked 18 Sep 2026).** Ross told Chief of Staff to actively improve brand presence, website quality, usability, web SEO and commercial results without waiting for per-item approval. Hard stops are §4B 23:11. Cap, no-twin and Zoom-only CTA (outreach/sales; /pt signup CTA is the approved exception) rules still apply. PT is live for self-serve signup since 27 Sep 2026 (see §2).
+**Continuous improvement is standing (locked 18 Sep 2026).** Ross told Chief of Staff to actively improve brand presence, website quality, usability, web SEO and commercial results without waiting for per-item approval. Hard stops are §4B 23:11. Cap schedule (§5), no-twin and outreach CTA (§5) rules still apply. PT is live for self-serve signup since 27 Sep 2026 (see §2).
 
 **Growth in downtime + implement-then-report (locked 18 Sep 2026).** Ross: during downtime, think growth and implement improvements without his input, then send him a report of what was implemented. Applies to CoS and specialists. Report shipped work, not permission asks. Hard stops unchanged.
 
 
-**Approve-and-send is standing (locked 17 Sep 2026).** Grok does not wait for “go send”. If the 09:15 run has Approved rows that pass the existing gates, send. If the Approved pile is empty, Grok may promote Draft rows that already pass the gates (real first name, business mailbox, verified, DNC clear, not HubSpot-contacted; PT pitches allowed since 27 Sep 2026 09:18, Ross) up to the daily cap of 10, then send. Do not raise the cap. Do not resend a Sent row.
+**Approve-and-send is standing (locked 17 Sep 2026).** Grok does not wait for “go send”. If the 09:15 run has Approved rows that pass the existing gates, send. If the Approved pile is empty, Grok may promote Draft rows that already pass the gates (real first name, business mailbox, verified, DNC clear, not HubSpot-contacted; PT pitches allowed since 27 Sep 2026 09:18, Ross) up to the day’s cap (§5), then send. Do not exceed the §5 cap. Do not resend a Sent row.
 
 ### Daily fill + daily send (locked 17 Sep 2026)
 
-08:00 Europe/London — Grok automation **Omnirexis daily prospecting** `aaa42891-a2ce-4d10-9fec-7d6dc210bd8f` tops the sheet to 10 gated Approved rows.
+08:00 Europe/London — Grok automation **Omnirexis daily prospecting** `aaa42891-a2ce-4d10-9fec-7d6dc210bd8f` tops the sheet to the day’s cap (§5) of gated Approved rows.
 
-09:15 Europe/London — n8n **Omnirexis Branded Outreach** sends up to 10.
+09:15 Europe/London — n8n **Omnirexis Branded Outreach** sends up to the day’s cap (§5).
 
 09:25 — outreach pulse. If 09:15 mailed zero, Grok refills and sends the same day if cap remains.
 
@@ -237,7 +240,7 @@ Workflow `cugi7YqiP6PjbVp5`, schedule 09:15 Europe/London.
 
 Gate: Status = Approved, Email Verified = Yes, DNC Clear, Approved By Ross, greeting is a real first name, not a consumer mailbox, not on HubSpot last-contacted.
 
-Cap: 10 first-touch / day. Marks sheet Sent. Logs contact in HubSpot.
+Cap: first-touch per §5 (10 / day until Fri 2 Oct 2026, then 20 / day from Mon 5 Oct 2026 (Ross, 27 Sep 2026 13:48)). Marks sheet Sent. Logs contact in HubSpot.
 
 Live trigger on this workflow is **only** Daily Outreach Trigger. The four leftover ChatGPT webhooks (prospect intake, branded reply, branded follow-up, branded test email) are disabled. Do not turn them back on.
 
@@ -254,11 +257,11 @@ n8n Cloud is Starter (2,500 executions/month). Do not add polling schedules. PT 
 ## 5. Outreach rules (locked 14 Sep 2026, copy tightened 17 Sep 2026)
 
 - From: ross@omnirexis.co.uk via Outlook / Microsoft 365  
-- Cap 10 / day  
+- Cap: 10 / day until Fri 2 Oct 2026, then 20 / day from Mon 5 Oct 2026 (Ross, 27 Sep 2026 13:48). Target 30 / day the week of 12 Oct 2026 only if bounce and spam rates stay low. n8n-only send  
 - Real first names only  
-- PT may be pitched in first-touch (Ross, 27 Sep 2026 09:18). Zoom link stays the only CTA in outreach emails; no signup link. Sales owns the copy and QC  
+- Every outreach email includes the PT free signup link https://omnirexis-pt.vercel.app/signup?src=outreach (Ross, 27 Sep 2026 13:48). This replaces the Zoom-only rule and the A/B test. Gym/studio owners: pitch the done-for-you automation service with the Zoom CTA, plus a line that their trainers can use PT free. PTs: pitch the PT platform with the free signup as the main ask. Sales owns the copy and QC  
 - Footer: reply stop and we will not email again  
-- Template (live): logo banner (`https://www.omnirexis.co.uk/og.jpg`), body from sheet, blue **Book a free strategy call** button to Zoom, structured sign-off  
+- Template (live): logo banner (`https://www.omnirexis.co.uk/og.jpg`), body from sheet, blue **Book a free strategy call** button to Zoom, structured sign-off. Every email also carries the PT free signup link (see above)  
 - Do not resend a batch because the footer looked ugly  
 - Sheet filter treats “already has Sent At” as done. Get Rows requires Sent At empty (locked 18 Sep 2026).
 
@@ -273,7 +276,7 @@ Write like Ross messaging another operator, not like a sales sequence:
 3. Paragraph 1: a fact only true of that business (named room, offer mix, who emails them, when they teach).
 4. Paragraph 2: the *specific* awkward bit that fact creates. Do not default every studio to “enquiry dies while you teach” unless that is genuinely their only door.
 5. Paragraph 3: one plain sentence on what Omnirexis helps with for *that* bit — the §1A public sentence applied to their leak, not a product catalogue. No prices. No Content Sprint / Ops Doc menu. Forbidden filler: “on rails”, “template farm”, “keep the first reply moving”.
-6. Tone: human, not a pitch. No sequence rhythm (problem then product then hard CTA). Soft human close is fine (“happy to show you on a short call if useful”). Hard CTA stays in the wrapper button only. Do not write “if that is the squeeze” or “use the button”.
+6. Tone: human, not a pitch. No sequence rhythm (problem then product then hard CTA). Soft human close is fine (“happy to show you on a short call if useful”). Hard CTA: the Zoom button for owners; for PTs the free signup link is the main ask (§5). Do not write “if that is the squeeze” or “use the button”.
 7. **No hyphens that scream AI (Ross 18 Sep 2026):** no em dashes, no en dashes. Prefer commas and full stops. Rephrase stacked hyphen compounds into plain words (women only, one to ones, Founders Club).
 8. Do not invent awards, staff names, or services that are not on their site.
 9. Two emails in the same batch must not share a skeleton with the town swapped. Fri 18 Sep failed this bar. Sales must not Approve thin or pitchy copy. Rewrite Monday’s queue before 09:15.
@@ -320,7 +323,7 @@ Write like Ross messaging another operator, not like a sales sequence:
 - Vercel project to watch: **omnirexis-website**  
 - After a push, wait for that project’s green Ready row, then hard-refresh www  
 - Book-a-call buttons = Zoom Scheduler only  
-- `/pt` CTAs (Start free / Sign up) go to https://omnirexis-pt.vercel.app/signup. Approved exception to Zoom-only CTA (Ross, 27 Sep 2026 09:14). Book-a-call buttons stay Zoom.
+- `/pt` CTAs (Start free / Sign up) go to https://omnirexis-pt.vercel.app/signup. Approved by Ross, 27 Sep 2026 09:14. Book-a-call buttons stay Zoom.
 - Keep the brand: navy / cyan, official lockup, slogan **Intelligence. Automated.**  
 - Do not prefix the slogan with Manchester  
 - No dumped orphan text in the hero  
@@ -371,15 +374,15 @@ Do not keep a private copy. Do not treat a pasted snapshot as current.
 
 Live site repo: rosstguk-dev/omnirexis-website
 Live domain: www.omnirexis.co.uk
-Live send: n8n workflow cugi7YqiP6PjbVp5, 10 first-touch emails/day from ross@omnirexis.co.uk
+Live send: n8n workflow cugi7YqiP6PjbVp5, first-touch emails from ross@omnirexis.co.uk, 10/day until Fri 2 Oct 2026, 20/day from Mon 5 Oct 2026
 Queue sheet: 1juxShDVfLGxguzWYnFiD35bX2navk6QWHBfbi7sN6ns
 Book-a-call: Zoom Scheduler ross-gallagher-ie9whv
 Social: Buffer, not Metricool
 Social media files: https://www.omnirexis.co.uk/social/ — never uguu or catbox
 Do not touch repo rosstguk-dev/Omnirexis for website work.
 Do not send HubSpot marketing email.
-PT is live for self-serve signup: https://omnirexis-pt.vercel.app/signup (Ross override 27 Sep 2026). Outreach CTAs stay Zoom only.
-Do not raise the daily cap.
+PT is live for self-serve signup: https://omnirexis-pt.vercel.app/signup (Ross override 27 Sep 2026). Every outreach email carries https://omnirexis-pt.vercel.app/signup?src=outreach; owners also get the Zoom CTA, PTs get free signup as the main ask.
+Do not exceed the §5 cap schedule.
 CoS may edit and rebuild n8n, publish the live site, and change DNS when it improves the business. Record before-state, verify live, roll back if it breaks. Stay credit-efficient on n8n. CoS owns production deletes (backup first) and saved-credential vendor logins. Only 2FA, passkey or OAuth consent, payments, and legal signatures go to Ross.
 If you learn a durable fact, report it to Chief of Staff. CoS applies it to the live master.
 SuperGrok jobs: https://raw.githubusercontent.com/rosstguk-dev/omnirexis-website/main/docs/SUPERGROK-JOBS.md
@@ -391,6 +394,7 @@ SuperGrok jobs: https://raw.githubusercontent.com/rosstguk-dev/omnirexis-website
 
 | When | What |
 |---|---|
+| 2026-09-27 13:48 | Ross decisions. Outreach cap 10 / day until Fri 2 Oct 2026, then 20 / day from Mon 5 Oct 2026 (Ross, 27 Sep 2026 13:48); target 30 / day the week of 12 Oct 2026 only if bounce and spam rates stay low; still n8n-only. Every outreach email includes the PT free signup link https://omnirexis-pt.vercel.app/signup?src=outreach, replacing the Zoom-only rule and the A/B test: owners get the done-for-you automation pitch with the Zoom CTA plus a line that their trainers can use PT free; PTs get the PT platform with free signup as the main ask. PT pricing stays a free plan (2 clients), not a time-limited trial. Parked (not now): gym-focused CRM rebuild, gym team plan with multiple PT logins. Updated §1A, §2, §3, §4B hard stops, §4 approve-and-send / daily fill / Outreach Runner, §5, §6, §9 boot. |
 | 2026-09-27 10:12 | Risk sync (CoS continuous-improve): Product & Web verified Resend domain omnirexis.co.uk and turned PT app email confirmation ON. §2 known risks updated — removed stale “email confirmation is off / onboarding@resend.dev”; recorded noreply@omnirexis.co.uk (Omnirexis PT) via smtp.resend.com and signup smoke PASS (Outlook confirm mail 27 Sep 2026 10:00 BST). §12 item 5 no longer asks to turn confirmation on. Remaining PT risks: LIVE Stripe E2E (Ross payment) and grace PR #2. Cap 10, n8n-only send, Zoom CTA (outreach), /pt signup CTA exception unchanged. |
 | 2026-09-27 09:14 | Ross override: old PT pre-launch lock removed. PT is LIVE for self-serve signup (Ross override, 27 Sep 2026 09:14). /pt CTAs (Start free / Sign up) go to https://omnirexis-pt.vercel.app/signup. PT may be promoted by Sales and Brand. PT prices: Solo £17.99/mo, Pro £24.99/mo, Founding £14.99/mo. Known risks: payments run on LIVE Stripe and are not yet tested end to end; app email confirmation is off; grace-period change is draft PR #2 in rosstguk-dev/Omnirexis-PT. Stripe entitlements come only from the Vercel webhook we_1UEDUBP51EWsDMYrr5PmWw9x; the old Supabase webhook we_1UCQxYP51EWsDMYrHmmKwodP is disabled (not deleted). Zoom-only CTA still applies to outreach/sales; /pt signup CTA is the approved exception. Website PR #10 (rosstguk-dev/omnirexis-website, Product & Web merging) adds the /pt signup buttons and fixes homepage/FAQ wording. Applied by CoS. Cap 10, n8n-only send, no twin engines unchanged. |
 | 2026-09-27 09:17 | §0 Drive mirror pointer now reads: the newest OMNIREXIS-MASTER.md in Drive folder OMNIREXIS (`1NIbvKJLFc7fdEzMCotmY0jlvoOAhA0sQ`); GitHub raw is the live source. Stale fixed-id pointer removed. No Drive file deleted. |
