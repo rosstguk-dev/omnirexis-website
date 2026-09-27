@@ -1,7 +1,7 @@
 # OMNIREXIS MASTER BRIEF
 
 **Status:** live operating brief  
-**Last updated:** 24 September 2026, 23:17 BST
+**Last updated:** 27 September 2026, 09:14 BST
 **Owner:** Ross Gallagher  
 **How to use:** fetch the live file. Do not paste a snapshot into a bot’s knowledge and treat that snapshot as current.
 
@@ -66,7 +66,7 @@ Manchester is the registered / postal address only. It is not the brand and it i
 
 Promise: the tools do the work. They do not create more of it.
 
-We do not sell vapour. We do not sell the PT platform as live until it is finished. We do not run two outreach engines. We do not edit the leftover website repo.
+We do not sell vapour. The PT platform is live for self-serve signup (Ross override, 27 Sep 2026 09:14). We do not run two outreach engines. We do not edit the leftover website repo.
 
 **Live site:** https://www.omnirexis.co.uk  
 **Business email only:** ross@omnirexis.co.uk  
@@ -98,7 +98,7 @@ Missed enquiries and follow-ups cost them customers. We make the first reply and
 Book a free 30-minute Zoom: https://scheduler.zoom.us/ross-gallagher-ie9whv/30-mins-with-ross
 
 ### What stays quiet on social until this is clear
-- PT platform sell
+- (PT platform sell lifted 27 Sep 2026: PT is live and Sales and Brand may promote it. See §2.)
 - Price lists and Rapid menus
 - Leisure software launches
 - Abstract cyan AI art / particle waves / “practical AI for operators” filler
@@ -116,7 +116,7 @@ First-touch stays studio-specific. Paragraph 3 must sound like the only public s
 2. **Strategy call → scoped implementation** — automation, voice, growth systems. Price from the conversation.  
 3. **Rapid studio** — fixed-price content and ops docs (Content Sprint £79, Ops Doc Sprint £149, and the other packaged offers on /rapid-services).  
 4. **Leisure systems** — club ops software conversation, not a hard sell on first touch.  
-5. **PT platform** — not sold as live. Rebuild lives in private GitHub `rosstguk-dev/Omnirexis-PT` (Next.js 15 + Supabase + Stripe). Live/legacy Supabase project is `mzcuztcamkvuvxjodsgy`. Do not create a second project. Do not run fresh init SQL against it until reconciled. Prices in code: Free £0 / 2 clients, Founding £14.99, Solo £17.99, Pro £24.99. ChatGPT-hosted PT app is deprecated. Site `/pt` CTAs go to `/contact?intent=pt-*`.
+5. **PT platform** — PT is LIVE for self-serve signup (Ross override, 27 Sep 2026 09:14). /pt CTAs (Start free / Sign up) go to https://omnirexis-pt.vercel.app/signup. PT may be promoted by Sales and Brand. PT prices: Solo £17.99/mo, Pro £24.99/mo, Founding £14.99/mo. Known risks: payments run on LIVE Stripe and are not yet tested end to end; app email confirmation is off; grace-period change is draft PR #2 in rosstguk-dev/Omnirexis-PT. Stripe entitlements come only from the Vercel webhook we_1UEDUBP51EWsDMYrr5PmWw9x; the old Supabase webhook we_1UCQxYP51EWsDMYrHmmKwodP is disabled (not deleted). Code lives in private GitHub `rosstguk-dev/Omnirexis-PT` (Next.js 15 + Supabase + Stripe). Live/legacy Supabase project is `mzcuztcamkvuvxjodsgy`. Do not create a second project. Do not run fresh init SQL against it until reconciled. Free tier in code: £0 / 2 clients. ChatGPT-hosted PT app is deprecated.
 
 Do not invent a fifth product line. Do not raise the daily email cap. Do not blast HubSpot marketing email.
 
@@ -165,7 +165,7 @@ Owns:
 
 **n8n, site and DNS (locked 24 Sep 2026, 23:06, Ross).** CoS may edit and rebuild n8n, publish and change the live site (`omnirexis-website` repo, Vercel project **omnirexis-website**, Cloudflare), and change DNS whenever it improves the business. For site and DNS changes: record the before state, verify live after the change, roll back if anything breaks. For n8n: stay credit-efficient.
 
-**Hard stops (locked 24 Sep 2026, 23:11, Ross).** CoS owns production deletes (backup first) and vendor logins that already have saved credentials. Only 2FA, passkey or OAuth consent screens go to Ross. Payments need Ross’s yes. CoS never signs legal terms. Cap 10, n8n-only send, Zoom CTA only, no twin engines, PT not sold as live.
+**Hard stops (locked 24 Sep 2026, 23:11, Ross).** CoS owns production deletes (backup first) and vendor logins that already have saved credentials. Only 2FA, passkey or OAuth consent screens go to Ross. Payments need Ross’s yes. CoS never signs legal terms. Cap 10, n8n-only send, Zoom CTA only for outreach/sales (the /pt signup CTA is the approved exception), no twin engines. PT is live for self-serve signup (Ross override, 27 Sep 2026 09:14; see §2).
 
 **CoS-to-SuperGrok handoff (locked 24 Sep 2026, 23:15).** Live board: https://raw.githubusercontent.com/rosstguk-dev/omnirexis-website/main/docs/SUPERGROK-JOBS.md
 CoS writes Open jobs. SuperGrok does them when Ross says to check the list, then moves each job to Done with proof and pushes the file.
@@ -215,7 +215,7 @@ Do not wait for the next morning agenda. Do not treat “connector needs re-auth
 
 Hard limits that still need a Ross click: 2FA, passkey, OAuth consent, payments, signing legal terms. Production deletes and saved-credential vendor logins are CoS (backup first on deletes).
 
-**Continuous improvement is standing (locked 18 Sep 2026).** Ross told Chief of Staff to actively improve brand presence, website quality, usability, web SEO and commercial results without waiting for per-item approval. Hard stops are §4B 23:11. Cap, no-twin, Zoom-only CTA, and PT-not-sold-as-live rules still apply.
+**Continuous improvement is standing (locked 18 Sep 2026).** Ross told Chief of Staff to actively improve brand presence, website quality, usability, web SEO and commercial results without waiting for per-item approval. Hard stops are §4B 23:11. Cap, no-twin and Zoom-only CTA (outreach/sales; /pt signup CTA is the approved exception) rules still apply. PT is live for self-serve signup since 27 Sep 2026 (see §2).
 
 **Growth in downtime + implement-then-report (locked 18 Sep 2026).** Ross: during downtime, think growth and implement improvements without his input, then send him a report of what was implemented. Applies to CoS and specialists. Report shipped work, not permission asks. Hard stops unchanged.
 
@@ -319,6 +319,7 @@ Write like Ross messaging another operator, not like a sales sequence:
 - Vercel project to watch: **omnirexis-website**  
 - After a push, wait for that project’s green Ready row, then hard-refresh www  
 - Book-a-call buttons = Zoom Scheduler only  
+- `/pt` CTAs (Start free / Sign up) go to https://omnirexis-pt.vercel.app/signup. Approved exception to Zoom-only CTA (Ross, 27 Sep 2026 09:14). Book-a-call buttons stay Zoom.
 - Keep the brand: navy / cyan, official lockup, slogan **Intelligence. Automated.**  
 - Do not prefix the slogan with Manchester  
 - No dumped orphan text in the hero  
@@ -336,7 +337,7 @@ Write like Ross messaging another operator, not like a sales sequence:
 | Growth systems | Live conversation |
 | Rapid studio (content / ops docs) | Live, fixed price |
 | Leisure systems | Live conversation |
-| PT platform | Rebuild in `rosstguk-dev/Omnirexis-PT`. Not on Vercel. Do not sell as live. Old ChatGPT app deprecated |
+| PT platform | LIVE for self-serve signup (Ross override, 27 Sep 2026 09:14): https://omnirexis-pt.vercel.app/signup. Code `rosstguk-dev/Omnirexis-PT`. Prices and known risks in §2. Old ChatGPT app deprecated |
 | Book SIGNAL ZERO | Separate personal brand. Do not mix into Omnirexis first-touch |
 
 ---
@@ -376,7 +377,7 @@ Social: Buffer, not Metricool
 Social media files: https://www.omnirexis.co.uk/social/ — never uguu or catbox
 Do not touch repo rosstguk-dev/Omnirexis for website work.
 Do not send HubSpot marketing email.
-Do not sell the PT platform as live.
+PT is live for self-serve signup: https://omnirexis-pt.vercel.app/signup (Ross override 27 Sep 2026). Outreach CTAs stay Zoom only.
 Do not raise the daily cap.
 CoS may edit and rebuild n8n, publish the live site, and change DNS when it improves the business. Record before-state, verify live, roll back if it breaks. Stay credit-efficient on n8n. CoS owns production deletes (backup first) and saved-credential vendor logins. Only 2FA, passkey or OAuth consent, payments, and legal signatures go to Ross.
 If you learn a durable fact, report it to Chief of Staff. CoS applies it to the live master.
@@ -389,6 +390,7 @@ SuperGrok jobs: https://raw.githubusercontent.com/rosstguk-dev/omnirexis-website
 
 | When | What |
 |---|---|
+| 2026-09-27 09:14 | Ross override: old PT pre-launch lock removed. PT is LIVE for self-serve signup (Ross override, 27 Sep 2026 09:14). /pt CTAs (Start free / Sign up) go to https://omnirexis-pt.vercel.app/signup. PT may be promoted by Sales and Brand. PT prices: Solo £17.99/mo, Pro £24.99/mo, Founding £14.99/mo. Known risks: payments run on LIVE Stripe and are not yet tested end to end; app email confirmation is off; grace-period change is draft PR #2 in rosstguk-dev/Omnirexis-PT. Stripe entitlements come only from the Vercel webhook we_1UEDUBP51EWsDMYrr5PmWw9x; the old Supabase webhook we_1UCQxYP51EWsDMYrHmmKwodP is disabled (not deleted). Zoom-only CTA still applies to outreach/sales; /pt signup CTA is the approved exception. Website PR #10 (rosstguk-dev/omnirexis-website, Product & Web merging) adds the /pt signup buttons and fixes homepage/FAQ wording. Applied by CoS. Cap 10, n8n-only send, no twin engines unchanged. |
 | 2026-09-24 23:17 | JOB-001: master now matches 23:06 power lock + 23:11 hard stops + SUPERGROK-JOBS.md as the CoS-to-SuperGrok handoff. CoS last write. SuperGrok on-call only. |
 | 2026-09-24 23:06 | Ross lock: CoS holds full operating authority and last write. CoS may edit and rebuild n8n, publish/change the live site (omnirexis-website, Vercel, Cloudflare) and change DNS. Site/DNS: record before state, verify live, roll back if broken. SuperGrok is on-call specialist only: no standing ownership, no approval role, no last write. Roster create/retire stays with CoS. Hard stops unchanged. |
 | 2026-09-24 | Org lock: Chief of Staff Omnirexis bot is the only CoS and reports to Ross. SuperGrok is the technical specialist with last write on this master. SuperGrok Review removed as a layer above CoS. |
@@ -403,7 +405,7 @@ SuperGrok jobs: https://raw.githubusercontent.com/rosstguk-dev/omnirexis-website
 | 2026-09-18 | First-touch tone: more human, less sales pitch; soft human close OK; hard CTA in wrapper only. |
 | 2026-09-18 | First-touch: no hyphens that scream AI (no em/en dashes; rephrase stacked compounds). |
 | 2026-09-18 | Clarified: Sales owns commercial relationship pre-commit (not every task); specialists keep domain ownership; Client Delivery owns relationship post-won. |
-| 2026-09-18 | Continuous improve: `/pt`, homepage PT teaser and FAQs softened so PT is not sold as live. Planned pricing kept; CTAs stay `/contact?intent=pt-*`. PR #7 merged. |
+| 2026-09-18 | Continuous improve: `/pt`, homepage PT teaser and FAQs softened while PT was pre-launch. Planned pricing kept. PR #7 merged. Superseded 27 Sep 2026 (PT live). |
 | 2026-09-18 | CoS continuous improvement standing: brand, site, SEO, usability, revenue without per-item approval. Hard stops: money, OAuth, production deletes, legal. |
 | 2026-09-14 | Morning scheduled send failed (sanitise JS). Catch-up of 10 sent 14:55 BST after Ross said “Go send”. |
 | 2026-09-14 | SPF updated to include Outlook. DKIM keys created and enabled in Microsoft 365. Gmail test landed in Inbox. |
@@ -445,6 +447,6 @@ If copies drift, the GitHub file with the newest section-10 date wins, then Ross
 2. **DONE (keep):** Sent At empty filter on n8n Get Rows for Branded Outreach `cugi7YqiP6PjbVp5`. Do not remove it. Sheet treats “already has Sent At” as done.
 3. After a week of PASS auth, consider DMARC `p=reject`.
 4. Keep Zoom Scheduler Basic upgraded before 23 Oct 2026.
-5. Finish PT platform before anyone sells it.
+5. PT is live (27 Sep 2026). Close the known risks: test LIVE Stripe payments end to end, turn app email confirmation on, land grace-period draft PR #2 in `rosstguk-dev/Omnirexis-PT`.
 6. Do not hire a swarm of new bots until credits are stable.
 7. After this week’s Buffer queue runs, refill next week in Buffer — do not invent a second scheduler. Put next week’s clips in `public/social/manifest.json` and dispatch `ingest-social.yml` before scheduling.
