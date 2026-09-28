@@ -1,7 +1,7 @@
 # OMNIREXIS MASTER BRIEF
 
 **Status:** live operating brief  
-**Last updated:** 27 September 2026, 13:48 BST
+**Last updated:** 28 September 2026, 10:12 BST
 **Owner:** Ross Gallagher  
 **How to use:** fetch the live file. Do not paste a snapshot into a bot’s knowledge and treat that snapshot as current.
 
@@ -263,7 +263,7 @@ n8n Cloud is Starter (2,500 executions/month). Do not add polling schedules. PT 
 - Real first names only  
 - Every outreach email includes the PT free signup link https://omnirexis-pt.vercel.app/signup?src=outreach (Ross, 27 Sep 2026 13:48). This replaces the Zoom-only rule and the A/B test. Gym/studio owners: pitch the done-for-you automation service with the Zoom CTA, plus a line that their trainers can use PT free. PTs: pitch the PT platform with the free signup as the main ask. Sales owns the copy and QC  
 - Footer: reply stop and we will not email again  
-- Template (live): logo banner (`https://www.omnirexis.co.uk/og.jpg`), body from sheet, blue **Book a free strategy call** button to Zoom, structured sign-off. Every email also carries the PT free signup link (see above)  
+- Template (live): logo banner (`https://www.omnirexis.co.uk/og.jpg`), body from sheet, blue **Book a free strategy call** button to Zoom, navy **Start free on Omnirexis PT** button to https://omnirexis-pt.vercel.app/signup?src=outreach, structured sign-off. Wrapper always carries the PT free signup CTA (see above); sheet body should not duplicate the raw signup URL  
 - Do not resend a batch because the footer looked ugly  
 - Sheet filter treats “already has Sent At” as done. Get Rows requires Sent At empty (locked 18 Sep 2026).
 
@@ -396,6 +396,7 @@ SuperGrok jobs: https://raw.githubusercontent.com/rosstguk-dev/omnirexis-website
 
 | When | What |
 |---|---|
+| 2026-09-28 10:12 | Continuous improve (CoS): live n8n Branded Outreach `cugi7YqiP6PjbVp5` HTML wrapper (`branded email` node) now always includes the PT free signup CTA https://omnirexis-pt.vercel.app/signup?src=outreach (navy **Start free on Omnirexis PT** button under the Zoom strategy-call button, plus a one-line trainers note). Strips any PT signup URL from the sheet body so it is not duplicated. Active version `2b0b0d02-b5b8-41a6-83fb-eec1f8014305`. Before: Zoom-only wrapper (active version `83cf2d7e-ff5a-40eb-a404-81b18154ccdf`). Cap schedule unchanged. No extra send batch. |
 | 2026-09-27 21:15 | Ross-approved public mission line (27 Sep 2026): "Omnirexis gives fitness and leisure businesses their time back. Every enquiry answered, every lead followed up, every booking made, so you can focus on your clients while your business keeps growing." Replaces the §1A only public sentence; the old "use AI properly" sentence stays as a supporting explainer line. Homepage hero, footer and meta description updated to match; docs/MARKETING-FUNDAMENTALS.md updated. |
 | 2026-09-27 13:48 | Ross decisions. Outreach cap 10 / day until Fri 2 Oct 2026, then 20 / day from Mon 5 Oct 2026 (Ross, 27 Sep 2026 13:48); target 30 / day the week of 12 Oct 2026 only if bounce and spam rates stay low; still n8n-only. Every outreach email includes the PT free signup link https://omnirexis-pt.vercel.app/signup?src=outreach, replacing the Zoom-only rule and the A/B test: owners get the done-for-you automation pitch with the Zoom CTA plus a line that their trainers can use PT free; PTs get the PT platform with free signup as the main ask. PT pricing stays a free plan (2 clients), not a time-limited trial. Parked (not now): gym-focused CRM rebuild, gym team plan with multiple PT logins. Updated §1A, §2, §3, §4B hard stops, §4 approve-and-send / daily fill / Outreach Runner, §5, §6, §9 boot. |
 | 2026-09-27 10:12 | Risk sync (CoS continuous-improve): Product & Web verified Resend domain omnirexis.co.uk and turned PT app email confirmation ON. §2 known risks updated — removed stale “email confirmation is off / onboarding@resend.dev”; recorded noreply@omnirexis.co.uk (Omnirexis PT) via smtp.resend.com and signup smoke PASS (Outlook confirm mail 27 Sep 2026 10:00 BST). §12 item 5 no longer asks to turn confirmation on. Remaining PT risks: LIVE Stripe E2E (Ross payment) and grace PR #2. Cap 10, n8n-only send, Zoom CTA (outreach), /pt signup CTA exception unchanged. |
