@@ -1,7 +1,7 @@
 # OMNIREXIS MASTER BRIEF
 
 **Status:** live operating brief  
-**Last updated:** 28 September 2026, 10:12 BST
+**Last updated:** 29 September 2026, 10:20 BST
 **Owner:** Ross Gallagher  
 **How to use:** fetch the live file. Do not paste a snapshot into a bot’s knowledge and treat that snapshot as current.
 
@@ -325,7 +325,7 @@ Write like Ross messaging another operator, not like a sales sequence:
 - Vercel project to watch: **omnirexis-website**  
 - After a push, wait for that project’s green Ready row, then hard-refresh www  
 - Book-a-call buttons = Zoom Scheduler only  
-- `/pt` CTAs (Start free / Sign up) go to https://omnirexis-pt.vercel.app/signup. Approved by Ross, 27 Sep 2026 09:14. Book-a-call buttons stay Zoom.
+- `/pt` CTAs (Start free / Sign up) go to https://omnirexis-pt.vercel.app/signup?src=website (site attribution; outreach keeps `?src=outreach`). Approved by Ross, 27 Sep 2026 09:14. Book-a-call buttons stay Zoom. /pt bottom band primary CTA is Start free (CoS, 29 Sep 2026).
 - Keep the brand: navy / cyan, official lockup, slogan **Intelligence. Automated.**  
 - Do not prefix the slogan with Manchester  
 - No dumped orphan text in the hero  
@@ -396,6 +396,7 @@ SuperGrok jobs: https://raw.githubusercontent.com/rosstguk-dev/omnirexis-website
 
 | When | What |
 |---|---|
+| 2026-09-29 10:20 | Continuous improve (CoS): /pt bottom CTA band now matches its copy — primary **Start free** button to https://omnirexis-pt.vercel.app/signup?src=website (same tab), Zoom strategy call kept as secondary. Before: band said "Start free" but only offered Zoom. All site PT signup CTAs now use `?src=website` so outreach `?src=outreach` stays distinct for attribution. Other pages keep Zoom-only CtaBand. Cap / n8n / outreach unchanged. |
 | 2026-09-28 10:12 | Continuous improve (CoS): live n8n Branded Outreach `cugi7YqiP6PjbVp5` HTML wrapper (`branded email` node) now always includes the PT free signup CTA https://omnirexis-pt.vercel.app/signup?src=outreach (navy **Start free on Omnirexis PT** button under the Zoom strategy-call button, plus a one-line trainers note). Strips any PT signup URL from the sheet body so it is not duplicated. Active version `2b0b0d02-b5b8-41a6-83fb-eec1f8014305`. Before: Zoom-only wrapper (active version `83cf2d7e-ff5a-40eb-a404-81b18154ccdf`). Cap schedule unchanged. No extra send batch. |
 | 2026-09-27 21:15 | Ross-approved public mission line (27 Sep 2026): "Omnirexis gives fitness and leisure businesses their time back. Every enquiry answered, every lead followed up, every booking made, so you can focus on your clients while your business keeps growing." Replaces the §1A only public sentence; the old "use AI properly" sentence stays as a supporting explainer line. Homepage hero, footer and meta description updated to match; docs/MARKETING-FUNDAMENTALS.md updated. |
 | 2026-09-27 13:48 | Ross decisions. Outreach cap 10 / day until Fri 2 Oct 2026, then 20 / day from Mon 5 Oct 2026 (Ross, 27 Sep 2026 13:48); target 30 / day the week of 12 Oct 2026 only if bounce and spam rates stay low; still n8n-only. Every outreach email includes the PT free signup link https://omnirexis-pt.vercel.app/signup?src=outreach, replacing the Zoom-only rule and the A/B test: owners get the done-for-you automation pitch with the Zoom CTA plus a line that their trainers can use PT free; PTs get the PT platform with free signup as the main ask. PT pricing stays a free plan (2 clients), not a time-limited trial. Parked (not now): gym-focused CRM rebuild, gym team plan with multiple PT logins. Updated §1A, §2, §3, §4B hard stops, §4 approve-and-send / daily fill / Outreach Runner, §5, §6, §9 boot. |

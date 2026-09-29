@@ -176,6 +176,11 @@ function PtPage() {
         kicker="Independent trainers"
         title="Start free. Talk to us if you want a hand."
         body="Create a free trainer account in a couple of minutes. Prefer a conversation first? Book a strategy call and we will talk through fit."
+        primaryHref={PT_SIGNUP}
+        primaryLabel="Start free"
+        primaryExternal={false}
+        secondaryHref={BOOK_CALL}
+        secondaryLabel="Book a strategy call"
       />
     </SiteLayout>
   );

@@ -6,10 +6,22 @@ export function CtaBand({
   kicker = "Free strategy call",
   title = "Book a free 30 minute Zoom strategy call.",
   body = "Tell us what is taking too long. We will talk through the tools, the gaps, and a first move.",
+  primaryHref = BOOK_CALL,
+  primaryLabel = "Book a free 30 minute Zoom strategy call",
+  primaryExternal = true,
+  secondaryHref,
+  secondaryLabel,
+  secondaryExternal = true,
 }: {
   kicker?: string;
   title?: string;
   body?: string;
+  primaryHref?: string;
+  primaryLabel?: string;
+  primaryExternal?: boolean;
+  secondaryHref?: string;
+  secondaryLabel?: string;
+  secondaryExternal?: boolean;
 }) {
   return (
     <section className="relative overflow-hidden border-t border-line bg-ink-2 text-bone">
@@ -33,13 +45,38 @@ export function CtaBand({
             size="lg"
             className="h-auto min-h-12 whitespace-normal py-3 text-center"
           >
-            <a href={BOOK_CALL} target="_blank" rel="noreferrer">
-              Book a free 30 minute Zoom strategy call
+            <a
+              href={primaryHref}
+              {...(primaryExternal
+                ? { target: "_blank", rel: "noreferrer" }
+                : {})}
+            >
+              {primaryLabel}
               <ArrowUpRight />
             </a>
           </Button>
+          {secondaryHref && secondaryLabel ? (
+            <Button
+              asChild
+              variant="inkOutline"
+              size="lg"
+              className="h-auto min-h-12 whitespace-normal py-3 text-center"
+            >
+              <a
+                href={secondaryHref}
+                {...(secondaryExternal
+                  ? { target: "_blank", rel: "noreferrer" }
+                  : {})}
+              >
+                {secondaryLabel}
+                <ArrowUpRight />
+              </a>
+            </Button>
+          ) : null}
           <p className="font-mono text-xs tracking-wide text-subtle">
-            Free. 30 minutes. Zoom. No obligation.
+            {secondaryHref
+              ? "Free plan for your first two clients. Or book a call."
+              : "Free. 30 minutes. Zoom. No obligation."}
           </p>
         </div>
       </div>

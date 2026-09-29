@@ -1,7 +1,7 @@
 export const BOOK_CALL =
   "https://scheduler.zoom.us/ross-gallagher-ie9whv/30-mins-with-ross";
 
-export const PT_SIGNUP = "https://omnirexis-pt.vercel.app/signup";
+export const PT_SIGNUP = "https://omnirexis-pt.vercel.app/signup?src=website";
 
 export const EMAIL = "hello@omnirexis.co.uk";
 export const PHONE = "0161 250 0045";
