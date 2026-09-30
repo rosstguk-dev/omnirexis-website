@@ -1,7 +1,7 @@
 # OMNIREXIS MASTER BRIEF
 
 **Status:** live operating brief  
-**Last updated:** 29 September 2026, 10:20 BST
+**Last updated:** 30 September 2026, 10:15 BST
 **Owner:** Ross Gallagher  
 **How to use:** fetch the live file. Do not paste a snapshot into a bot’s knowledge and treat that snapshot as current.
 
@@ -396,6 +396,7 @@ SuperGrok jobs: https://raw.githubusercontent.com/rosstguk-dev/omnirexis-website
 
 | When | What |
 |---|---|
+| 2026-09-30 10:15 | Continuous improve (CoS): Omnirexis-PT signup now stores sanitized `signup_src` from `?src=` in Supabase Auth user_metadata (PR #5, merge `7ab28f4`, production deploy `dpl_ExPBjujaaozkZkRnbYi4AusVfFa9`). Site `?src=website` and outreach `?src=outreach` / `outreach_pt` / `outreach_gym` were already on CTAs but ignored at signup, so Free-plan conversions could not be attributed. No DB migration. Cap / n8n / outreach unchanged. |
 | 2026-09-29 10:20 | Continuous improve (CoS): /pt bottom CTA band now matches its copy — primary **Start free** button to https://omnirexis-pt.vercel.app/signup?src=website (same tab), Zoom strategy call kept as secondary. Before: band said "Start free" but only offered Zoom. All site PT signup CTAs now use `?src=website` so outreach `?src=outreach` stays distinct for attribution. Other pages keep Zoom-only CtaBand. Cap / n8n / outreach unchanged. |
 | 2026-09-28 10:12 | Continuous improve (CoS): live n8n Branded Outreach `cugi7YqiP6PjbVp5` HTML wrapper (`branded email` node) now always includes the PT free signup CTA https://omnirexis-pt.vercel.app/signup?src=outreach (navy **Start free on Omnirexis PT** button under the Zoom strategy-call button, plus a one-line trainers note). Strips any PT signup URL from the sheet body so it is not duplicated. Active version `2b0b0d02-b5b8-41a6-83fb-eec1f8014305`. Before: Zoom-only wrapper (active version `83cf2d7e-ff5a-40eb-a404-81b18154ccdf`). Cap schedule unchanged. No extra send batch. |
 | 2026-09-27 21:15 | Ross-approved public mission line (27 Sep 2026): "Omnirexis gives fitness and leisure businesses their time back. Every enquiry answered, every lead followed up, every booking made, so you can focus on your clients while your business keeps growing." Replaces the §1A only public sentence; the old "use AI properly" sentence stays as a supporting explainer line. Homepage hero, footer and meta description updated to match; docs/MARKETING-FUNDAMENTALS.md updated. |
