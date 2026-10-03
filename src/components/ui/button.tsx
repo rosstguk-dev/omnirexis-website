@@ -8,8 +8,8 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        solid: "bg-pine text-pine-fg hover:opacity-90",
-        pine: "bg-pine text-pine-fg hover:opacity-90",
+        solid: "bg-cta text-pine-fg hover:bg-cta-hover",
+        pine: "bg-cta text-pine-fg hover:bg-cta-hover",
         outline:
           "border border-line-strong bg-transparent text-bone hover:bg-ink-3",
         ghost: "text-bone hover:bg-ink-3",

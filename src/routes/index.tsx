@@ -43,7 +43,10 @@ function Home() {
               Omnirexis gives fitness and leisure businesses{" "}
               <span className="text-cyan">their time back.</span>
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
+            <p className="mt-5 max-w-xl text-xl font-medium leading-snug tracking-tight text-bone">
+              Lead follow up automation for gyms, studios and personal trainers.
+            </p>
+            <p className="mt-4 max-w-xl text-lg leading-relaxed text-muted">
               Every enquiry answered, every lead followed up, every booking
               made, so you can focus on your clients while your business keeps
               growing.
