@@ -325,7 +325,7 @@ Write like Ross messaging another operator, not like a sales sequence:
 - Vercel project to watch: **omnirexis-website**  
 - After a push, wait for that project’s green Ready row, then hard-refresh www  
 - Book-a-call buttons = Zoom Scheduler only  
-- `/pt` CTAs (Start free / Sign up) go to https://omnirexis-pt.vercel.app/signup?src=website (site attribution; outreach keeps `?src=outreach`). Approved by Ross, 27 Sep 2026 09:14. Book-a-call buttons stay Zoom. /pt bottom band primary CTA is Start free (CoS, 29 Sep 2026).
+- `/pt` CTAs (Start free / Sign up) go to https://omnirexis-pt.vercel.app/signup?src=site_pt. Signup source tags (3 Oct 2026): website `site_pt` on /pt and `site_home` on the homepage PT section; SEO pages and blog `seo_<page>` and `seo_blog-<slug>`; social `social`; outreach emails `outreach`, `outreach_pt` and `outreach_gym`. The PT app stores the tag as `signup_src` on the trainer's account and saves untagged signups as `direct`. Approved by Ross, 27 Sep 2026 09:14. Book-a-call buttons stay Zoom. /pt bottom band primary CTA is Start free (CoS, 29 Sep 2026).
 - Keep the brand: navy / cyan, official lockup, slogan **Intelligence. Automated.**  
 - Do not prefix the slogan with Manchester  
 - No dumped orphan text in the hero  
