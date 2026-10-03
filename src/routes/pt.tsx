@@ -89,8 +89,8 @@ function PtPage() {
               <span className="italic"> Run the business calmly.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-bone/70">
-              Clients, programmes, sessions, check-ins, progress and payments in
-              one focused workspace. The useful depth of the big PT platforms,
+              Clients, programmes, sessions, check-ins and progress in one
+              focused workspace. The useful depth of the big PT platforms,
               without the cockpit of unexplained buttons. Start free with your
               first two clients.
             </p>
