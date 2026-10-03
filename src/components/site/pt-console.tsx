@@ -1,3 +1,18 @@
+// Mirrors the Free plan dashboard in the PT app (app/app/page.tsx): the same tiles and
+// list labels, with example figures the Free plan can reach (2 active clients max).
+const NEXT_SESSIONS = [
+  { name: "Sam", when: "05/10/2026, 07:30:00" },
+  { name: "Alex", when: "06/10/2026, 18:00:00" },
+  { name: "Sam", when: "08/10/2026, 07:30:00" },
+  { name: "Alex", when: "09/10/2026, 18:00:00" },
+];
+
+const LATEST_CHECK_INS = [
+  { name: "Alex", when: "2026-10-03" },
+  { name: "Sam", when: "2026-10-02" },
+  { name: "Alex", when: "2026-09-26" },
+];
+
 export function PtConsole() {
   return (
     <div className="rounded-xl bg-ink p-2 shadow-card">
@@ -14,19 +29,13 @@ export function PtConsole() {
           <span className="text-micro text-subtle">Example figures</span>
         </div>
         <div className="grid gap-4 p-5 sm:grid-cols-3">
-          <Stat label="Active clients" value="12" />
-          <Stat label="Need attention" value="3" />
+          <Stat label="Active clients" value="2" />
           <Stat label="Upcoming sessions" value="4" />
+          <Stat label="Recent check-ins" value="3" />
         </div>
-        <div className="px-5 pb-5">
-          <p className="text-micro tracking-micro text-subtle uppercase">
-            Priority list
-          </p>
-          <ul className="mt-3 divide-y divide-line-on-ink border-t border-line-on-ink">
-            <Row name="Chloe M." note="Check-in overdue" />
-            <Row name="Marcus H." note="2 sessions remaining" />
-            <Row name="Dani R." note="Attendance has dipped" />
-          </ul>
+        <div className="grid gap-5 px-5 pb-5 sm:grid-cols-2">
+          <List title="Next sessions" rows={NEXT_SESSIONS} />
+          <List title="Latest check-ins" rows={LATEST_CHECK_INS} />
         </div>
       </div>
     </div>
@@ -46,11 +55,27 @@ function Stat({ label, value }: { label: string; value: string }) {
   );
 }
 
-function Row({ name, note }: { name: string; note: string }) {
+function List({
+  title,
+  rows,
+}: {
+  title: string;
+  rows: { name: string; when: string }[];
+}) {
   return (
-    <li className="flex items-center justify-between gap-4 py-3">
-      <span className="text-sm text-bone">{name}</span>
-      <span className="text-xs text-subtle">{note}</span>
-    </li>
+    <div>
+      <p className="text-micro tracking-micro text-subtle uppercase">{title}</p>
+      <ul className="mt-3 divide-y divide-line-on-ink border-t border-line-on-ink">
+        {rows.map((row) => (
+          <li
+            key={row.name + row.when}
+            className="flex items-center justify-between gap-4 py-2.5"
+          >
+            <span className="text-sm text-bone">{row.name}</span>
+            <span className="text-xs text-subtle tabular-nums">{row.when}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }

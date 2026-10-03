@@ -124,15 +124,15 @@ function PtPage() {
           {[
             {
               t: "Client desk",
-              d: "Profiles, notes, check-ins and the next session, attached to the right person.",
+              d: "Profiles, notes, measurements and check-ins, attached to the right person.",
             },
             {
               t: "Programmes",
-              d: "Build the week, assign the work, see who is actually doing it.",
+              d: "Build the training days, add sets, reps and load, and assign the programme to a client.",
             },
             {
               t: "Sessions",
-              d: "The diary and the remaining pack, without a second spreadsheet.",
+              d: "Book each client's sessions with notes and mark them complete, without a second spreadsheet.",
             },
             {
               t: "Action view",
@@ -170,8 +170,9 @@ function PtPage() {
               Replace the spreadsheet
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-muted">
-              If your clients live in a spreadsheet, keep the same columns in a
-              client desk instead, with sessions and check-ins on each client.
+              If your clients live in a spreadsheet, move them into a client
+              desk instead, with sessions and check-ins recorded against each
+              client.
               Free for your first two active clients.
             </p>
           </div>
