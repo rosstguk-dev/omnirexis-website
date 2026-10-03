@@ -5,16 +5,39 @@ import { CtaBand } from "@/components/site/cta-band";
 import { SiteLayout } from "@/components/site/layout";
 import { PtConsole } from "@/components/site/pt-console";
 import { BOOK_CALL, PT_PLANS, PT_SIGNUP } from "@/lib/site";
-import { pageSeo } from "@/lib/page-seo";
+import { pageSeo, SITE_URL } from "@/lib/page-seo";
 import { cn } from "@/lib/utils";
+
+// Free plan only. No paid prices, ratings or reviews in structured data.
+const PT_APP_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Omnirexis PT",
+  applicationCategory: "BusinessApplication",
+  applicationSubCategory: "Personal trainer client management",
+  operatingSystem: "Web",
+  url: `${SITE_URL}/pt`,
+  description:
+    "A focused workspace for personal trainers: clients, programmes, sessions and check-ins in one place.",
+  publisher: { "@id": `${SITE_URL}/#organization` },
+  offers: {
+    "@type": "Offer",
+    name: "Free",
+    description: "Free plan for your first two active clients.",
+    price: "0",
+    priceCurrency: "GBP",
+    url: PT_SIGNUP,
+  },
+};
 
 export const Route = createFileRoute("/pt")({
   head: () =>
     pageSeo({
-      title: "PT platform | Omnirexis",
+      title: "Software for personal trainers, start free | Omnirexis PT",
       description:
-        "Omnirexis PT is a focused workspace for trainers. Start free with your first two clients.",
+        "Omnirexis PT keeps clients, programmes, sessions and check-ins in one focused workspace for personal trainers. Start free with your first two clients.",
       path: "/pt",
+      jsonLd: PT_APP_JSON_LD,
     }),
   component: PtPage,
 });

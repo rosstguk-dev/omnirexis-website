@@ -385,6 +385,15 @@ export function stripShareMetaTags(html) {
   });
 }
 
+/** True when the document already carries its own og:title and og:description. */
+export function hasPageShareMeta(html) {
+  const doc = String(html ?? "");
+  return (
+    /<meta\b[^>]*\bproperty\s*=\s*["']og:title["'][^>]*>/i.test(doc) &&
+    /<meta\b[^>]*\bproperty\s*=\s*["']og:description["'][^>]*>/i.test(doc)
+  );
+}
+
 function insertAfterHeadOpen(html, snippet) {
   if (/<head\b[^>]*>/i.test(html)) {
     return html.replace(/<head\b[^>]*>/i, (open) => `${open}${snippet}`);
@@ -432,7 +441,11 @@ export function injectGrokPwaHead(html, ctx = {}) {
     host,
     documentTitle,
   );
-  let next = stripShareMetaTags(html);
+  // Omnirexis: when the page already renders its own share card (per-route
+  // og:title / og:description / og:url / twitter:* from page-seo.ts), keep it.
+  // Only pages with no share metas get the platform fallback card.
+  const keepPageShareMeta = hasPageShareMeta(html);
+  let next = keepPageShareMeta ? html : stripShareMetaTags(html);
 
   const missing = grokPwaHeadTags(appName)
     .filter(([key]) => {
@@ -442,10 +455,12 @@ export function injectGrokPwaHead(html, ctx = {}) {
     })
     .map(([, tag]) => tag);
 
-  next = insertAfterHeadOpen(
-    next,
-    grokOgHeadTags({ host, appName, site, documentTitle, cwd }).join(""),
-  );
+  if (!keepPageShareMeta) {
+    next = insertAfterHeadOpen(
+      next,
+      grokOgHeadTags({ host, appName, site, documentTitle, cwd }).join(""),
+    );
+  }
 
   // Omnirexis: do not inject grok.com extensions.js or grok project metas.
   missing.push(...grokExtensionsHeadTags(projectId));

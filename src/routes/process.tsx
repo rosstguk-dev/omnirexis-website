@@ -10,9 +10,9 @@ import { pageSeo } from "@/lib/page-seo";
 export const Route = createFileRoute("/process")({
   head: () =>
     pageSeo({
-      title: "Process | Omnirexis",
+      title: "How we work: first call to daily use | Omnirexis",
       description:
-        "How Omnirexis works: discovery, opportunity audit, solution design, implementation, and ongoing support.",
+        "How Omnirexis works with fitness and leisure businesses: discovery call, opportunity audit, solution design, implementation, then ongoing support.",
       path: "/process",
     }),
   component: ProcessPage,

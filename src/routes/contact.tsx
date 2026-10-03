@@ -32,9 +32,9 @@ export const Route = createFileRoute("/contact")({
   }),
   head: () =>
     pageSeo({
-      title: "Contact | Omnirexis",
+      title: "Contact Omnirexis | Book a free Zoom strategy call",
       description:
-        "Contact Omnirexis in Manchester. Send an enquiry or book a free 30-minute AI strategy call.",
+        "Contact Omnirexis: send an enquiry, email hello@omnirexis.co.uk or book a free 30 minute Zoom strategy call for your fitness or leisure business.",
       path: "/contact",
     }),
   component: ContactPage,
@@ -239,7 +239,11 @@ function ContactPage() {
         <aside className="space-y-10 lg:col-span-5">
           <div className="relative overflow-hidden rounded-xl">
             <img
-              src="/media/desk.jpg"
+              src="/media/desk.webp"
+              width={1200}
+              height={900}
+              loading="lazy"
+              decoding="async"
               alt="Reception desk, telephone and appointment book"
               className="h-56 w-full object-cover"
             />

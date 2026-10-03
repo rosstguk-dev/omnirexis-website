@@ -9,9 +9,9 @@ import { PageHero } from "@/components/site/page-hero";
 export const Route = createFileRoute("/leisure")({
   head: () =>
     pageSeo({
-      title: "Leisure systems | Omnirexis",
+      title: "Daily operations for gyms, spas and leisure clubs | Omnirexis",
       description:
-        "Practical checks, staff tasks, maintenance and reporting for gyms, spas and leisure clubs.",
+        "Practical daily checks, staff tasks, rotas, maintenance and records for UK gyms, spas and leisure clubs, so the whole team has a clearer day.",
       path: "/leisure",
     }),
   component: LeisurePage,
@@ -61,7 +61,11 @@ function LeisurePage() {
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 sm:px-8 lg:grid-cols-12 lg:py-24">
           <div className="relative overflow-hidden rounded-xl lg:col-span-6">
             <img
-              src="/media/floor.jpg"
+              src="/media/floor.webp"
+              width={1200}
+              height={800}
+              loading="lazy"
+              decoding="async"
               alt="Independent gym floor in morning light"
               className="h-full min-h-72 w-full object-cover"
             />
