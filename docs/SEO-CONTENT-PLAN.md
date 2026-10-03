@@ -1,0 +1,418 @@
+# OMNIREXIS SEO keyword map, page briefs and 6-week content plan
+
+**Owner:** Brand & Social for Ross Gallagher · **Written:** Sat 3 Oct 2026 (BST) · **Status:** draft for Product, Client Delivery and Finance & Quality. Nothing here is live until it is built, checked and published.
+
+**Mission line (use word for word):** Omnirexis gives fitness and leisure businesses their time back. Every enquiry answered, every lead followed up, every booking made, so you can focus on your clients while your business keeps growing.
+
+**Tagline:** Intelligence. Automated.
+
+---
+
+## 1. Intro
+
+**Purpose.** Give every existing and proposed page one clear search phrase, so pages do not compete with each other. Then plan 12 helpful posts over 6 weeks that answer questions gym, studio and PT owners already type into Google, and link each post to the page that solves the problem.
+
+**Who it is for.** Independent UK gym owners and managers, Pilates and yoga studio owners, leisure operators and personal trainers. North West and Manchester first. Not the general public: we are not trying to rank for people looking for a class or a trainer.
+
+**Sources (all read 3 Oct 2026)**
+- Sales' sourced term list, 72 terms: `ops/sales-crm/seo-search-terms-2026-10-03.md`, plus the raw autocomplete log `seo-autocomplete-raw-2026-10-03.txt`. `#` numbers below are Sales' row numbers, and source tags are carried over from that list.
+- Live master `docs/OMNIREXIS-MASTER.md` (last updated 3 Oct 2026 10:10) and `docs/MARKETING-FUNDAMENTALS.md`. Where they disagree, the master wins.
+- Site source on `main` of `rosstguk-dev/omnirexis-website` (commit 55b5525): `src/routes/*`, `src/lib/site.ts`, `src/lib/page-seo.ts`, `public/sitemap.xml`. Live titles were checked against https://omnirexis-website.vercel.app on 3 Oct 2026, and they match the repo.
+
+**Rules this plan follows**
+- Every claim must be checkable on the live site, the PT app or the master. Anything else goes in a "claims to verify" list.
+- No invented clients, results, reviews, testimonials, statistics, search volumes or addresses.
+- PT: only the **Free plan** (£0, up to 2 active clients, self-serve signup at https://omnirexis-pt.vercel.app/signup via omnirexis.co.uk/pt). Never paid plans, prices or billing. Never "trial". No client portal or client login.
+- Service CTA: the free 30-minute Zoom strategy call, https://scheduler.zoom.us/ross-gallagher-ie9whv/30-mins-with-ross . Public email: hello@omnirexis.co.uk. Never HubSpot links.
+- Lead follow-up automation is **scoped work, priced on a call**. No price, turnaround or set package on that page.
+- "Gym CRM" is a supporting phrase only, on the lead follow-up page. Write it as "the CRM you already use", never as an Omnirexis gym CRM (a gym CRM product is parked, master §2).
+- No pages built around WhatsApp or "gym missed calls" (no evidence).
+- Booking-system phrases: Omnirexis is the automation **around** enquiries and bookings. It is not a booking system.
+- Brand voice: plain UK English, no em or en dashes, no hype words.
+
+**Caveats**
+- **No search volumes.** None of the free sources show volume. An autocomplete suggestion only proves that people search a phrase, not how often. Suggestions marked [tail] are weaker still.
+- Autocomplete was pulled from a box that geolocates to Manchester, so local variants lean Greater Manchester.
+- Outreach-pain counts show what *we* wrote about in 99 prospect emails. They are not prospect-confirmed pains: we have no replies or objections yet.
+- No keyword difficulty data. The PT app terms and booking-system terms are crowded with established vendors, so expect slow progress on head terms. The posts are the realistic early wins.
+
+**Fixed-price offers (Client Delivery, 3 Oct 2026).** The Content Sprint, Operations Document Sprint and Content Engine live on /rapid-services. No Sales term maps to them, so they are not SEO targets this round, and no brief here quotes their prices or turnarounds. **Flag:** the master names the Content Sprint (£79) and the Ops Doc Sprint (£149) but not the Content Engine. The live site (`src/lib/site.ts`) shows the Content Engine at £349 per month, and shows turnarounds (48 hours, three working days) that the master does not state. CoS should add the Content Engine to the master, or Ross should confirm it.
+
+### Parked: local pages
+
+There are **no local pages (Manchester, Leeds or elsewhere) in this plan.** Sales found no evidence of owner-side local searches: "gym lead follow up manchester" and similar phrases returned no suggestions. Every local phrase with suggestions is consumer intent ("reformer pilates manchester", "personal trainer leeds"). Those searchers want a class or a trainer, and the studios themselves will outrank us. A local page now would be a guess, and town-swapped versions would be doorway pages.
+
+Local pages wait until we have evidence of either kind:
+1. Google Search Console data showing owner-side queries with a place name (needs Search Console set up, see §5), or
+2. Real phrases from prospects or clients, in replies or on calls, showing they look for this kind of help locally.
+
+When that evidence exists, build **one** Manchester page first, with content specific to Manchester that we can back up, and only re-check Leeds after that. Sales' local rows (#28 to #30, #44 to #56, #70 to #72) are parked until then. The Manchester address on the site (Bartle House, 9 Oxford Court, M2 3WQ) is a postal address only (master §1). Never use it to imply an office people can visit.
+
+---
+
+## 2. Keyword map
+
+One primary term per URL. Supporting terms go in H2s, body copy and FAQs, never as the primary of another URL. The "Sales #" column gives Sales' row numbers.
+
+### 2a. Pages
+
+| URL | Status | Current title / H1 (live) | Primary term | Supporting terms (Sales #) | Audience | Intent | Source tag |
+|---|---|---|---|---|---|---|---|
+| /pt | Existing: update | "Software for personal trainers, start free \| Omnirexis PT" / "Coach brilliantly. Run the business calmly." | free personal trainer app to track clients (#57) | pt client management app / software (#59, strongest secondary, use in an H2), personal trainer app (#58), personal trainer software uk (#64), online coaching apps for personal trainers (#67) | PT | app | autocomplete (+ outreach-pain for #59, #67) |
+| /lead-follow-up-automation | **New** | none | lead follow up automation (#1) | enquiry follow up software (#2), gym lead follow up app (#13), automate gym enquiries uk (#21), gym crm (#11, supporting only); copy angles "reply to enquiries while you're teaching" (#3) and "one inbox for enquiries across sites" (#4) | all owners | solution | autocomplete + outreach-pain |
+| /solutions | Existing: update | "AI receptionists and automation for gyms \| Omnirexis" / "Tools that become part of the workforce." | ai receptionist for gyms (#25) | gym ai chatbot (#24, on the Customer experience section) | gym, studio, leisure | solution | autocomplete |
+| /gyms | **New** (niche) | none | gym marketing automation (#19) | gym booking system (#22) and gym appointment booking software (#23), as context only ("works around your booking system") | gym | solution | autocomplete (+ outreach-pain for #23) |
+| /pilates-yoga-studios | **New** (niche) | none | studio booking automation (#38) | pilates booking system (#34), pilates studio management system (#35), yoga studio booking system (#36), yoga studio management software (#37), fitness studio booking software (#7), boutique fitness studio software (#8), all as context only | studio | solution | autocomplete ([tail] for #38) |
+| /blog | **New** (hub) | none | none (hub; brand plus "guides for gym, studio and PT owners") | n/a | all | n/a | n/a |
+| / | Existing: no change | "AI automation for gyms, studios and leisure clubs \| Omnirexis" / mission line | brand ("Omnirexis") | none added; it links to every page above | all | navigational | n/a |
+
+The PT niche page is /pt, and the gym and studio niche pages are /gyms and /pilates-yoga-studios. /about, /process, /faq, /contact, /leisure, /rapid-services and /privacy have no Sales term mapped to them and stay as they are.
+
+**Why /pt carries two strong terms.** "free personal trainer app to track clients" and "pt client management app" describe the same product and almost certainly the same results page. Two PT landing pages would compete with each other. So /pt is primary for the free phrase (the honest differentiator), and "PT client management app" goes in the H2 and FAQ.
+
+**Why "gym marketing automation" for /gyms.** It is the only gym-specific solution phrase with normal (non-tail) autocomplete that fits a service we offer: follow-ups and CRM updates (/solutions, Process automation). The page must describe follow-up and enquiry automation, not ads or social media management, which we do not offer for gyms. Client Delivery should confirm the fit.
+
+**Why "studio booking automation" for studios.** It is weak ([tail] only) but describes the positioning exactly. The stronger phrases are searches for booking software, and we are not booking software, so they are context only.
+
+### 2b. Posts (all under /blog/)
+
+| # | Proposed slug | Primary term (Sales #) | Supporting (Sales #) | Audience | Intent | Links to | Source tag |
+|---|---|---|---|---|---|---|---|
+| P1 | /blog/personal-trainer-client-tracking-spreadsheet | personal trainer client tracking spreadsheet (#60) | personal trainer spreadsheet template (#61), personal trainer client tracker google sheets | PT | problem | /pt | autocomplete |
+| P2 | /blog/how-to-follow-up-gym-leads | how to follow up gym leads (#12) | gym lead follow up questions [tail] | gym | problem | /lead-follow-up-automation | paa + outreach-pain |
+| P3 | /blog/personal-trainer-check-in-form | personal trainer check in form (#62) | personal trainer weekly check in questions, online coaching check in form | PT | problem | /pt | autocomplete + outreach-pain |
+| P4 | /blog/pilates-intro-offer | pilates intro offer (#39) | taster or first class booking (outreach theme) | studio | problem | /pilates-yoga-studios | autocomplete + outreach-pain + prospect-site |
+| P5 | /blog/what-app-do-personal-trainers-use | what app do personal trainers use for clients (#66) | best app for personal trainers to track clients (#65), is there a free personal trainer app | PT | app | /pt | paa (+ autocomplete for #65) |
+| P6 | /blog/gym-member-retention-strategies | gym member retention strategies (#16) | gym member retention ideas, win back lapsed membership (#17, [tail]) | gym | problem | /gyms | autocomplete + outreach-pain |
+| P7 | /blog/how-to-fill-pilates-classes | how to fill pilates classes (#40) | none (the local variants reflect the box IP) | studio | problem | /pilates-yoga-studios | paa + outreach-pain |
+| P8 | /blog/gym-trial-follow-up-email | gym trial follow up email (#14, [tail]) | free trial follow up email template (#6, [tail]) | gym | problem | /lead-follow-up-automation | autocomplete + outreach-pain |
+| P9 | /blog/personal-training-session-tracker | personal training session tracker (#63) | personal trainer session tracking sheet | PT | problem | /pt | autocomplete + outreach-pain |
+| P10 | /blog/gym-enquiry-form-template | gym enquiry form template (#20) | gym enquiry form | gym | problem | /lead-follow-up-automation | autocomplete + outreach-pain |
+| P11 | /blog/how-to-get-more-personal-training-clients | how to get more personal training clients (#69) | how to get more online personal training clients | PT | problem | /pt | paa |
+| P12 | /blog/how-to-get-more-yoga-students | how to get more yoga students (#42) | none | studio | problem | /pilates-yoga-studios | paa |
+
+Sales listed #63 (session tracker) as /pt. It is moved to a post so that it does not dilute the /pt primary. /pt still links to P9.
+
+### 2c. Not mapped this round
+
+| Sales # | Term(s) | Decision | Reason |
+|---|---|---|---|
+| 5 | missed call text back | Hold | Good autocomplete, but "text back" is not a verified service (the voice receptionist captures the call; texting back is not stated anywhere). Map it to /solutions only once Client Delivery confirms we deliver it. |
+| 9, 10 | online booking system for small business uk; client check in app | Backlog | Off-audience or a different meaning (general small business booking; reception check-in kiosks). |
+| 15, 18, 27, 41, 43, 68 | how to get more gym members; gym lead generation; what software do gyms use; how to get more pilates clients; pilates studio waitlist; trainerize free alternative | Backlog (weeks 7+) | Valid topics. #41 overlaps P7 and P12, #43 is a small theme (3/99), and #68 needs a fact-checked competitor comparison first. |
+| 26 | gym waitlist software | Parked | Small theme (3/99) and no verified waitlist feature. |
+| 31 | gym membership enquiries | Parked | Consumer intent (people contacting big chains). |
+| 32, 33 | whatsapp for gyms uk; gym missed calls | Avoid | No evidence (Ops decision 3 Oct 2026). |
+| 28 to 30, 44 to 56, 70 to 72 | all local and city terms | Parked | See "Parked: local pages" above. The word "boutique" (#44) may still be used as copy on /pilates-yoga-studios. |
+
+---
+
+## 3. Page briefs
+
+Each service page brief carries **Client Delivery check: pending**. Client Delivery reviews the promises first, then Finance & Quality does the publishing QC. Character counts were checked with a script.
+
+### 3.1 /pt (update): PT niche page
+
+- **Primary term:** free personal trainer app to track clients
+- **Title (54):** Free personal trainer app to track clients | Omnirexis
+- **Meta (154):** Track clients, programmes, sessions and check-ins in one place. Omnirexis PT is free for your first two active clients. Start free in a couple of minutes.
+- **H1:** Keep the current brand H1 ("Coach brilliantly. Run the business calmly.") as the display line, and add a visible kicker or sub-H1 line: "The free personal trainer app to track your clients." (Product decides the markup; the phrase must appear in the H1 or the first H2.)
+- **Key sections**
+  1. Hero: the phrase, the Free plan (£0, up to 2 active clients), and the "Start free" CTA.
+  2. H2 "A PT client management app without the cockpit": client desk, programmes, sessions, weekly action view (wording as on the live /pt page).
+  3. H2 "Check-ins and macros": only the fields verified in the app (weight, training and nutrition adherence, sleep, steps, energy, stress, mood, wins, problems, trainer feedback). Macros are labelled "estimates only, not medical advice".
+  4. H2 "Replace the spreadsheet": links to P1 and P9.
+  5. FAQ (below) and a "Guides for PTs" link row (P1, P3, P5, P9, P11).
+- **FAQ**
+  1. *Is Omnirexis PT really free?* Yes. The Free plan is £0 for up to 2 active clients. It is a free plan, not a time-limited trial.
+  2. *What can I track on the Free plan?* Programmes, sessions, check-ins and macros (as listed on /pt).
+  3. *Do I need card details to sign up?* No card details to start on Free. Signup asks for your name, email and a password.
+  4. *How long does signup take?* A couple of minutes (site wording; never "2 minutes").
+  5. *Does it work for online coaching clients?* Check-ins and programmes are assigned per client in the trainer workspace. **Verify** that this wording holds in the live app before using it.
+- **Internal links:** P1, P3, P5, P9, P11; /faq; footer to /. Inbound links from the home PT teaser and every PT post.
+- **CTA:** Start free, https://omnirexis-pt.vercel.app/signup?src=website (the existing PT_SIGNUP). Secondary: the Zoom call (already on the page).
+- **Claims to verify**
+  - Check-in fields, the macro calculator and the exercise library work in the **live** app. The shipped code has them, but the live database schema is not reconciled (`supabase/README.md`). Capture real screens before describing or showing them.
+  - "No card details to start on Free": recheck the live /signup form on publish day.
+  - Do not add any client portal or client login claim.
+  - **Conflict to resolve (Ross or CoS):** the live /pt page already shows paid plans and prices (#pricing, `PT_PLANS`) and the hero mentions "payments". The brief for this plan says never to mention paid plans. This update does not add, quote or link to them. Whether the existing pricing section stays is a Ross or CoS call, not part of this plan.
+  - Do not quote the dashboard mock-up figures (12 clients, £1,248, "Chloe M.").
+
+### 3.2 /lead-follow-up-automation (new): main service page
+
+- **Primary term:** lead follow up automation
+- **Title (58):** Lead follow-up automation for gyms and studios | Omnirexis
+- **Meta (150):** Every enquiry answered, every lead followed up. We set up lead follow-up automation around the tools you already use. Book a free 30-minute Zoom call.
+- **H1:** Lead follow-up automation for gyms, studios and leisure clubs
+- **Key sections**
+  1. Hero: the mission line, then "The enquiry that arrived mid-class still gets an answer." (copy angle #3), then the Zoom CTA ("Free. 30 minutes. Zoom. No obligation.").
+  2. H2 "Where leads go missing": waiting while you teach (#3), a shared info@ or hello@ inbox, several sites (#4), follow-ups that live in one person's head. Problem framing only, with no statistics.
+  3. H2 "What we set up": the verified /solutions wording. Process automation (follow-ups, CRM updates, reporting) around the software you already pay for, and voice receptionists that capture the enquiry, answer approved questions, book the slot and hand the rest to a person.
+  4. H2 "Works with the CRM you already use": the place for "gym crm" (supporting). "Not if it still earns its place. We start with what you already use." No Omnirexis gym CRM, and no named vendors unless verified.
+  5. H2 "How it works": discovery call, opportunity audit, solution design agreed in writing, implementation (configured, integrated, tested), optimise and support as scoped (/process).
+  6. H2 "What it costs": "Scoped around the job and agreed before anything is built. We work it out with you on a free 30-minute Zoom." **No price, turnaround or package.**
+  7. FAQ, then the CTA band.
+- **FAQ** (all answered from the live /faq)
+  1. *How much does lead follow-up automation cost?* Scoped around the job, agreed before anything is built. Start with a free 30-minute Zoom.
+  2. *Do I need to replace my CRM or booking software?* Not if it still earns its place. We start with what you already use and which connections it supports.
+  3. *Will it replace my front desk staff?* No. The tools take the repeatable jobs, so people keep the work that needs a person. You decide where that line sits.
+  4. *Is our data safe?* Access, permissions and data handling are assessed for each setup and discussed before anything is connected.
+  5. *How long does it take?* It depends on your systems, access, data and scope. We agree a realistic plan before starting.
+- **Internal links:** /solutions#automation, /solutions#voice, /process, /faq, /gyms, /pilates-yoga-studios, P2, P8, P10.
+- **CTA:** the Zoom strategy call only.
+- **Client Delivery check: pending**
+- **Claims to verify**
+  - That we deliver automated **first replies** to email and web enquiries (not only voice). The mission line says "every enquiry answered", but /solutions only details voice and chat. Confirm the channels before naming any.
+  - Do not state reply speed, "24/7" or "instant" anywhere unless Client Delivery confirms a setup that does it.
+  - Name no CRM or booking platforms until integrations are confirmed.
+  - No "trial reminders" or "booking reminders" as a named service (marketing doc §2b).
+  - "gym crm" must read as "your CRM", never as an Omnirexis product (a gym CRM is parked, master §2).
+
+### 3.3 /solutions (update): enquiries and voice
+
+- **Primary term:** ai receptionist for gyms
+- **Title (55):** AI receptionist for gyms, studios and clubs | Omnirexis
+- **Meta (154):** AI receptionists that capture the enquiry, answer approved questions, book the slot and hand the rest to a person. For UK gyms, studios and leisure clubs.
+- **H1:** Keep "Tools that become part of the workforce." Rename the Voice receptionists H2 to "AI receptionist for gyms and studios", and keep the other three sections.
+- **Key sections:** the existing four services (Audit, Voice, Process automation, Customer experience). Add one paragraph to Voice in plain words on what a call looks like (verified points only). In Customer experience, use "gym AI chatbot" once (supporting), grounded in "approved information". Link Process automation to /lead-follow-up-automation.
+- **FAQ**
+  1. *What does an AI receptionist do for a gym?* It captures the enquiry, answers what you have approved, books the slot and hands the rest to a person.
+  2. *Does it sound like a robot?* We write the call flows and approved answers with you and test them before go-live (verified points: "call flows and approved answers", "testing and ongoing refinement"). Do not promise how it sounds.
+  3. *Can it book into my calendar?* Calendar and CRM integration where your tools allow it.
+  4. *What happens with questions it cannot answer?* It hands over to a person.
+- **Internal links:** /lead-follow-up-automation, /gyms, /pilates-yoga-studios, /process, /faq.
+- **CTA:** the Zoom call (already the hero CTA).
+- **Client Delivery check: pending**
+- **Claims to verify**
+  - The existing Voice kicker says "Every missed call still has a next step". Fine as copy, but do not build on "missed calls" or "text back" (#5 on hold).
+  - Which channels a chatbot runs on (website, socials): not stated, so do not list any.
+  - Remove the em dash in the live Voice summary ("...book the slot, and hand the rest to a person — without a script...") when editing, to match brand voice.
+
+### 3.4 /gyms (new): gym niche page
+
+- **Primary term:** gym marketing automation
+- **Title (57):** Gym marketing automation for independent gyms | Omnirexis
+- **Meta (154):** Follow-ups, enquiry replies and admin set up around the software your gym already uses. For independent UK gyms. Book a free 30-minute Zoom strategy call.
+- **H1:** Gym marketing automation for independent gyms
+- **Key sections**
+  1. Hero: the mission line, "For independent gym owners who still work the floor", and the Zoom CTA.
+  2. H2 "The jobs that slip": enquiries during the busy hour, trial and induction follow-ups (described as the gym's own process, not as a named Omnirexis reminder service), members going quiet.
+  3. H2 "What we set up": follow-ups and CRM updates (Process automation), the AI receptionist (Voice), reporting and admin. Link to /lead-follow-up-automation and /solutions.
+  4. H2 "Works around your gym booking system": we are not a booking system. We start with the system you have and the connections it supports. Use "gym booking system" and "gym appointment booking software" here as context.
+  5. H2 "Run a leisure club or spa as well?": link to /leisure.
+  6. Guides row (P2, P6, P8, P10), FAQ, CTA band.
+- **FAQ**
+  1. *Is this a gym management or booking system?* No. Omnirexis sets up and connects the automation around the tools you already use.
+  2. *Do I need a big team or a tech person?* No. It is built for operators without a tech team, and we show you how each tool works (verified on the home page and FAQ).
+  3. *What does it cost?* Scoped around the job, agreed before anything is built, starting with a free 30-minute Zoom.
+  4. *Will it replace my staff?* No. The tools take the repeatable jobs (live FAQ).
+- **Internal links:** /lead-follow-up-automation, /solutions, /leisure, /process, P2, P6, P8, P10.
+- **CTA:** the Zoom call.
+- **Client Delivery check: pending**
+- **Claims to verify**
+  - That member re-engagement or "lapsed member" follow-ups are a deliverable. They are not named on the site. Until confirmed, say "follow-ups" only.
+  - That "marketing automation" is wording Client Delivery is comfortable with (we do not run ads or social media management for gyms).
+  - No named booking platforms or integrations.
+
+### 3.5 /pilates-yoga-studios (new): studio niche page
+
+- **Primary term:** studio booking automation
+- **Title (58):** Studio booking automation for Pilates and yoga | Omnirexis
+- **Meta (153):** Enquiries answered and intro bookings followed up while you teach. We set up the automation around your Pilates or yoga booking system. Free 30-min Zoom.
+- **H1:** Studio booking automation for Pilates and yoga studios
+- **Key sections**
+  1. Hero: "The enquiry that arrived mid-class" (the strongest outreach angle for studios), the mission line, and the Zoom CTA.
+  2. H2 "Between the enquiry and the first class": intro and taster booking (36/99 outreach theme; problem framing only), the shared inbox, the reply that waits until after the evening class.
+  3. H2 "We work around your Pilates booking system": not a replacement. Booking-system phrases (pilates booking system, yoga studio booking system, studio management system) go here as context.
+  4. H2 "What we set up": enquiry capture and approved answers (Voice), follow-ups (Process automation), the knowledge assistant for repeat questions (Customer experience).
+  5. Guides row (P4, P7, P12), FAQ, CTA band.
+- **FAQ**
+  1. *Do I have to change my booking system?* Not if it still earns its place. We start with what you use and which connections it supports.
+  2. *Can it answer questions while I am teaching?* The receptionist and assistants answer what you have approved and hand the rest to a person. **Verify** the channels before saying more.
+  3. *Is this for boutique and reformer studios?* It is for independent studios in the UK; "boutique" can be used as copy (#44), but name no studios.
+  4. *What does it cost?* Scoped on a free 30-minute Zoom, agreed before anything is built.
+- **Internal links:** /lead-follow-up-automation, /solutions, /process, P4, P7, P12, /pt (for studios with self-employed instructors who also train PT clients; one line only).
+- **CTA:** the Zoom call.
+- **Client Delivery check: pending**
+- **Claims to verify**
+  - Follow-up after an intro or first class as a deliverable: confirm it, and never name it "class-trial reminders" or "booking reminders".
+  - No named booking platforms.
+  - Name no prospect studios or their offers (they are outreach prospects, not clients).
+
+### 3.6 /blog (new): guides hub
+
+- **Primary term:** none (hub)
+- **Title (48):** Guides for gym, studio and PT owners | Omnirexis
+- **Meta (128):** Plain, practical guides on enquiries, follow-ups, retention and PT admin for independent UK gyms, studios and personal trainers.
+- **H1:** Guides for gym, studio and PT owners
+- **Key sections:** three filters (Gyms, Studios, PTs), post cards, and one CTA band per audience (Zoom for owners, Start free for PTs).
+- **FAQ:** none.
+- **Internal links:** every post; /pt, /gyms, /pilates-yoga-studios, /lead-follow-up-automation.
+- **Build notes for Product:** a new route (`src/routes/blog.tsx` plus `blog.$slug.tsx`, or the existing pattern), `pageSeo` for each post, Article JSON-LD (no ratings or reviews), new URLs added to `public/sitemap.xml`, and a nav or footer link.
+- **Claims to verify:** none on the hub itself. Every post goes through Finance & Quality.
+
+---
+
+## 4. Six-week calendar (from Mon 5 Oct 2026)
+
+Two posts a week: Monday (PT or owner) and Thursday. The dates are publish targets. They depend on Product shipping /blog (week 1) and on Finance & Quality sign-off; until then, posts are drafted and held.
+
+**CTAs:** PT posts use Start free, https://omnirexis-pt.vercel.app/signup?src=website. Owner posts use the Zoom call. One CTA per post.
+
+**Social repurpose:** each idea is one house-standard motion-graphics video (15 to 20 s, real screens only). Nothing is scheduled until Ross approves that exact asset, with a maximum of 3 generated videos a week.
+
+### Week 1
+
+**P1 · Mon 5 Oct · Personal trainer client tracking spreadsheet: free template, and when to move on**
+- Primary: personal trainer client tracking spreadsheet · Audience: PT · Links to: /pt · CTA: Start free
+- Outline:
+  - The columns that matter: client, goal, sessions left, last check-in, next session, notes.
+  - A free Google Sheets template (Brand builds it before publish).
+  - Where spreadsheets break: sessions running out unnoticed, check-ins in another app.
+  - Signs you have outgrown the sheet.
+  - Omnirexis PT: the same columns in a client desk, free for 2 active clients.
+- Social: a "spreadsheet tab chaos" to client desk screen recording, ending on "Free for your first two clients".
+
+**P2 · Thu 8 Oct · How to follow up gym leads: a simple process for independent gyms**
+- Primary: how to follow up gym leads · Audience: gym owners · Links to: /lead-follow-up-automation · CTA: Zoom
+- Outline:
+  - Why leads go cold (the reply waits while you are on the floor; no statistics).
+  - First reply: what to say and what to ask.
+  - A follow-up sequence the gym owns: day 0, next day, end of week (wording examples).
+  - Who owns follow-up when there is a shared inbox.
+  - Which parts to automate and which to keep human.
+- Social: the "enquiry at 6pm during the busy hour" scene, then three follow-up cards.
+
+### Week 2
+
+**P3 · Mon 12 Oct · Personal trainer check-in form: weekly questions to copy**
+- Primary: personal trainer check in form · Audience: PT · Links to: /pt · CTA: Start free
+- Outline:
+  - What a weekly check-in is for.
+  - Questions grouped by the fields in Omnirexis PT: weight, training and nutrition adherence, sleep, steps, energy, stress, mood, wins, problems.
+  - How to give trainer feedback that clients read.
+  - In-person and online clients: same form, different follow-up.
+  - Keeping check-ins on the client record (Omnirexis PT, Free plan).
+- Social: kinetic type of 5 questions, ending on a real check-in screen (only once captured working live).
+
+**P4 · Thu 15 Oct · Pilates intro offer: how to structure one that leads to a second booking**
+- Primary: pilates intro offer · Audience: studio owners · Links to: /pilates-yoga-studios · CTA: Zoom
+- Outline:
+  - Common formats (a class pack, a single taster, a first-week bundle), described generically with no competitor prices.
+  - What happens after the first class matters more than the price.
+  - The follow-up after class 1 and before the offer runs out (the studio's own process).
+  - Answering intro enquiries while you are teaching.
+  - Where automation helps, and where a personal message is better.
+- Social: "They loved class one. Then nobody followed up." in 4 beats.
+- Note: the search results for this phrase are partly consumer (people looking for offers). Write clearly for owners in the title and intro.
+
+### Week 3
+
+**P5 · Mon 19 Oct · What app do personal trainers use for clients? A plain guide**
+- Primary: what app do personal trainers use for clients · Audience: PT · Links to: /pt · CTA: Start free
+- Outline:
+  - The jobs a PT app has to do: clients, programmes, sessions, check-ins.
+  - Spreadsheet, messaging apps and notes vs a dedicated app (pros and cons, no statistics).
+  - What to check before choosing: client limits, setup time, what is free.
+  - Is there a free personal trainer app? Yes: Omnirexis PT's Free plan (2 active clients, not a trial).
+  - How to move your first two clients over.
+- Social: a "What app do PTs use?" question card, then the Omnirexis PT tour.
+- Rule: name no competitors or their prices unless each fact is checked on their live site on publish day.
+
+**P6 · Thu 22 Oct · Gym member retention strategies for independent gyms**
+- Primary: gym member retention strategies · Audience: gym owners · Links to: /gyms · CTA: Zoom
+- Outline:
+  - Retention starts at induction.
+  - Spotting members going quiet before they cancel.
+  - Check-in messages that do not feel automated.
+  - Win back lapsed members: a simple, respectful approach.
+  - The admin that makes this stick, and what can be automated.
+- Social: "Members rarely cancel loudly." in 4 beats.
+- Rule: no retention-rate figures unless sourced and cited.
+
+### Week 4
+
+**P7 · Mon 26 Oct · How to fill Pilates classes without discounting every week**
+- Primary: how to fill pilates classes · Audience: studio owners · Links to: /pilates-yoga-studios · CTA: Zoom
+- Outline:
+  - Look at the timetable first: which slots are quiet and why.
+  - Turn intro clients into regulars (link to P4).
+  - Refill late cancellations (keep it short: a small theme in our evidence).
+  - Reply fast to enquiries for the quiet slots.
+  - Follow-ups the studio can automate and still keep personal.
+- Social: an empty reformer slot turning into a booked one, in kinetic type over real-studio footage (text-free generation, type added in the edit).
+
+**P8 · Thu 29 Oct · Gym trial follow-up email: templates for before, during and after**
+- Primary: gym trial follow up email · Audience: gym owners · Links to: /lead-follow-up-automation · CTA: Zoom
+- Outline:
+  - The gym's own trial or taster pass: why follow-up decides whether people join.
+  - Template 1: welcome and first visit.
+  - Template 2: mid-trial check-in.
+  - Template 3: end of trial, with a clear next step.
+  - Sending these on time without relying on memory.
+- Social: three template subject lines as cards.
+- Rule: this is about gyms' own trials. Never call the Omnirexis PT free plan a trial, and never present "trial reminders" as an Omnirexis service.
+
+### Week 5
+
+**P9 · Mon 2 Nov · Personal training session tracker: know when a pack is running out**
+- Primary: personal training session tracker · Audience: PT · Links to: /pt · CTA: Start free
+- Outline:
+  - Why session packs run out unnoticed.
+  - A simple tracking sheet layout (links to P1's template).
+  - When to have the renewal conversation.
+  - Sessions and the diary in one place: the Omnirexis PT sessions view and the weekly action view ("who is running out of sessions").
+  - Start free with 2 clients.
+- Social: "2 sessions left" alert on the weekly action view (a real screen).
+
+**P10 · Thu 5 Nov · Gym enquiry form template: what to ask, and what happens next**
+- Primary: gym enquiry form template · Audience: gym owners · Links to: /lead-follow-up-automation · CTA: Zoom
+- Outline:
+  - Fields to ask (name, contact, goal, best time, how they heard), and fields to drop.
+  - Consent wording to check with your own privacy policy (no legal advice).
+  - What should happen in the first hour after a form comes in.
+  - Routing forms from several sites into one inbox.
+  - Where automation takes over the follow-up.
+- Social: a form filling in, then "Then what?" cards.
+
+### Week 6
+
+**P11 · Mon 9 Nov · How to get more personal training clients (and keep the ones you have)**
+- Primary: how to get more personal training clients · Audience: PT · Links to: /pt · CTA: Start free
+- Outline:
+  - Referrals from current clients: when to ask.
+  - Reply to every enquiry quickly and follow up once.
+  - Visible progress keeps clients (check-ins and progress tracking).
+  - Keep admin small so there is time to sell.
+  - A free workspace for your first two clients.
+- Social: "More clients starts with the ones you've got" in 4 beats.
+- Rule: no income or client-growth promises.
+
+**P12 · Thu 12 Nov · How to get more yoga students at an independent studio**
+- Primary: how to get more yoga students · Audience: studio owners · Links to: /pilates-yoga-studios · CTA: Zoom
+- Outline:
+  - Who the beginner student is and what stops them booking.
+  - Beginner pathways and intro offers (link to P4).
+  - Answer enquiries while you are teaching.
+  - Bring back students who have drifted.
+  - The admin that can run in the background.
+- Social: a yoga front desk at 7am, with an enquiry answered in kinetic type.
+
+**Totals:** 12 posts (6 PT, 6 owner: 3 gym, 3 studio).
+
+---
+
+## 5. Owners and next steps
+
+| # | What | Owner | When |
+|---|---|---|---|
+| 1 | Confirm the claims in the "Client Delivery check: pending" lists (3.2 to 3.5): first-reply channels, re-engagement follow-ups, intro follow-up, "marketing automation" wording | Client Delivery | Before build, ideally Mon 5 Oct |
+| 2 | Build /blog (hub plus post template), /lead-follow-up-automation, /gyms and /pilates-yoga-studios; update titles, meta and H2s on /pt and /solutions; add URLs to the sitemap | Product & Web | /blog plus lead follow-up page first (week 1), niche pages by week 2 |
+| 3 | Capture live PT app screens (check-ins, macros, sessions, weekly action view) and confirm they work against the live database | Product & Web | Before P3 and P9 |
+| 4 | Build the free PT spreadsheet template for P1 | Brand & Social | Before Mon 5 Oct publish |
+| 5 | Draft posts 1 to 12 and social cuts; Ross approves each video before Buffer | Brand & Social, then Ross | Rolling, 1 week ahead |
+| 6 | QC every page and post before publish: claims, the free-plan-only rule, no prices on the lead follow-up page, no em dashes, title and meta lengths, links | Finance & Quality | Before each publish |
+| 7 | **Flag to CoS:** set up Google Search Console for www.omnirexis.co.uk (needs Ross sign-in or a DNS verification record) and submit the sitemap. It is the evidence we need before any local page. | CoS (Ross sign-in needed) | This week |
+| 8 | **Flag to CoS:** Google Business Profile. Check whether one exists and whether the Manchester postal address is eligible (it is a postal address, not premises people visit, so a service-area profile with a hidden address may be the honest option). Needs a Ross sign-in. | CoS (Ross sign-in needed) | This week |
+| 9 | **Flag to CoS:** add the Content Engine and the rapid-pack turnarounds to the master, or have Ross confirm them; resolve whether /pt keeps its paid pricing section | CoS / Ross | When convenient |
+| 10 | Review at week 6: Search Console queries, then re-rank the backlog (2c) and reconsider local pages | Brand & Social with Sales | Mon 16 Nov 2026 |
