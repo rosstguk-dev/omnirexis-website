@@ -4,7 +4,6 @@ import {
   ADDRESS,
   BOOK_CALL,
   EMAIL,
-  HOURS,
   LINKEDIN,
   PHONE,
   PHONE_HREF,
@@ -146,13 +145,6 @@ export function SiteFooter() {
                 <br />
                 {ADDRESS.city} {ADDRESS.postcode}
               </li>
-              {HOURS.map((h) => (
-                <li key={h.days} className="text-bone/60">
-                  {h.days}
-                  <br />
-                  {h.time}
-                </li>
-              ))}
               <li>
                 <a
                   href={LINKEDIN}
