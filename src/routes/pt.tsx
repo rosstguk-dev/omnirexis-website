@@ -14,11 +14,11 @@ const PT_APP_JSON_LD = {
   "@type": "SoftwareApplication",
   name: "Omnirexis PT",
   applicationCategory: "BusinessApplication",
-  applicationSubCategory: "Personal trainer client management",
+  applicationSubCategory: "PT client management",
   operatingSystem: "Web",
   url: `${SITE_URL}/pt`,
   description:
-    "A focused workspace for personal trainers: clients, programmes, sessions and check-ins in one place.",
+    "A PT client management app for personal trainers: clients, programmes, sessions and check-ins in one place. Free for your first two clients.",
   publisher: { "@id": `${SITE_URL}/#organization` },
   offers: {
     "@type": "Offer",
@@ -33,9 +33,9 @@ const PT_APP_JSON_LD = {
 export const Route = createFileRoute("/pt")({
   head: () =>
     pageSeo({
-      title: "Software for personal trainers, start free | Omnirexis PT",
+      title: "Free personal trainer app to track clients | Omnirexis PT",
       description:
-        "Omnirexis PT keeps clients, programmes, sessions and check-ins in one focused workspace for personal trainers. Start free with your first two clients.",
+        "Omnirexis PT is a PT client management app for personal trainers: clients, programmes, sessions and check-ins in one place. Free for your first two clients.",
       path: "/pt",
       jsonLd: PT_APP_JSON_LD,
     }),

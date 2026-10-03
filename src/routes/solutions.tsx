@@ -10,9 +10,9 @@ import { pageSeo } from "@/lib/page-seo";
 export const Route = createFileRoute("/solutions")({
   head: () =>
     pageSeo({
-      title: "AI receptionists and automation for gyms | Omnirexis",
+      title: "Lead follow up automation and AI receptionists | Omnirexis",
       description:
-        "AI opportunity audits, voice receptionists and process automation for UK gyms, studios, spas and leisure clubs. Tools that become part of the workforce.",
+        "Lead follow up automation, AI receptionists and opportunity audits for UK gyms and studios, connected to the booking system and gym CRM you already use.",
       path: "/solutions",
     }),
   component: SolutionsPage,
