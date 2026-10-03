@@ -5,15 +5,38 @@ import { CtaBand } from "@/components/site/cta-band";
 import { SiteLayout } from "@/components/site/layout";
 import { PageHero } from "@/components/site/page-hero";
 import { BOOK_CALL, SOLUTIONS } from "@/lib/site";
-import { pageSeo } from "@/lib/page-seo";
+import { pageSeo, SITE_URL } from "@/lib/page-seo";
+
+// Scoped work priced on a call: no offers, prices, turnaround or packages here.
+const SERVICE_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Lead follow up automation",
+  serviceType: "Lead follow up automation",
+  url: `${SITE_URL}/solutions`,
+  description:
+    "Enquiry and lead follow up automation, AI receptionists and process automation for UK gyms, studios and leisure clubs. Scoped on a free 30 minute Zoom call.",
+  provider: { "@id": `${SITE_URL}/#organization` },
+  areaServed: { "@type": "Country", name: "United Kingdom" },
+  audience: {
+    "@type": "BusinessAudience",
+    audienceType: "Gyms, fitness studios, spas and leisure clubs",
+  },
+  potentialAction: {
+    "@type": "ScheduleAction",
+    name: "Book a free 30 minute Zoom strategy call",
+    target: BOOK_CALL,
+  },
+};
 
 export const Route = createFileRoute("/solutions")({
   head: () =>
     pageSeo({
       title: "Lead follow up automation and AI receptionists | Omnirexis",
       description:
-        "Lead follow up automation, AI receptionists and opportunity audits for UK gyms and studios, connected to the booking system and gym CRM you already use.",
+        "Lead follow up automation, AI receptionists and opportunity audits for UK gyms and studios, around the gym CRM you already use. Scoped on a free Zoom call.",
       path: "/solutions",
+      jsonLd: SERVICE_JSON_LD,
     }),
   component: SolutionsPage,
 });
