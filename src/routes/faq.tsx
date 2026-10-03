@@ -9,10 +9,19 @@ import { pageSeo } from "@/lib/page-seo";
 export const Route = createFileRoute("/faq")({
   head: () =>
     pageSeo({
-      title: "FAQ | Omnirexis",
+      title: "FAQ: AI for fitness and leisure businesses | Omnirexis",
       description:
-        "Straight answers about Omnirexis AI implementation, the PT platform, pricing, security, and how to start.",
+        "Straight answers about Omnirexis: where to start, cost, security, ongoing support, and trying the PT platform free. For UK fitness and leisure owners.",
       path: "/faq",
+      jsonLd: {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: FAQS.map((item) => ({
+          "@type": "Question",
+          name: item.q,
+          acceptedAnswer: { "@type": "Answer", text: item.a },
+        })),
+      },
     }),
   component: FaqPage,
 });

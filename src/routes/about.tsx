@@ -8,9 +8,9 @@ import { pageSeo } from "@/lib/page-seo";
 export const Route = createFileRoute("/about")({
   head: () =>
     pageSeo({
-      title: "About | Omnirexis",
+      title: "About Omnirexis and founder Ross Gallagher",
       description:
-        "Omnirexis helps fitness and leisure operators use AI properly. Led by Ross Gallagher, from years on the gym and leisure floor.",
+        "Omnirexis helps UK fitness and leisure operators use AI properly. Led by founder Ross Gallagher, from 15+ years on the gym and leisure floor.",
       path: "/about",
     }),
   component: AboutPage,
@@ -29,7 +29,11 @@ function AboutPage() {
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 sm:px-8 lg:grid-cols-12 lg:py-24">
           <div className="relative overflow-hidden rounded-xl lg:col-span-5">
             <img
-              src="/media/studio.jpg"
+              src="/media/studio.webp"
+              width={1200}
+              height={800}
+              loading="lazy"
+              decoding="async"
               alt="Studio desk in morning light"
               className="h-full min-h-80 w-full object-cover"
             />

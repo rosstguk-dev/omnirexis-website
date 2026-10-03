@@ -1,17 +1,25 @@
 export const SITE_URL = "https://www.omnirexis.co.uk";
 export const SITE_NAME = "Omnirexis";
-export const DEFAULT_TITLE = "Omnirexis | Intelligence. Automated.";
+export const DEFAULT_TITLE =
+  "AI automation for gyms, studios and leisure clubs | Omnirexis";
 export const DEFAULT_DESCRIPTION =
-  "Omnirexis gives fitness and leisure businesses their time back. Every enquiry answered, every lead followed up, every booking made. Book a free 30 minute Zoom strategy call.";
+  "Omnirexis gives fitness and leisure businesses their time back. Every enquiry answered, every lead followed up, every booking made. Book a free Zoom call.";
+export const OG_IMAGE = `${SITE_URL}/og.jpg`;
 
-/** Per-page title, description, Open Graph, Twitter, and canonical. */
+/** Absolute www URL for a site path. Canonicals always point here, whichever host served the page. */
+export function siteUrl(path: string) {
+  if (path === "/" || path === "") return `${SITE_URL}/`;
+  return `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
+}
+
+/** Per-page title, description, Open Graph, Twitter, canonical, and optional JSON-LD. */
 export function pageSeo(opts: {
   title: string;
   description: string;
   path: string;
+  jsonLd?: Record<string, unknown>;
 }) {
-  const url =
-    opts.path === "/" ? `${SITE_URL}/` : `${SITE_URL}${opts.path.startsWith("/") ? opts.path : `/${opts.path}`}`;
+  const url = siteUrl(opts.path);
 
   return {
     meta: [
@@ -24,5 +32,8 @@ export function pageSeo(opts: {
       { name: "twitter:description", content: opts.description },
     ],
     links: [{ rel: "canonical", href: url }],
+    scripts: opts.jsonLd
+      ? [{ type: "application/ld+json", children: JSON.stringify(opts.jsonLd) }]
+      : [],
   };
 }

@@ -10,9 +10,9 @@ import { pageSeo } from "@/lib/page-seo";
 export const Route = createFileRoute("/rapid-services")({
   head: () =>
     pageSeo({
-      title: "Rapid delivery studio | Omnirexis",
+      title: "Fixed-price fitness content and ops documents | Omnirexis",
       description:
-        "Fixed-price content and operations documents for fitness, leisure and wellness, delivered fast.",
+        "Fixed-price content and operations documents for UK fitness, leisure and wellness businesses: articles, member emails and ops docs, delivered fast.",
       path: "/rapid-services",
     }),
   component: RapidPage,
