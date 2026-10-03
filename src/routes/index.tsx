@@ -10,9 +10,11 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { BOOK_CALL, FAQS, PROCESS, PT_SIGNUP } from "@/lib/site";
+import { BOOK_CALL, FAQS, PROCESS, ptSignup } from "@/lib/site";
 import { pageSeo } from "@/lib/page-seo";
 import { cn } from "@/lib/utils";
+
+const PT_SIGNUP_URL = ptSignup("site_home");
 
 export const Route = createFileRoute("/")({
   head: () =>
@@ -221,7 +223,7 @@ function Home() {
               </p>
               <div className="mt-6 flex flex-wrap gap-x-6">
                 <a
-                  href={PT_SIGNUP}
+                  href={PT_SIGNUP_URL}
                   className="inline-flex min-h-11 items-center gap-2 text-sm font-medium"
                 >
                   Start free

@@ -1,7 +1,10 @@
 export const BOOK_CALL =
   "https://scheduler.zoom.us/ross-gallagher-ie9whv/30-mins-with-ross";
 
-export const PT_SIGNUP = "https://omnirexis-pt.vercel.app/signup?src=website";
+export const PT_SIGNUP_BASE = "https://omnirexis-pt.vercel.app/signup";
+/** PT signup link tagged with its source: site_<page>, seo_<page> or social. */
+export const ptSignup = (src: string) =>
+  `${PT_SIGNUP_BASE}?src=${encodeURIComponent(src)}`;
 
 export const EMAIL = "hello@omnirexis.co.uk";
 export const PHONE = "0161 250 0045";

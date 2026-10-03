@@ -4,9 +4,11 @@ import { Button } from "@/components/ui/button";
 import { CtaBand } from "@/components/site/cta-band";
 import { SiteLayout } from "@/components/site/layout";
 import { PtConsole } from "@/components/site/pt-console";
-import { BOOK_CALL, PT_PLANS, PT_SIGNUP } from "@/lib/site";
+import { BOOK_CALL, PT_PLANS, ptSignup } from "@/lib/site";
 import { pageSeo, SITE_URL } from "@/lib/page-seo";
 import { cn } from "@/lib/utils";
+
+const PT_SIGNUP_URL = ptSignup("site_pt");
 
 // Free plan only. No paid prices, ratings or reviews in structured data.
 const PT_APP_JSON_LD = {
@@ -26,7 +28,7 @@ const PT_APP_JSON_LD = {
     description: "Free plan for your first two active clients.",
     price: "0",
     priceCurrency: "GBP",
-    url: PT_SIGNUP,
+    url: PT_SIGNUP_URL,
   },
 };
 
@@ -63,7 +65,7 @@ function PtPage() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild variant="paper" size="lg">
-                <a href={PT_SIGNUP}>Start free</a>
+                <a href={PT_SIGNUP_URL}>Start free</a>
               </Button>
               <Button asChild variant="inkOutline" size="lg">
                 <a href={BOOK_CALL} target="_blank" rel="noreferrer">
@@ -171,7 +173,7 @@ function PtPage() {
                   className="mt-8"
                   variant={plan.featured ? "paper" : "solid"}
                 >
-                  <a href={PT_SIGNUP}>
+                  <a href={PT_SIGNUP_URL}>
                     {plan.id === "free"
                       ? "Start free"
                       : `Sign up for ${plan.name}`}
@@ -199,7 +201,7 @@ function PtPage() {
         kicker="Independent trainers"
         title="Start free. Talk to us if you want a hand."
         body="Create a free trainer account in a couple of minutes. Prefer a conversation first? Book a strategy call and we will talk through fit."
-        primaryHref={PT_SIGNUP}
+        primaryHref={PT_SIGNUP_URL}
         primaryLabel="Start free"
         primaryExternal={false}
         secondaryHref={BOOK_CALL}
