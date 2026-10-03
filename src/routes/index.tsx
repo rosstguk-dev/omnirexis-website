@@ -19,7 +19,7 @@ const PT_SIGNUP_URL = ptSignup("site_home");
 export const Route = createFileRoute("/")({
   head: () =>
     pageSeo({
-      title: "Lead follow up automation for gyms and studios | Omnirexis",
+      title: "Omnirexis | AI and automation for gyms, studios and clubs",
       description:
         "Omnirexis gives fitness and leisure businesses their time back. Every enquiry answered, every lead followed up, every booking made. Book a free Zoom call.",
       path: "/",

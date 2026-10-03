@@ -41,7 +41,7 @@ export const Route = createFileRoute("/lead-follow-up-automation")({
     pageSeo({
       title: "Lead follow-up automation for gyms and studios | Omnirexis",
       description:
-        "Every enquiry answered, every lead followed up. We set up lead follow-up automation around the tools you already use. Book a free 30-minute Zoom call.",
+        "Lead follow-up automation for UK gyms and studios: follow-ups for enquiries by phone, web form or email, set up around your tools. Free 30-minute Zoom.",
       path: PATH,
       jsonLd: jsonLdGraph(
         {
@@ -79,7 +79,7 @@ function LeadFollowUpPage() {
         lede={MISSION}
       >
         <p className="mt-5 max-w-2xl text-xl font-medium tracking-tight text-bone">
-          The enquiry that arrived mid-class still gets followed up.
+          The enquiry that arrived mid-class should not depend on someone remembering it.
         </p>
         <ZoomCta />
       </PageHero>

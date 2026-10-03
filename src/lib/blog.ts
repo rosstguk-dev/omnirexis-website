@@ -3,7 +3,7 @@
  *
  * A post only renders (hub card, guides rows, its own URL) once `published` is set.
  * Brand & Social drafts posts; Finance & Quality signs each one off before it is published.
- * PT posts link to signup with ?src=seo_blog-<slug>; owner posts use the Zoom call.
+ * PT posts link to signup with ?src=seo_blog-<srcTag> (the exact tag is on each post in the plan); owner posts use the Zoom call.
  */
 export type BlogAudience = "gyms" | "studios" | "pts";
 
@@ -21,6 +21,8 @@ export type BlogPost = {
   /** ISO date (YYYY-MM-DD). Unset means draft: not listed and its URL 404s. */
   published?: string;
   updated?: string;
+  /** PT posts: short signup tag, sent as ?src=seo_blog-<srcTag> (max 40 chars in total, per the plan). */
+  srcTag?: string;
   /** The page this post supports, e.g. "/pt" or "/lead-follow-up-automation". */
   linksTo: string;
   intro: string;

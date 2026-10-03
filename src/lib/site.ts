@@ -51,9 +51,9 @@ export const SOLUTIONS = [
     id: "voice",
     index: "02",
     name: "Voice receptionists",
-    kicker: "Every missed call still has a next step",
+    kicker: "Calls answered, details captured, booked or handed over",
     summary:
-      "Capture the enquiry, answer what you have approved, book the slot, and hand the rest to a person, without a script that sounds like a machine.",
+      "Capture the enquiry, answer what you have approved, book the slot, and hand the rest to a person.",
     href: "/solutions#voice",
     points: [
       "Call flows and approved answers",
@@ -79,9 +79,9 @@ export const SOLUTIONS = [
     id: "experience",
     index: "04",
     name: "Customer experience",
-    kicker: "A useful answer, faster",
+    kicker: "A useful answer from approved information",
     summary:
-      "Chat and knowledge assistants grounded in your approved information, so customers stop waiting and your team stops repeating themselves.",
+      "Chat and knowledge assistants grounded in your approved information, so your team stops repeating themselves.",
     href: "/solutions#experience",
     points: [
       "Approved knowledge and brand voice",

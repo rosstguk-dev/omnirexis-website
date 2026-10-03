@@ -37,7 +37,7 @@ export const Route = createFileRoute("/pilates-yoga-studios")({
     pageSeo({
       title: "Studio booking automation for Pilates and yoga | Omnirexis",
       description:
-        "Follow-ups for enquiries by phone, web form or email, set up around the booking system your Pilates or yoga studio already uses. Book a free 30-min Zoom.",
+        "Follow-ups for enquiries by phone, web form or email, set up around the tools your Pilates or yoga studio already uses. Book a free 30-minute Zoom call.",
       path: PATH,
       jsonLd: jsonLdGraph(
         {

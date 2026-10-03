@@ -12,7 +12,8 @@ import { cn } from "@/lib/utils";
 
 const PT_SIGNUP_URL = ptSignup("site_pt");
 
-// Brief 3.1 (docs/SEO-CONTENT-PLAN.md). FAQ 5 (online coaching) is held until verified in the live app.
+// Brief 3.1 (docs/SEO-CONTENT-PLAN.md). Check-in fields, macros and the online coaching answer
+// confirmed in the live app (CoS, 3 Oct 2026). No client portal or client login claims.
 const FAQS = [
   {
     q: "Is Omnirexis PT really free?",
@@ -24,11 +25,15 @@ const FAQS = [
   },
   {
     q: "Do I need card details to sign up?",
-    a: "No card details to start on Free. Signup asks for your name, email and a password.",
+    a: "No card details to start on Free. Signup asks for your name, email and a password, then confirm your email.",
   },
   {
     q: "How long does signup take?",
     a: "A couple of minutes.",
+  },
+  {
+    q: "Does it work for online coaching clients?",
+    a: "Yes. Programmes, check-ins and macro targets are kept per client in your trainer workspace, so you can run in-person and online clients the same way.",
   },
 ];
 
@@ -126,7 +131,7 @@ function PtPage() {
               d: "Build the week, assign the work, see who is actually doing it.",
             },
             {
-              t: "Sessions & payments",
+              t: "Sessions",
               d: "The diary and the remaining pack, without a second spreadsheet.",
             },
             {
@@ -149,12 +154,15 @@ function PtPage() {
               Check-ins and macros
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-muted">
-              Weekly check-ins sit on the client record: weight, training and
-              nutrition adherence, sleep, steps, energy, stress, mood, wins,
-              problems and your trainer feedback.
+              Check-ins are saved against each client: weight, steps, training
+              and nutrition adherence (1–10), sleep quality, energy, stress and
+              mood (each 1–5), wins, problems and your feedback.
             </p>
-            <p className="mt-3 text-sm text-muted">
-              Macro targets are estimates only, not medical advice.
+            <p className="mt-3 text-base leading-relaxed text-muted">
+              The macro calculator turns sex, age, height, weight, activity
+              level and goal into calories, protein, carbs and fat. You can
+              override the numbers before saving them to a client. Estimates
+              only, not medical advice.
             </p>
           </div>
           <div>

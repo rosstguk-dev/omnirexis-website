@@ -106,7 +106,7 @@ function BlogPostPage() {
           kicker="Personal trainers"
           title="Start free with your first two clients."
           body="Omnirexis PT keeps clients, programmes, sessions and check-ins in one place. Free for up to two active clients."
-          primaryHref={ptSignup(`seo_blog-${post.slug}`)}
+          primaryHref={ptSignup(`seo_blog-${post.srcTag ?? post.slug}`.slice(0, 40))}
           primaryLabel="Start free"
           primaryExternal={false}
         />
