@@ -18,11 +18,6 @@ export const ADDRESS = {
   postcode: "M2 3WQ",
 };
 
-export const HOURS = [
-  { days: "Monday – Friday", time: "8:00 – 20:00" },
-  { days: "Saturday – Sunday", time: "9:00 – 17:00" },
-];
-
 export const NAV = [
   { to: "/solutions" as const, label: "Solutions" },
   { to: "/process" as const, label: "Process" },

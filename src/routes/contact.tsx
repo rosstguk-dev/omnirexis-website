@@ -11,7 +11,6 @@ import {
   ADDRESS,
   BOOK_CALL,
   EMAIL,
-  HOURS,
   LINKEDIN,
   PHONE,
   PHONE_HREF,
@@ -257,19 +256,12 @@ function ContactPage() {
             <Item label="Phone">
               <a href={PHONE_HREF}>{PHONE}</a>
             </Item>
-            <Item label="Studio">
+            <Item label="Postal address">
               {ADDRESS.line1}
               <br />
               {ADDRESS.line2}
               <br />
               {ADDRESS.city} {ADDRESS.postcode}
-            </Item>
-            <Item label="Hours">
-              {HOURS.map((h) => (
-                <span key={h.days} className="block">
-                  {h.days} · {h.time}
-                </span>
-              ))}
             </Item>
             <Item label="LinkedIn">
               <a href={LINKEDIN} target="_blank" rel="noreferrer">
