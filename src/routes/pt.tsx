@@ -135,8 +135,8 @@ function PtPage() {
               d: "The diary and the remaining pack, without a second spreadsheet.",
             },
             {
-              t: "Weekly action view",
-              d: "Who is overdue, who is running out of sessions, who needs a nudge.",
+              t: "Action view",
+              d: "Active clients, upcoming sessions and the latest check-ins on one screen, so you can see what needs attention today.",
             },
           ].map((item) => (
             <article key={item.t}>

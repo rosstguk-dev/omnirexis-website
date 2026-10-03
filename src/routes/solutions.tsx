@@ -14,7 +14,7 @@ import { faqJsonLd, jsonLdGraph, pageSeo, SITE_URL } from "@/lib/page-seo";
 const FAQS = [
   {
     q: "What does an AI receptionist do for a gym?",
-    a: "It captures the enquiry, answers what you have approved, books the slot and hands the rest to a person.",
+    a: "It captures the enquiry, answers what you have approved, books the slot where your calendar allows it and hands the rest to a person.",
   },
   {
     q: "Does it sound like a robot?",
@@ -76,7 +76,7 @@ const SERVICE_JSON_LD = {
   serviceType: "AI receptionist and automation",
   url: `${SITE_URL}/solutions`,
   description:
-    "AI receptionists that capture the enquiry, answer approved questions, book the slot and hand the rest to a person, plus process automation and approved-knowledge assistants for UK gyms, studios and leisure clubs. Scoped on a free 30 minute Zoom call.",
+    "AI receptionists that capture the enquiry, answer approved questions, book the slot where your calendar allows it and hand the rest to a person, plus process automation and approved-knowledge assistants for UK gyms, studios and leisure clubs. Scoped on a free 30 minute Zoom call.",
   provider: { "@id": `${SITE_URL}/#organization` },
   areaServed: { "@type": "Country", name: "United Kingdom" },
   audience: {
@@ -95,7 +95,7 @@ export const Route = createFileRoute("/solutions")({
     pageSeo({
       title: "AI receptionist for gyms, studios and clubs | Omnirexis",
       description:
-        "AI receptionists that capture the enquiry, answer approved questions, book the slot and hand the rest to a person. For UK gyms, studios and leisure clubs.",
+        "AI receptionists that capture the enquiry, answer approved questions, and book or hand over to a person. For UK gyms, studios and leisure clubs.",
       path: "/solutions",
       jsonLd: jsonLdGraph(SERVICE_JSON_LD, faqJsonLd(FAQS)),
     }),

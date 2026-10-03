@@ -75,7 +75,7 @@ function StudiosPage() {
         lede={MISSION}
       >
         <p className="mt-5 max-w-2xl text-xl font-medium tracking-tight text-bone">
-          The enquiry that arrived mid-class still has a next step.
+          The enquiry that arrived mid-class should not depend on someone remembering it.
         </p>
         <ZoomCta />
       </PageHero>

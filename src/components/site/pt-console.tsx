@@ -11,12 +11,12 @@ export function PtConsole() {
           <p className="text-micro tracking-micro text-subtle uppercase">
             Omnirexis PT
           </p>
-          <span className="text-micro text-subtle">Today</span>
+          <span className="text-micro text-subtle">Example figures</span>
         </div>
         <div className="grid gap-4 p-5 sm:grid-cols-3">
           <Stat label="Active clients" value="12" />
           <Stat label="Need attention" value="3" />
-          <Stat label="Month" value="£1,248" />
+          <Stat label="Upcoming sessions" value="4" />
         </div>
         <div className="px-5 pb-5">
           <p className="text-micro tracking-micro text-subtle uppercase">

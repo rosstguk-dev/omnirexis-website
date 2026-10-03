@@ -53,7 +53,7 @@ export const SOLUTIONS = [
     name: "Voice receptionists",
     kicker: "Calls answered, details captured, booked or handed over",
     summary:
-      "Capture the enquiry, answer what you have approved, book the slot, and hand the rest to a person.",
+      "Capture the enquiry, answer what you have approved, book the slot where your calendar allows it, and hand the rest to a person.",
     href: "/solutions#voice",
     points: [
       "Call flows and approved answers",
@@ -81,7 +81,7 @@ export const SOLUTIONS = [
     name: "Customer experience",
     kicker: "A useful answer from approved information",
     summary:
-      "Chat and knowledge assistants grounded in your approved information, so your team stops repeating themselves.",
+      "Chat and knowledge assistants grounded in your approved information, so your team repeats themselves less.",
     href: "/solutions#experience",
     points: [
       "Approved knowledge and brand voice",
