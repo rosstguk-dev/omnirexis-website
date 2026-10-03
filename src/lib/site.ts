@@ -6,6 +6,10 @@ export const PT_SIGNUP_BASE = "https://omnirexis-pt.vercel.app/signup";
 export const ptSignup = (src: string) =>
   `${PT_SIGNUP_BASE}?src=${encodeURIComponent(src)}`;
 
+/** Mission line, word for word (master brief). */
+export const MISSION =
+  "Omnirexis gives fitness and leisure businesses their time back. Every enquiry answered, every lead followed up, every booking made, so you can focus on your clients while your business keeps growing.";
+
 export const EMAIL = "hello@omnirexis.co.uk";
 export const PHONE = "0161 250 0045";
 export const PHONE_HREF = "tel:+441612500045";
@@ -54,7 +58,7 @@ export const SOLUTIONS = [
     name: "Voice receptionists",
     kicker: "Every missed call still has a next step",
     summary:
-      "Capture the enquiry, answer what you have approved, book the slot, and hand the rest to a person — without a script that sounds like a machine.",
+      "Capture the enquiry, answer what you have approved, book the slot, and hand the rest to a person, without a script that sounds like a machine.",
     href: "/solutions#voice",
     points: [
       "Call flows and approved answers",
@@ -68,7 +72,7 @@ export const SOLUTIONS = [
     name: "Process automation",
     kicker: "Let the systems talk to each other",
     summary:
-      "CRM updates, follow-ups, reporting and the admin that currently lives in someone’s head — connected around the software you already pay for.",
+      "CRM updates, follow-ups, reporting and the admin that currently lives in someone’s head, connected around the software you already pay for.",
     href: "/solutions#automation",
     points: [
       "Workflow mapping and integration",

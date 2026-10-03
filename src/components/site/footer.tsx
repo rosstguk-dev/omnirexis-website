@@ -37,6 +37,27 @@ export function SiteFooter() {
                 </Link>
               </li>
               <li>
+                <Link
+                  to="/lead-follow-up-automation"
+                  className="text-bone/80 hover:text-bone"
+                >
+                  Lead follow-up automation
+                </Link>
+              </li>
+              <li>
+                <Link to="/gyms" className="text-bone/80 hover:text-bone">
+                  For gyms
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/pilates-yoga-studios"
+                  className="text-bone/80 hover:text-bone"
+                >
+                  For Pilates and yoga studios
+                </Link>
+              </li>
+              <li>
                 <Link to="/process" className="text-bone/80 hover:text-bone">
                   Process
                 </Link>
@@ -74,6 +95,11 @@ export function SiteFooter() {
               <li>
                 <Link to="/faq" className="text-bone/80 hover:text-bone">
                   FAQ
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog" className="text-bone/80 hover:text-bone">
+                  Guides
                 </Link>
               </li>
               <li>

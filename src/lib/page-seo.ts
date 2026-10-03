@@ -18,6 +18,7 @@ export function pageSeo(opts: {
   description: string;
   path: string;
   jsonLd?: Record<string, unknown>;
+  noindex?: boolean;
 }) {
   const url = siteUrl(opts.path);
 
@@ -30,10 +31,28 @@ export function pageSeo(opts: {
       { property: "og:url", content: url },
       { name: "twitter:title", content: opts.title },
       { name: "twitter:description", content: opts.description },
+      ...(opts.noindex ? [{ name: "robots", content: "noindex" }] : []),
     ],
     links: [{ rel: "canonical", href: url }],
     scripts: opts.jsonLd
       ? [{ type: "application/ld+json", children: JSON.stringify(opts.jsonLd) }]
       : [],
   };
+}
+
+/** FAQPage JSON-LD node. Use only where the same questions are visible on the page. */
+export function faqJsonLd(items: readonly { q: string; a: string }[]) {
+  return {
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
+}
+
+/** Wraps several JSON-LD nodes in one @graph script. */
+export function jsonLdGraph(...nodes: Record<string, unknown>[]) {
+  return { "@context": "https://schema.org", "@graph": nodes };
 }

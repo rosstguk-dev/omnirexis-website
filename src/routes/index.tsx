@@ -69,6 +69,14 @@ function Home() {
             <p className="mt-5 font-mono text-xs tracking-wide text-subtle">
               Free. 30 minutes. Zoom. No obligation.
             </p>
+            <p className="mt-4 text-sm">
+              <Link
+                to="/lead-follow-up-automation"
+                className="text-bone underline underline-offset-4"
+              >
+                How lead follow-up automation works
+              </Link>
+            </p>
           </div>
           <aside className="lg:col-span-5">
             <div className="rounded-2xl border border-line-on-ink bg-ink/40 p-6 sm:p-7">

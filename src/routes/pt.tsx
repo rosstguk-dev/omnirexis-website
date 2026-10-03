@@ -5,15 +5,37 @@ import { CtaBand } from "@/components/site/cta-band";
 import { SiteLayout } from "@/components/site/layout";
 import { PtConsole } from "@/components/site/pt-console";
 import { BOOK_CALL, PT_PLANS, ptSignup } from "@/lib/site";
-import { pageSeo, SITE_URL } from "@/lib/page-seo";
+import { FaqList } from "@/components/site/faq-list";
+import { GuidesRow } from "@/components/site/guides-row";
+import { faqJsonLd, jsonLdGraph, pageSeo, SITE_URL } from "@/lib/page-seo";
 import { cn } from "@/lib/utils";
 
 const PT_SIGNUP_URL = ptSignup("site_pt");
 
+// Brief 3.1 (docs/SEO-CONTENT-PLAN.md). FAQ 5 (online coaching) is held until verified in the live app.
+const FAQS = [
+  {
+    q: "Is Omnirexis PT really free?",
+    a: "Yes. The Free plan is £0 for up to 2 active clients. It is a free plan, not a time-limited trial.",
+  },
+  {
+    q: "What can I track on the Free plan?",
+    a: "Programmes, sessions, check-ins and macros for your first two active clients.",
+  },
+  {
+    q: "Do I need card details to sign up?",
+    a: "No card details to start on Free. Signup asks for your name, email and a password.",
+  },
+  {
+    q: "How long does signup take?",
+    a: "A couple of minutes.",
+  },
+];
+
 // Free plan only. No paid prices, ratings or reviews in structured data.
 const PT_APP_JSON_LD = {
-  "@context": "https://schema.org",
   "@type": "SoftwareApplication",
+  "@id": `${SITE_URL}/pt#app`,
   name: "Omnirexis PT",
   applicationCategory: "BusinessApplication",
   applicationSubCategory: "PT client management",
@@ -35,11 +57,11 @@ const PT_APP_JSON_LD = {
 export const Route = createFileRoute("/pt")({
   head: () =>
     pageSeo({
-      title: "Free personal trainer app to track clients | Omnirexis PT",
+      title: "Free personal trainer app to track clients | Omnirexis",
       description:
-        "Omnirexis PT is a PT client management app for personal trainers: clients, programmes, sessions and check-ins in one place. Free for your first two clients.",
+        "Track clients, programmes, sessions and check-ins in one place. Omnirexis PT is free for your first two active clients. Start free in a couple of minutes.",
       path: "/pt",
-      jsonLd: PT_APP_JSON_LD,
+      jsonLd: jsonLdGraph(PT_APP_JSON_LD, faqJsonLd(FAQS)),
     }),
   component: PtPage,
 });
@@ -54,6 +76,10 @@ function PtPage() {
               Omnirexis PT
             </p>
             <h1 className="mt-4 font-sans text-4xl leading-display tracking-tight sm:text-6xl">
+              <span className="mb-4 block text-lg font-medium leading-snug text-bone/85 sm:text-xl">
+                The free personal trainer app to track your clients.
+              </span>
+              {" "}
               Coach brilliantly.
               <span className="italic"> Run the business calmly.</span>
             </h1>
@@ -84,11 +110,16 @@ function PtPage() {
       </section>
 
       <section className="border-b border-line bg-paper">
-        <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-8 sm:grid-cols-2 lg:grid-cols-4 lg:py-20">
+        <div className="mx-auto max-w-6xl px-5 pt-16 sm:px-8 lg:pt-20">
+          <h2 className="font-sans text-3xl tracking-tight sm:text-4xl">
+            A PT client management app without the cockpit
+          </h2>
+        </div>
+        <div className="mx-auto grid max-w-6xl gap-10 px-5 pt-10 pb-16 sm:px-8 sm:grid-cols-2 lg:grid-cols-4 lg:pb-20">
           {[
             {
               t: "Client desk",
-              d: "Profiles, notes, check-ins and the next session — attached to the right person.",
+              d: "Profiles, notes, check-ins and the next session, attached to the right person.",
             },
             {
               t: "Programmes",
@@ -104,10 +135,38 @@ function PtPage() {
             },
           ].map((item) => (
             <article key={item.t}>
-              <h2 className="text-lg font-medium tracking-tight">{item.t}</h2>
+              <h3 className="text-lg font-medium tracking-tight">{item.t}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted">{item.d}</p>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="border-b border-line bg-paper">
+        <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-8 lg:grid-cols-2 lg:py-20">
+          <div>
+            <h2 className="font-sans text-3xl tracking-tight sm:text-4xl">
+              Check-ins and macros
+            </h2>
+            <p className="mt-4 text-lg leading-relaxed text-muted">
+              Weekly check-ins sit on the client record: weight, training and
+              nutrition adherence, sleep, steps, energy, stress, mood, wins,
+              problems and your trainer feedback.
+            </p>
+            <p className="mt-3 text-sm text-muted">
+              Macro targets are estimates only, not medical advice.
+            </p>
+          </div>
+          <div>
+            <h2 className="font-sans text-3xl tracking-tight sm:text-4xl">
+              Replace the spreadsheet
+            </h2>
+            <p className="mt-4 text-lg leading-relaxed text-muted">
+              If your clients live in a spreadsheet, keep the same columns in a
+              client desk instead, with sessions and check-ins on each client.
+              Free for your first two active clients.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -197,6 +256,35 @@ function PtPage() {
           </p>
         </div>
       </section>
+      <div className="bg-paper">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <GuidesRow
+            title="Guides for PTs"
+            slugs={[
+              "personal-trainer-client-tracking-spreadsheet",
+              "personal-trainer-check-in-form",
+              "what-app-do-personal-trainers-use",
+              "personal-training-session-tracker",
+              "how-to-get-more-personal-training-clients",
+            ]}
+          />
+          <section className="py-14 lg:py-16">
+            <h2 className="font-sans text-3xl tracking-tight sm:text-4xl">
+              Questions about Omnirexis PT
+            </h2>
+            <div className="mt-4">
+              <FaqList items={FAQS} />
+            </div>
+            <p className="mt-6 text-base text-muted">
+              More answers on the{" "}
+              <Link to="/faq" className="text-bone underline underline-offset-4">
+                FAQ page
+              </Link>
+              .
+            </p>
+          </section>
+        </div>
+      </div>
       <CtaBand
         kicker="Independent trainers"
         title="Start free. Talk to us if you want a hand."
