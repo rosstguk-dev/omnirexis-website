@@ -76,7 +76,7 @@ export function SiteHeader({ ink: _ink = false }: { ink?: boolean }) {
             href={BOOK_CALL}
             target="_blank"
             rel="noreferrer"
-            className="mt-2 inline-flex min-h-12 items-center justify-center rounded-md bg-pine text-sm font-medium text-pine-fg"
+            className="mt-2 inline-flex min-h-12 items-center justify-center rounded-md bg-cta text-sm font-medium text-pine-fg hover:bg-cta-hover"
           >
             Book a strategy call
           </a>

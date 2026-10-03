@@ -138,7 +138,7 @@ Do not invent a fifth product line. Do not raise the daily email cap beyond the 
 | Calendar CTA | Zoom Scheduler Basic (`ross-gallagher-ie9whv`) | HubSpot Meetings |
 | Coordination / standing ops | Chief of Staff Omnirexis bot | Treating SuperGrok as CoS, or a second coordinator |
 | n8n | CoS may edit and rebuild when it improves the business and stays credit-efficient | Extra sends, cap raises outside the §5 schedule, twin engines |
-| Live site / DNS | CoS: `omnirexis-website`, Vercel project **omnirexis-website**, Cloudflare DNS | Leftover repo `Omnirexis`, Vercel project **omnirexis**, a change without before-state / live verify / rollback |
+| Live site / DNS | CoS: `omnirexis-website`, Vercel project **omnirexis-website**, DNS at GoDaddy (ns35/ns36.domaincontrol.com) pointing straight at Vercel (no Cloudflare in front) | Leftover repo `Omnirexis`, Vercel project **omnirexis**, a change without before-state / live verify / rollback |
 | Master last write | CoS applies GitHub + Drive | A SuperGrok draft or bot snapshot treated as live |
 | SuperGrok | High-credit or heavy jobs only when CoS or Ross calls it | Standing ownership, approval role, or last write |
 | Social scheduler | Buffer (Instagram, Facebook, LinkedIn) | Metricool |
@@ -168,7 +168,7 @@ Owns:
 
 **Daily improvement (locked 24 Sep 2026, 23:00, Ross).** Improve the business every day without Ross’s input. Report at least one shipped improvement each day. Do not ask permission for reversible work inside this remit.
 
-**n8n, site and DNS (locked 24 Sep 2026, 23:06, Ross).** CoS may edit and rebuild n8n, publish and change the live site (`omnirexis-website` repo, Vercel project **omnirexis-website**, Cloudflare), and change DNS whenever it improves the business. For site and DNS changes: record the before state, verify live after the change, roll back if anything breaks. For n8n: stay credit-efficient.
+**n8n, site and DNS (locked 24 Sep 2026, 23:06, Ross).** CoS may edit and rebuild n8n, publish and change the live site (`omnirexis-website` repo, Vercel project **omnirexis-website**; DNS is at GoDaddy, ns35/ns36.domaincontrol.com, with traffic going straight to Vercel), and change DNS whenever it improves the business. For site and DNS changes: record the before state, verify live after the change, roll back if anything breaks. For n8n: stay credit-efficient.
 
 **Hard stops (locked 24 Sep 2026, 23:11, Ross).** CoS owns production deletes (backup first) and vendor logins that already have saved credentials. Only 2FA, passkey or OAuth consent screens go to Ross. Payments need Ross’s yes. CoS never signs legal terms. Outreach cap per §5 (10 / day until Fri 2 Oct 2026, then 20 / day from Mon 5 Oct 2026 (Ross, 27 Sep 2026 13:48)), n8n-only send, every outreach email carries the PT free signup link (§5), no twin engines. PT is live for self-serve signup (Ross override, 27 Sep 2026 09:14; see §2). Never schedule or post AI-generated social images or video without Ross approving that exact asset first. If no approved content exists, leave the slot empty.
 

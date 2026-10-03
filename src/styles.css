@@ -24,6 +24,9 @@
   --color-subtle: #6b8498;
   --color-pine: #2199ea;
   --color-pine-fg: #ffffff;
+  /* Primary button fill: white text passes WCAG AA (4.92:1). */
+  --color-cta: #1773c2;
+  --color-cta-hover: #1565b0;
   --color-cyan: #00aeef;
   --color-blue: #137dc5;
   --color-blue-dark: #0f5f96;
