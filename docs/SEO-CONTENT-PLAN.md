@@ -5,6 +5,7 @@
 **Changelog**
 - 3 Oct 2026: Finance & Quality QC fixes applied (re-QC pending); Voice kicker wording from Client Delivery.
 - 3 Oct 2026: F&Q re-QC fixes R1-R6 applied.
+- 3 Oct 2026: PT claims trimmed to app-confirmed features (no packs, remaining sessions, overdue check-ins, notes or messaging); P9 reframed.
 - 3 Oct 2026: Client Delivery preview-check wording aligned (calendar condition on booking, studio hero line, "repeats themselves less", action view, mock-up tile).
 
 **Mission line (use word for word):** Omnirexis gives fitness and leisure businesses their time back. Every enquiry answered, every lead followed up, every booking made, so you can focus on your clients while your business keeps growing.
@@ -134,7 +135,7 @@ Client Delivery reviewed the four service page briefs (3.2 to 3.5) on 3 Oct 2026
 - **H1:** Keep the current brand H1 ("Coach brilliantly. Run the business calmly.") as the display line, and add a visible kicker or sub-H1 line: "The free personal trainer app to track your clients." (Product decides the markup; the phrase must appear in the H1 or the first H2.)
 - **Key sections**
   1. Hero: the phrase, the Free plan (£0, up to 2 active clients), and the "Start free" CTA.
-  2. H2 "A PT client management app without the cockpit": client desk, programmes, sessions, action view. Reuse the live /pt card wording for Client desk, Programmes and the action view (call it "Weekly action view" only if Product confirms that screen and its running-out-of-sessions flag exist in the live app; otherwise "Action view"); for sessions use "Sessions: the diary and the remaining pack, without a second spreadsheet." No "payments", "Compare plans" or paid-plan wording.
+  2. H2 "A PT client management app without the cockpit": client desk, programmes, sessions, action view. Reuse the live /pt card wording for Client desk, Programmes and the action view (call it "Action view": Product confirmed 3 Oct there is no weekly view or running-out-of-sessions flag in the live app); for sessions keep the "Sessions" heading and use Product's line checked against the live app (it shows upcoming sessions; it does not track packs or remaining sessions, so never say "pack" or "remaining"). No "payments", "Compare plans" or paid-plan wording.
   3. H2 "Check-ins and macros": check-in fields: hold until confirmed in the live app (see §5 item 3). Macros are labelled "estimates only, not medical advice".
   4. H2 "Replace the spreadsheet": links to P1 and P9.
   5. FAQ (below) and a "Guides for PTs" link row (P1, P3, P5, P9, P11).
@@ -292,9 +293,9 @@ Two posts a week: Monday (PT or owner) and Thursday. The dates are publish targe
 - Outline:
   - The columns that matter: client, goal, sessions left, last check-in, next session, notes.
   - A free Google Sheets template (Brand builds it before publish).
-  - Where spreadsheets break: sessions running out unnoticed, check-ins in another app.
+  - Where spreadsheets break: a tab per client, check-ins in another app, no single view of the week.
   - Signs you have outgrown the sheet.
-  - Omnirexis PT: profiles, notes, check-ins, the next session and the remaining pack in one workspace, free for 2 active clients.
+  - Omnirexis PT: clients, programmes, sessions, check-ins, progress and macro targets in one workspace, free for 2 active clients (confirmed features only; no notes, messaging, packs or remaining-session claims).
 - Social: a "spreadsheet tab chaos" to client desk screen recording, ending on "Free for your first two clients".
 
 **P2 · Thu 8 Oct · How to follow up gym leads: a simple process for independent gyms**
@@ -379,15 +380,15 @@ Two posts a week: Monday (PT or owner) and Thursday. The dates are publish targe
 
 ### Week 5
 
-**P9 · Mon 2 Nov · Personal training session tracker: know when a pack is running out**
+**P9 · Mon 2 Nov · Personal training session tracker: keep every client's sessions in one diary**
 - Primary: personal training session tracker · Audience: PT · Links to: /pt · CTA: Start free, https://omnirexis-pt.vercel.app/signup?src=seo_blog-pt-session-tracker
 - Outline:
-  - Why session packs run out unnoticed.
-  - A simple tracking sheet layout (links to P1's template).
-  - When to have the renewal conversation.
-  - Sessions and the diary in one place: the Omnirexis PT sessions view and the weekly action view ("who is running out of sessions").
+  - Why sessions get lost across a paper diary, messages and a spreadsheet.
+  - A simple tracking sheet layout, including a "sessions left" column you keep yourself (links to P1's template).
+  - When to have the renewal conversation, using your own records.
+  - Upcoming sessions for each client in one place: the Omnirexis PT sessions view and dashboard (Upcoming sessions). The app does not track packs or remaining sessions, so never imply it.
   - Start free with 2 clients.
-- Social: "2 sessions left" alert on the weekly action view (a real screen).
+- Social: the real Upcoming sessions screen, captured working live. No "sessions left" or overdue alerts.
 
 **P10 · Thu 5 Nov · Gym enquiry form template: what to ask, and what happens next**
 - Primary: gym enquiry form template · Audience: gym owners · Links to: /lead-follow-up-automation · CTA: Zoom
@@ -447,7 +448,7 @@ PT CTAs in this plan: /pt uses `site_pt` and the homepage PT teaser uses `site_h
 | 1 | Service brief review (3.2 to 3.5) | Client Delivery | **PASSED 3 Oct 2026** with the wordings in §3 |
 | 2a | `?src=site_pt` (PT_SIGNUP) and `?src=site_home` (homepage PT teaser) are already live since 172dafe, so no change is needed there. Add the `seo_*` tags to SEO page and blog CTAs (see Tracking tags); apply the homepage sub-line, the new home title "Omnirexis \| AI and automation for gyms, studios and clubs" and the #1773c2 / #1565b0 button colours | Product & Web | With the first build |
 | 2 | Build /blog (hub plus post template), /lead-follow-up-automation, /gyms and /pilates-yoga-studios; update titles, meta and H2s on /pt and /solutions; add URLs to the sitemap | Product & Web | /blog plus lead follow-up page first (week 1), niche pages by week 2 |
-| 3 | Capture live PT app screens (check-ins, macros, sessions, weekly action view) and confirm they work against the live database | Product & Web | Before P3 and P9 |
+| 3 | Capture live PT app screens (check-ins, macros, upcoming sessions, dashboard) and confirm they work against the live database | Product & Web | Before P3 and P9 |
 | 4 | Build the free PT spreadsheet template for P1 | Brand & Social | Before Mon 5 Oct publish |
 | 5 | Draft posts 1 to 12 and social cuts; Ross approves each video before Buffer | Brand & Social, then Ross | Rolling, 1 week ahead |
 | 6 | QC every page and post before publish: claims, the free-plan-only rule, no prices on the lead follow-up page, no em dashes, title and meta lengths, links | Finance & Quality | Before each publish |
