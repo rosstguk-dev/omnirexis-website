@@ -10,7 +10,15 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { BOOK_CALL, FAQS, PROCESS, ptSignup } from "@/lib/site";
+import {
+  BOOK_CALL,
+  FAQS,
+  PROCESS,
+  PT_CTA_LABEL,
+  PT_CTA_LINK_PROPS,
+  PT_SIGNUP_PAUSED,
+  ptSignup,
+} from "@/lib/site";
 import { pageSeo } from "@/lib/page-seo";
 import { cn } from "@/lib/utils";
 
@@ -214,19 +222,22 @@ function Home() {
                 Omnirexis PT
               </p>
               <h3 className="mt-3 text-xl font-medium tracking-tight">
-                Live. Start free.
+                {PT_SIGNUP_PAUSED
+                  ? "Free plan for your first two clients."
+                  : "Live. Start free."}
               </h3>
               <p className="mt-4 flex-1 text-sm leading-relaxed text-muted">
                 A quieter desk for independent trainers. Clients, programmes,
-                sessions and check-ins in one place. Start free with your first
-                two clients.
+                sessions and check-ins in one place.
+                {PT_SIGNUP_PAUSED ? null : " Start free with your first two clients."}
               </p>
               <div className="mt-6 flex flex-wrap gap-x-6">
                 <a
                   href={PT_SIGNUP_URL}
+                  {...PT_CTA_LINK_PROPS}
                   className="inline-flex min-h-11 items-center gap-2 text-sm font-medium"
                 >
-                  Start free
+                  {PT_CTA_LABEL}
                   <ArrowUpRight className="size-4" />
                 </a>
                 <Link

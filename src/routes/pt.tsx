@@ -4,7 +4,14 @@ import { Button } from "@/components/ui/button";
 import { CtaBand } from "@/components/site/cta-band";
 import { SiteLayout } from "@/components/site/layout";
 import { PtConsole } from "@/components/site/pt-console";
-import { BOOK_CALL, PT_PLANS, ptSignup } from "@/lib/site";
+import {
+  BOOK_CALL,
+  PT_CTA_LABEL,
+  PT_CTA_LINK_PROPS,
+  PT_PLANS,
+  PT_SIGNUP_PAUSED,
+  ptSignup,
+} from "@/lib/site";
 import { pageSeo, SITE_URL } from "@/lib/page-seo";
 import { cn } from "@/lib/utils";
 
@@ -60,18 +67,22 @@ function PtPage() {
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-bone/70">
               Clients, programmes, sessions, check-ins, progress and payments in
               one focused workspace. The useful depth of the big PT platforms,
-              without the cockpit of unexplained buttons. Start free with your
-              first two clients.
+              without the cockpit of unexplained buttons.
+              {PT_SIGNUP_PAUSED ? null : " Start free with your first two clients."}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild variant="paper" size="lg">
-                <a href={PT_SIGNUP_URL}>Start free</a>
-              </Button>
-              <Button asChild variant="inkOutline" size="lg">
-                <a href={BOOK_CALL} target="_blank" rel="noreferrer">
-                  Book a call
+                <a href={PT_SIGNUP_URL} {...PT_CTA_LINK_PROPS}>
+                  {PT_CTA_LABEL}
                 </a>
               </Button>
+              {PT_SIGNUP_PAUSED ? null : (
+                <Button asChild variant="inkOutline" size="lg">
+                  <a href={BOOK_CALL} target="_blank" rel="noreferrer">
+                    Book a call
+                  </a>
+                </Button>
+              )}
               <Button asChild variant="inkOutline" size="lg">
                 <a href="#pricing">Compare plans</a>
               </Button>
@@ -173,10 +184,12 @@ function PtPage() {
                   className="mt-8"
                   variant={plan.featured ? "paper" : "solid"}
                 >
-                  <a href={PT_SIGNUP_URL}>
-                    {plan.id === "free"
-                      ? "Start free"
-                      : `Sign up for ${plan.name}`}
+                  <a href={PT_SIGNUP_URL} {...PT_CTA_LINK_PROPS}>
+                    {PT_SIGNUP_PAUSED
+                      ? "Book a call"
+                      : plan.id === "free"
+                        ? "Start free"
+                        : `Sign up for ${plan.name}`}
                     <ArrowUpRight />
                   </a>
                 </Button>
@@ -184,8 +197,9 @@ function PtPage() {
             ))}
           </div>
           <p className="mt-8 text-sm text-muted">
-            Every account starts on Free. Choose a paid plan from Billing
-            inside the app when you need more clients. Questions first?{" "}
+            {PT_SIGNUP_PAUSED
+              ? "Questions first? "
+              : "Every account starts on Free. Choose a paid plan from Billing inside the app when you need more clients. Questions first? "}
             <Link
               to="/contact"
               search={{ intent: "pt-free" }}
@@ -197,16 +211,26 @@ function PtPage() {
           </p>
         </div>
       </section>
-      <CtaBand
-        kicker="Independent trainers"
-        title="Start free. Talk to us if you want a hand."
-        body="Create a free trainer account in a couple of minutes. Prefer a conversation first? Book a strategy call and we will talk through fit."
-        primaryHref={PT_SIGNUP_URL}
-        primaryLabel="Start free"
-        primaryExternal={false}
-        secondaryHref={BOOK_CALL}
-        secondaryLabel="Book a strategy call"
-      />
+      {PT_SIGNUP_PAUSED ? (
+        <CtaBand
+          kicker="Independent trainers"
+          title="Talk to us about Omnirexis PT."
+          body="Book a free 30 minute Zoom call and we will talk through fit."
+          primaryHref={BOOK_CALL}
+          primaryLabel="Book a call"
+        />
+      ) : (
+        <CtaBand
+          kicker="Independent trainers"
+          title="Start free. Talk to us if you want a hand."
+          body="Create a free trainer account in a couple of minutes. Prefer a conversation first? Book a strategy call and we will talk through fit."
+          primaryHref={PT_SIGNUP_URL}
+          primaryLabel="Start free"
+          primaryExternal={false}
+          secondaryHref={BOOK_CALL}
+          secondaryLabel="Book a strategy call"
+        />
+      )}
     </SiteLayout>
   );
 }

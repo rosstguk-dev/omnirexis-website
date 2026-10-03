@@ -1,10 +1,21 @@
 export const BOOK_CALL =
   "https://scheduler.zoom.us/ross-gallagher-ie9whv/30-mins-with-ross";
 
+/**
+ * Contingency switch. true = every PT "Start free" button goes to the Zoom call,
+ * reads "Book a call", and sign-up-now wording is hidden. Set back to false to undo.
+ */
+export const PT_SIGNUP_PAUSED = true;
+
 export const PT_SIGNUP_BASE = "https://omnirexis-pt.vercel.app/signup";
 /** PT signup link tagged with its source: site_<page>, seo_<page> or social. */
 export const ptSignup = (src: string) =>
-  `${PT_SIGNUP_BASE}?src=${encodeURIComponent(src)}`;
+  PT_SIGNUP_PAUSED ? BOOK_CALL : `${PT_SIGNUP_BASE}?src=${encodeURIComponent(src)}`;
+export const PT_CTA_LABEL = PT_SIGNUP_PAUSED ? "Book a call" : "Start free";
+/** Zoom opens in a new tab, like every other Book a call link. */
+export const PT_CTA_LINK_PROPS = PT_SIGNUP_PAUSED
+  ? { target: "_blank", rel: "noreferrer" }
+  : {};
 
 export const EMAIL = "hello@omnirexis.co.uk";
 export const PHONE = "0161 250 0045";
@@ -229,7 +240,7 @@ export const FAQS = [
   },
   {
     q: "How much does it cost?",
-    a: "The main work is scoped around the job. Rapid packs are fixed price. PT platform pricing is on the PT page, and you can start free. Third-party subscriptions and ongoing support are agreed separately.",
+    a: `The main work is scoped around the job. Rapid packs are fixed price. ${PT_SIGNUP_PAUSED ? "PT platform pricing is on the PT page." : "PT platform pricing is on the PT page, and you can start free."} Third-party subscriptions and ongoing support are agreed separately.`,
   },
   {
     q: "Do you offer ongoing support?",
@@ -253,7 +264,9 @@ export const FAQS = [
   },
   {
     q: "Can I try the PT platform for free?",
-    a: "Yes. The PT platform is live and the Free plan covers your first two active clients, with programmes, sessions and check-ins. Press Start free on the PT page to create a trainer account, and upgrade from Billing inside the app when you need more clients.",
+    a: PT_SIGNUP_PAUSED
+      ? "Yes. The Free plan covers your first two active clients, with programmes, sessions and check-ins. Book a call from the PT page and we will help you get set up."
+      : "Yes. The PT platform is live and the Free plan covers your first two active clients, with programmes, sessions and check-ins. Press Start free on the PT page to create a trainer account, and upgrade from Billing inside the app when you need more clients.",
   },
 ];
 
