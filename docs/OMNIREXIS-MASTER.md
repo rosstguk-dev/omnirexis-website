@@ -1,7 +1,7 @@
 # OMNIREXIS MASTER BRIEF
 
 **Status:** live operating brief  
-**Last updated:** 2 October 2026, 10:20 BST
+**Last updated:** 3 October 2026, 10:10 BST
 **Owner:** Ross Gallagher  
 **How to use:** fetch the live file. Do not paste a snapshot into a bot’s knowledge and treat that snapshot as current.
 
@@ -396,6 +396,7 @@ SuperGrok jobs: https://raw.githubusercontent.com/rosstguk-dev/omnirexis-website
 
 | When | What |
 |---|---|
+| 2026-10-03 10:10 | Continuous improve (CoS): n8n Queue Guard `XAjOcbgPF6FQBDHi` now uses the §5 cap schedule as its alert target (10 through Fri 2 Oct 2026 London, 20 from Mon 5 Oct 2026) instead of a hard-coded 10; Sales alert subject/body carry the live target. Also fixed a silent-fail: when the sheet has zero Approved rows the guard used to stop after Get Rows and never email Sales — `Read Approved rows` now has alwaysOutputData so an empty queue still alerts. Active version `f2b5d95e-3ef8-4c71-a37b-c448f5434106` (before `f31e974a-57e2-4459-a574-ad05ef7870f9`). No extra send batch. Note: the separate Grok Bot queue-guard routine still needs its prompt updated to the same §5 target (this continuous-improve run could not edit another routine). |
 | 2026-10-02 10:20 | Continuous improve (CoS): n8n Branded Outreach `cugi7YqiP6PjbVp5` now applies the §5 cap schedule in code — `DAILY_CAP` is 10 through Fri 2 Oct 2026 (London) and 20 from Mon 5 Oct 2026; `Limit.maxItems` raised to 20 as the ceiling. Also fixed a conversion gap: unknown/ambiguous audience rows now still get the PT free signup button (`?src=outreach`, secondary under Zoom) instead of dropping the CTA. Active version `4649cb32-6aba-4841-b492-726c8c420341` (before sendpath harden `856036a3-2a28-46b4-9d17-670f9f0fd9e2`). No extra send batch. |
 | 2026-09-30 10:15 | Continuous improve (CoS): Omnirexis-PT signup now stores sanitized `signup_src` from `?src=` in Supabase Auth user_metadata (PR #5, merge `7ab28f4`, production deploy `dpl_ExPBjujaaozkZkRnbYi4AusVfFa9`). Site `?src=website` and outreach `?src=outreach` / `outreach_pt` / `outreach_gym` were already on CTAs but ignored at signup, so Free-plan conversions could not be attributed. No DB migration. Cap / n8n / outreach unchanged. |
 | 2026-09-29 10:20 | Continuous improve (CoS): /pt bottom CTA band now matches its copy — primary **Start free** button to https://omnirexis-pt.vercel.app/signup?src=website (same tab), Zoom strategy call kept as secondary. Before: band said "Start free" but only offered Zoom. All site PT signup CTAs now use `?src=website` so outreach `?src=outreach` stays distinct for attribution. Other pages keep Zoom-only CtaBand. Cap / n8n / outreach unchanged. |
