@@ -1,7 +1,7 @@
 export const SITE_URL = "https://www.omnirexis.co.uk";
 export const SITE_NAME = "Omnirexis";
 export const DEFAULT_TITLE =
-  "AI automation for gyms, studios and leisure clubs | Omnirexis";
+  "Lead follow up automation for gyms and studios | Omnirexis";
 export const DEFAULT_DESCRIPTION =
   "Omnirexis gives fitness and leisure businesses their time back. Every enquiry answered, every lead followed up, every booking made. Book a free Zoom call.";
 export const OG_IMAGE = `${SITE_URL}/og.jpg`;

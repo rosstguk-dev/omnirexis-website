@@ -17,7 +17,7 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/")({
   head: () =>
     pageSeo({
-      title: "AI automation for gyms, studios and leisure clubs | Omnirexis",
+      title: "Lead follow up automation for gyms and studios | Omnirexis",
       description:
         "Omnirexis gives fitness and leisure businesses their time back. Every enquiry answered, every lead followed up, every booking made. Book a free Zoom call.",
       path: "/",
