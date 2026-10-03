@@ -38,7 +38,7 @@
 - Outreach-pain counts show what *we* wrote about in 99 prospect emails. They are not prospect-confirmed pains: we have no replies or objections yet.
 - No keyword difficulty data. The PT app terms and booking-system terms are crowded with established vendors, so expect slow progress on head terms. The posts are the realistic early wins.
 
-**Fixed-price offers (Client Delivery, 3 Oct 2026).** The Content Sprint, Operations Document Sprint and Content Engine live on /rapid-services. No Sales term maps to them, so they are not SEO targets this round, and no brief here quotes their prices or turnarounds. **Flag:** the master names the Content Sprint (£79) and the Ops Doc Sprint (£149) and covers "the other packaged offers on /rapid-services", but does not state the Content Engine price. The live site (`src/lib/site.ts`) shows the Content Engine at £349 per month. Only that £349 per month price needs Ross's confirmation; CoS then adds it to the master.
+**Fixed-price offers (Client Delivery, 3 Oct 2026).** The Content Sprint, Operations Document Sprint and Content Engine live on /rapid-services. No Sales term maps to them, so they are not SEO targets this round, and no brief here quotes their prices or turnarounds. **Flag:** the master names the Content Sprint (£79) and the Ops Doc Sprint (£149) and covers "the other packaged offers on /rapid-services", but does not state the Content Engine price. The live site (`src/lib/site.ts`) shows the Content Engine at £349 per month. Content Engine £349/month confirmed by Ross 3 Oct 2026; CoS to add to master.
 
 ### Parked: local pages
 
@@ -132,7 +132,7 @@ Client Delivery reviewed the four service page briefs (3.2 to 3.5) on 3 Oct 2026
 - **Key sections**
   1. Hero: the phrase, the Free plan (£0, up to 2 active clients), and the "Start free" CTA.
   2. H2 "A PT client management app without the cockpit": client desk, programmes, sessions, weekly action view. Reuse the live /pt card wording for Client desk, Programmes and Weekly action view; for sessions use "Sessions: the diary and the remaining pack, without a second spreadsheet." No "payments", "Compare plans" or paid-plan wording.
-  3. H2 "Check-ins and macros": only the fields verified in the app (weight, training and nutrition adherence, sleep, steps, energy, stress, mood, wins, problems, trainer feedback). Macros are labelled "estimates only, not medical advice".
+  3. H2 "Check-ins and macros": check-in fields: hold until confirmed in the live app (see §5 item 3). Macros are labelled "estimates only, not medical advice".
   4. H2 "Replace the spreadsheet": links to P1 and P9.
   5. FAQ (below) and a "Guides for PTs" link row (P1, P3, P5, P9, P11).
 - **FAQ**
@@ -450,5 +450,5 @@ PT CTAs in this plan: /pt uses `site_pt` and the homepage PT teaser uses `site_h
 | 6 | QC every page and post before publish: claims, the free-plan-only rule, no prices on the lead follow-up page, no em dashes, title and meta lengths, links | Finance & Quality | Before each publish |
 | 7 | **Flag to CoS:** set up Google Search Console for www.omnirexis.co.uk (needs Ross sign-in or a DNS verification record) and submit the sitemap. It is the evidence we need before any local page. | CoS (Ross sign-in needed) | This week |
 | 8 | **Flag to CoS:** Google Business Profile. Check whether one exists and whether the Manchester postal address is eligible (it is a postal address, not premises people visit, so a service-area profile with a hidden address may be the honest option). Needs a Ross sign-in. | CoS (Ross sign-in needed) | This week |
-| 9 | **Flag to CoS:** get Ross's confirmation of the Content Engine price (£349 per month), then add it to the master; resolve whether /pt keeps its paid pricing section | CoS / Ross | When convenient |
+| 9 | **Flag to CoS:** Content Engine £349/month confirmed by Ross 3 Oct 2026; CoS to add to master; resolve whether /pt keeps its paid pricing section | CoS / Ross | When convenient |
 | 10 | Review at week 6: Search Console queries, then re-rank the backlog (2c) and reconsider local pages | Brand & Social with Sales | Mon 16 Nov 2026 |
