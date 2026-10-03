@@ -2,7 +2,9 @@
 
 **Owner:** Brand & Social for Ross Gallagher · **Written:** Sat 3 Oct 2026 (BST) · **Status:** draft for Product, Client Delivery and Finance & Quality. Nothing here is live until it is built, checked and published.
 
-**Changelog:** 3 Oct 2026: Finance & Quality QC fixes applied (re-QC pending); Voice kicker wording from Client Delivery.
+**Changelog**
+- 3 Oct 2026: Finance & Quality QC fixes applied (re-QC pending); Voice kicker wording from Client Delivery.
+- 3 Oct 2026: F&Q re-QC fixes R1-R6 applied.
 
 **Mission line (use word for word):** Omnirexis gives fitness and leisure businesses their time back. Every enquiry answered, every lead followed up, every booking made, so you can focus on your clients while your business keeps growing.
 
@@ -142,12 +144,12 @@ Client Delivery reviewed the four service page briefs (3.2 to 3.5) on 3 Oct 2026
   4. *How long does signup take?* A couple of minutes (site wording; never "2 minutes").
   5. *Does it work for online coaching clients?* Check-ins and programmes are assigned per client in the trainer workspace. **Verify** that this wording holds in the live app before using it.
 - **Internal links:** P1, P3, P5, P9, P11; /faq; footer to /. Inbound links from the home PT teaser and every PT post.
-- **CTA:** Start free, https://omnirexis-pt.vercel.app/signup?src=site_pt . PT_SIGNUP already uses `?src=site_pt` on live (172dafe). CoS must update master §6, which still says `?src=website`. Secondary: the Zoom call (already on the page).
+- **CTA:** Start free, https://omnirexis-pt.vercel.app/signup?src=site_pt . PT_SIGNUP already uses `?src=site_pt` on live (172dafe). Matches master §6 (updated 3 Oct 2026, e42c1de). Secondary: the Zoom call (already on the page).
 - **Claims to verify**
   - Check-in fields, the macro calculator and the exercise library work in the **live** app. The shipped code has them, but the live database schema is not reconciled (`supabase/README.md`). Capture real screens before describing or showing them.
   - "No card details to start on Free": recheck the live /signup form on publish day.
   - Do not add any client portal or client login claim.
-  - **Conflict to resolve (Ross or CoS):** the live /pt page already shows paid plans and prices (#pricing, `PT_PLANS`) and a payment-related sessions card. The brief for this plan says never to mention paid plans. This update does not add, quote or link to them. Whether the existing pricing section stays is a Ross or CoS call, not part of this plan.
+  - **Resolved (CoS, 3 Oct 2026):** the existing paid pricing section stays on live /pt. This SEO update stays free-plan only: it does not add, quote or link to paid plans, prices or payments.
   - Do not quote the dashboard mock-up figures (12 clients, £1,248, "Chloe M.").
 
 ### 3.2 /lead-follow-up-automation (new): main service page
@@ -200,9 +202,9 @@ Client Delivery reviewed the four service page briefs (3.2 to 3.5) on 3 Oct 2026
   - Chat channels: list none. Use "on the channels we agree with you on the call".
   - No reply times, "instant" or "24/7".
   - Nothing may sound proven with a customer.
-  - Missed-call text back (#5) stays on hold. Change the existing Voice kicker "Every missed call still has a next step" to "Calls answered, details captured, next step booked" (Client Delivery approved 3 Oct; shorter fallback "Calls answered, next step booked"), and do not add text-back wording.
+  - Missed-call text back (#5) stays on hold. Change the existing Voice kicker "Every missed call still has a next step" to "Calls answered, details captured, booked or handed over" (Client Delivery structure, F&Q wording 3 Oct; shorter fallback "Calls answered, booked or handed over"), and do not add text-back wording.
 - **Claims to verify (Finance & Quality at publish)**
-  - Remove the em dash in the live Voice summary ("...book the slot, and hand the rest to a person — without a script...") when editing, to match brand voice.
+  - Remove the em dash and the clause "without a script that sounds like a machine" from the live Voice summary, so it reads "Capture the enquiry, answer what you have approved, book the slot, and hand the rest to a person." (FAQ 2: do not promise how it sounds.)
 
 ### 3.4 /gyms (new): gym niche page
 
@@ -291,7 +293,7 @@ Two posts a week: Monday (PT or owner) and Thursday. The dates are publish targe
   - A free Google Sheets template (Brand builds it before publish).
   - Where spreadsheets break: sessions running out unnoticed, check-ins in another app.
   - Signs you have outgrown the sheet.
-  - Omnirexis PT: profiles, notes, check-ins, the next session and the remaining pack in one client desk, free for 2 active clients.
+  - Omnirexis PT: profiles, notes, check-ins, the next session and the remaining pack in one workspace, free for 2 active clients.
 - Social: a "spreadsheet tab chaos" to client desk screen recording, ending on "Free for your first two clients".
 
 **P2 · Thu 8 Oct · How to follow up gym leads: a simple process for independent gyms**
@@ -430,7 +432,7 @@ The PT app saves the `?src=` value on signup (master §10, 30 Sep 2026). Agreed 
 | Tag | Where it is used |
 |---|---|
 | `outreach_pt`, `outreach_gym`, `outreach` | Outreach emails. Leave them as they are. |
-| `site_pt`, `site_home` | Website /pt and homepage PT teaser "Start free" buttons. Live since 172dafe (replaced `website`). CoS to update master §6. |
+| `site_pt`, `site_home` | Website /pt and homepage PT teaser "Start free" buttons. Live since 172dafe (replaced `website`). Matches master §6 (e42c1de). |
 | `seo_<page>` | SEO page and blog CTAs, for example `seo_lead-follow-up-automation`, `seo_blog` (hub) and `seo_blog-<short tag, max 40 chars>` (posts) |
 | `social` | Links in Buffer posts |
 | untagged | Direct |
@@ -450,5 +452,5 @@ PT CTAs in this plan: /pt uses `site_pt` and the homepage PT teaser uses `site_h
 | 6 | QC every page and post before publish: claims, the free-plan-only rule, no prices on the lead follow-up page, no em dashes, title and meta lengths, links | Finance & Quality | Before each publish |
 | 7 | **Flag to CoS:** set up Google Search Console for www.omnirexis.co.uk (needs Ross sign-in or a DNS verification record) and submit the sitemap. It is the evidence we need before any local page. | CoS (Ross sign-in needed) | This week |
 | 8 | **Flag to CoS:** Google Business Profile. Check whether one exists and whether the Manchester postal address is eligible (it is a postal address, not premises people visit, so a service-area profile with a hidden address may be the honest option). Needs a Ross sign-in. | CoS (Ross sign-in needed) | This week |
-| 9 | **Flag to CoS:** Content Engine £349/month confirmed by Ross 3 Oct 2026; CoS to add to master; resolve whether /pt keeps its paid pricing section | CoS / Ross | When convenient |
+| 9 | **Flag to CoS:** Content Engine £349/month confirmed by Ross 3 Oct 2026; CoS to add to master. Resolved (CoS, 3 Oct 2026): the paid pricing section stays on live /pt; this SEO update stays free-plan only | CoS / Ross | When convenient |
 | 10 | Review at week 6: Search Console queries, then re-rank the backlog (2c) and reconsider local pages | Brand & Social with Sales | Mon 16 Nov 2026 |
