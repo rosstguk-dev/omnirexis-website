@@ -5,6 +5,7 @@
 **Changelog**
 - 3 Oct 2026: Finance & Quality QC fixes applied (re-QC pending); Voice kicker wording from Client Delivery.
 - 3 Oct 2026: F&Q re-QC fixes R1-R6 applied.
+- 3 Oct 2026: Client Delivery preview-check wording aligned (calendar condition on booking, studio hero line, "repeats themselves less", action view, mock-up tile).
 
 **Mission line (use word for word):** Omnirexis gives fitness and leisure businesses their time back. Every enquiry answered, every lead followed up, every booking made, so you can focus on your clients while your business keeps growing.
 
@@ -133,7 +134,7 @@ Client Delivery reviewed the four service page briefs (3.2 to 3.5) on 3 Oct 2026
 - **H1:** Keep the current brand H1 ("Coach brilliantly. Run the business calmly.") as the display line, and add a visible kicker or sub-H1 line: "The free personal trainer app to track your clients." (Product decides the markup; the phrase must appear in the H1 or the first H2.)
 - **Key sections**
   1. Hero: the phrase, the Free plan (£0, up to 2 active clients), and the "Start free" CTA.
-  2. H2 "A PT client management app without the cockpit": client desk, programmes, sessions, weekly action view. Reuse the live /pt card wording for Client desk, Programmes and Weekly action view; for sessions use "Sessions: the diary and the remaining pack, without a second spreadsheet." No "payments", "Compare plans" or paid-plan wording.
+  2. H2 "A PT client management app without the cockpit": client desk, programmes, sessions, action view. Reuse the live /pt card wording for Client desk, Programmes and the action view (call it "Weekly action view" only if Product confirms that screen and its running-out-of-sessions flag exist in the live app; otherwise "Action view"); for sessions use "Sessions: the diary and the remaining pack, without a second spreadsheet." No "payments", "Compare plans" or paid-plan wording.
   3. H2 "Check-ins and macros": check-in fields: hold until confirmed in the live app (see §5 item 3). Macros are labelled "estimates only, not medical advice".
   4. H2 "Replace the spreadsheet": links to P1 and P9.
   5. FAQ (below) and a "Guides for PTs" link row (P1, P3, P5, P9, P11).
@@ -150,7 +151,7 @@ Client Delivery reviewed the four service page briefs (3.2 to 3.5) on 3 Oct 2026
   - "No card details to start on Free": recheck the live /signup form on publish day.
   - Do not add any client portal or client login claim.
   - **Resolved (CoS, 3 Oct 2026):** the existing paid pricing section stays on live /pt. This SEO update stays free-plan only: it does not add, quote or link to paid plans, prices or payments.
-  - Do not quote the dashboard mock-up figures (12 clients, £1,248, "Chloe M.").
+  - Do not quote the dashboard mock-up figures (12 clients, £1,248, "Chloe M."). Replace the "Month £1,248" tile in the mock-up with something the free plan really shows (e.g. sessions this week), so it does not imply takings tracking.
 
 ### 3.2 /lead-follow-up-automation (new): main service page
 
@@ -161,7 +162,7 @@ Client Delivery reviewed the four service page briefs (3.2 to 3.5) on 3 Oct 2026
 - **Key sections**
   1. Hero: the mission line word for word, then "The enquiry that arrived mid-class should not depend on someone remembering it." (copy angle #3), then the Zoom CTA ("Free. 30 minutes. Zoom. No obligation.").
   2. H2 "Where leads go missing": enquiries waiting while you teach (#3), a shared info@ or hello@ inbox, several sites (#4), follow-ups that live in one person's head. Problem framing only, with no statistics and no customer stories.
-  3. H2 "What we set up": "Follow-ups for enquiries that come in by phone, web form or email, set up around the tools you already use." Then the verified /solutions points: CRM updates and reporting (Process automation), and voice receptionists that capture the enquiry, answer approved questions, book the slot and hand the rest to a person. Examples, scoped on the call: following up after an intro class, or with lapsed members, where your booking system allows it.
+  3. H2 "What we set up": "Follow-ups for enquiries that come in by phone, web form or email, set up around the tools you already use." Then the verified /solutions points: CRM updates and reporting (Process automation), and voice receptionists that capture the enquiry, answer approved questions, book the slot where your calendar allows it and hand the rest to a person. Examples, scoped on the call: following up after an intro class, or with lapsed members, where your booking system allows it.
   4. H2 "Works with the CRM you already use": the place for "gym crm" (supporting). "Not if it still earns its place. We start with what you already use." No Omnirexis gym CRM, and no CRM or booking systems named.
   5. H2 "How it works": discovery call, opportunity audit, solution design agreed in writing, implementation (configured, integrated, tested), optimise and support as scoped (/process).
   6. H2 "What it costs": "Scoped around the job and agreed before anything is built. We work it out with you on a free 30-minute Zoom." **No price, turnaround or package.**
@@ -187,9 +188,9 @@ Client Delivery reviewed the four service page briefs (3.2 to 3.5) on 3 Oct 2026
 
 - **Primary term:** ai receptionist for gyms
 - **Title (55):** AI receptionist for gyms, studios and clubs | Omnirexis
-- **Meta (154):** AI receptionists that capture the enquiry, answer approved questions, book the slot and hand the rest to a person. For UK gyms, studios and leisure clubs.
+- **Meta (144):** AI receptionists that capture the enquiry, answer approved questions, and book or hand over to a person. For UK gyms, studios and leisure clubs.
 - **H1:** Keep "Tools that become part of the workforce." Rename the Voice receptionists H2 to "AI receptionist for gyms and studios", and keep the other three sections.
-- **Key sections:** the existing four services (Audit, Voice, Process automation, Customer experience). Add one paragraph to Voice in plain words on what a call looks like (verified points only). In Process automation, add "Follow-ups for enquiries that come in by phone, web form or email, set up around the tools you already use." and link to /lead-follow-up-automation. In Customer experience, use "gym AI chatbot" once (supporting), grounded in "approved information" and running "on the channels we agree with you on the call". Change the live kicker "A useful answer, faster" to "A useful answer from approved information", and change "so customers stop waiting and your team stops repeating themselves" to "so your team stops repeating themselves".
+- **Key sections:** the existing four services (Audit, Voice, Process automation, Customer experience). Add one paragraph to Voice in plain words on what a call looks like (verified points only). In Process automation, add "Follow-ups for enquiries that come in by phone, web form or email, set up around the tools you already use." and link to /lead-follow-up-automation. In Customer experience, use "gym AI chatbot" once (supporting), grounded in "approved information" and running "on the channels we agree with you on the call". Change the live kicker "A useful answer, faster" to "A useful answer from approved information", and change "so customers stop waiting and your team stops repeating themselves" to "so your team repeats themselves less" (Client Delivery, 3 Oct: no promised result).
 - **FAQ**
   1. *What does an AI receptionist do for a gym?* It captures the enquiry, answers what you have approved, books the slot and hands the rest to a person.
   2. *Does it sound like a robot?* We write the call flows and approved answers with you and test them before go-live (verified points: "call flows and approved answers", "testing and ongoing refinement"). Do not promise how it sounds.
@@ -204,7 +205,7 @@ Client Delivery reviewed the four service page briefs (3.2 to 3.5) on 3 Oct 2026
   - Nothing may sound proven with a customer.
   - Missed-call text back (#5) stays on hold. Change the existing Voice kicker "Every missed call still has a next step" to "Calls answered, details captured, booked or handed over" (Client Delivery structure, F&Q wording 3 Oct; shorter fallback "Calls answered, booked or handed over"), and do not add text-back wording.
 - **Claims to verify (Finance & Quality at publish)**
-  - Remove the em dash and the clause "without a script that sounds like a machine" from the live Voice summary, so it reads "Capture the enquiry, answer what you have approved, book the slot, and hand the rest to a person." (FAQ 2: do not promise how it sounds.)
+  - Remove the em dash and the clause "without a script that sounds like a machine" from the live Voice summary, so it reads "Capture the enquiry, answer what you have approved, book the slot where your calendar allows it, and hand the rest to a person." Use the same "where your calendar allows it" condition in the /solutions FAQ answer and anywhere else the copy says "book the slot". (FAQ 2: do not promise how it sounds.)
 
 ### 3.4 /gyms (new): gym niche page
 
@@ -241,7 +242,7 @@ Client Delivery reviewed the four service page briefs (3.2 to 3.5) on 3 Oct 2026
 - **Meta (152):** Follow-ups for enquiries by phone, web form or email, set up around the tools your Pilates or yoga studio already uses. Book a free 30-minute Zoom call.
 - **H1:** Studio booking automation for Pilates and yoga studios
 - **Key sections**
-  1. Hero: "The enquiry that arrived mid-class" (the strongest outreach angle for studios), the mission line, and the Zoom CTA.
+  1. Hero: the mission line, then "The enquiry that arrived mid-class should not depend on someone remembering it." (the strongest outreach angle for studios; never "still has a next step"), and the Zoom CTA.
   2. H2 "Between the enquiry and the first class": intro and taster booking (a common outreach theme; problem framing only, never quote the count), the shared inbox, the reply that waits until after the evening class.
   3. H2 "We work around your Pilates booking system": not a replacement, and no booking systems named. Booking-system phrases (pilates booking system, yoga studio booking system, studio management system) go here as context.
   4. H2 "What we set up": "Follow-ups for enquiries that come in by phone, web form or email, set up around the tools you already use." Enquiry capture and approved answers (Voice), the knowledge assistant for repeat questions on the channels we agree with you on the call (Customer experience). Examples, scoped on the call: following up after an intro class, or with lapsed members, where your booking system allows it.
