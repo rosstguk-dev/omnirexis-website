@@ -59,10 +59,6 @@ const ORG_JSON_LD = {
         { "@type": "Country", name: "United Kingdom" },
         { "@type": "Place", name: "North of England" },
       ],
-      audience: {
-        "@type": "BusinessAudience",
-        audienceType: "Gyms, fitness studios, spas and leisure clubs",
-      },
     },
     {
       "@type": "WebSite",
