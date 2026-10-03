@@ -58,8 +58,8 @@ function PtPage() {
               <span className="italic"> Run the business calmly.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-bone/70">
-              Clients, programmes, sessions, check-ins, progress and payments in
-              one focused workspace. The useful depth of the big PT platforms,
+              Clients, programmes, sessions, check-ins and progress in one
+              focused workspace. The useful depth of the big PT platforms,
               without the cockpit of unexplained buttons. Start free with your
               first two clients.
             </p>
@@ -88,19 +88,19 @@ function PtPage() {
           {[
             {
               t: "Client desk",
-              d: "Profiles, notes, check-ins and the next session — attached to the right person.",
+              d: "Profiles, notes, measurements and check-ins, attached to the right person.",
             },
             {
               t: "Programmes",
-              d: "Build the week, assign the work, see who is actually doing it.",
+              d: "Build the training days, add sets, reps and load, and assign the programme to a client.",
             },
             {
-              t: "Sessions & payments",
-              d: "The diary and the remaining pack, without a second spreadsheet.",
+              t: "Sessions",
+              d: "Book each client's sessions with notes and mark them complete, without a second spreadsheet.",
             },
             {
-              t: "Weekly action view",
-              d: "Who is overdue, who is running out of sessions, who needs a nudge.",
+              t: "Action view",
+              d: "Active clients, upcoming sessions and the latest check-ins on one screen, so you can see what needs attention today.",
             },
           ].map((item) => (
             <article key={item.t}>
