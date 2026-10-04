@@ -14,11 +14,12 @@ import {
   SITE_NAME,
   SITE_URL,
 } from "@/lib/page-seo";
+import { SOCIAL_LINKS } from "@/lib/site";
 import appCss from "../styles.css?url";
 
 const ORG_ID = `${SITE_URL}/#organization`;
 
-// Facts only: name, url, logo, public email, LinkedIn, area served, and the
+// Facts only: name, url, logo, public email, social profiles (SOCIAL_LINKS), area served, and the
 // postal address / phone already shown in the site footer. No reviews,
 // ratings or invented locations.
 const ORG_JSON_LD = {
@@ -44,7 +45,7 @@ const ORG_JSON_LD = {
         addressCountry: "GB",
       },
       founder: { "@type": "Person", name: "Ross Gallagher" },
-      sameAs: ["https://www.linkedin.com/company/omnirexis"],
+      sameAs: SOCIAL_LINKS.map((s) => s.href),
     },
     {
       "@type": "ProfessionalService",

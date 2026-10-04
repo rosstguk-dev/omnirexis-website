@@ -15,6 +15,24 @@ export const PHONE = "0161 250 0045";
 export const PHONE_HREF = "tel:+441612500045";
 export const LINKEDIN = "https://www.linkedin.com/company/omnirexis";
 
+/**
+ * Official Omnirexis social profiles, in display order. Used by the site footer
+ * and the Organization JSON-LD `sameAs` (src/routes/__root.tsx).
+ * Confirmed 4 Oct 2026: Instagram and Facebook from the connected Buffer channels
+ * (Facebook kept as the numeric Page URL: it does not redirect to a vanity name),
+ * LinkedIn /company/omnirexis is organization 136034507 (the Buffer-linked page),
+ * YouTube channel UCSAP-6p0YMotXADBP9_YjPw, X is the connected @Omnirexis account.
+ */
+export const SOCIAL_LINKS = [
+  { id: "instagram", name: "Instagram", href: "https://www.instagram.com/omnirexis/" },
+  { id: "facebook", name: "Facebook", href: "https://www.facebook.com/1296715416862181" },
+  { id: "linkedin", name: "LinkedIn", href: LINKEDIN },
+  { id: "youtube", name: "YouTube", href: "https://www.youtube.com/@omnirexisuk" },
+  { id: "x", name: "X", href: "https://x.com/Omnirexis" },
+] as const;
+
+export type SocialId = (typeof SOCIAL_LINKS)[number]["id"];
+
 export const ADDRESS = {
   line1: "Bartle House",
   line2: "9 Oxford Court",
