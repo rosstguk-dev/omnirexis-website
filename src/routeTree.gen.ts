@@ -13,12 +13,17 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as FaqRouteImport } from './routes/faq'
+import { Route as GymsRouteImport } from './routes/gyms'
+import { Route as LeadFollowUpAutomationRouteImport } from './routes/lead-follow-up-automation'
 import { Route as LeisureRouteImport } from './routes/leisure'
+import { Route as PilatesYogaStudiosRouteImport } from './routes/pilates-yoga-studios'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ProcessRouteImport } from './routes/process'
 import { Route as PtRouteImport } from './routes/pt'
 import { Route as RapidServicesRouteImport } from './routes/rapid-services'
 import { Route as SolutionsRouteImport } from './routes/solutions'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -40,9 +45,24 @@ const FaqRoute = FaqRouteImport.update({
   path: '/faq',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GymsRoute = GymsRouteImport.update({
+  id: '/gyms',
+  path: '/gyms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeadFollowUpAutomationRoute = LeadFollowUpAutomationRouteImport.update({
+  id: '/lead-follow-up-automation',
+  path: '/lead-follow-up-automation',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LeisureRoute = LeisureRouteImport.update({
   id: '/leisure',
   path: '/leisure',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PilatesYogaStudiosRoute = PilatesYogaStudiosRouteImport.update({
+  id: '/pilates-yoga-studios',
+  path: '/pilates-yoga-studios',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
@@ -70,30 +90,50 @@ const SolutionsRoute = SolutionsRouteImport.update({
   path: '/solutions',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/blog/$slug',
+  path: '/blog/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
+  '/gyms': typeof GymsRoute
+  '/lead-follow-up-automation': typeof LeadFollowUpAutomationRoute
   '/leisure': typeof LeisureRoute
+  '/pilates-yoga-studios': typeof PilatesYogaStudiosRoute
   '/privacy': typeof PrivacyRoute
   '/process': typeof ProcessRoute
   '/pt': typeof PtRoute
   '/rapid-services': typeof RapidServicesRoute
   '/solutions': typeof SolutionsRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
+  '/gyms': typeof GymsRoute
+  '/lead-follow-up-automation': typeof LeadFollowUpAutomationRoute
   '/leisure': typeof LeisureRoute
+  '/pilates-yoga-studios': typeof PilatesYogaStudiosRoute
   '/privacy': typeof PrivacyRoute
   '/process': typeof ProcessRoute
   '/pt': typeof PtRoute
   '/rapid-services': typeof RapidServicesRoute
   '/solutions': typeof SolutionsRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/blog': typeof BlogIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -101,12 +141,17 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
+  '/gyms': typeof GymsRoute
+  '/lead-follow-up-automation': typeof LeadFollowUpAutomationRoute
   '/leisure': typeof LeisureRoute
+  '/pilates-yoga-studios': typeof PilatesYogaStudiosRoute
   '/privacy': typeof PrivacyRoute
   '/process': typeof ProcessRoute
   '/pt': typeof PtRoute
   '/rapid-services': typeof RapidServicesRoute
   '/solutions': typeof SolutionsRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -115,36 +160,51 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/faq'
+    | '/gyms'
+    | '/lead-follow-up-automation'
     | '/leisure'
+    | '/pilates-yoga-studios'
     | '/privacy'
     | '/process'
     | '/pt'
     | '/rapid-services'
     | '/solutions'
+    | '/blog/$slug'
+    | '/blog/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/contact'
     | '/faq'
+    | '/gyms'
+    | '/lead-follow-up-automation'
     | '/leisure'
+    | '/pilates-yoga-studios'
     | '/privacy'
     | '/process'
     | '/pt'
     | '/rapid-services'
     | '/solutions'
+    | '/blog/$slug'
+    | '/blog'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/contact'
     | '/faq'
+    | '/gyms'
+    | '/lead-follow-up-automation'
     | '/leisure'
+    | '/pilates-yoga-studios'
     | '/privacy'
     | '/process'
     | '/pt'
     | '/rapid-services'
     | '/solutions'
+    | '/blog/$slug'
+    | '/blog/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -152,12 +212,17 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
   FaqRoute: typeof FaqRoute
+  GymsRoute: typeof GymsRoute
+  LeadFollowUpAutomationRoute: typeof LeadFollowUpAutomationRoute
   LeisureRoute: typeof LeisureRoute
+  PilatesYogaStudiosRoute: typeof PilatesYogaStudiosRoute
   PrivacyRoute: typeof PrivacyRoute
   ProcessRoute: typeof ProcessRoute
   PtRoute: typeof PtRoute
   RapidServicesRoute: typeof RapidServicesRoute
   SolutionsRoute: typeof SolutionsRoute
+  BlogSlugRoute: typeof BlogSlugRoute
+  BlogIndexRoute: typeof BlogIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -190,11 +255,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FaqRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/gyms': {
+      id: '/gyms'
+      path: '/gyms'
+      fullPath: '/gyms'
+      preLoaderRoute: typeof GymsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lead-follow-up-automation': {
+      id: '/lead-follow-up-automation'
+      path: '/lead-follow-up-automation'
+      fullPath: '/lead-follow-up-automation'
+      preLoaderRoute: typeof LeadFollowUpAutomationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/leisure': {
       id: '/leisure'
       path: '/leisure'
       fullPath: '/leisure'
       preLoaderRoute: typeof LeisureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pilates-yoga-studios': {
+      id: '/pilates-yoga-studios'
+      path: '/pilates-yoga-studios'
+      fullPath: '/pilates-yoga-studios'
+      preLoaderRoute: typeof PilatesYogaStudiosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy': {
@@ -232,6 +318,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SolutionsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -240,12 +340,17 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
   FaqRoute: FaqRoute,
+  GymsRoute: GymsRoute,
+  LeadFollowUpAutomationRoute: LeadFollowUpAutomationRoute,
   LeisureRoute: LeisureRoute,
+  PilatesYogaStudiosRoute: PilatesYogaStudiosRoute,
   PrivacyRoute: PrivacyRoute,
   ProcessRoute: ProcessRoute,
   PtRoute: PtRoute,
   RapidServicesRoute: RapidServicesRoute,
   SolutionsRoute: SolutionsRoute,
+  BlogSlugRoute: BlogSlugRoute,
+  BlogIndexRoute: BlogIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
