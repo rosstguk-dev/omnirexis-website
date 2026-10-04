@@ -5,6 +5,8 @@
  * Brand & Social drafts posts; Finance & Quality signs each one off before it is published.
  * PT posts link to signup with ?src=seo_blog-<srcTag> (the exact tag is on each post in the plan); owner posts use the Zoom call.
  */
+import aiOrSiBody from "@/content/blog/ai-or-si-super-intelligence-gyms.md?raw";
+
 export type BlogAudience = "gyms" | "studios" | "pts";
 
 export type BlogSection = {
@@ -25,8 +27,15 @@ export type BlogPost = {
   srcTag?: string;
   /** The page this post supports, e.g. "/pt" or "/lead-follow-up-automation". */
   linksTo: string;
+  /** Hero lede. Leave empty when the whole signed-off text is in `body`. */
   intro: string;
   sections: BlogSection[];
+  /** Exact <title>, when the signed-off post sets its own meta title (otherwise "<title> | Omnirexis"). */
+  metaTitle?: string;
+  /** Hub card text, taken word for word from the post (otherwise `description`). */
+  excerpt?: string;
+  /** Signed-off markdown body, rendered word for word below the hero (used instead of `sections`). */
+  body?: string;
 };
 
 export const BLOG_AUDIENCES: { id: BlogAudience; label: string; page: string; pageLabel: string }[] = [
@@ -35,8 +44,25 @@ export const BLOG_AUDIENCES: { id: BlogAudience; label: string; page: string; pa
   { id: "pts", label: "PTs", page: "/pt", pageLabel: "Omnirexis PT" },
 ];
 
-/** No posts are published yet. Add drafts here without `published` until they are signed off. */
-export const POSTS: BlogPost[] = [];
+/** Add drafts here without `published` until they are signed off. */
+export const POSTS: BlogPost[] = [
+  {
+    // Source: /workspace/si-campaign/blog-ai-or-si.md. F&Q re-QC PASS 4 Oct 2026 12:20; Ross approved 4 Oct 2026 13:57.
+    slug: "ai-or-si-super-intelligence-gyms",
+    title: "AI or SI? What the super intelligence buzz actually means for gym and studio owners",
+    metaTitle: "AI or SI? What the Super Intelligence Buzz Means for Gyms",
+    description:
+      "AI or SI? The label is all over the news. For gym and studio owners, what matters is whether enquiries get a reply and a follow-up.",
+    excerpt:
+      "Here's what actually happened, and why, for a gym or studio owner, the label matters far less than what happens to your next enquiry.",
+    audience: "gyms",
+    published: "2026-10-04",
+    linksTo: "/lead-follow-up-automation",
+    intro: "",
+    sections: [],
+    body: aiOrSiBody,
+  },
+];
 
 export const publishedPosts = () =>
   POSTS.filter((p) => Boolean(p.published)).sort((a, b) =>

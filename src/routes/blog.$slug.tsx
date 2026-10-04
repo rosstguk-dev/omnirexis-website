@@ -2,6 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { CtaBand } from "@/components/site/cta-band";
 import { SiteLayout } from "@/components/site/layout";
+import { MarkdownBody } from "@/components/site/markdown-body";
 import { PageHero } from "@/components/site/page-hero";
 import { findPublishedPost } from "@/lib/blog";
 import { ptSignup } from "@/lib/site";
@@ -19,7 +20,7 @@ export const Route = createFileRoute("/blog/$slug")({
     const { post } = loaderData;
     const path = `/blog/${post.slug}`;
     return pageSeo({
-      title: `${post.title} | Omnirexis`,
+      title: post.metaTitle ?? `${post.title} | Omnirexis`,
       description: post.description,
       path,
       // Article: no ratings or reviews.
@@ -48,7 +49,7 @@ function BlogPostPage() {
   const isPt = post.audience === "pts";
   return (
     <SiteLayout>
-      <PageHero kicker="Guide" title={post.title} lede={post.intro}>
+      <PageHero kicker="Guide" title={post.title} lede={post.intro || undefined}>
         {post.published ? (
           <p className="mt-6 font-mono text-xs tracking-wide text-subtle">
             Published{" "}
@@ -63,6 +64,11 @@ function BlogPostPage() {
         ) : null}
       </PageHero>
       <article className="mx-auto max-w-3xl px-5 py-14 sm:px-8">
+        {post.body ? (
+          <div data-post-body>
+            <MarkdownBody markdown={post.body} />
+          </div>
+        ) : null}
         {post.sections.map((s) => (
           <section key={s.heading} className="mt-10 first:mt-0">
             <h2 className="font-sans text-2xl tracking-tight sm:text-3xl">

@@ -77,7 +77,7 @@ function BlogHub() {
                           {p.title}
                         </span>
                         <span className="mt-2 text-sm text-muted">
-                          {p.description}
+                          {p.excerpt ?? p.description}
                         </span>
                       </Link>
                     </li>
