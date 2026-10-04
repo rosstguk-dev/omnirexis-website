@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Wordmark } from "@/components/site/mark";
+import { SocialLinks } from "@/components/site/social-icons";
 import {
   ADDRESS,
   BOOK_CALL,
@@ -22,6 +23,9 @@ export function SiteFooter() {
           <p className="mt-6 text-xs tracking-mark text-subtle uppercase">
             Intelligence. Automated.
           </p>
+          <nav aria-label="Omnirexis on social media" className="mt-6">
+            <SocialLinks />
+          </nav>
         </div>
 
         <div className="grid gap-10 sm:grid-cols-3 lg:col-span-8">
