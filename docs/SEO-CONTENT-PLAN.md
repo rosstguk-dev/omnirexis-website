@@ -5,7 +5,8 @@
 **Changelog**
 - 3 Oct 2026: Finance & Quality QC fixes applied (re-QC pending); Voice kicker wording from Client Delivery.
 - 3 Oct 2026: F&Q re-QC fixes R1-R6 applied.
-- 3 Oct 2026: PT claims trimmed to app-confirmed features (no packs, remaining sessions, overdue check-ins, notes or messaging); P9 reframed.
+- 3 Oct 2026: PT claims trimmed to app-confirmed features (no packs, remaining sessions, overdue check-ins or messaging); P9 reframed.
+- 4 Oct 2026 (F&Q A4): no "weekly" wording about the app anywhere; notes and the check-in field list added from Product's confirmed list (3 Oct); P3 retitled.
 - 3 Oct 2026: Client Delivery preview-check wording aligned (calendar condition on booking, studio hero line, "repeats themselves less", action view, mock-up tile).
 
 **Mission line (use word for word):** Omnirexis gives fitness and leisure businesses their time back. Every enquiry answered, every lead followed up, every booking made, so you can focus on your clients while your business keeps growing.
@@ -135,8 +136,8 @@ Client Delivery reviewed the four service page briefs (3.2 to 3.5) on 3 Oct 2026
 - **H1:** Keep the current brand H1 ("Coach brilliantly. Run the business calmly.") as the display line, and add a visible kicker or sub-H1 line: "The free personal trainer app to track your clients." (Product decides the markup; the phrase must appear in the H1 or the first H2.)
 - **Key sections**
   1. Hero: the phrase, the Free plan (£0, up to 2 active clients), and the "Start free" CTA.
-  2. H2 "A PT client management app without the cockpit": client desk, programmes, sessions, action view. Reuse the live /pt card wording for Client desk, Programmes and the action view (call it "Action view": Product confirmed 3 Oct there is no weekly view or running-out-of-sessions flag in the live app); for sessions keep the "Sessions" heading and use Product's line checked against the live app (it shows upcoming sessions; it does not track packs or remaining sessions, so never say "pack" or "remaining"). No "payments", "Compare plans" or paid-plan wording.
-  3. H2 "Check-ins and macros": check-in fields: hold until confirmed in the live app (see §5 item 3). Macros are labelled "estimates only, not medical advice".
+  2. H2 "A PT client management app without the cockpit": client desk, programmes, sessions, action view. Reuse the live /pt card wording for Client desk, Programmes and the action view (call it "Action view", never "weekly": Product confirmed 3 Oct there is no weekly view or running-out-of-sessions flag in the live app); for sessions keep the "Sessions" heading and use Product's line checked against the live app (it shows upcoming sessions; it does not track packs or remaining sessions, so never say "pack" or "remaining"). No "payments", "Compare plans" or paid-plan wording.
+  3. H2 "Check-ins and macros": check-in fields as confirmed by Product on 3 Oct: weight, steps, training and nutrition adherence (1 to 10), sleep quality, energy, stress, mood (1 to 5), wins, problems and trainer feedback. Macro targets are labelled "estimates only, not medical advice". Do not say how often check-ins happen.
   4. H2 "Replace the spreadsheet": links to P1 and P9.
   5. FAQ (below) and a "Guides for PTs" link row (P1, P3, P5, P9, P11).
 - **FAQ**
@@ -152,7 +153,7 @@ Client Delivery reviewed the four service page briefs (3.2 to 3.5) on 3 Oct 2026
   - "No card details to start on Free": recheck the live /signup form on publish day.
   - Do not add any client portal or client login claim.
   - **Resolved (CoS, 3 Oct 2026):** the existing paid pricing section stays on live /pt. This SEO update stays free-plan only: it does not add, quote or link to paid plans, prices or payments.
-  - Do not quote the dashboard mock-up figures (12 clients, £1,248, "Chloe M."). Replace the "Month £1,248" tile in the mock-up with something the free plan really shows (e.g. sessions this week), so it does not imply takings tracking.
+  - Do not quote the dashboard mock-up figures (12 clients, £1,248, "Chloe M."). Replace the "Month £1,248" tile in the mock-up with something the free plan really shows (e.g. upcoming sessions), so it does not imply takings tracking.
 
 ### 3.2 /lead-follow-up-automation (new): main service page
 
@@ -293,9 +294,9 @@ Two posts a week: Monday (PT or owner) and Thursday. The dates are publish targe
 - Outline:
   - The columns that matter: client, goal, sessions left, last check-in, next session, notes.
   - A free Google Sheets template (Brand builds it before publish).
-  - Where spreadsheets break: a tab per client, check-ins in another app, no single view of the week.
+  - Where spreadsheets break: a tab per client, check-ins in another app, no single place to see what is coming up.
   - Signs you have outgrown the sheet.
-  - Omnirexis PT: clients, programmes, sessions, check-ins, progress and macro targets in one workspace, free for 2 active clients (confirmed features only; no notes, messaging, packs or remaining-session claims).
+  - Omnirexis PT: clients, client notes, programmes, sessions with notes, check-ins, progress, macro targets and 288 built-in exercises in one workspace, free for 2 active clients (confirmed features only; never packs, remaining sessions, "running out of sessions", weekly views, payments or messaging). The "sessions left" column stays in the reader's own spreadsheet only.
 - Social: a "spreadsheet tab chaos" to client desk screen recording, ending on "Free for your first two clients".
 
 **P2 · Thu 8 Oct · How to follow up gym leads: a simple process for independent gyms**
@@ -310,11 +311,11 @@ Two posts a week: Monday (PT or owner) and Thursday. The dates are publish targe
 
 ### Week 2
 
-**P3 · Mon 12 Oct · Personal trainer check-in form: weekly questions to copy**
+**P3 · Mon 12 Oct · Personal trainer check-in form: questions to copy**
 - Primary: personal trainer check in form · Audience: PT · Links to: /pt · CTA: Start free, https://omnirexis-pt.vercel.app/signup?src=seo_blog-personal-trainer-check-in-form
 - Outline:
-  - What a weekly check-in is for.
-  - Questions grouped by the check-in fields in Omnirexis PT (only fields confirmed working in the live app, §5 item 3). Field list: hold until confirmed in the app.
+  - What a regular check-in is for (how often is the trainer's choice; never say the app schedules or sends check-ins weekly).
+  - Questions grouped by the check-in fields in Omnirexis PT, as confirmed by Product on 3 Oct: weight, steps, training and nutrition adherence (1 to 10), sleep quality, energy, stress, mood (1 to 5), wins, problems and trainer feedback.
   - How to give trainer feedback that clients read.
   - In-person and online clients: same form, different follow-up.
   - Keeping check-ins on the client record (Omnirexis PT, Free plan).
