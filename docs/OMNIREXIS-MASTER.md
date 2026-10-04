@@ -1,7 +1,7 @@
 # OMNIREXIS MASTER BRIEF
 
 **Status:** live operating brief  
-**Last updated:** 3 October 2026, 10:10 BST
+**Last updated:** 4 October 2026, 10:20 BST
 **Owner:** Ross Gallagher  
 **How to use:** fetch the live file. Do not paste a snapshot into a bot’s knowledge and treat that snapshot as current.
 
@@ -396,6 +396,7 @@ SuperGrok jobs: https://raw.githubusercontent.com/rosstguk-dev/omnirexis-website
 
 | When | What |
 |---|---|
+| 2026-10-04 10:20 | Continuous improve (CoS): (1) Shipped SEO landing pages from draft PR #17 (merge `38bbca5`, production `dpl_FAhsLPrfCNAdZWsy92TiAHzGUWyw` READY). Live: `/lead-follow-up-automation`, `/gyms`, `/pilates-yoga-studios`, `/blog` hub (no posts yet), home brand title, `/pt` and `/solutions` brief updates; sitemap includes the new URLs. CoS claim QC before merge (CD wordings; no posts published unsigned). Rollback: `dpl_5EqDuiFJaaogB6e37fNUc3sEubbm`. (2) Unpublished stale n8n **Omnirexis PT — Website Opt-In and Pack Delivery** `dqiAs5dx55Eo3Ku9` (site form gone; email still pointed at deprecated ChatGPT pack URL and off nurture). One-click unsubscribe left active. Cap / outreach send path unchanged. Note: Grok Bot queue-guard routine `omnirexis-08-00-outreach-queue-guard` still needs its prompt updated to the §5 20/day target from Mon 5 Oct (automation runs cannot edit another routine). |
 | 2026-10-03 10:10 | Continuous improve (CoS): n8n Queue Guard `XAjOcbgPF6FQBDHi` now uses the §5 cap schedule as its alert target (10 through Fri 2 Oct 2026 London, 20 from Mon 5 Oct 2026) instead of a hard-coded 10; Sales alert subject/body carry the live target. Also fixed a silent-fail: when the sheet has zero Approved rows the guard used to stop after Get Rows and never email Sales — `Read Approved rows` now has alwaysOutputData so an empty queue still alerts. Active version `f2b5d95e-3ef8-4c71-a37b-c448f5434106` (before `f31e974a-57e2-4459-a574-ad05ef7870f9`). No extra send batch. Note: the separate Grok Bot queue-guard routine still needs its prompt updated to the same §5 target (this continuous-improve run could not edit another routine). |
 | 2026-10-02 10:20 | Continuous improve (CoS): n8n Branded Outreach `cugi7YqiP6PjbVp5` now applies the §5 cap schedule in code — `DAILY_CAP` is 10 through Fri 2 Oct 2026 (London) and 20 from Mon 5 Oct 2026; `Limit.maxItems` raised to 20 as the ceiling. Also fixed a conversion gap: unknown/ambiguous audience rows now still get the PT free signup button (`?src=outreach`, secondary under Zoom) instead of dropping the CTA. Active version `4649cb32-6aba-4841-b492-726c8c420341` (before sendpath harden `856036a3-2a28-46b4-9d17-670f9f0fd9e2`). No extra send batch. |
 | 2026-09-30 10:15 | Continuous improve (CoS): Omnirexis-PT signup now stores sanitized `signup_src` from `?src=` in Supabase Auth user_metadata (PR #5, merge `7ab28f4`, production deploy `dpl_ExPBjujaaozkZkRnbYi4AusVfFa9`). Site `?src=website` and outreach `?src=outreach` / `outreach_pt` / `outreach_gym` were already on CTAs but ignored at signup, so Free-plan conversions could not be attributed. No DB migration. Cap / n8n / outreach unchanged. |
@@ -468,3 +469,4 @@ If copies drift, the GitHub file with the newest section-10 date wins, then Ross
 5. PT is live (27 Sep 2026). Close the remaining known risks: test LIVE Stripe payments end to end (needs Ross payment), land grace-period draft PR #2 in `rosstguk-dev/Omnirexis-PT`. App email confirmation is already ON (see §2).
 6. Do not hire a swarm of new bots until credits are stable.
 7. After this week’s Buffer queue runs, refill next week in Buffer — do not invent a second scheduler. Put next week’s clips in `public/social/manifest.json` and dispatch `ingest-social.yml` before scheduling.
+8. **DONE (4 Oct 2026):** SEO landing pages live (`/lead-follow-up-automation`, `/gyms`, `/pilates-yoga-studios`, `/blog` hub). Next: Brand builds P1 spreadsheet; Brand drafts posts; F&Q QC each post; Product confirms live PT screens before P3/P9.
