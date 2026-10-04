@@ -155,8 +155,8 @@ function PtPage() {
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-muted">
               Check-ins are saved against each client: weight, steps, training
-              and nutrition adherence (1–10), sleep quality, energy, stress and
-              mood (each 1–5), wins, problems and your feedback.
+              and nutrition adherence (1 to 10), sleep quality, energy, stress and
+              mood (each 1 to 5), wins, problems and your feedback.
             </p>
             <p className="mt-3 text-base leading-relaxed text-muted">
               The macro calculator turns sex, age, height, weight, activity
