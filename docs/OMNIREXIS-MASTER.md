@@ -1,7 +1,7 @@
 # OMNIREXIS MASTER BRIEF
 
 **Status:** live operating brief  
-**Last updated:** 4 October 2026, 10:20 BST
+**Last updated:** 5 October 2026, 10:40 BST
 **Owner:** Ross Gallagher  
 **How to use:** fetch the live file. Do not paste a snapshot into a bot’s knowledge and treat that snapshot as current.
 
@@ -246,7 +246,7 @@ Cap: first-touch per §5 (10 / day until Fri 2 Oct 2026, then 20 / day from Mon 
 
 Live trigger on this workflow is **only** Daily Outreach Trigger. The four leftover ChatGPT webhooks (prospect intake, branded reply, branded follow-up, branded test email) are disabled. Do not turn them back on.
 
-n8n Cloud is Starter (2,500 executions/month). Do not add polling schedules. PT Automatic Reply Stop stays off while PT sequences are paused. Client onboarding closed-won check is daily at 10:10 Europe/London, not hourly.
+n8n Cloud is Pro (Cloud Pro-1, £72/month incl. VAT; Ross confirmed 5 Oct 2026). Still stay credit-efficient: do not add polling schedules. PT Automatic Reply Stop stays off while PT sequences are paused. Client onboarding closed-won check is daily at 10:10 Europe/London, not hourly.
 
 ### E. Do not create
 - A second outreach agent in chat
@@ -396,6 +396,7 @@ SuperGrok jobs: https://raw.githubusercontent.com/rosstguk-dev/omnirexis-website
 
 | When | What |
 |---|---|
+| 2026-10-05 10:40 | Continuous improve (CoS): PT signup page (https://omnirexis-pt.vercel.app/signup), where every outreach email's Start free button lands, now shows the Free plan facts above the form: £0 for up to 2 active clients (not a time-limited trial), no card details needed, programmes/sessions/check-ins/macros (all match `lib/plans.ts` and the /pt FAQ). After signup the confirm step names the address, says the mail comes from Omnirexis PT and to check spam/junk; button shows a pending state and cannot double-submit. `signup_src` capture unchanged; no DB, Stripe or auth config change. Omnirexis-PT PR #10 (merge `32ff751`), production `dpl_69YtAak3NTepd7qMcVfxd8C76hcs` READY and verified live; rollback `dpl_3f3gMa5YEEpzDn3udzckoAmUFPJk`. Also §4D: n8n plan corrected from Starter to Cloud Pro (Ross, 5 Oct 2026; receipt 3 Oct £72). Cap / outreach send path unchanged (Mon 5 Oct 09:15 run exec 3304 succeeded). |
 | 2026-10-04 12:15 | Retired the 3D robot video look (CoS job, Ross's 27 Sep 2026 standard). §5 Social: house social standard now states the 19 Sep 3D robot advert look (robot visual lock, robot videos, robot stills) is retired and points to the house video recipe; cadence line no longer says robot videos/stills; Visual lock and Robot week pack bullets marked RETIRED 4 Oct 2026. `ops/brand-social/VIDEO-RECIPE-LOCKED.md` rewritten to the house standard: short beat-synced motion-graphics video, dark navy premium look, bold kinetic type, real app screens, original royalty-free music, clear CTA to omnirexis.co.uk, modelled on the PT launch promo (`/workspace/pt-promo/`, render scripts `/workspace/pt-promo/build/`; note: that `build/` folder was not on the box on 4 Oct, restore before the next render). Docs only, no site change. |
 | 2026-10-04 10:20 | Continuous improve (CoS): (1) Shipped SEO landing pages from draft PR #17 (merge `38bbca5`, production `dpl_FAhsLPrfCNAdZWsy92TiAHzGUWyw` READY). Live: `/lead-follow-up-automation`, `/gyms`, `/pilates-yoga-studios`, `/blog` hub (no posts yet), home brand title, `/pt` and `/solutions` brief updates; sitemap includes the new URLs. CoS claim QC before merge (CD wordings; no posts published unsigned). Rollback: `dpl_5EqDuiFJaaogB6e37fNUc3sEubbm`. (2) Unpublished stale n8n **Omnirexis PT — Website Opt-In and Pack Delivery** `dqiAs5dx55Eo3Ku9` (site form gone; email still pointed at deprecated ChatGPT pack URL and off nurture). One-click unsubscribe left active. Cap / outreach send path unchanged. Note: Grok Bot queue-guard routine `omnirexis-08-00-outreach-queue-guard` still needs its prompt updated to the §5 20/day target from Mon 5 Oct (automation runs cannot edit another routine). |
 | 2026-10-03 10:10 | Continuous improve (CoS): n8n Queue Guard `XAjOcbgPF6FQBDHi` now uses the §5 cap schedule as its alert target (10 through Fri 2 Oct 2026 London, 20 from Mon 5 Oct 2026) instead of a hard-coded 10; Sales alert subject/body carry the live target. Also fixed a silent-fail: when the sheet has zero Approved rows the guard used to stop after Get Rows and never email Sales — `Read Approved rows` now has alwaysOutputData so an empty queue still alerts. Active version `f2b5d95e-3ef8-4c71-a37b-c448f5434106` (before `f31e974a-57e2-4459-a574-ad05ef7870f9`). No extra send batch. Note: the separate Grok Bot queue-guard routine still needs its prompt updated to the same §5 target (this continuous-improve run could not edit another routine). |
