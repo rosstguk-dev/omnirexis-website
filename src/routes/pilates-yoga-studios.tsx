@@ -18,7 +18,7 @@ const FAQS = [
   },
   {
     q: "Can enquiries be followed up while I am teaching?",
-    a: "We set up follow-ups for enquiries that come in by phone, web form or email, around the tools you already use. The receptionist and assistants answer what you have approved and hand the rest to a person.",
+    a: "We set up follow-ups for enquiries that come in by phone, web form or email, around the tools you already use. Each enquiry is logged and chased, and an optional chat assistant answers from what you have approved and hands the rest to a person.",
   },
   {
     q: "Can you follow up after an intro class?",
@@ -108,10 +108,10 @@ function StudiosPage() {
           <Points
             items={[
               <>
-                Enquiry capture and approved answers from a voice receptionist,
-                with the rest handed to a person.{" "}
+                Phone, web form and email enquiries logged and chased, with the
+                rest handed to a person.{" "}
                 <Link to="/solutions" hash="voice">
-                  Voice receptionists
+                  Enquiry follow-up
                 </Link>
               </>,
               <>

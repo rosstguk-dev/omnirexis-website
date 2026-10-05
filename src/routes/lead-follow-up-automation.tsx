@@ -111,11 +111,11 @@ function LeadFollowUpPage() {
                 </Link>
               </>,
               <>
-                Voice receptionists that capture the enquiry, answer the
-                questions you have approved, book the slot where your calendar
-                allows it and hand the rest to a person.{" "}
+                Phone, web form and email enquiries logged and chased, with an
+                optional chat assistant that answers from your approved
+                information and hands the rest to a person.{" "}
                 <Link to="/solutions" hash="voice">
-                  Voice receptionists
+                  Enquiry follow-up
                 </Link>
               </>,
             ]}
