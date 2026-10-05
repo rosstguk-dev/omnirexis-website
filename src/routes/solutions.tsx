@@ -36,16 +36,17 @@ const FAQS = [
 
 /** Page-only overrides for /solutions (SOLUTIONS is shared with the homepage). */
 const HEADINGS: Record<string, string> = {
-  voice: "AI receptionist for gyms and studios",
+  voice: "Enquiry follow-up for gyms and studios",
 };
 
 const EXTRA: Record<string, ReactNode> = {
   voice: (
     <p className="mt-6 text-base leading-relaxed text-muted">
-      On a call, the receptionist captures the caller's details, answers the
-      questions you have approved, books the slot where your calendar allows
-      it, and hands anything else to a person. We write the call flows with
-      you and test them before anyone relies on them.
+      Each phone, web form or email enquiry is logged with the details
+      captured, and the follow-ups that chase it are set up around the tools
+      you already use. Anything that needs a person goes to a person. If you
+      want one, a chat assistant answers from your approved information and
+      hands the rest to your team.
     </p>
   ),
   automation: (

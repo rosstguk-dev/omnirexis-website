@@ -41,7 +41,7 @@ export const Route = createFileRoute("/contact")({
 
 const INTENT_LABEL: Record<string, string> = {
   audit: "AI Opportunity Audit",
-  voice: "Voice receptionists",
+  voice: "Enquiry follow-up",
   automation: "Process automation",
   experience: "Customer experience",
   leisure: "Leisure systems",
