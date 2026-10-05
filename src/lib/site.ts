@@ -67,17 +67,19 @@ export const SOLUTIONS = [
     ],
   },
   {
+    // id stays "voice" so existing /solutions#voice links and the contact intent keep working.
+    // Voice / call answering is parked (Ross, 5 Oct 2026): this card is enquiry follow-up.
     id: "voice",
     index: "02",
-    name: "Voice receptionists",
-    kicker: "Calls answered, details captured, booked or handed over",
+    name: "Enquiry follow-up",
+    kicker: "Phone, form and email enquiries logged and chased",
     summary:
-      "Capture the enquiry, answer what you have approved, book the slot where your calendar allows it, and hand the rest to a person.",
+      "Enquiries that come in by phone, web form or email are logged in one place and chased with follow-ups, so they stop depending on someone remembering them. A chat assistant is optional.",
     href: "/solutions#voice",
     points: [
-      "Call flows and approved answers",
-      "Calendar and CRM integration where the tools allow it",
-      "Human handover, testing and ongoing refinement",
+      "Enquiry log for phone, web form and email",
+      "Follow-ups set up around the tools you already use",
+      "Optional chat assistant on your approved information, with handover to a person",
     ],
   },
   {
