@@ -13,20 +13,20 @@ import { faqJsonLd, jsonLdGraph, pageSeo, SITE_URL } from "@/lib/page-seo";
 // No chat channels named, no reply times, no missed-call text back.
 const FAQS = [
   {
-    q: "What does an AI receptionist do for a gym?",
-    a: "It captures the enquiry, answers what you have approved, books the slot where your calendar allows it and hands the rest to a person.",
+    q: "What does enquiry follow-up do for a gym?",
+    a: "Enquiries that come in by phone, web form or email are logged in one place and chased with follow-ups, set up around the tools you already use.",
   },
   {
-    q: "Does it sound like a robot?",
-    a: "We write the call flows and approved answers with you, and test them before go-live, with ongoing refinement after that.",
-  },
-  {
-    q: "Can it book into my calendar?",
+    q: "Does it connect to my CRM and calendar?",
     a: "Calendar and CRM integration where your tools allow it.",
   },
   {
-    q: "What happens with questions it cannot answer?",
-    a: "It hands over to a person.",
+    q: "What happens with enquiries that need a person?",
+    a: "They go to a person, with the details captured.",
+  },
+  {
+    q: "Is the chat assistant included?",
+    a: "It is optional. If you want one, it answers from your approved information and hands the rest to a person.",
   },
   {
     q: "Where does the chat assistant run?",
@@ -73,11 +73,11 @@ const EXTRA: Record<string, ReactNode> = {
 const SERVICE_JSON_LD = {
   "@type": "Service",
   "@id": `${SITE_URL}/solutions#service`,
-  name: "AI receptionist for gyms",
-  serviceType: "AI receptionist and automation",
+  name: "Enquiry follow-up for gyms",
+  serviceType: "Enquiry follow-up and automation",
   url: `${SITE_URL}/solutions`,
   description:
-    "AI receptionists that capture the enquiry, answer approved questions, book the slot where your calendar allows it and hand the rest to a person, plus process automation and approved-knowledge assistants for UK gyms, studios and leisure clubs. Scoped on a free 30 minute Zoom call.",
+    "Enquiry follow-up that logs and chases phone, web form and email enquiries, with an optional chat assistant, plus process automation and approved-knowledge assistants for UK gyms, studios and leisure clubs. Scoped on a free 30 minute Zoom call.",
   provider: { "@id": `${SITE_URL}/#organization` },
   areaServed: { "@type": "Country", name: "United Kingdom" },
   audience: {
@@ -94,9 +94,9 @@ const SERVICE_JSON_LD = {
 export const Route = createFileRoute("/solutions")({
   head: () =>
     pageSeo({
-      title: "AI receptionist for gyms, studios and clubs | Omnirexis",
+      title: "Enquiry follow-up for gyms, studios and clubs | Omnirexis",
       description:
-        "AI receptionists that capture the enquiry, answer approved questions, and book or hand over to a person. For UK gyms, studios and leisure clubs.",
+        "Phone, web form and email enquiries logged and chased with follow-ups, with an optional chat assistant. For UK gyms, studios and leisure clubs.",
       path: "/solutions",
       jsonLd: jsonLdGraph(SERVICE_JSON_LD, faqJsonLd(FAQS)),
     }),
@@ -192,7 +192,7 @@ function SolutionsPage() {
         </section>
         <section className="py-14 lg:py-16">
           <h2 className="font-sans text-3xl tracking-tight sm:text-4xl">
-            AI receptionist questions
+            Enquiry follow-up questions
           </h2>
           <div className="mt-4">
             <FaqList items={FAQS} />
