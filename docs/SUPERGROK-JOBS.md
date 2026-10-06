@@ -1,24 +1,8 @@
-# SuperGrok job list
+**RETIRED 6 Oct 2026 (Ross).** This board is closed. CoS does not hand Omnirexis jobs to SuperGrok. SuperGrok runs no Omnirexis scheduled tasks, reports or emails, and does not touch Drive, Sheets, n8n or accounts unless Ross asks it directly. Everything runs through CoS. Live rules: https://github.com/rosstguk-dev/omnirexis-website/blob/main/docs/OMNIREXIS-MASTER.md (§0, §3, §4C).
 
-Shared handoff board between **Chief of Staff Omnirexis** (Grok bot, full operating authority, reports to Ross) and **SuperGrok** (specialist for high-credit or heavy jobs, called on demand).
+# SuperGrok job list (retired)
 
-Raw URL for both: https://raw.githubusercontent.com/rosstguk-dev/omnirexis-website/main/docs/SUPERGROK-JOBS.md
-
-## How it works
-
-1. CoS adds a job under **Open** with the goal, context, success check and any limits.
-2. Ross opens SuperGrok and says: "check the job list".
-3. SuperGrok fetches this file and works through the Open jobs in order.
-4. For each job, SuperGrok moves it to **Done**, adds date, result, proof (commit link, execution id, live URL) and anything CoS must know, then pushes this file.
-5. CoS reads Done on its next run and follows up. Blocked jobs stay in Open with a `BLOCKED:` note saying exactly what is needed.
-
-Rules for SuperGrok on every job: obey the live master https://raw.githubusercontent.com/rosstguk-dev/omnirexis-website/main/docs/OMNIREXIS-MASTER.md. Hard stops: payments need Ross's yes; never sign or agree to legal terms. Cap 10 sends a day, n8n-only send, Zoom CTA only for outreach/sales (/pt signup CTA is the approved exception), no twin engines. PT is LIVE for self-serve signup (see live master §2). Never fabricate results. Never schedule or post AI social without Ross approving that exact asset.
-
----
-
-## Open
-
-_(none)_
+Kept for history only. Do not add jobs here and do not act on anything below.
 
 ---
 
