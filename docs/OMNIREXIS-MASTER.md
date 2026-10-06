@@ -1,7 +1,7 @@
 # OMNIREXIS MASTER BRIEF
 
 **Status:** live operating brief  
-**Last updated:** 5 October 2026, 10:40 BST
+**Last updated:** 6 October 2026, 10:30 BST
 **Owner:** Ross Gallagher  
 **How to use:** fetch the live file. Do not paste a snapshot into a bot’s knowledge and treat that snapshot as current.
 
@@ -116,7 +116,7 @@ First-touch stays studio-specific. Paragraph 3 must sound like the only public s
 ## 2. How money is made (in this order)
 
 1. **First-touch outreach** — personal emails from Outlook via n8n, cap 10 / day until Fri 2 Oct 2026, then 20 / day from Mon 5 Oct 2026 (Ross, 27 Sep 2026 13:48). Gym/studio owners: book a 30-min Zoom. PTs: free PT signup. Every email carries the PT free signup link (§5).  
-2. **Strategy call → scoped implementation** — automation, voice, growth systems. Price from the conversation.  
+2. **Strategy call → scoped implementation** — automation, enquiry follow-up, growth systems. Price from the conversation. Voice / call answering is parked (Ross, 5 Oct 2026): do not sell or say receptionist or "answers calls" until the Voice add-on is live (see §7).  
 3. **Rapid studio** — fixed-price content and ops docs (Content Sprint £79, Ops Doc Sprint £149, and the other packaged offers on /rapid-services). Ross confirmed on 3 Oct 2026 that the Content Engine stays at £349/month (live packaged offer on /rapid-services).  
 4. **Leisure systems** — club ops software conversation, not a hard sell on first touch.  
 5. **PT platform** — PT is LIVE for self-serve signup (Ross override, 27 Sep 2026 09:14). /pt CTAs (Start free / Sign up) go to https://omnirexis-pt.vercel.app/signup. PT may be promoted by Sales and Brand. PT prices: Solo £17.99/mo, Pro £24.99/mo, Founding £14.99/mo. Known risks: payments run on LIVE Stripe and are not yet tested end to end; grace-period change is draft PR #2 in rosstguk-dev/Omnirexis-PT. App email confirmation is ON (Product & Web, 27 Sep 2026): Resend domain omnirexis.co.uk Verified; Supabase Auth sends from noreply@omnirexis.co.uk (Omnirexis PT) via smtp.resend.com; signup smoke PASS (confirm mail arrived and link landed in app; Outlook proof 27 Sep 2026 10:00 BST to ross+ptconfirm20260927a@omnirexis.co.uk from Omnirexis PT <noreply@omnirexis.co.uk>). Stripe entitlements come only from the Vercel webhook we_1UEDUBP51EWsDMYrr5PmWw9x; the old Supabase webhook we_1UCQxYP51EWsDMYrHmmKwodP is disabled (not deleted). Code lives in private GitHub `rosstguk-dev/Omnirexis-PT` (Next.js 15 + Supabase + Stripe). Live/legacy Supabase project is `mzcuztcamkvuvxjodsgy`. Do not create a second project. Do not run fresh init SQL against it until reconciled. Free tier in code: £0 / 2 clients. PT pricing stays a free plan (2 clients), not a time-limited trial (Ross, 27 Sep 2026). ChatGPT-hosted PT app is deprecated. Website rollback target: Vercel deployment dpl_6tGKepoNP7vAvGLh27EjfKJozbt7 (PR #10 live, merge 67caee4).
@@ -235,7 +235,7 @@ Hard limits that still need a Ross click: 2FA, passkey, OAuth consent, payments,
 
 09:25 — outreach pulse. If 09:15 mailed zero, Grok refills and sends the same day if cap remains.
 
-n8n **Omnirexis Prospecting Agent** `6oSGzXqhkOTmS4Eu` stays unpublished. It is only the sheet-append machine for Grok’s named batch. Do not turn its OpenAI 08:00/14:00 schedule on.
+n8n **Omnirexis Prospecting Agent** `6oSGzXqhkOTmS4Eu` stays unpublished. Do not turn its OpenAI 08:00/14:00 schedule on. Hard rule (2 Oct 2026): no bot edits or runs n8n to add outreach rows (no named-batch saves, no appending to the outreach sheet). Queue top-ups go only through Sales & CRM intake; if the queue is short, ask Sales and accept a smaller send.
 
 ### D. n8n “Outreach Runner” (machine, not a bot)
 Workflow `cugi7YqiP6PjbVp5`, schedule 09:15 Europe/London.
@@ -339,7 +339,7 @@ Write like Ross messaging another operator, not like a sales sequence:
 | Offer | Status |
 |---|---|
 | Automation / implementation | Live, scoped per call |
-| Voice / receptionist | Live conversation, not a fake “platform launch” |
+| Voice / receptionist | **Parked (Ross, 5 Oct 2026).** No call answering. Do not say receptionist or "answers calls" in outreach, Zoom pitches, site, blog or social until the Voice add-on is live. Studio Front Desk is a chat assistant plus enquiry follow-up (log and chase phone, form and email). /solutions card is now Enquiry follow-up (PR #26, #27) |
 | Growth systems | Live conversation |
 | Rapid studio (content / ops docs) | Live, fixed price |
 | Leisure systems | Live conversation |
@@ -396,6 +396,7 @@ SuperGrok jobs: https://raw.githubusercontent.com/rosstguk-dev/omnirexis-website
 
 | When | What |
 |---|---|
+| 2026-10-06 10:30 | Continuous improve (CoS): stale-instruction cleanup so bots stop selling what is parked. §2 item 2 and §7: Voice / call answering marked parked (Ross, 5 Oct 2026; site already changed in PR #26/#27); no receptionist / "answers calls" wording anywhere until the Voice add-on is live. §4C: Prospecting Agent line now carries the 2 Oct 2026 hard rule (no n8n row appends; top-ups via Sales intake only). `docs/BOT-BOOTSTRAP.md` was still telling new bots PT is not live, "today's 10" and to never edit n8n: rewritten to match §9 (PT live, §5 cap schedule, CoS powers). `docs/MARKETING-FUNDAMENTALS.md` and `docs/SEO-CONTENT-PLAN.md` carry a Voice-parked note so blog/SEO drafts do not target "ai receptionist" terms. Drive mirror: newest OMNIREXIS-MASTER.md re-uploaded; older stale .md copies trashed (backed up on the box first) after a stale copy caused a false 10/day cap alert on 6 Oct. Docs only, no site build change; cap / send path unchanged. |
 | 2026-10-05 10:40 | Continuous improve (CoS): PT signup page (https://omnirexis-pt.vercel.app/signup), where every outreach email's Start free button lands, now shows the Free plan facts above the form: £0 for up to 2 active clients (not a time-limited trial), no card details needed, programmes/sessions/check-ins/macros (all match `lib/plans.ts` and the /pt FAQ). After signup the confirm step names the address, says the mail comes from Omnirexis PT and to check spam/junk; button shows a pending state and cannot double-submit. `signup_src` capture unchanged; no DB, Stripe or auth config change. Omnirexis-PT PR #10 (merge `32ff751`), production `dpl_69YtAak3NTepd7qMcVfxd8C76hcs` READY and verified live; rollback `dpl_3f3gMa5YEEpzDn3udzckoAmUFPJk`. Also §4D: n8n plan corrected from Starter to Cloud Pro (Ross, 5 Oct 2026; receipt 3 Oct £72). Cap / outreach send path unchanged (Mon 5 Oct 09:15 run exec 3304 succeeded). |
 | 2026-10-04 12:15 | Retired the 3D robot video look (CoS job, Ross's 27 Sep 2026 standard). §5 Social: house social standard now states the 19 Sep 3D robot advert look (robot visual lock, robot videos, robot stills) is retired and points to the house video recipe; cadence line no longer says robot videos/stills; Visual lock and Robot week pack bullets marked RETIRED 4 Oct 2026. `ops/brand-social/VIDEO-RECIPE-LOCKED.md` rewritten to the house standard: short beat-synced motion-graphics video, dark navy premium look, bold kinetic type, real app screens, original royalty-free music, clear CTA to omnirexis.co.uk, modelled on the PT launch promo (`/workspace/pt-promo/`, render scripts `/workspace/pt-promo/build/`; note: that `build/` folder was not on the box on 4 Oct, restore before the next render). Docs only, no site change. |
 | 2026-10-04 10:20 | Continuous improve (CoS): (1) Shipped SEO landing pages from draft PR #17 (merge `38bbca5`, production `dpl_FAhsLPrfCNAdZWsy92TiAHzGUWyw` READY). Live: `/lead-follow-up-automation`, `/gyms`, `/pilates-yoga-studios`, `/blog` hub (no posts yet), home brand title, `/pt` and `/solutions` brief updates; sitemap includes the new URLs. CoS claim QC before merge (CD wordings; no posts published unsigned). Rollback: `dpl_5EqDuiFJaaogB6e37fNUc3sEubbm`. (2) Unpublished stale n8n **Omnirexis PT — Website Opt-In and Pack Delivery** `dqiAs5dx55Eo3Ku9` (site form gone; email still pointed at deprecated ChatGPT pack URL and off nurture). One-click unsubscribe left active. Cap / outreach send path unchanged. Note: Grok Bot queue-guard routine `omnirexis-08-00-outreach-queue-guard` still needs its prompt updated to the §5 20/day target from Mon 5 Oct (automation runs cannot edit another routine). |

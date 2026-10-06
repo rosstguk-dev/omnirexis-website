@@ -2,6 +2,8 @@
 
 **Owner:** Brand & Social for Ross Gallagher · **Written:** Sat 3 Oct 2026 (BST) · **Status:** draft for Product, Client Delivery and Finance & Quality. Nothing here is live until it is built, checked and published.
 
+**Voice parked (CoS, 6 Oct 2026, per Ross 5 Oct 2026):** call answering is off the site until the Voice add-on is live. Do not build or publish pages, posts or titles targeting "ai receptionist", "voice receptionist" or "answers calls" terms, and read any receptionist wording below as on hold. Map those searches to Enquiry follow-up on /solutions (phone, form and email enquiries logged and chased) only where the copy stays true to that.
+
 **Changelog**
 - 3 Oct 2026: Finance & Quality QC fixes applied (re-QC pending); Voice kicker wording from Client Delivery.
 - 3 Oct 2026: F&Q re-QC fixes R1-R6 applied.
