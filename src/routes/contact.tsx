@@ -45,13 +45,13 @@ const INTENT_LABEL: Record<string, string> = {
   automation: "Process automation",
   experience: "Customer experience",
   leisure: "Leisure systems",
-  "pt-free": "PT platform — Free",
-  "pt-founding": "PT platform — Founding",
-  "pt-solo": "PT platform — Solo",
-  "pt-pro": "PT platform — Pro",
-  "rapid-content": "Rapid — Content Sprint",
-  "rapid-ops": "Rapid — Operations Document Sprint",
-  "rapid-engine": "Rapid — Content Engine",
+  "pt-free": "PT platform, Free",
+  "pt-founding": "PT platform, Founding",
+  "pt-solo": "PT platform, Solo",
+  "pt-pro": "PT platform, Pro",
+  "rapid-content": "Rapid, Content Sprint",
+  "rapid-ops": "Rapid, Operations Document Sprint",
+  "rapid-engine": "Rapid, Content Engine",
 };
 
 function ContactPage() {
@@ -122,7 +122,7 @@ function ContactPage() {
           {submit.status === "success" ? (
             <div className="rounded-xl bg-paper-2 px-8 py-12">
               <h2 className="font-sans text-3xl tracking-tight">
-                Thanks — we have your enquiry.
+                Thanks, we have your enquiry.
               </h2>
               <p className="mt-4 max-w-md text-base leading-relaxed text-muted">
                 We read everything that comes in and will reply to the email you

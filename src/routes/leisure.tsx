@@ -20,7 +20,7 @@ export const Route = createFileRoute("/leisure")({
 const PILLARS = [
   {
     t: "Daily checks",
-    d: "Opening, closing and floor standards that actually get done — and can be shown when someone asks.",
+    d: "Opening, closing and floor standards that actually get done, and can be shown when someone asks.",
   },
   {
     t: "Maintenance",
@@ -32,7 +32,7 @@ const PILLARS = [
   },
   {
     t: "Records",
-    d: "Operational notes a manager can stand behind — for the team, for the next shift, for the audit.",
+    d: "Operational notes a manager can stand behind: for the team, for the next shift, for the audit.",
   },
 ];
 
@@ -42,7 +42,7 @@ function LeisurePage() {
       <PageHero
         kicker="Leisure systems"
         title="A clearer day, for the whole team."
-        lede="Practical checks, staff tasks, maintenance and reporting for gyms, spas and leisure clubs. Built from years on the floor — not from a generic ops template."
+        lede="Practical checks, staff tasks, maintenance and reporting for gyms, spas and leisure clubs. Built from years on the floor, not from a generic ops template."
       >
         <div className="mt-8 flex flex-wrap gap-3">
           <Button asChild>
@@ -82,8 +82,8 @@ function LeisurePage() {
               shift. We put that work in a system the team will use.
             </p>
             <p className="mt-4 text-base leading-relaxed text-muted">
-              Connected, where it helps, to the same automation and voice work
-              we run for the rest of the business — one point of contact.
+              Connected, where it helps, to the same automation and enquiry follow-up
+              we run for the rest of the business. One point of contact.
             </p>
           </div>
         </div>

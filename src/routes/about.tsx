@@ -48,7 +48,7 @@ function AboutPage() {
               Ross Gallagher
             </h2>
             <p className="mt-5 text-base leading-relaxed text-muted">
-              More than fifteen years in fitness and operational management —
+              More than fifteen years in fitness and operational management:
               gyms, leisure clubs, the unglamorous work that keeps a site
               running. Omnirexis exists because that work is still done in
               inboxes, whiteboards and someone’s head, while the market sells
