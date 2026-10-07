@@ -63,7 +63,7 @@ function RapidPage() {
           <p className="max-w-3xl text-sm leading-relaxed text-muted">
             Turnaround starts once the brief and source material are complete.
             Secure invoicing. Safety-critical, medical or regulated documents
-            require your approval and a competent-person review — we will not
+            require your approval and a competent-person review. We will not
             pretend otherwise.
           </p>
         </div>
