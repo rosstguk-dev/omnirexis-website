@@ -117,6 +117,11 @@ export const Route = createRootRoute({
     <html lang="en-GB" className="antialiased" suppressHydrationWarning>
       <head>
         <HeadContent />
+        <meta
+          name="impact-site-verification"
+          // Impact.com verification uses `value`, not `content`.
+          {...({ value: "a88ba91c-b8ec-4448-9269-63c60bc41c40" } as Record<string, string>)}
+        />
       </head>
       <body>
         <PreviewHostBridge />
