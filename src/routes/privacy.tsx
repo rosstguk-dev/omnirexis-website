@@ -40,6 +40,12 @@ function PrivacyPage() {
           agreed before systems are connected.
         </p>
         <p>
+          We use Vercel Web Analytics to see how the site is used: it does not
+          use cookies or identify individual visitors, and only gives us
+          aggregate figures such as page views, referring sites, country and
+          device type.
+        </p>
+        <p>
           To ask about the information we hold, or to request a correction or
           deletion, write to{" "}
           <a className="text-bone underline" href={`mailto:${EMAIL}`}>
