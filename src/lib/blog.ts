@@ -76,7 +76,7 @@ export const POSTS: BlogPost[] = [
     description:
       "Make vs n8n for gyms and PTs: prices checked 10 Oct 2026, a plain comparison table and a clear verdict for solo PTs, studios and multi-site gyms.",
     excerpt:
-      "We run Omnirexis on n8n every day, and we've assessed Make as the alternative. Here's how to choose between them for a gym, studio or PT business.",
+      "We run Omnirexis on n8n every day, and we've compared Make on features and pricing. Here's how to choose between them for a gym, studio or PT business.",
     audience: "gyms",
     published: "2026-10-10",
     linksTo: "/lead-follow-up-automation",

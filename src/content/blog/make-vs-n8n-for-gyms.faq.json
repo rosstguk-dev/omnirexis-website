@@ -39,7 +39,7 @@
       "name": "Which tool does Omnirexis use?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We run Omnirexis on n8n Cloud Pro. We've assessed Make as an alternative but don't run our business on it."
+        "text": "We run Omnirexis on n8n Cloud Pro. We've compared Make on features and pricing but don't run our business on it."
       }
     },
     {

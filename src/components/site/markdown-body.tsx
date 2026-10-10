@@ -18,7 +18,7 @@ const INLINE =
 
 /** General affiliate URL patterns (query tracking params used by affiliate programmes). */
 const AFFILIATE_PATTERNS: RegExp[] = [
-  /^https?:\/\/(www\.)?make\.com\/.*[?&]pc=/i,
+  /^https?:\/\/(www\.)?make\.com(\/[^?#]*)?\?(.*&)?pc=/i, // make.com/?pc=… and make.com/en/register?pc=…
   /[?&](aff|affiliate|aff_id|affiliate_id|ref_id|via|fpr|partner_id)=/i,
 ];
 

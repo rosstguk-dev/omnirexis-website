@@ -1,4 +1,4 @@
-*This post contains an affiliate link to Make. If you sign up through it we may earn a commission, at no extra cost to you. We only recommend tools we've assessed.*
+**Affiliate disclosure:** This post contains an affiliate link to Make. If you sign up through it we may earn a commission, at no extra cost to you. We only recommend tools we've compared carefully.
 
 *Prices checked 10 Oct 2026.*
 
@@ -6,7 +6,7 @@ If you run a gym, a studio or a PT business, you've probably heard that automati
 
 Both are visual automation tools. You connect your apps (your inbox, forms, spreadsheets, CRM, calendar) and build workflows that run on their own. Both can do the jobs a fitness business cares about, like following up enquiries and moving data between systems.
 
-We'll be upfront about where we stand. Omnirexis runs on n8n, on the paid Cloud Pro plan, and we use it every day. We have not run our business on Make. We've opened a free Make account and assessed it against what we know from n8n, so treat the Make side as an informed assessment, not a long-term user review.
+We'll be upfront about where we stand. Omnirexis runs on n8n, on the paid Cloud Pro plan, and we use it every day. We have not run our business on Make. We've opened a free Make account and compared it with n8n on features and pricing, so treat the Make side as an informed assessment, not a long-term user review.
 
 ## What we actually use n8n for
 
@@ -96,7 +96,7 @@ Make uses credits: most actions inside a workflow use one, so longer workflows c
 
 ### Which tool does Omnirexis use?
 
-We run Omnirexis on n8n Cloud Pro. We've assessed Make as an alternative but don't run our business on it.
+We run Omnirexis on n8n Cloud Pro. We've compared Make on features and pricing but don't run our business on it.
 
 ### Can I automate gym enquiry follow-up with either tool?
 
