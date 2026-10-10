@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/layout";
 import { PageHero } from "@/components/site/page-hero";
 import { EMAIL } from "@/lib/site";
@@ -51,6 +51,13 @@ function PrivacyPage() {
           <a className="text-bone underline" href={`mailto:${EMAIL}`}>
             {EMAIL}
           </a>
+          .
+        </p>
+        <p>
+          See also our{" "}
+          <Link to="/terms" className="text-bone underline">
+            terms and conditions
+          </Link>
           .
         </p>
         <p className="text-sm">Last updated September 2026.</p>

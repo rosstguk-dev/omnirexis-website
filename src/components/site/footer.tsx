@@ -125,6 +125,11 @@ export function SiteFooter() {
                   Privacy
                 </Link>
               </li>
+              <li>
+                <Link to="/terms" className="text-bone/80 hover:text-bone">
+                  Terms
+                </Link>
+              </li>
             </ul>
           </div>
           <div>
