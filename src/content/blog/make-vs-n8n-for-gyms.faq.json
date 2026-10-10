@@ -1,0 +1,54 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Make or n8n better for a small gym?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For a small gym where the owner builds the automations, Make is usually the easier start thanks to its free plan and friendly builder. If someone technical is setting things up, or the workflows will have many steps, n8n is often the better long-term fit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is n8n free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The self-hosted Community Edition is free if you can run your own server. n8n Cloud has a free trial with no card needed, then paid plans from €20 a month billed annually (prices checked 10 Oct 2026)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Make have a free plan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Make's Free plan has no time limit and includes 1,000 credits a month, up to 2 active scenarios and runs at most every 15 minutes (checked 10 Oct 2026)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between Make credits and n8n executions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Make uses credits: most actions inside a workflow use one, so longer workflows cost more per run. n8n counts executions: one complete run of a workflow counts once, however many steps it has."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which tool does Omnirexis use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We run Omnirexis on n8n Cloud Pro. We've compared Make on features and pricing but don't run our business on it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I automate gym enquiry follow-up with either tool?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Both can log enquiries, send a first reply, follow up when people go quiet and link to booking. The hard part is designing the process, not choosing the tool."
+      }
+    }
+  ]
+}

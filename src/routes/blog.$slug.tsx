@@ -6,7 +6,7 @@ import { MarkdownBody } from "@/components/site/markdown-body";
 import { PageHero } from "@/components/site/page-hero";
 import { findPublishedPost } from "@/lib/blog";
 import { ptSignup } from "@/lib/site";
-import { OG_IMAGE, pageSeo, SITE_URL } from "@/lib/page-seo";
+import { jsonLdGraph, OG_IMAGE, pageSeo, SITE_URL } from "@/lib/page-seo";
 
 // Only published posts render; drafts and unknown slugs fall through to the branded 404.
 export const Route = createFileRoute("/blog/$slug")({
@@ -24,7 +24,7 @@ export const Route = createFileRoute("/blog/$slug")({
       description: post.description,
       path,
       // Article: no ratings or reviews.
-      jsonLd: {
+      jsonLd: withFaq(post.faqJsonLd, {
         "@context": "https://schema.org",
         "@type": "Article",
         headline: post.title,
@@ -38,11 +38,18 @@ export const Route = createFileRoute("/blog/$slug")({
         author: { "@id": `${SITE_URL}/#organization` },
         publisher: { "@id": `${SITE_URL}/#organization` },
         isPartOf: { "@id": `${SITE_URL}/blog#blog` },
-      },
+      }),
     });
   },
   component: BlogPostPage,
 });
+
+/** Adds a post's own FAQPage node next to the Article, in one @graph. */
+function withFaq(faq: Record<string, unknown> | undefined, article: Record<string, unknown>) {
+  if (!faq) return article;
+  const strip = ({ "@context": _c, ...rest }: Record<string, unknown>) => rest;
+  return jsonLdGraph(strip(article), strip(faq));
+}
 
 function BlogPostPage() {
   const { post } = Route.useLoaderData();
@@ -66,7 +73,7 @@ function BlogPostPage() {
       <article className="mx-auto max-w-3xl px-5 py-14 sm:px-8">
         {post.body ? (
           <div data-post-body>
-            <MarkdownBody markdown={post.body} />
+            <MarkdownBody markdown={post.body} affiliateLinks={post.affiliateLinks} />
           </div>
         ) : null}
         {post.sections.map((s) => (
