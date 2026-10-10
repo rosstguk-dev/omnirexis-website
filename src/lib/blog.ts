@@ -6,6 +6,8 @@
  * PT posts link to signup with ?src=seo_blog-<srcTag> (the exact tag is on each post in the plan); owner posts use the Zoom call.
  */
 import aiOrSiBody from "@/content/blog/ai-or-si-super-intelligence-gyms.md?raw";
+import makeVsN8nBody from "@/content/blog/make-vs-n8n-for-gyms.md?raw";
+import makeVsN8nFaq from "@/content/blog/make-vs-n8n-for-gyms.faq.json";
 
 export type BlogAudience = "gyms" | "studios" | "pts";
 
@@ -36,6 +38,10 @@ export type BlogPost = {
   excerpt?: string;
   /** Signed-off markdown body, rendered word for word below the hero (used instead of `sections`). */
   body?: string;
+  /** Extra JSON-LD for this post only (e.g. FAQPage). Its answers must match FAQ text visible in `body`. */
+  faqJsonLd?: Record<string, unknown>;
+  /** URL prefixes in this post that are affiliate links (rendered rel="sponsored nofollow"), on top of the general patterns in markdown-body. */
+  affiliateLinks?: string[];
 };
 
 export const BLOG_AUDIENCES: { id: BlogAudience; label: string; page: string; pageLabel: string }[] = [
@@ -61,6 +67,24 @@ export const POSTS: BlogPost[] = [
     intro: "",
     sections: [],
     body: aiOrSiBody,
+  },
+  {
+    // Source: /workspace/side-income/posts/make-vs-n8n.md (Money Machine, via CoS). Needs F&Q sign-off before merge.
+    slug: "make-vs-n8n-for-gyms",
+    title: "Make vs n8n: which automation tool should a gym or PT business pick?",
+    metaTitle: "Make vs n8n for Gyms and PTs: Which Should You Pick?",
+    description:
+      "Make vs n8n for gyms and PTs: prices checked 10 Oct 2026, a plain comparison table and a clear verdict for solo PTs, studios and multi-site gyms.",
+    excerpt:
+      "We run Omnirexis on n8n every day, and we've assessed Make as the alternative. Here's how to choose between them for a gym, studio or PT business.",
+    audience: "gyms",
+    published: "2026-10-10",
+    linksTo: "/lead-follow-up-automation",
+    intro: "",
+    sections: [],
+    body: makeVsN8nBody,
+    faqJsonLd: makeVsN8nFaq,
+    affiliateLinks: ["https://www.make.com/en/register?pc="],
   },
 ];
 

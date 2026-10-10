@@ -4,11 +4,48 @@ import { SITE_URL } from "@/lib/page-seo";
 /**
  * Renders a signed-off blog post body (markdown) in the site's article styles,
  * without changing the words. Supports the subset the posts use: `##`/`###`
- * headings, paragraphs, `-` and `1.` lists, `**bold**` and `[text](url)` links.
+ * headings, paragraphs, `-` and `1.` lists, `|` tables, `**bold**`, `*italic*`,
+ * `[text](url)` links and plain `<a href="url">text</a>` anchors (only href is
+ * read; any other attributes in the markdown are ignored).
+ *
+ * Affiliate links get rel="sponsored nofollow" (plus noopener when they open in
+ * a new tab). A link is affiliate when it starts with one of the post's
+ * `affiliateLinks` prefixes or matches AFFILIATE_PATTERNS. Other links keep
+ * their normal rel.
  */
-const INLINE = /\*\*(.+?)\*\*|\[([^\]]+)\]\(([^)\s]+)\)/g;
+const INLINE =
+  /\*\*(.+?)\*\*|\[([^\]]+)\]\(([^)\s]+)\)|<a\s[^>]*?href="([^"]+)"[^>]*>(.*?)<\/a>|(?<![*\w])\*(?!\s)([^*]+?)\*(?![*\w])/g;
 
-function inline(text: string): ReactNode[] {
+/** General affiliate URL patterns (query tracking params used by affiliate programmes). */
+const AFFILIATE_PATTERNS: RegExp[] = [
+  /^https?:\/\/(www\.)?make\.com\/.*[?&]pc=/i,
+  /[?&](aff|affiliate|aff_id|affiliate_id|ref_id|via|fpr|partner_id)=/i,
+];
+
+function isAffiliate(href: string, extra: string[] = []) {
+  return extra.some((p) => href.startsWith(p)) || AFFILIATE_PATTERNS.some((r) => r.test(href));
+}
+
+type Ctx = { affiliateLinks: string[] };
+
+function link(key: number, rawHref: string, label: ReactNode[], ctx: Ctx) {
+  const href = rawHref.startsWith(SITE_URL) ? rawHref.slice(SITE_URL.length) || "/" : rawHref;
+  const external = /^https?:\/\//.test(href);
+  const affiliate = external && isAffiliate(href, ctx.affiliateLinks);
+  const rel = affiliate ? "sponsored nofollow noopener noreferrer" : "noreferrer";
+  return (
+    <a
+      key={key}
+      href={href}
+      className="text-bone underline underline-offset-4"
+      {...(external ? { target: "_blank", rel } : {})}
+    >
+      {label}
+    </a>
+  );
+}
+
+function inline(text: string, ctx: Ctx): ReactNode[] {
   const out: ReactNode[] = [];
   let last = 0;
   let key = 0;
@@ -18,22 +55,15 @@ function inline(text: string): ReactNode[] {
     if (m[1] !== undefined) {
       out.push(
         <strong key={key++} className="font-medium text-bone">
-          {inline(m[1])}
+          {inline(m[1], ctx)}
         </strong>,
       );
+    } else if (m[3] !== undefined) {
+      out.push(link(key++, m[3], [m[2]], ctx));
+    } else if (m[4] !== undefined) {
+      out.push(link(key++, m[4].replace(/&amp;/g, "&"), inline(m[5], ctx), ctx));
     } else {
-      const href = m[3].startsWith(SITE_URL) ? m[3].slice(SITE_URL.length) || "/" : m[3];
-      const external = /^https?:\/\//.test(href);
-      out.push(
-        <a
-          key={key++}
-          href={href}
-          className="text-bone underline underline-offset-4"
-          {...(external ? { target: "_blank", rel: "noreferrer" } : {})}
-        >
-          {m[2]}
-        </a>,
-      );
+      out.push(<em key={key++}>{inline(m[6], ctx)}</em>);
     }
     last = at + m[0].length;
   }
@@ -43,7 +73,10 @@ function inline(text: string): ReactNode[] {
 
 type Block =
   | { kind: "h2" | "h3" | "p"; text: string }
-  | { kind: "ul" | "ol"; items: string[] };
+  | { kind: "ul" | "ol"; items: string[] }
+  | { kind: "table"; head: string[]; rows: string[][] };
+
+const cells = (l: string) => l.replace(/^\|/, "").replace(/\|$/, "").split("|").map((c) => c.trim());
 
 function parse(md: string): Block[] {
   const blocks: Block[] = [];
@@ -53,6 +86,8 @@ function parse(md: string): Block[] {
     const first = lines[0];
     if (first.startsWith("### ")) blocks.push({ kind: "h3", text: first.slice(4) });
     else if (first.startsWith("## ")) blocks.push({ kind: "h2", text: first.slice(3) });
+    else if (lines.length >= 2 && lines.every((l) => l.startsWith("|")) && /^\|[\s:|-]+\|$/.test(lines[1]))
+      blocks.push({ kind: "table", head: cells(first), rows: lines.slice(2).map(cells) });
     else if (lines.every((l) => /^- /.test(l)))
       blocks.push({ kind: "ul", items: lines.map((l) => l.slice(2)) });
     else if (lines.every((l) => /^\d+\. /.test(l)))
@@ -62,7 +97,14 @@ function parse(md: string): Block[] {
   return blocks;
 }
 
-export function MarkdownBody({ markdown }: { markdown: string }) {
+export function MarkdownBody({
+  markdown,
+  affiliateLinks = [],
+}: {
+  markdown: string;
+  affiliateLinks?: string[];
+}) {
+  const ctx: Ctx = { affiliateLinks };
   return (
     <>
       {parse(markdown).map((b, i) => {
@@ -70,13 +112,13 @@ export function MarkdownBody({ markdown }: { markdown: string }) {
           case "h2":
             return (
               <h2 key={i} className="mt-12 font-sans text-2xl tracking-tight first:mt-0 sm:text-3xl">
-                {inline(b.text)}
+                {inline(b.text, ctx)}
               </h2>
             );
           case "h3":
             return (
               <h3 key={i} className="mt-8 font-sans text-xl tracking-tight">
-                {inline(b.text)}
+                {inline(b.text, ctx)}
               </h3>
             );
           case "ul":
@@ -84,7 +126,7 @@ export function MarkdownBody({ markdown }: { markdown: string }) {
               <ul key={i} className="mt-4 space-y-2">
                 {b.items.map((it, j) => (
                   <li key={j} className="border-l-2 border-pine pl-4 text-base text-muted">
-                    {inline(it)}
+                    {inline(it, ctx)}
                   </li>
                 ))}
               </ul>
@@ -94,15 +136,42 @@ export function MarkdownBody({ markdown }: { markdown: string }) {
               <ol key={i} className="mt-4 list-decimal space-y-2 pl-6 text-base text-muted marker:text-pine">
                 {b.items.map((it, j) => (
                   <li key={j} className="pl-1">
-                    {inline(it)}
+                    {inline(it, ctx)}
                   </li>
                 ))}
               </ol>
             );
+          case "table":
+            return (
+              <div key={i} className="mt-6 overflow-x-auto">
+                <table className="w-full border-collapse text-left text-sm text-muted">
+                  <thead>
+                    <tr>
+                      {b.head.map((h, j) => (
+                        <th key={j} scope="col" className="border-b border-pine px-3 py-2 font-medium text-bone">
+                          {inline(h, ctx)}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {b.rows.map((r, j) => (
+                      <tr key={j} className="align-top">
+                        {r.map((c, k) => (
+                          <td key={k} className={`border-b border-white/10 px-3 py-2 ${k === 0 ? "font-medium text-bone" : ""}`}>
+                            {inline(c, ctx)}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            );
           default:
             return (
               <p key={i} className="mt-4 text-lg leading-relaxed text-muted first:mt-0">
-                {inline(b.text)}
+                {inline(b.text, ctx)}
               </p>
             );
         }
