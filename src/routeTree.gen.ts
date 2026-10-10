@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DpaRouteImport } from './routes/dpa'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as GymsRouteImport } from './routes/gyms'
 import { Route as LeadFollowUpAutomationRouteImport } from './routes/lead-follow-up-automation'
@@ -39,6 +40,11 @@ const AboutRoute = AboutRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DpaRoute = DpaRouteImport.update({
+  id: '/dpa',
+  path: '/dpa',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FaqRoute = FaqRouteImport.update({
@@ -111,6 +117,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/dpa': typeof DpaRoute
   '/faq': typeof FaqRoute
   '/gyms': typeof GymsRoute
   '/lead-follow-up-automation': typeof LeadFollowUpAutomationRoute
@@ -129,6 +136,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/dpa': typeof DpaRoute
   '/faq': typeof FaqRoute
   '/gyms': typeof GymsRoute
   '/lead-follow-up-automation': typeof LeadFollowUpAutomationRoute
@@ -148,6 +156,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/dpa': typeof DpaRoute
   '/faq': typeof FaqRoute
   '/gyms': typeof GymsRoute
   '/lead-follow-up-automation': typeof LeadFollowUpAutomationRoute
@@ -168,6 +177,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/dpa'
     | '/faq'
     | '/gyms'
     | '/lead-follow-up-automation'
@@ -186,6 +196,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/dpa'
     | '/faq'
     | '/gyms'
     | '/lead-follow-up-automation'
@@ -204,6 +215,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/dpa'
     | '/faq'
     | '/gyms'
     | '/lead-follow-up-automation'
@@ -223,6 +235,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
+  DpaRoute: typeof DpaRoute
   FaqRoute: typeof FaqRoute
   GymsRoute: typeof GymsRoute
   LeadFollowUpAutomationRoute: typeof LeadFollowUpAutomationRoute
@@ -259,6 +272,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dpa': {
+      id: '/dpa'
+      path: '/dpa'
+      fullPath: '/dpa'
+      preLoaderRoute: typeof DpaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/faq': {
@@ -359,6 +379,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
+  DpaRoute: DpaRoute,
   FaqRoute: FaqRoute,
   GymsRoute: GymsRoute,
   LeadFollowUpAutomationRoute: LeadFollowUpAutomationRoute,

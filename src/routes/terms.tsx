@@ -2,7 +2,7 @@ import { Fragment, type ReactNode } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/layout";
 import { PageHero } from "@/components/site/page-hero";
-import { EMAIL } from "@/lib/site";
+import { ADDRESS, EMAIL } from "@/lib/site";
 import { pageSeo } from "@/lib/page-seo";
 
 export const Route = createFileRoute("/terms")({
@@ -32,8 +32,9 @@ const SECTIONS: { h: string; body: ReactNode[] }[] = [
         Omnirexis, and “you” means the person or business using our services.
       </p>,
       <p>
-        We are not registered for VAT, so our prices do not include VAT. You
-        can contact us at {mail}.
+        Our address is {ADDRESS.line1}, {ADDRESS.line2}, {ADDRESS.city}{" "}
+        {ADDRESS.postcode}. We are not registered for VAT, so our prices do not
+        include VAT. You can contact us at {mail}.
       </p>,
     ],
   },
@@ -111,6 +112,13 @@ const SECTIONS: { h: string; body: ReactNode[] }[] = [
         ends once supply starts.
       </p>,
       <p>
+        When you start a paid Omnirexis PT plan, you can tick a box to ask for
+        your subscription to start straight away. If you are a consumer and you
+        do not tick that box, you keep your 14-day right to cancel. If you
+        cancel within those 14 days after you have started using the service,
+        you may have to pay for what you have used.
+      </p>,
+      <p>
         Most of our customers are businesses. Business customers do not have
         these statutory cooling-off rights.
       </p>,
@@ -139,8 +147,11 @@ const SECTIONS: { h: string; body: ReactNode[] }[] = [
         approvals you give.
       </p>,
       <p>
-        When we handle your customers’ data, we act on your instructions. A
-        data processing addendum is available on request.
+        When we handle your customers’ data, we act on your instructions. Our{" "}
+        <Link to="/dpa" className="text-bone underline">
+          data processing addendum
+        </Link>{" "}
+        applies to that processing.
       </p>,
     ],
   },
@@ -170,17 +181,22 @@ const SECTIONS: { h: string; body: ReactNode[] }[] = [
     h: "10. Our liability",
     body: [
       <p>
-        Our total liability to you under or in connection with these terms is
-        limited to the fees you paid us in the 12 months before the claim. If
-        you are a business customer, we are not liable for any indirect or
-        consequential loss, or for loss of profit, revenue or data.
+        If you are a business customer, our total liability to you under or in
+        connection with these terms is limited to the greater of the fees you
+        paid us in the 12 months before the claim or £100. We are also not
+        liable to business customers for any indirect or consequential loss, or
+        for loss of profit, revenue or data.
       </p>,
       <p>
         Nothing in these terms limits or excludes our liability for death or
         personal injury caused by our negligence, for fraud or fraudulent
         misrepresentation, or for anything else that cannot be limited or
-        excluded by law. If you are a consumer, nothing in these terms affects
-        your statutory rights.
+        excluded by law.
+      </p>,
+      <p>
+        If you are a consumer, nothing in these terms limits or excludes your
+        statutory rights under the Consumer Rights Act 2015 or other consumer
+        law.
       </p>,
     ],
   },

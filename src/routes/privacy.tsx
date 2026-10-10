@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/layout";
 import { PageHero } from "@/components/site/page-hero";
-import { EMAIL } from "@/lib/site";
+import { ADDRESS, EMAIL } from "@/lib/site";
 import { pageSeo } from "@/lib/page-seo";
 
 export const Route = createFileRoute("/privacy")({
@@ -25,6 +25,10 @@ function PrivacyPage() {
       />
       <article className="mx-auto max-w-3xl space-y-8 px-5 pb-24 text-base leading-relaxed text-muted sm:px-8">
         <p>
+          Omnirexis is the trading name of Ross Gallagher, a sole trader, of{" "}
+          {ADDRESS.line1}, {ADDRESS.line2}, {ADDRESS.city} {ADDRESS.postcode}.
+        </p>
+        <p>
           We collect the name, company, email, phone number and any business
           information you choose to share on the contact form, so we can respond
           to an enquiry or book a strategy call. We do not sell this
@@ -45,6 +49,20 @@ function PrivacyPage() {
           aggregate figures such as page views, referring sites, country and
           device type.
         </p>
+        <h2 className="font-sans text-xl font-medium tracking-tight text-bone">
+          How long we keep your information
+        </h2>
+        <p>
+          We keep enquiry details for as long as we need them to deal with your
+          enquiry and any work that follows. When an agreement with us ends, you
+          can ask us to export your data within 30 days. After that we delete
+          it from our live systems.
+        </p>
+        <p>
+          Copies held in backups expire in line with our providers’ standard
+          backup cycles. We keep legal and accounting records, such as invoices,
+          for as long as the law requires.
+        </p>
         <p>
           To ask about the information we hold, or to request a correction or
           deletion, write to{" "}
@@ -60,7 +78,7 @@ function PrivacyPage() {
           </Link>
           .
         </p>
-        <p className="text-sm">Last updated September 2026.</p>
+        <p className="text-sm">Last updated 10 October 2026.</p>
       </article>
     </SiteLayout>
   );
