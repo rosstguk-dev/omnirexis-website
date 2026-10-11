@@ -124,7 +124,12 @@ function BlogPostPage() {
           primaryExternal={false}
         />
       ) : (
-        <CtaBand />
+        // Owner guides are read by PTs too: keep the Zoom call first, add the free PT signup.
+        <CtaBand
+          secondaryHref={ptSignup(`seo_blog-${post.srcTag ?? post.slug}`.slice(0, 40))}
+          secondaryLabel="Personal trainer? Start free"
+          secondaryExternal={false}
+        />
       )}
     </SiteLayout>
   );
