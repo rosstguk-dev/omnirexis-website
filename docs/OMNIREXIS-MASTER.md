@@ -142,7 +142,8 @@ Omnirexis gives fitness and leisure businesses their time back. Every enquiry an
 - We educate the owner, not just install tools. Same way Ross runs his own setup.
 
 ### Who we talk to first
-- Primary: independent studio, gym, spa and leisure club owners and managers in the UK (North of England first).
+- Primary: independent studio, gym, spa and leisure club owners and managers UK-wide.
+- From 12 Oct 2026 (Ross via CoS): prospecting is UK-wide; all gates unchanged.
 - Demographics of the business: small operator teams, founder often still on the floor, using WhatsApp/email/CRM poorly, missing enquiries while teaching or running sessions.
 - Not primary: the general public, random AI hobbyists, big corporate IT buyers. PT software shoppers are no longer excluded: PT is live and may be pitched in first-touch outreach (Ross, 27 Sep 2026 09:18).
 
