@@ -326,7 +326,7 @@ Grok Bot routines only. n8n schedules (09:15 Branded Outreach, 10:10 Client Onbo
 | Product & Web | Keep PT staging database awake | Mon and Thu 08:41 | Yes | CoS |
 | Finance & Quality | Weekly money and QC check | Fri 14:53 | Yes | CoS |
 | Client Delivery | New watch routines | Pending, being set up | Pending, being set up | CoS |
-| Correction Bot | Daily playbook check | Pending, being set up | Pending, being set up | CoS |
+| Correction Bot | Omnirexis daily drift check (live since 6 Oct 2026; docs PRs to docs/MISTAKES-LOG.md, never merges) | Weekdays 07:20 | Yes | CoS |
 
 ---
 
@@ -471,6 +471,7 @@ SuperGrok runs no Omnirexis tasks unless Ross asks it directly. Everything runs 
 
 | When | What |
 |---|---|
+| 2026-10-12 | §4F: Correction Bot row updated to the live weekday 07:20 drift check (running since 6 Oct 2026). Drift PR #61 merged (`30822bf`). CoS housekeeping. |
 | 2026-10-11 | Long-form 2 minute videos posted once in full on YouTube and LinkedIn, then cut into clips (Ross). |
 | 2026-10-10 | 10 Oct 2026: weekend posting slot moved to 10:00 to 13:00 (Ross). |
 | 2026-10-10 10:40 | Terms follow-up, approved by CoS under Ross's delegation, 10 Oct 2026. Website PR #48 (merge `540965e`), production `dpl_Bv4SZwN9M3vuzLBew6xqhaH2rpxi`, rollback `dpl_4CLduzeecmyyEXW8RiqcRJyr6Rcn`: /terms business liability cap is the greater of 12 months' fees or £100, consumer clause (Consumer Rights Act 2015), footer address in Who we are, PT immediate-start checkbox wording, DPA link; new /dpa (UK GDPR Article 28 addendum, sub-processors Vercel, Supabase (London), Resend, Stripe; in sitemap); /privacy adds address and "How long we keep your information" (30-day export then deletion, provider backup cycles, legal records). Omnirexis-PT PR #13 (merge `e13b59e`), production `dpl_3giRKKuFgzHCVLsUhWnKgGsDaR6X`, rollback `dpl_DqYsnrTdHAK2bAvLteNorwhYTShP`: required Terms and Privacy checkbox on /signup (terms_accepted_at in auth user metadata, no migration); optional immediate-supply checkbox on paid plans, checkout adds immediate_supply_consent yes/no plus timestamp to Checkout Session and subscription metadata. No price, Stripe product, webhook or plan logic change; verified by code only (no Stripe test key), no payment or accounts made. |
