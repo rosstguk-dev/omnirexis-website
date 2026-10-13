@@ -7,6 +7,7 @@ import {
 import { Analytics } from "@vercel/analytics/react";
 import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
+import { PtSignupUtm } from "@/components/site/pt-signup-utm";
 import { NotFoundPage } from "@/components/site/not-found";
 import {
   DEFAULT_DESCRIPTION,
@@ -129,6 +130,7 @@ export const Route = createRootRoute({
           <Outlet />
         </AuthProvider>
         <Analytics />
+        <PtSignupUtm />
         <Scripts />
       </body>
     </html>
