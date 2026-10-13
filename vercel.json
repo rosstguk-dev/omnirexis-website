@@ -17,6 +17,36 @@
       "source": "/index.html",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/industries",
+      "destination": "/solutions",
+      "permanent": true
+    },
+    {
+      "source": "/industries.html",
+      "destination": "/solutions",
+      "permanent": true
+    },
+    {
+      "source": "/services",
+      "destination": "/solutions",
+      "permanent": true
+    },
+    {
+      "source": "/services.html",
+      "destination": "/solutions",
+      "permanent": true
+    },
+    {
+      "source": "/home.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/:page(about|contact|faq|process|pt|leisure|privacy|terms|solutions|rapid-services|gyms|pilates-yoga-studios|lead-follow-up-automation|blog|dpa)\\.html",
+      "destination": "/:page",
+      "permanent": true
     }
   ]
 }
