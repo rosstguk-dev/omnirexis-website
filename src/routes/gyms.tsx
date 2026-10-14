@@ -1,57 +1,149 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowUpRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { CtaBand } from "@/components/site/cta-band";
 import { ContentSection, Points } from "@/components/site/content-section";
 import { FaqList } from "@/components/site/faq-list";
 import { GuidesRow } from "@/components/site/guides-row";
 import { SiteLayout } from "@/components/site/layout";
 import { PageHero } from "@/components/site/page-hero";
-import { ZoomCta } from "@/components/site/zoom-cta";
-import { BOOK_CALL, MISSION } from "@/lib/site";
+import { BOOK_CALL, MISSION, ptSignup } from "@/lib/site";
 import { faqJsonLd, jsonLdGraph, pageSeo, SITE_URL } from "@/lib/page-seo";
 
-// Brief 3.4 (docs/SEO-CONTENT-PLAN.md), Client Delivery PASSED 3 Oct 2026.
-// "Gym marketing automation" is explained as follow-ups and CRM updates. We don't run ads or social media.
-const FAQS = [
+// Gyms flagship (Ross, 14 Oct 2026: gyms are the main audience).
+// Master 0A: enquiry follow-up only (no call answering), no invented stats or outcomes,
+// PT claims limited to real features (free plan, 2 clients). We don't run ads or social media.
+const PATH = "/gyms";
+const PT_SIGNUP_URL = ptSignup("site_gyms");
+
+const PROBLEMS = [
   {
-    q: "Is this a gym management or booking system?",
-    a: "No. Omnirexis sets up and connects follow-ups and CRM updates around the tools you already use.",
+    t: "Missed enquiries",
+    d: "Phone, web form and email enquiries land while you are coaching or on the gym floor. Some never get a reply.",
   },
   {
-    q: "Do you run our ads or social media?",
-    a: "No. We don't run ads or social media.",
+    t: "Slow lead follow-up",
+    d: "The first reply waits for a free minute, and the second one depends on someone remembering to send it.",
   },
   {
-    q: "Do I need a big team or a tech person?",
-    a: "No. It is built for owners without a big tech team, and we show you what each tool is for and how the tools connect.",
+    t: "Trials that never join",
+    d: "Someone books a trial or induction, trains once, and nobody checks in before the moment passes.",
   },
   {
-    q: "What does it cost?",
-    a: "It is scoped around the job and agreed before anything is built, starting with a free 30-minute Zoom.",
+    t: "Cancellations and quiet members",
+    d: "Members drift off long before they cancel, and the signs sit unread in the booking system.",
   },
   {
-    q: "Will it replace my staff?",
-    a: "No. The tools take the repeatable jobs, so people keep the work that needs a person. You stay in control of where that line sits.",
+    t: "Admin that eats the week",
+    d: "Copying enquiries into spreadsheets, chasing payments, posting updates and booking calls, all by hand.",
   },
 ];
 
-const PATH = "/gyms";
+const STACK = [
+  {
+    t: "n8n",
+    d: "The automation layer. It moves each enquiry, trial and member update between your tools and runs the follow-up steps you agree, on a schedule you can see.",
+  },
+  {
+    t: "HubSpot",
+    d: "The CRM. Every enquiry from phone, web form and email is logged in one place with its source, status and next step, so nothing lives in someone's head.",
+  },
+  {
+    t: "Buffer",
+    d: "A posting queue for your own class, offer and open day updates, so posting does not depend on a spare minute between sessions. We do not run your social media.",
+  },
+  {
+    t: "Zoom",
+    d: "A booking link for consultations or calls that can sit inside follow-up emails, so a lead can pick a time without the back and forth.",
+  },
+  {
+    t: "Stripe",
+    d: "Where you take payments with Stripe, payment events such as a failed payment can feed into the CRM and trigger a follow-up, so it gets picked up rather than found later.",
+  },
+];
+
+const FIXES = [
+  "Every phone, web form and email enquiry logged in HubSpot, with a follow-up sequence that keeps going until someone replies or a person takes over.",
+  "Trial and induction follow-ups timed around the visit, with a reminder for your team to make the personal call.",
+  "Quiet members flagged from the data your booking system shares, so you can step in before they cancel.",
+  "An optional chat assistant on your website, answering from information you approve, with handover to a person.",
+  "A short weekly view of new enquiries, trials and follow-ups due, instead of a pile of notes.",
+];
+
+const OUTCOMES = [
+  {
+    t: "Fewer enquiries slip through",
+    d: "Each enquiry has a record and a next step, so it is clear what has been answered and what has not.",
+  },
+  {
+    t: "Faster, steadier follow-up",
+    d: "The first reply and the chasers go out on time, even on the days you are short-staffed.",
+  },
+  {
+    t: "A clearer path from trial to member",
+    d: "Trial visitors hear from you at the right moments, and your team knows who to call.",
+  },
+  {
+    t: "Earlier warning on retention",
+    d: "Quiet members show up on a list while there is still time to do something about it.",
+  },
+  {
+    t: "Less admin for you",
+    d: "The repeatable jobs sit with the setup, so you and your team keep the work that needs a person.",
+  },
+];
+
+const FAQS = [
+  {
+    q: "Is this a gym management or booking system?",
+    a: "No. Omnirexis sets up and connects follow-ups and CRM updates around the gym software you already use. We start with the connections your booking system supports.",
+  },
+  {
+    q: "Which tools do you use?",
+    a: "Usually n8n for the automation, HubSpot as the CRM, Buffer for scheduled posts, Zoom for booked calls and Stripe where you take payments with it. Which ones you need is agreed on the call, and we show you what each one does.",
+  },
+  {
+    q: "Do you answer our phones?",
+    a: "No. Phone enquiries are logged and chased with follow-ups alongside web form and email enquiries. A chat assistant on your website is optional.",
+  },
+  {
+    q: "Do you run our ads or social media?",
+    a: "No. We don't run ads or manage your social media. If it helps, we set up a Buffer queue so your own posts go out on schedule.",
+  },
+  {
+    q: "Can you guarantee more members?",
+    a: "No, and we would be wary of anyone who did. We set up the follow-up and admin so fewer enquiries are missed and your team can act sooner. What changes depends on your gym.",
+  },
+  {
+    q: "Do I need a big team or a tech person?",
+    a: "No. It is built for owners without a big tech team. We set it up, test it, and show you how it works.",
+  },
+  {
+    q: "What does it cost?",
+    a: "It is scoped around the job and agreed in writing before anything is built, starting with a free 30 minute Zoom strategy call.",
+  },
+  {
+    q: "Can our personal trainers use Omnirexis PT?",
+    a: "Yes. Omnirexis PT is live with a free plan for up to two clients, covering programmes, sessions, check-ins and macros. Each trainer signs up for their own account.",
+  },
+];
 
 export const Route = createFileRoute("/gyms")({
   head: () =>
     pageSeo({
-      title: "Gym marketing automation for independent gyms | Omnirexis",
+      title: "Gym enquiry follow-up and automation for UK gyms | Omnirexis",
       description:
-        "Gym marketing automation, explained plainly: follow-ups and CRM updates set up around the tools you already use. For UK gyms. Book a free 30-minute Zoom.",
+        "For independent UK gyms: enquiries logged and chased, trial and member follow-ups, and less admin, set up with n8n, HubSpot, Buffer, Zoom and Stripe. Book a free Zoom.",
       path: PATH,
       jsonLd: jsonLdGraph(
         {
           "@type": "Service",
           "@id": `${SITE_URL}${PATH}#service`,
-          name: "Gym marketing automation",
-          serviceType: "Follow-ups and CRM updates for gyms",
+          name: "Enquiry follow-up and automation for gyms",
+          serviceType: "Enquiry follow-up, CRM and admin automation for gyms",
           url: `${SITE_URL}${PATH}`,
           description:
-            "Follow-ups and CRM updates for independent gyms, set up around the tools you already use. Scoped on a free 30 minute Zoom call.",
+            "Phone, web form and email enquiries logged and chased, trial and member follow-ups, and admin automation for independent UK gyms, set up with n8n, HubSpot, Buffer, Zoom and Stripe. Scoped on a free 30 minute Zoom call.",
           provider: { "@id": `${SITE_URL}/#organization` },
           areaServed: { "@type": "Country", name: "United Kingdom" },
           audience: {
@@ -75,70 +167,147 @@ function GymsPage() {
     <SiteLayout>
       <PageHero
         kicker="For independent gyms"
-        title="Gym marketing automation for independent gyms"
+        title="Every gym enquiry logged, chased and followed up."
         lede={MISSION}
       >
         <p className="mt-5 max-w-2xl text-xl font-medium tracking-tight text-bone">
-          For independent gym owners who still work the floor.
+          For independent UK gym owners who still work the floor. We connect
+          n8n, HubSpot, Buffer, Zoom and Stripe around the tools you already
+          use.
         </p>
-        <ZoomCta />
+        <div className="mt-8 flex flex-wrap gap-3">
+          <Button
+            asChild
+            variant="solid"
+            size="lg"
+            className="h-auto min-h-12 whitespace-normal py-3 text-center"
+          >
+            <a href={BOOK_CALL} target="_blank" rel="noreferrer">
+              Book a free 30 minute Zoom strategy call
+              <ArrowUpRight />
+            </a>
+          </Button>
+          <Button
+            asChild
+            variant="outline"
+            size="lg"
+            className="h-auto min-h-12 whitespace-normal py-3 text-center"
+          >
+            <a href={PT_SIGNUP_URL}>Your PTs can start free</a>
+          </Button>
+        </div>
+        <p className="mt-5 font-mono text-xs tracking-wide text-subtle">
+          Free. 30 minutes. Zoom. No obligation.
+        </p>
       </PageHero>
 
+      <section className="border-b border-line">
+        <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 sm:px-8 lg:grid-cols-12 lg:py-24">
+          <div className="relative overflow-hidden rounded-xl lg:col-span-6">
+            <img
+              src="/media/floor.webp"
+              width={1200}
+              height={800}
+              loading="lazy"
+              decoding="async"
+              alt="Independent gym floor in morning light"
+              className="h-full min-h-72 w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-ink/45" />
+            <div className="absolute inset-0 bg-pine/15" />
+          </div>
+          <div className="lg:col-span-6">
+            <p className="font-mono text-xs font-medium tracking-kicker text-pine uppercase">
+              The problem
+            </p>
+            <h2 className="mt-3 font-sans text-3xl tracking-tight sm:text-4xl">
+              The jobs that slip when you are on the floor.
+            </h2>
+            <p className="mt-5 text-base leading-relaxed text-muted">
+              Independent gyms rarely lose people for lack of effort. They
+              lose them in the gap between a busy session and the next free
+              minute at the desk.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-8 sm:grid-cols-2 lg:grid-cols-3 lg:py-24">
+        {PROBLEMS.map((item) => (
+          <article key={item.t} className="border-t border-line pt-6">
+            <h3 className="text-xl font-medium tracking-tight">{item.t}</h3>
+            <p className="mt-3 text-base leading-relaxed text-muted">{item.d}</p>
+          </article>
+        ))}
+      </section>
+
       <div className="mx-auto max-w-6xl px-5 py-4 sm:px-8">
-        <ContentSection title="What we mean by gym marketing automation">
+        <ContentSection kicker="How we fix it" title="Five tools, set up to work together">
           <p>
-            Follow-ups and CRM updates. Follow-ups for enquiries that come in
-            by phone, web form or email, set up around the tools you already
-            use, with each enquiry and its next step updated in the CRM you
-            already use.
+            We set up and connect these tools for your gym, test the handoffs,
+            and show you what each one does. You only get the parts that fit.
           </p>
-          <p className="text-bone">We don't run ads or social media.</p>
-          <p>
-            <Link to="/lead-follow-up-automation">
-              How lead follow-up automation works
-            </Link>
-          </p>
+          <div className="grid gap-px bg-line sm:grid-cols-2">
+            {STACK.map((item) => (
+              <div key={item.t} className="bg-paper py-5 sm:p-5">
+                <h3 className="text-base font-medium tracking-tight text-bone">
+                  {item.t}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted">{item.d}</p>
+              </div>
+            ))}
+          </div>
         </ContentSection>
 
-        <ContentSection title="The jobs that slip">
-          <Points
-            items={[
-              "Enquiries that come in during the busy hour, while you are on the gym floor.",
-              "Follow-ups that depend on someone remembering to send them.",
-              "Members who go quiet, and nobody notices until they cancel.",
-            ]}
-          />
-        </ContentSection>
-
-        <ContentSection title="Examples of follow-ups we set up">
-          <Points
-            items={[
-              "Following up after an intro or induction session.",
-              "Following up with lapsed members.",
-            ]}
-          />
+        <ContentSection kicker="What we set up" title="What it looks like in a gym">
+          <Points items={FIXES} />
           <p>
             These are examples, scoped on the call, where your booking system
-            allows it.
+            and current tools allow it. See{" "}
+            <Link to="/lead-follow-up-automation">
+              how lead follow-up automation works
+            </Link>
+            .
           </p>
         </ContentSection>
 
-        <ContentSection title="Works around your gym booking system">
-          <p>
-            Omnirexis is not a gym booking system or gym appointment booking
-            software. We start with the system you have and the connections
-            it supports, and set up the follow-ups around it.
-          </p>
-          <p>
-            See all <Link to="/solutions">solutions</Link> and{" "}
-            <Link to="/process">how the process works</Link>.
+        <ContentSection kicker="Outcomes" title="What should feel different">
+          <div className="grid gap-8 sm:grid-cols-2">
+            {OUTCOMES.map((item) => (
+              <div key={item.t} className="border-t border-line pt-5">
+                <h3 className="text-lg font-medium tracking-tight text-bone">
+                  {item.t}
+                </h3>
+                <p className="mt-2 text-base leading-relaxed text-muted">{item.d}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-sm">
+            No guaranteed results. What changes depends on your gym, your
+            tools and your team.
           </p>
         </ContentSection>
 
-        <ContentSection title="Run a leisure club or spa as well?">
+        <ContentSection kicker="Your trainers" title="Omnirexis PT, free for your PTs">
           <p>
-            See how we approach{" "}
-            <Link to="/leisure">leisure clubs and spas</Link>.
+            Omnirexis PT is live with a free plan for up to two clients:
+            programmes, sessions, check-ins and macros in one place. Each
+            trainer signs up for their own account.
+          </p>
+          <p>
+            <a href={PT_SIGNUP_URL}>Start free on Omnirexis PT</a> or see{" "}
+            <Link to="/pt">the PT platform and plans</Link>.
+          </p>
+        </ContentSection>
+
+        <ContentSection title="Works around your gym software">
+          <p>
+            Omnirexis is not a gym booking system. We start with the system
+            you have and the connections it supports. See all{" "}
+            <Link to="/solutions">solutions</Link>,{" "}
+            <Link to="/process">how the process works</Link>, or how we
+            approach <Link to="/leisure">leisure clubs and spas</Link> and{" "}
+            <Link to="/pilates-yoga-studios">Pilates and yoga studios</Link>.
           </p>
         </ContentSection>
 
@@ -154,14 +323,21 @@ function GymsPage() {
 
         <section className="py-14 lg:py-16">
           <h2 className="font-sans text-3xl tracking-tight sm:text-4xl">
-            Questions
+            Gym owner questions
           </h2>
           <div className="mt-4">
             <FaqList items={FAQS} />
           </div>
         </section>
       </div>
-      <CtaBand />
+      <CtaBand
+        kicker="For gym owners"
+        title="Book a free 30 minute Zoom strategy call."
+        body="Tell us where enquiries, trials and admin are slipping. We will talk through your tools and a sensible first move."
+        secondaryHref={PT_SIGNUP_URL}
+        secondaryLabel="Your PTs can start free"
+        secondaryExternal={false}
+      />
     </SiteLayout>
   );
 }

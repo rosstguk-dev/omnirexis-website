@@ -10,6 +10,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { GymsFeature } from "@/components/site/gyms-feature";
 import { BOOK_CALL, FAQS, PROCESS, ptSignup } from "@/lib/site";
 import { pageSeo } from "@/lib/page-seo";
 import { cn } from "@/lib/utils";
@@ -46,7 +47,7 @@ function Home() {
               <span className="text-cyan">their time back.</span>
             </h1>
             <p className="mt-5 max-w-xl text-xl font-medium leading-snug tracking-tight text-bone">
-              Lead follow up automation for gyms, studios and personal trainers.
+              Lead follow-up automation for gyms first, plus studios and personal trainers.
             </p>
             <p className="mt-4 max-w-xl text-lg leading-relaxed text-muted">
               Every enquiry answered, every lead followed up, every booking
@@ -84,8 +85,8 @@ function Home() {
                 Who it is for
               </p>
               <p className="mt-3 text-sm leading-relaxed text-muted">
-                Independent studio, gym, spa and leisure club owners and
-                managers in the UK, starting with the North of England. People
+                Independent gym owners first, plus studio, spa and leisure
+                club owners and managers in the UK, starting with the North of England. People
                 who still work on the floor and do not have a big tech team.
               </p>
               <p className="mt-6 font-mono text-xs font-medium tracking-kicker text-pine uppercase">
@@ -101,6 +102,8 @@ function Home() {
           </aside>
         </div>
       </section>
+
+      <GymsFeature />
 
       <section className="border-b border-line bg-paper">
         <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-8 lg:grid-cols-12 lg:py-24">
