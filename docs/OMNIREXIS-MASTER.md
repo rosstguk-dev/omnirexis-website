@@ -314,15 +314,15 @@ Grok Bot routines only. n8n schedules (09:15 Branded Outreach, 10:10 Client Onbo
 | CoS (Primary Bot) | OMNIREXIS continuous improve | Daily 10:04 | Yes | Ross |
 | CoS (Primary Bot) | OMNIREXIS shipped digest (silent; feeds the afternoon update) | Weekdays 16:54 | Yes | Ross |
 | CoS (Primary Bot) | Daily X post pack for Ross (the combined afternoon update) | Daily 17:31 | Yes | Ross |
+| Primary Bot (CoS) | AI and SI news article, posted as an X Article; Brand & Social's 10:41 run then repurposes it for LinkedIn, Facebook, Instagram and YouTube Shorts (Ross's standing permission of 9 Oct 2026, also covered by his 13 Oct 2026 permission) | Weekdays 09:03 | Yes | Ross |
 | CoS (Primary Bot) | Omnirexis weekly promo video + social check | Mon 09:15 | Yes | Ross |
 | CoS (Primary Bot) | Omnirexis weekly Buffer schedule | Mon 09:49 | Yes | Ross |
 | CoS (Primary Bot) | OMNIREXIS weekly review | Fri 17:06 | Yes | Ross |
 | CoS (Primary Bot) | Omnirexis weekly Metricool schedule | Mon 10:00 (paused) | No | Ross |
 | CoS (Primary Bot) | SuperGrok renewal vs X Pass check | One-off, Fri 9 Oct 2026 10:13 | Yes | Ross |
 | Brand & Social | Omnirexis daily engagement | Weekdays 08:47 | Yes | CoS |
-| Brand & Social | AI and SI news article, posts to X, LinkedIn and Facebook (Ross's standing permission 9 Oct 2026; also covered by his 13 Oct 2026 promo content permission) | Weekdays 09:03 | Yes | CoS |
 | Brand & Social | Omnirexis LinkedIn lead list | Weekdays 09:19 | Yes | CoS |
-| Brand & Social | Daily article repurpose run (turns the daily article into an Instagram carousel and a YouTube Short) | Weekdays 10:41 | Yes | CoS |
+| Brand & Social | Daily article repurpose run (turns the 09:03 X Article into posts for LinkedIn and Facebook, an Instagram carousel and a YouTube Short) | Weekdays 10:41 | Yes | CoS |
 | Sales & CRM | Next-day outreach pack builder | Sun to Thu 19:16 | Yes | CoS |
 | Sales & CRM | Business outreach morning run | Paused | No | CoS |
 | Automation & Systems | Weekly bounce and stop-reply report | Thu 15:51 | Yes | CoS |
