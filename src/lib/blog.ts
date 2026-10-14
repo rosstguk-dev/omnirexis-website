@@ -8,6 +8,8 @@
 import aiOrSiBody from "@/content/blog/ai-or-si-super-intelligence-gyms.md?raw";
 import makeVsN8nBody from "@/content/blog/make-vs-n8n-for-gyms.md?raw";
 import makeVsN8nFaq from "@/content/blog/make-vs-n8n-for-gyms.faq.json";
+import kahunasBody from "@/content/blog/kahunas-vs-my-pt-hub.md?raw";
+import kahunasFaq from "@/content/blog/kahunas-vs-my-pt-hub.faq.json";
 
 export type BlogAudience = "gyms" | "studios" | "pts";
 
@@ -85,6 +87,24 @@ export const POSTS: BlogPost[] = [
     body: makeVsN8nBody,
     faqJsonLd: makeVsN8nFaq,
     affiliateLinks: ["https://www.make.com/en/register?pc="],
+  },
+  {
+    // Source: /workspace/side-income/posts/kahunas-vs-my-pt-hub.md (via CoS). F&Q QC 14 Oct 2026: PASS WITH FIXES, fixes applied. DO NOT MERGE until signed off.
+    slug: "kahunas-vs-my-pt-hub",
+    title: "Kahunas vs My PT Hub: which coaching app should a PT or small studio pick?",
+    metaTitle: "Kahunas vs My PT Hub: Which Suits Your PT Business?",
+    description:
+      "Kahunas vs My PT Hub for personal trainers and studios: prices checked 14 Oct 2026, a plain comparison table and a verdict by business type.",
+    excerpt:
+      "We haven't used either to coach clients, so we've compared Kahunas and myPTHub on features and pricing. Here's how to choose for a solo PT or small studio.",
+    audience: "pts",
+    published: "2026-10-15",
+    linksTo: "/pt",
+    intro: "",
+    sections: [],
+    body: kahunasBody,
+    faqJsonLd: kahunasFaq,
+    affiliateLinks: ["https://kahunas.io/?via=", "https://mypthub.referralrock.com/l/"],
   },
 ];
 
