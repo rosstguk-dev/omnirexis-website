@@ -314,6 +314,7 @@ Grok Bot routines only. n8n schedules (09:15 Branded Outreach, 10:10 Client Onbo
 | CoS (Primary Bot) | OMNIREXIS continuous improve | Daily 10:04 | Yes | Ross |
 | CoS (Primary Bot) | OMNIREXIS shipped digest (silent; feeds the afternoon update) | Weekdays 16:54 | Yes | Ross |
 | CoS (Primary Bot) | Daily X post pack for Ross (the combined afternoon update) | Daily 17:31 | Yes | Ross |
+| Primary Bot (CoS) | AI and SI news article, posted as an X Article; Brand & Social's 10:41 run then repurposes it for LinkedIn, Facebook, Instagram and YouTube Shorts (Ross's standing permission of 9 Oct 2026, also covered by his 13 Oct 2026 permission) | Weekdays 09:03 | Yes | Ross |
 | CoS (Primary Bot) | Omnirexis weekly promo video + social check | Mon 09:15 | Yes | Ross |
 | CoS (Primary Bot) | Omnirexis weekly Buffer schedule | Mon 09:49 | Yes | Ross |
 | CoS (Primary Bot) | OMNIREXIS weekly review | Fri 17:06 | Yes | Ross |
@@ -321,13 +322,14 @@ Grok Bot routines only. n8n schedules (09:15 Branded Outreach, 10:10 Client Onbo
 | CoS (Primary Bot) | SuperGrok renewal vs X Pass check | One-off, Fri 9 Oct 2026 10:13 | Yes | Ross |
 | Brand & Social | Omnirexis daily engagement | Weekdays 08:47 | Yes | CoS |
 | Brand & Social | Omnirexis LinkedIn lead list | Weekdays 09:19 | Yes | CoS |
+| Brand & Social | Daily article repurpose run (turns the 09:03 X Article into posts for LinkedIn and Facebook, an Instagram carousel and a YouTube Short) | Weekdays 10:41 | Yes | CoS |
 | Sales & CRM | Next-day outreach pack builder | Sun to Thu 19:16 | Yes | CoS |
 | Sales & CRM | Business outreach morning run | Paused | No | CoS |
 | Automation & Systems | Weekly bounce and stop-reply report | Thu 15:51 | Yes | CoS |
 | Product & Web | Keep PT staging database awake | Mon and Thu 08:41 | Yes | CoS |
 | Finance & Quality | Weekly money and QC check | Fri 14:53 | Yes | CoS |
 | Client Delivery | New watch routines | Pending, being set up | Pending, being set up | CoS |
-| Correction Bot | Omnirexis daily drift check (live since 6 Oct 2026; docs PRs to docs/MISTAKES-LOG.md, never merges) | Weekdays 07:20 | Yes | CoS |
+| Finance & Quality | Omnirexis daily drift check (live since 6 Oct 2026; owner Finance & Quality since 13 Oct 2026, when Correction Bot merged into Finance & Quality with Ross's OK; docs PRs to docs/MISTAKES-LOG.md, never merges) | Weekdays 07:20 | Yes | CoS |
 
 ---
 
@@ -473,6 +475,7 @@ SuperGrok runs no Omnirexis tasks unless Ross asks it directly. Everything runs 
 
 | When | What |
 |---|---|
+| 2026-10-14 07:40 | §4F roster: the weekday 07:20 drift check is owned by Finance & Quality (Correction Bot merged into Finance & Quality 13 Oct 2026, Ross's OK). Added the weekday 09:03 AI and SI news article (CoS, posted as an X Article; Ross's standing permission 9 Oct 2026, also covered by his 13 Oct 2026 permission) and the weekday 10:41 repurpose run (Brand & Social: LinkedIn, Facebook, Instagram carousel and YouTube Short). `docs/MISTAKES-LOG.md` header now names Finance & Quality. Docs only. |
 | 2026-10-13 10:40 | Continuous improve (CoS): old site URLs that Google still sends visitors to were 404ing. Vercel Web Analytics (28 Sep to 13 Oct) showed google.com visitors landing on /industries.html and /solutions.html, both 404 on www (the only Google search visits in the window). Added permanent (308) redirects in `vercel.json`: /industries(.html) and /services(.html) to /solutions, /home.html to /, and /<live page>.html to the live page (about, contact, faq, process, pt, leisure, privacy, terms, solutions, rapid-services, gyms, pilates-yoga-studios, lead-follow-up-automation, blog, dpa). Website PR #74 (merge `a3bfc9d`); the Git push did not start a production build, so CoS deployed main at `a3bfc9d` via the Vercel API: production `dpl_EooYgvTLEQ1z11ZzP4tEfpXZU6gV` READY. Rollback: `dpl_FZn9eCbdotYFqjABiqaXqUJ4kEDg` (main `72926fb`) or revert PR #74. Before: all of those paths 404. Verified live after: each 308s to the right page on www, the apex and omnirexis.vercel.app chain through to the same page, all 17 sitemap pages plus /sitemap.xml, /robots.txt, /og.jpg and /social media still 200. Config only; no copy, route, n8n, cap or outreach change. |
 | 2026-10-13 07:35 | Ross standing permission (13 Oct 2026 00:11): affiliate and Omnirexis promo content (posts, videos, Shorts, articles, blogs, newsletters) may be posted on the schedule CoS thinks best, without Ross approving each asset. Quality bar (omnirexis-video-quality skill, full QC) and honest, disclosed affiliate content still apply; new spending still needs Ross. Updated §0A Approvals, §4B hard stops, and §5 Social to match. Docs only; no site, n8n or routine change. |
 | 2026-10-12 10:21 | Continuous improve (CoS): security patch on the live PT app. omnirexis-pt.vercel.app (signup, login, Stripe checkout and webhook) was on `next@15.5.7`; `npm audit --omit=dev` listed 30+ published Next.js advisories fixed later in 15.5.x, including high middleware bypasses (GHSA-492v-c6pp-mqqv, GHSA-267c-6grr-h53f, GHSA-26hh-7cqf-hhc6; the app gates /app, /client and /admin in middleware), Server Components and Server Actions DoS, SSRF, and two critical RCEs (GHSA-2xp9-vwfh-vxw4, GHSA-p293-qw3h-jr36). Bumped `next` and `eslint-config-next` 15.5.7 to 15.5.27 (same 15.5 patch line, no app code, React, env, Stripe, Supabase or DB change). Audit after: every Next.js advisory cleared; only `postcss` bundled inside Next remains (build-time only, fix needs Next 16, not done). Typecheck, lint and build clean; Vercel preview green. Omnirexis-PT PR #18 (merge `1b098a5`), production `dpl_AinZirwANFEgqhBrpF2XfA6vjjMy` READY 10:21 BST, build log shows Next.js 15.5.27. Rollback: `dpl_3q8u9N57kMDQFtaWs2D6m7gJSny6` (main `2872132`). Verified live: `/`, `/signup`, `/signup?src=site_pt` (sets `omx_signup_src`), `/login`, `/api/keepalive` 200; `/privacy`, `/terms` 307 to site; `/app`, `/app/clients/x`, `/admin` 307 to login; no runtime errors. Grace PR #2 not touched. No n8n, cap or outreach change. |
