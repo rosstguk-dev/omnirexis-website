@@ -320,14 +320,16 @@ Grok Bot routines only. n8n schedules (09:15 Branded Outreach, 10:10 Client Onbo
 | CoS (Primary Bot) | Omnirexis weekly Metricool schedule | Mon 10:00 (paused) | No | Ross |
 | CoS (Primary Bot) | SuperGrok renewal vs X Pass check | One-off, Fri 9 Oct 2026 10:13 | Yes | Ross |
 | Brand & Social | Omnirexis daily engagement | Weekdays 08:47 | Yes | CoS |
+| Brand & Social | AI and SI news article, posts to X, LinkedIn and Facebook (Ross's standing permission 9 Oct 2026; also covered by his 13 Oct 2026 promo content permission) | Weekdays 09:03 | Yes | CoS |
 | Brand & Social | Omnirexis LinkedIn lead list | Weekdays 09:19 | Yes | CoS |
+| Brand & Social | Daily article repurpose run (turns the daily article into an Instagram carousel and a YouTube Short) | Weekdays 10:41 | Yes | CoS |
 | Sales & CRM | Next-day outreach pack builder | Sun to Thu 19:16 | Yes | CoS |
 | Sales & CRM | Business outreach morning run | Paused | No | CoS |
 | Automation & Systems | Weekly bounce and stop-reply report | Thu 15:51 | Yes | CoS |
 | Product & Web | Keep PT staging database awake | Mon and Thu 08:41 | Yes | CoS |
 | Finance & Quality | Weekly money and QC check | Fri 14:53 | Yes | CoS |
 | Client Delivery | New watch routines | Pending, being set up | Pending, being set up | CoS |
-| Correction Bot | Omnirexis daily drift check (live since 6 Oct 2026; docs PRs to docs/MISTAKES-LOG.md, never merges) | Weekdays 07:20 | Yes | CoS |
+| Finance & Quality | Omnirexis daily drift check (live since 6 Oct 2026; owner Finance & Quality since 13 Oct 2026, when Correction Bot merged into Finance & Quality with Ross's OK; docs PRs to docs/MISTAKES-LOG.md, never merges) | Weekdays 07:20 | Yes | CoS |
 
 ---
 

@@ -1,6 +1,6 @@
 # Omnirexis mistakes log
 
-Correction Bot reads this. Any bot that finds content, a draft, a routine or a doc breaking the live master adds a row here through a PR (or tells CoS if it cannot open one). Newest at the bottom. Times are UK time.
+Finance & Quality reads this. Any bot that finds content, a draft, a routine or a doc breaking the live master adds a row here through a PR (or tells CoS if it cannot open one). Newest at the bottom. Times are UK time.
 
 | Date and time (UK) | Who or what | What happened | Master rule and SHA | Fix | Status |
 |---|---|---|---|---|---|
