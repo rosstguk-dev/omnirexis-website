@@ -35,6 +35,11 @@ export function SiteFooter() {
             </p>
             <ul className="mt-4 space-y-2.5 text-sm">
               <li>
+                <Link to="/gyms" className="text-bone/80 hover:text-bone">
+                  For gyms
+                </Link>
+              </li>
+              <li>
                 <Link to="/solutions" className="text-bone/80 hover:text-bone">
                   Solutions
                 </Link>
@@ -45,11 +50,6 @@ export function SiteFooter() {
                   className="text-bone/80 hover:text-bone"
                 >
                   Lead follow-up automation
-                </Link>
-              </li>
-              <li>
-                <Link to="/gyms" className="text-bone/80 hover:text-bone">
-                  For gyms
                 </Link>
               </li>
               <li>

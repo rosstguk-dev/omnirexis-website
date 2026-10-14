@@ -41,6 +41,7 @@ export const ADDRESS = {
 };
 
 export const NAV = [
+  { to: "/gyms" as const, label: "Gyms" },
   { to: "/solutions" as const, label: "Solutions" },
   { to: "/process" as const, label: "Process" },
   { to: "/pt" as const, label: "PT" },
