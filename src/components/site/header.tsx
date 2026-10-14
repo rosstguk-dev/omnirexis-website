@@ -17,7 +17,7 @@ export function SiteHeader({ ink: _ink = false }: { ink?: boolean }) {
           <Wordmark />
         </Link>
 
-        <nav className="hidden items-center gap-5 lg:flex xl:gap-7" aria-label="Primary">
+        <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
           {NAV.map((item) => {
             const active =
               pathname === item.to || pathname.startsWith(`${item.to}/`);

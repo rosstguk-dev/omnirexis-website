@@ -3,7 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CtaBand } from "@/components/site/cta-band";
 import { SiteLayout } from "@/components/site/layout";
-import { GymsFeature } from "@/components/site/gyms-feature";
+import { SectorGrid } from "@/components/site/sector-grid";
 import { PageHero } from "@/components/site/page-hero";
 import type { ReactNode } from "react";
 import { FaqList } from "@/components/site/faq-list";
@@ -125,7 +125,7 @@ function SolutionsPage() {
         </div>
       </PageHero>
 
-      <GymsFeature />
+      <SectorGrid />
 
       <div className="mx-auto max-w-6xl px-5 py-8 sm:px-8">
         {SOLUTIONS.map((item, i) => (
