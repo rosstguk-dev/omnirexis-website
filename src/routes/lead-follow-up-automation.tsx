@@ -172,6 +172,8 @@ function LeadFollowUpPage() {
         <GuidesRow
           title="Guides on following up leads"
           slugs={[
+            "make-vs-n8n-for-gyms",
+            "ai-or-si-super-intelligence-gyms",
             "how-to-follow-up-gym-leads",
             "gym-trial-follow-up-email",
             "gym-enquiry-form-template",
