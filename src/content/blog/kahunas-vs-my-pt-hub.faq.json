@@ -1,0 +1,54 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Kahunas or My PT Hub better for a personal trainer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on how you coach. Kahunas suits online coaches who want strong nutrition tools and pricing by client count. myPTHub suits trainers and studios that need bookings, classes and a team of trainers. Both offer a way to try before you commit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does Kahunas cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kahunas Essentials costs $35 a month or $315 a year for up to 25 clients. Growth costs $69 a month or $621 a year for up to 50 clients. Ultimate costs $99 a month for unlimited clients (prices checked 14 Oct 2026)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does My PT Hub have a free trial?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. myPTHub offers a 30-day free trial with no card needed. After the trial, your account moves to a Free plan. Check myPTHub's pricing page for current subscription prices."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I get my own branded app with Kahunas or My PT Hub?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, with both. Kahunas includes an own branded iOS and Android app on its Ultimate plan, and you need an Apple developer account at $99 USD a year. myPTHub offers a custom branded app for a one-time $95, or a white label app with your own store listing for $145 a month or included in its Ultimate plan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which is better for a studio with several trainers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "myPTHub is the more natural fit for a small team. Its Ultimate plan includes 5 additional trainers, extra trainers cost $10 a month each, and its plans list group bookings and classes. Kahunas offers the option to add team members on its Ultimate plan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Has Omnirexis used Kahunas or My PT Hub?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. We have not used either tool to run client coaching. We've compared them on features and pricing from their public pages. Our own Omnirexis PT free plan covers up to 2 active clients."
+      }
+    }
+  ]
+}

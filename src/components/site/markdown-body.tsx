@@ -169,6 +169,18 @@ export function MarkdownBody({
               </div>
             );
           default:
+            if (b.text.startsWith("**Affiliate disclosure:**"))
+              return (
+                <aside
+                  key={i}
+                  role="note"
+                  aria-label="Affiliate disclosure"
+                  data-affiliate-disclosure
+                  className="mt-4 rounded-md border border-pine bg-white/5 px-5 py-4 text-base leading-relaxed text-bone first:mt-0"
+                >
+                  {inline(b.text, ctx)}
+                </aside>
+              );
             return (
               <p key={i} className="mt-4 text-lg leading-relaxed text-muted first:mt-0">
                 {inline(b.text, ctx)}
