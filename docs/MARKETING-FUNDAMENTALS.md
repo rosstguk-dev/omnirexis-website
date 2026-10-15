@@ -128,7 +128,7 @@ Nothing is posted or scheduled until Ross approves that exact asset.
 | Evenings lost to programming and check-ins | "Is it a trial that runs out?" | No. It is a free plan, not a time-limited trial. |
 | | "Will it take ages to set up?" | Create a free trainer account "in a couple of minutes" (/pt). |
 
-### Gym, studio, spa and leisure owners/managers (UK, North of England first)
+### Gym, studio, spa and leisure owners/managers (UK-wide)
 | Pain | Objection | Answer (no invented proof) |
 |---|---|---|
 | Enquiries missed while teaching or on the floor | "I don't have time for a tech project" | Start with a free 30-minute Zoom. You leave with a view either way. |

@@ -8,10 +8,10 @@
 
 | Offer | What we deliver | What we do **not** promise |
 |---|---|---|
-| Strategy call → scoped implementation | Agreed automation / voice / growth work from the Zoom | Fixed price before scoping; PT platform as live |
+| Strategy call → scoped implementation | Agreed automation / enquiry follow-up / growth work from the Zoom | Fixed price before scoping |
 | Rapid studio | Fixed packages on /rapid-services (Content Sprint, Ops Doc Sprint, etc.) | Unlimited revisions; custom builds under Rapid price |
 | Leisure systems | Conversation + discovery for club ops | Instant software install from first email |
-| PT platform | Interest capture only (`/contact?intent=pt-*`) | Live product sale |
+| PT platform | Live for self-serve signup at public prices: Free (£0, 2 clients, a free plan, not a trial), Founding £14.99, Solo £17.99, Pro £24.99 per month; /pt CTAs go to https://omnirexis-pt.vercel.app/signup | Client logins, a client portal or messaging; Stripe payments tested end to end |
 
 Price for scoped work stays with Ross until a written playbook says otherwise.
 
