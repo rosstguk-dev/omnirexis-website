@@ -21,7 +21,7 @@
 
 **Purpose.** Give every existing and proposed page one clear search phrase, so pages do not compete with each other. Then plan 12 helpful posts over 6 weeks that answer questions gym, studio and PT owners already type into Google, and link each post to the page that solves the problem.
 
-**Who it is for.** Independent UK gym owners and managers, Pilates and yoga studio owners, leisure operators and personal trainers. North of England first (master §1A). Not the general public: we are not trying to rank for people looking for a class or a trainer.
+**Who it is for.** Independent UK gym owners and managers, Pilates and yoga studio owners, leisure operators and personal trainers. UK-wide (master §1A). Not the general public: we are not trying to rank for people looking for a class or a trainer.
 
 **Sources (all read 3 Oct 2026)**
 - Sales' sourced term list, 72 terms: `ops/sales-crm/seo-search-terms-2026-10-03.md`, plus the raw autocomplete log `seo-autocomplete-raw-2026-10-03.txt`. `#` numbers below are Sales' row numbers, and source tags are carried over from that list.
