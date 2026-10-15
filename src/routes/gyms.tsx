@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { CtaBand } from "@/components/site/cta-band";
 import { ContentSection, Points } from "@/components/site/content-section";
 import { FaqList } from "@/components/site/faq-list";
-import { GuidesRow } from "@/components/site/guides-row";
 import { SiteLayout } from "@/components/site/layout";
 import { PageHero } from "@/components/site/page-hero";
 import { BOOK_CALL, MISSION, ptSignup } from "@/lib/site";
@@ -35,30 +34,26 @@ const PROBLEMS = [
   },
   {
     t: "Admin that eats the week",
-    d: "Copying enquiries into spreadsheets, chasing payments, posting updates and booking calls, all by hand.",
+    d: "Copying enquiries into spreadsheets, chasing follow-ups and booking calls, all by hand.",
   },
 ];
 
 const STACK = [
   {
     t: "n8n",
-    d: "The automation layer. It moves each enquiry, trial and member update between your tools and runs the follow-up steps you agree, on a schedule you can see.",
+    d: "The automation layer. It moves each enquiry and trial between your tools and runs the follow-up steps you agree, on a schedule you can see.",
   },
   {
     t: "HubSpot",
     d: "The CRM. Every enquiry from phone, web form and email is logged in one place with its source, status and next step, so nothing lives in someone's head.",
   },
   {
-    t: "Buffer",
-    d: "A posting queue for your own class, offer and open day updates, so posting does not depend on a spare minute between sessions. We do not run your social media.",
-  },
-  {
     t: "Zoom",
     d: "A booking link for consultations or calls that can sit inside follow-up emails, so a lead can pick a time without the back and forth.",
   },
   {
-    t: "Stripe",
-    d: "Where you take payments with Stripe, payment events such as a failed payment can feed into the CRM and trigger a follow-up, so it gets picked up rather than found later.",
+    t: "Chat assistant (optional)",
+    d: "A chat assistant on your website that answers from information you approve, with handover to a person.",
   },
 ];
 
@@ -66,8 +61,7 @@ const FIXES = [
   "Every phone, web form and email enquiry logged in HubSpot, with a follow-up sequence that keeps going until someone replies or a person takes over.",
   "Trial and induction follow-ups timed around the visit, with a reminder for your team to make the personal call.",
   "Quiet members flagged from the data your booking system shares, so you can step in before they cancel.",
-  "An optional chat assistant on your website, answering from information you approve, with handover to a person.",
-  "A short weekly view of new enquiries, trials and follow-ups due, instead of a pile of notes.",
+    "A short weekly view of new enquiries, trials and follow-ups due, instead of a pile of notes.",
 ];
 
 const OUTCOMES = [
@@ -100,7 +94,7 @@ const FAQS = [
   },
   {
     q: "Which tools do you use?",
-    a: "Usually n8n for the automation, HubSpot as the CRM, Buffer for scheduled posts, Zoom for booked calls and Stripe where you take payments with it. Which ones you need is agreed on the call, and we show you what each one does.",
+    a: "Usually n8n for the automation, HubSpot as the CRM and Zoom for booked calls, with an optional chat assistant on your website. Which ones you need is agreed on the call, and we show you what each one does.",
   },
   {
     q: "Do you answer our phones?",
@@ -108,7 +102,7 @@ const FAQS = [
   },
   {
     q: "Do you run our ads or social media?",
-    a: "No. We don't run ads or manage your social media. If it helps, we set up a Buffer queue so your own posts go out on schedule.",
+    a: "No. We don't run ads or manage your social media.",
   },
   {
     q: "Can you guarantee more members?",
@@ -133,7 +127,7 @@ export const Route = createFileRoute("/gyms")({
     pageSeo({
       title: "Gym enquiry follow-up and automation for UK gyms | Omnirexis",
       description:
-        "For independent UK gyms: enquiries logged and chased, trial and member follow-ups, and less admin, set up with n8n, HubSpot, Buffer, Zoom and Stripe. Book a free Zoom.",
+        "For independent UK gyms: enquiries logged and chased, trial and member follow-ups, and less admin, set up with n8n, HubSpot and Zoom. Book a free Zoom.",
       path: PATH,
       jsonLd: jsonLdGraph(
         {
@@ -143,7 +137,7 @@ export const Route = createFileRoute("/gyms")({
           serviceType: "Enquiry follow-up, CRM and admin automation for gyms",
           url: `${SITE_URL}${PATH}`,
           description:
-            "Phone, web form and email enquiries logged and chased, trial and member follow-ups, and admin automation for independent UK gyms, set up with n8n, HubSpot, Buffer, Zoom and Stripe. Scoped on a free 30 minute Zoom call.",
+            "Phone, web form and email enquiries logged and chased, trial and member follow-ups, and admin automation for independent UK gyms, set up with n8n, HubSpot and Zoom. Scoped on a free 30 minute Zoom call.",
           provider: { "@id": `${SITE_URL}/#organization` },
           areaServed: { "@type": "Country", name: "United Kingdom" },
           audience: {
@@ -172,8 +166,7 @@ function GymsPage() {
       >
         <p className="mt-5 max-w-2xl text-xl font-medium tracking-tight text-bone">
           For independent UK gym owners who still work the floor. We connect
-          n8n, HubSpot, Buffer, Zoom and Stripe around the tools you already
-          use.
+          n8n, HubSpot and Zoom around the tools you already use.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Button
@@ -242,7 +235,7 @@ function GymsPage() {
       </section>
 
       <div className="mx-auto max-w-6xl px-5 py-4 sm:px-8">
-        <ContentSection kicker="How we fix it" title="Five tools, set up to work together">
+        <ContentSection kicker="How we fix it" title="Tools set up to work together">
           <p>
             We set up and connect these tools for your gym, test the handoffs,
             and show you what each one does. You only get the parts that fit.
@@ -311,15 +304,7 @@ function GymsPage() {
           </p>
         </ContentSection>
 
-        <GuidesRow
-          title="Guides for gym owners"
-          slugs={[
-            "how-to-follow-up-gym-leads",
-            "gym-member-retention-strategies",
-            "gym-trial-follow-up-email",
-            "gym-enquiry-form-template",
-          ]}
-        />
+        {/* Guides for gym owners: hidden until at least one of these guides is published. */}
 
         <section className="py-14 lg:py-16">
           <h2 className="font-sans text-3xl tracking-tight sm:text-4xl">
