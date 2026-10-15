@@ -86,7 +86,7 @@ function Home() {
               </p>
               <p className="mt-3 text-sm leading-relaxed text-muted">
                 Independent studio, gym, spa and leisure club owners and
-                managers in the UK, starting with the North of England. People
+                managers across the UK. People
                 who still work on the floor and do not have a big tech team.
               </p>
               <p className="mt-6 font-mono text-xs font-medium tracking-kicker text-pine uppercase">

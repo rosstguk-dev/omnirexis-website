@@ -263,6 +263,7 @@ function ContactPage() {
               <br />
               {ADDRESS.city} {ADDRESS.postcode}
             </Item>
+            <Item label="Service area">Across the UK</Item>
             <Item label="LinkedIn">
               <a href={LINKEDIN} target="_blank" rel="noreferrer">
                 linkedin.com/company/omnirexis

@@ -101,6 +101,11 @@ export function SiteFooter() {
                 </Link>
               </li>
               <li>
+                <Link to="/facts" className="text-bone/80 hover:text-bone">
+                  Company facts
+                </Link>
+              </li>
+              <li>
                 <Link to="/blog" className="text-bone/80 hover:text-bone">
                   Guides
                 </Link>

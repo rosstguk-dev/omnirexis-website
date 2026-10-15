@@ -1,8 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { CtaBand } from "@/components/site/cta-band";
 import { SiteLayout } from "@/components/site/layout";
 import { PageHero } from "@/components/site/page-hero";
-import { VALUES } from "@/lib/site";
+import { EMAIL, PHONE, PHONE_HREF, VALUES } from "@/lib/site";
 import { pageSeo } from "@/lib/page-seo";
 
 export const Route = createFileRoute("/about")({
@@ -10,7 +10,7 @@ export const Route = createFileRoute("/about")({
     pageSeo({
       title: "About Omnirexis and founder Ross Gallagher",
       description:
-        "Omnirexis helps UK fitness and leisure operators use AI properly. Led by founder Ross Gallagher, from 15+ years on the gym and leisure floor.",
+        "Omnirexis helps UK fitness and leisure operators use AI properly: enquiry follow-up, process automation and the Omnirexis PT platform. Founded by Ross Gallagher. Contact hello@omnirexis.co.uk.",
       path: "/about",
     }),
   component: AboutPage,
@@ -22,7 +22,7 @@ function AboutPage() {
       <PageHero
         kicker="The firm"
         title="We educate owners. Then the tools act like staff."
-        lede="Omnirexis helps fitness and leisure operators use AI properly. Independent studio, gym, spa and leisure club owners and managers in the UK, starting with the North of England."
+        lede="Omnirexis helps fitness and leisure operators use AI properly. Independent studio, gym, spa and leisure club owners and managers across the UK."
       />
 
       <section className="border-b border-line">
@@ -59,6 +59,36 @@ function AboutPage() {
               select established tools or specialist software that fit the job,
               connect them where we can, and agree what success should look
               like.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-line">
+        <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-8 lg:grid-cols-3 lg:py-20">
+          <div>
+            <h2 className="text-lg font-medium tracking-tight">What we do</h2>
+            <ul className="mt-3 space-y-2 text-base leading-relaxed text-muted">
+              <li><Link to="/solutions" className="text-bone underline underline-offset-4">Enquiry follow-up and process automation</Link></li>
+              <li><Link to="/pt" className="text-bone underline underline-offset-4">Omnirexis PT, live with a free plan</Link></li>
+              <li><Link to="/rapid-services" className="text-bone underline underline-offset-4">Fixed price content and operations documents</Link></li>
+              <li><Link to="/leisure" className="text-bone underline underline-offset-4">Leisure operations systems</Link></li>
+            </ul>
+          </div>
+          <div>
+            <h2 className="text-lg font-medium tracking-tight">Where we work</h2>
+            <p className="mt-3 text-base leading-relaxed text-muted">
+              Across the UK, starting with a free 30 minute Zoom strategy call.
+            </p>
+          </div>
+          <div>
+            <h2 className="text-lg font-medium tracking-tight">Contact</h2>
+            <p className="mt-3 text-base leading-relaxed text-muted">
+              <a href={`mailto:${EMAIL}`} className="text-bone underline underline-offset-4">{EMAIL}</a>
+              <br />
+              <a href={PHONE_HREF} className="text-bone underline underline-offset-4">{PHONE}</a>
+              <br />
+              <Link to="/facts" className="text-bone underline underline-offset-4">Company facts</Link>
             </p>
           </div>
         </div>

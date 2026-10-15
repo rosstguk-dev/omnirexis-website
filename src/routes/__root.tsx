@@ -22,7 +22,7 @@ import appCss from "../styles.css?url";
 const ORG_ID = `${SITE_URL}/#organization`;
 
 // Facts only: name, url, logo, public email, social profiles (SOCIAL_LINKS), area served, and the
-// postal address / phone already shown in the site footer. No reviews,
+// postal address / phone already shown in the site footer. No headcount, reviews,
 // ratings or invented locations.
 const ORG_JSON_LD = {
   "@context": "https://schema.org",
@@ -46,6 +46,7 @@ const ORG_JSON_LD = {
         postalCode: "M2 3WQ",
         addressCountry: "GB",
       },
+      areaServed: { "@type": "Country", name: "United Kingdom", identifier: "GB" },
       founder: { "@type": "Person", name: "Ross Gallagher" },
       sameAs: SOCIAL_LINKS.map((s) => s.href),
     },
@@ -58,9 +59,21 @@ const ORG_JSON_LD = {
       email: "hello@omnirexis.co.uk",
       description: DEFAULT_DESCRIPTION,
       parentOrganization: { "@id": ORG_ID },
-      areaServed: [
-        { "@type": "Country", name: "United Kingdom" },
-        { "@type": "Place", name: "North of England" },
+      areaServed: { "@type": "Country", name: "United Kingdom", identifier: "GB" },
+      telephone: "+44-161-250-0045",
+      // Postal address only: no walk-in premises are claimed.
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Bartle House, 9 Oxford Court",
+        addressLocality: "Manchester",
+        postalCode: "M2 3WQ",
+        addressCountry: "GB",
+      },
+      knowsAbout: [
+        "Enquiry follow-up",
+        "Process automation",
+        "CRM updates and reporting",
+        "AI opportunity audits",
       ],
     },
     {
