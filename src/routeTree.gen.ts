@@ -23,6 +23,7 @@ import { Route as ProcessRouteImport } from './routes/process'
 import { Route as PtRouteImport } from './routes/pt'
 import { Route as RapidServicesRouteImport } from './routes/rapid-services'
 import { Route as SolutionsRouteImport } from './routes/solutions'
+import { Route as FactsRouteImport } from './routes/facts'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
@@ -97,6 +98,11 @@ const SolutionsRoute = SolutionsRouteImport.update({
   path: '/solutions',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FactsRoute = FactsRouteImport.update({
+  id: '/facts',
+  path: '/facts',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
@@ -128,6 +134,7 @@ export interface FileRoutesByFullPath {
   '/pt': typeof PtRoute
   '/rapid-services': typeof RapidServicesRoute
   '/solutions': typeof SolutionsRoute
+  '/facts': typeof FactsRoute
   '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/': typeof BlogIndexRoute
@@ -147,6 +154,7 @@ export interface FileRoutesByTo {
   '/pt': typeof PtRoute
   '/rapid-services': typeof RapidServicesRoute
   '/solutions': typeof SolutionsRoute
+  '/facts': typeof FactsRoute
   '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog': typeof BlogIndexRoute
@@ -167,6 +175,7 @@ export interface FileRoutesById {
   '/pt': typeof PtRoute
   '/rapid-services': typeof RapidServicesRoute
   '/solutions': typeof SolutionsRoute
+  '/facts': typeof FactsRoute
   '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/': typeof BlogIndexRoute
@@ -188,6 +197,7 @@ export interface FileRouteTypes {
     | '/pt'
     | '/rapid-services'
     | '/solutions'
+    | '/facts'
     | '/terms'
     | '/blog/$slug'
     | '/blog/'
@@ -207,6 +217,7 @@ export interface FileRouteTypes {
     | '/pt'
     | '/rapid-services'
     | '/solutions'
+    | '/facts'
     | '/terms'
     | '/blog/$slug'
     | '/blog'
@@ -226,6 +237,7 @@ export interface FileRouteTypes {
     | '/pt'
     | '/rapid-services'
     | '/solutions'
+    | '/facts'
     | '/terms'
     | '/blog/$slug'
     | '/blog/'
@@ -246,6 +258,7 @@ export interface RootRouteChildren {
   PtRoute: typeof PtRoute
   RapidServicesRoute: typeof RapidServicesRoute
   SolutionsRoute: typeof SolutionsRoute
+  FactsRoute: typeof FactsRoute
   TermsRoute: typeof TermsRoute
   BlogSlugRoute: typeof BlogSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
@@ -351,6 +364,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SolutionsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/facts': {
+      id: '/facts'
+      path: '/facts'
+      fullPath: '/facts'
+      preLoaderRoute: typeof FactsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/terms': {
       id: '/terms'
       path: '/terms'
@@ -390,6 +410,7 @@ const rootRouteChildren: RootRouteChildren = {
   PtRoute: PtRoute,
   RapidServicesRoute: RapidServicesRoute,
   SolutionsRoute: SolutionsRoute,
+  FactsRoute: FactsRoute,
   TermsRoute: TermsRoute,
   BlogSlugRoute: BlogSlugRoute,
   BlogIndexRoute: BlogIndexRoute,

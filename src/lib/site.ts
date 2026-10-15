@@ -247,7 +247,7 @@ export const FAQS = [
   },
   {
     q: "Who is this for?",
-    a: "Independent studio, gym, spa and leisure club owners and managers in the UK, starting with the North of England. People who still work on the floor and do not have a big tech team.",
+    a: "Independent studio, gym, spa and leisure club owners and managers across the UK. People who still work on the floor and do not have a big tech team.",
   },
   {
     q: "Do I need to replace my existing software?",
