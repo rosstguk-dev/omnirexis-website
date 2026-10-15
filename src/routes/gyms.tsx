@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { CtaBand } from "@/components/site/cta-band";
 import { ContentSection, Points } from "@/components/site/content-section";
 import { FaqList } from "@/components/site/faq-list";
+import { GuidesRow } from "@/components/site/guides-row";
 import { SiteLayout } from "@/components/site/layout";
 import { PageHero } from "@/components/site/page-hero";
 import { BOOK_CALL, MISSION, ptSignup } from "@/lib/site";
@@ -304,7 +305,17 @@ function GymsPage() {
           </p>
         </ContentSection>
 
-        {/* Guides for gym owners: hidden until at least one of these guides is published. */}
+        <GuidesRow
+          title="Guides for gym owners"
+          slugs={[
+            "make-vs-n8n-for-gyms",
+            "ai-or-si-super-intelligence-gyms",
+            "how-to-follow-up-gym-leads",
+            "gym-member-retention-strategies",
+            "gym-trial-follow-up-email",
+            "gym-enquiry-form-template",
+          ]}
+        />
 
         <section className="py-14 lg:py-16">
           <h2 className="font-sans text-3xl tracking-tight sm:text-4xl">
