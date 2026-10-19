@@ -339,7 +339,8 @@ Grok Bot routines only. n8n schedules (09:15 Branded Outreach, 10:10 Client Onbo
 - Cap: 10 / day until Fri 2 Oct 2026, then 20 / day from Mon 5 Oct 2026 (Ross, 27 Sep 2026 13:48). Cap stays 20 / day for the week of 12 Oct 2026 (Ross, 9 Oct 2026 08:25). It steps to 25 / day only after three consecutive weekdays with at least 25 Approved rows (Sent At blank, all gates passed) by 08:00 and hard bounces under 2%. It steps to 30 / day only after a clean week at 25, and only with Ross's OK at that point. n8n-only send  
 - Real first names only  
 - **From Tue 20 Oct 2026 (CoS, 19 Oct 2026, decision delegated by Ross; 19 Oct audit: 196 sends, 4 replies all negative, 0 real PT signups):** first touch is give-first: offer a free one-page check of the prospect's enquiry follow-up (form, auto-reply, booking link) and ask for a one-word reply. Zoom Scheduler book-a-call stays the only call CTA, as a next step, at most one link. The PT free signup link https://omnirexis-pt.vercel.app/signup?src=outreach is required only for solo PTs and PT-led businesses; gym and studio emails no longer carry it (replaces "every outreach email includes the PT free signup link", Ross, 27 Sep 2026 13:48). Sales owns the copy and QC  
-- Footer: reply stop and we will not email again  
+- Footer: If this isn't relevant, reply stop and I won't email again  
+- The n8n first-touch node (Branded Outreach `cugi7YqiP6PjbVp5`, version `8e3dfdbd`) adds Ross's signature and the stop line itself, so sheet bodies end at "Kind regards,".  
 - Template from Tue 20 Oct 2026: plain text only. No banner, no buttons, one link at most, under ~110 words, keep the stop line. (Retired: og.jpg banner, Zoom and Start free buttons.)  
 - Do not resend a batch because the footer looked ugly  
 - Sheet filter treats “already has Sent At” as done. Get Rows requires Sent At empty (locked 18 Sep 2026).
