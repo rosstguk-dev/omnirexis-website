@@ -21,8 +21,10 @@ unless Ross asks it directly.
 
 PT is live for self-serve signup: https://omnirexis-pt.vercel.app/signup
 Outreach: n8n workflow cugi7YqiP6PjbVp5 only, from ross@omnirexis.co.uk, cap per master §5
-(20/day from Mon 5 Oct 2026). Every outreach email carries
-https://omnirexis-pt.vercel.app/signup?src=outreach. Sales & CRM owns first-touch copy.
+(20/day from Mon 5 Oct 2026). First touch is give-first plain text with at most one link:
+https://omnirexis-pt.vercel.app/signup?src=outreach only for solo PTs and PT-led businesses;
+no links for gyms or studios. One in-thread follow-up after 4 working days, within the 20/day cap.
+Sales & CRM owns first-touch copy.
 Voice / call answering is parked: never say receptionist or "answers calls".
 
 Allowed for specialists: light checks in their own lane (did today's capped batch send,
