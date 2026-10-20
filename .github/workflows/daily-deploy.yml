@@ -1,0 +1,58 @@
+name: Daily deploy (Vercel freeze batch)
+
+# Pushes an empty "[daily-deploy] batch YYYY-MM-DD" commit to main once a day at 16:00 UK
+# if anything has been merged since the last [daily-deploy] commit. Vercel builds
+# production only for those commits (see scripts/vercel-ignore.sh).
+# Two crons cover BST (15:00 UTC) and GMT (16:00 UTC); only the run at 16:xx UK continues.
+# Urgent deploy: Actions > "Daily deploy" > Run workflow (skips the hour check),
+# or `gh workflow run daily-deploy.yml -R rosstguk-dev/omnirexis-website`.
+# After 27 Oct 2026 this workflow does nothing. Delete it whenever convenient.
+
+on:
+  schedule:
+    - cron: '0 15 * * *'
+    - cron: '0 16 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-deploy
+  cancel-in-progress: false
+
+jobs:
+  batch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Gate on UK time and freeze window
+        id: gate
+        run: |
+          hour=$(TZ=Europe/London date +%H)
+          today=$(TZ=Europe/London date +%F)
+          echo "UK now: $(TZ=Europe/London date '+%F %H:%M %Z')"
+          go=true
+          if [[ ! "$today" < "2026-10-27" ]]; then echo "Freeze over; nothing to do."; go=false; fi
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$hour" != "16" ]; then
+            echo "Not 16:xx UK (hour=$hour); skipping this cron."; go=false
+          fi
+          echo "go=$go" >> "$GITHUB_OUTPUT"
+          echo "today=$today" >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@v4
+        if: steps.gate.outputs.go == 'true'
+        with:
+          ref: main
+          fetch-depth: 200
+      - name: Push [daily-deploy] commit if main changed
+        if: steps.gate.outputs.go == 'true'
+        run: |
+          last=$(git log -1 --format=%H -F --grep='[daily-deploy]' || true)
+          if [ -n "$last" ]; then n=$(git rev-list --count "$last"..HEAD); else n=$(git rev-list --count HEAD); fi
+          echo "Commits since last [daily-deploy] (${last:-none}): $n"
+          if [ "$n" = "0" ] && [ "${{ github.event_name }}" = "schedule" ]; then
+            echo "Nothing new; no deploy."; exit 0
+          fi
+          git config user.name "omnirexis-daily-deploy"
+          git config user.email "ross@omnirexis.co.uk"
+          git commit --allow-empty -m "[daily-deploy] batch ${{ steps.gate.outputs.today }}"
+          git push origin HEAD:main
