@@ -15,6 +15,8 @@
 
 Price for scoped work stays with Ross until a written playbook says otherwise.
 
+**Free enquiry follow-up check (give-first offer from 20 Oct 2026):** when a prospect says yes, run `docs/ENQUIRY-CHECK-KIT.md` (rules, timings, test enquiry, eight checkpoints, one-page template, QC).
+
 ## 2. Sales → delivery handover (required on booked Zoom / hot lead)
 
 Sales notes in HubSpot deal or CoS chat:
