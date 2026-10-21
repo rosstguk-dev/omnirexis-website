@@ -6,12 +6,16 @@ import { GuidesRow } from "@/components/site/guides-row";
 import { SiteLayout } from "@/components/site/layout";
 import { PageHero } from "@/components/site/page-hero";
 import { ZoomCta } from "@/components/site/zoom-cta";
-import { BOOK_CALL, MISSION, PROCESS } from "@/lib/site";
+import { BOOK_CALL, EMAIL, MISSION, PROCESS } from "@/lib/site";
 import { faqJsonLd, jsonLdGraph, pageSeo, SITE_URL } from "@/lib/page-seo";
 
 // Brief 3.2 (docs/SEO-CONTENT-PLAN.md), Client Delivery PASSED 3 Oct 2026.
 // Scoped work priced on a call: no price, turnaround or package anywhere on this page or in its schema.
 const FAQS = [
+  {
+    q: "What is the free enquiry follow-up check?",
+    a: "With your OK, Ross sends one enquiry through your website form, email or WhatsApp, signed as himself so you know it is the check. You get a one-page write-up of what happened, with three fixes you can make yourself, within 2 working days. It is free, uses only what the public can see, and needs no logins.",
+  },
   {
     q: "How much does lead follow-up automation cost?",
     a: "It is scoped around the job and agreed before anything is built. Start with a free 30-minute Zoom.",
@@ -94,6 +98,30 @@ function LeadFollowUpPage() {
               "Follow-ups live in one person's head, so they stop when that person is busy or away.",
             ]}
           />
+        </ContentSection>
+
+        <ContentSection title="Free enquiry follow-up check">
+          <p className="text-bone">
+            Not sure where your enquiries slip? With your OK, Ross sends one
+            enquiry through your website form, email or WhatsApp, signed as
+            himself so you know it is the check, then follows what happens as
+            a new customer would.
+          </p>
+          <Points
+            items={[
+              "Within 2 working days you get one page covering eight points, from how easy it is to enquire to whether a second message ever arrives.",
+              "It ends with three fixes you can make yourself this week, with no new tools needed.",
+              "Outside view only: what any member of the public can see. No logins, no passwords, no access to your systems.",
+              "Free, and no obligation to book anything.",
+            ]}
+          />
+          <p>
+            Want one? Email{" "}
+            <a href={`mailto:${EMAIL}?subject=Free%20enquiry%20follow-up%20check`}>
+              {EMAIL}
+            </a>{" "}
+            with your business name, or ask on the free 30-minute Zoom.
+          </p>
         </ContentSection>
 
         <ContentSection title="What we set up">
