@@ -345,8 +345,8 @@ Grok Bot routines only. n8n schedules (09:15 Branded Outreach, 10:10 Client Onbo
 - Template from Tue 20 Oct 2026: plain text only. No banner, no buttons, one link at most, under ~110 words, keep the stop line. (Retired: og.jpg banner, Zoom and Start free buttons.)  
 - Do not resend a batch because the footer looked ugly  
 - Sheet filter treats “already has Sent At” as done. Get Rows requires Sent At empty (locked 18 Sep 2026).
-- Follow-up for first touches sent from Tue 20 Oct 2026: one follow-up email 4 working days after the first touch (first follow-ups due Fri 23 Oct 2026), same thread, plain text. Never to anyone who replied, bounced, opted out or is suppressed. Counts inside the 20/day cap. Maximum one follow-up (CoS, 19 Oct 2026, decision delegated by Ross; 19 Oct audit: 196 sends, 4 replies all negative, 0 real PT signups)
-- Send order (CoS decision, 20 Oct 2026): from Fri 23 Oct 2026, when the first follow-ups fall due (4 working days after the first give-first sends on Tue 20 Oct), due follow-ups go first each day, oldest first, and first emails fill whatever is left of the 20 a day cap. Live Branded Outreach version `06b7487e`; rollback `8e3dfdbd`.
+- Follow-up for first touches sent from Tue 20 Oct 2026: one follow-up email 4 working days after the first touch, same thread. Fri 23 Oct 2026 follow-ups cover the Mon 19 Oct sends (7 rows, sheet rows 1386-1392); the Tue 20 Oct sends follow up on Mon 26 Oct 2026. Same thread, plain text. Never to anyone who replied, bounced, opted out or is suppressed. Counts inside the 20/day cap. Maximum one follow-up (CoS, 19 Oct 2026, decision delegated by Ross; 19 Oct audit: 196 sends, 4 replies all negative, 0 real PT signups)
+- Send order (CoS decision, 20 Oct 2026): from Fri 23 Oct 2026, when the first follow-ups fall due (4 working days after the Mon 19 Oct sends, 7 rows, sheet rows 1386-1392; the Tue 20 Oct sends fall due Mon 26 Oct), due follow-ups go first each day, oldest first, and first emails fill whatever is left of the 20 a day cap. Live Branded Outreach version `06b7487e`; rollback `8e3dfdbd`.
 
 ### First-touch copy (locked 17 Sep 2026, tightened 18 Sep 2026)
 
