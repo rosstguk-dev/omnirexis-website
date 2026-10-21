@@ -14,7 +14,8 @@ A prospect replies to an Omnirexis first touch or follow-up with yes, or anythin
 |---|---|
 | Thank-you reply drafted for Ross (section 4) | Same working day |
 | Test enquiry sent, clearly signed as Ross (section 2) | Same working day as the yes, or next working morning |
-| One-page check finished and QC passed | 2 working days after the yes |
+| One-page check drafted by Sales | 1 working day after the yes |
+| One-page check finished and QC passed | 2 working days after the yes (the promise to the prospect: delivered within 2 working days) |
 | Check sent by Ross from ross@omnirexis.co.uk | Same day it passes QC |
 
 A slow or missing reply to our test enquiry is a finding, not a reason to wait longer.
