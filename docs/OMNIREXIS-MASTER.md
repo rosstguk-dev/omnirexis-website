@@ -291,6 +291,8 @@ Workflow `cugi7YqiP6PjbVp5`, schedule 09:15 Europe/London.
 
 Gate: Status = Approved, Email Verified = Yes, DNC Clear, Approved By Ross, greeting is a real first name, not a consumer mailbox, not on HubSpot last-contacted.
 
+From 21 Oct 2026 (CoS decision): a solo PT whose business is their own name passes if they have their own website with a services or pricing page and are clearly the owner. Business-mailbox-only and named-owner gates unchanged. Short days are not padded.
+
 Cap: first-touch per §5 (10 / day until Fri 2 Oct 2026, then 20 / day from Mon 5 Oct 2026 (Ross, 27 Sep 2026 13:48)). Marks sheet Sent. Logs contact in HubSpot.
 
 Live trigger on this workflow is **only** Daily Outreach Trigger. The four leftover ChatGPT webhooks (prospect intake, branded reply, branded follow-up, branded test email) are disabled. Do not turn them back on.
