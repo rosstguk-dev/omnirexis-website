@@ -10,6 +10,8 @@ import makeVsN8nBody from "@/content/blog/make-vs-n8n-for-gyms.md?raw";
 import makeVsN8nFaq from "@/content/blog/make-vs-n8n-for-gyms.faq.json";
 import kahunasBody from "@/content/blog/kahunas-vs-my-pt-hub.md?raw";
 import kahunasFaq from "@/content/blog/kahunas-vs-my-pt-hub.faq.json";
+import gymRetentionBody from "@/content/blog/gym-member-retention-strategies.md?raw";
+import gymRetentionFaq from "@/content/blog/gym-member-retention-strategies.faq.json";
 
 export type BlogAudience = "gyms" | "studios" | "pts";
 
@@ -105,6 +107,23 @@ export const POSTS: BlogPost[] = [
     body: kahunasBody,
     faqJsonLd: kahunasFaq,
     affiliateLinks: ["https://kahunas.io/?via=", "https://mypthub.referralrock.com/l/"],
+  },
+  {
+    // P6 in docs/SEO-CONTENT-PLAN.md (Thu 22 Oct 2026). X scan and fact-check done 22 Oct 2026; no retention-rate figures. Needs F&Q QC before merge.
+    slug: "gym-member-retention-strategies",
+    title: "Gym member retention strategies for independent gyms",
+    metaTitle: "Gym Member Retention Strategies for Independent Gyms",
+    description:
+      "Practical gym member retention strategies for independent gyms: enquiry follow-up, inductions, spotting quiet members, check-ins and respectful win-backs.",
+    excerpt:
+      "Members rarely cancel loudly. Most of them just stop coming. Here are practical, honest retention strategies for independent gym owners.",
+    audience: "gyms",
+    published: "2026-10-22",
+    linksTo: "/gyms",
+    intro: "",
+    sections: [],
+    body: gymRetentionBody,
+    faqJsonLd: gymRetentionFaq,
   },
 ];
 

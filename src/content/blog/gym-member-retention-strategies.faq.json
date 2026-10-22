@@ -1,0 +1,46 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the best gym member retention strategy for an independent gym?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There isn't a single best one, but the basics do most of the work: reply to every enquiry and follow it up, run a good induction, notice members going quiet and check in with them personally, and make leaving easy and respectful. The key is a weekly routine with a named owner, so it keeps happening on busy weeks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I spot members who are about to cancel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pick a simple rule, such as regular members who haven't visited for a set number of days, and pull that list from your gym software every week. Give it to one named person to follow up. Adjust the number of days once you've seen a few weeks of results."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should a check-in message to a quiet member say?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Keep it short and personal. Use their name, sign it with yours, mention something real like their usual class or their goal, and ask one easy question such as whether everything is OK. Avoid guilt, countdowns and sales offers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I email former members to win them back?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Often, but check the rules first. The ICO says you must not send marketing emails or texts to individuals without specific consent, except under the soft opt-in for your own previous customers about similar products or services, where you gave them a simple way to opt out when you collected their details and in every message. Stop as soon as anyone asks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can automation help with gym member retention?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It can help with the repeatable parts, like following up enquiries on time and putting the right list in front of the right person. It doesn't replace the personal conversation. Omnirexis sets up enquiry follow-up around the tools you already use, and lapsed-member follow-ups are one example we can set up, scoped on a call, where your booking system allows it."
+      }
+    }
+  ]
+}
