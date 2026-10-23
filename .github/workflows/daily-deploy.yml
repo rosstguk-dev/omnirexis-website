@@ -34,10 +34,10 @@ jobs:
           echo "UK now: $(TZ=Europe/London date '+%F %H:%M %Z')"
           go=true
           if [[ ! "$today" < "2026-10-30" ]]; then echo "Freeze over; nothing to do."; go=false; fi
-          # Tightened freeze (CoS, 23 Oct): the 23 Oct batch is the last scheduled one. From 24 Oct to
+          # Tightened freeze (CoS, 23 Oct): no more scheduled batches. From 23 Oct to
           # 29 Oct scheduled runs do nothing; only a manual workflow_dispatch (urgent fix) deploys.
-          if [ "${{ github.event_name }}" = "schedule" ] && [[ "$today" > "2026-10-23" ]]; then
-            echo "Scheduled batches paused 24-29 Oct; use workflow_dispatch for urgent fixes."; go=false
+          if [ "${{ github.event_name }}" = "schedule" ] && [[ ! "$today" < "2026-10-23" ]]; then
+            echo "Scheduled batches paused 23-29 Oct; use workflow_dispatch for urgent fixes."; go=false
           fi
           # GitHub runs scheduled crons hours late (20-21 Oct ran at 19:03-20:46 UTC), so an exact
           # 16:xx check never passed and nothing deployed. Accept any scheduled run at or after 16:00 UK;
