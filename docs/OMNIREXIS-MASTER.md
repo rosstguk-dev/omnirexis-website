@@ -297,7 +297,11 @@ Cap: first-touch per §5 (10 / day until Fri 2 Oct 2026, then 20 / day from Mon 
 
 Live trigger on this workflow is **only** Daily Outreach Trigger. The four leftover ChatGPT webhooks (prospect intake, branded reply, branded follow-up, branded test email) are disabled. Do not turn them back on.
 
-n8n Cloud is Pro (Cloud Pro-1, £72/month incl. VAT; Ross confirmed 5 Oct 2026). Still stay credit-efficient: do not add polling schedules. PT Automatic Reply Stop stays off while PT sequences are paused. Client onboarding closed-won check is daily at 10:10 Europe/London, not hourly.
+**Ross availability (Ross, 23 Oct 2026).** Ross is busy Monday to Friday. Every update to Ross and anything needed from him goes out only on Saturday, or Sunday morning into early afternoon (UK). Bots hold weekday items and give them to CoS, who batches them into the weekend briefing (Sat and Sun 09:00) and the weekly review (Sat 10:00). The business keeps running through the week. Do not email, message or ping Ross on a weekday.
+
+**Cost-cut mode (Ross, 23 Oct 2026, until at least February 2027).** Tool costs go from about £360 to roughly £85 a month. Vercel (Pro, $20 spend cap, stay well under it) and Zoom Scheduler stay as they are. Grok moves to the $30 Premium plan. n8n moves to Starter. Buffer, HubSpot and Supabase move to their free plans. Posting and automations are scaled down to fit these plans. No new spending without Ross's yes. Weekly, not daily: the X Article and the promo video and social check run on Mondays only.
+
+**n8n (Starter from 23 Oct 2026; was Cloud Pro).** Stay credit-efficient: do not add polling schedules. Prep done and verified 23 to 24 Oct 2026: five unused workflows deactivated (Lead Processing, AI Enrichment, Proposal Engine, Configuration Service, AI Video Renderer), 23 TEMP and old copies archived (JSON backups first), Client Onboarding closed-won check moved to weekdays 10:10 Europe/London. PT Automatic Reply Stop `xA0m4LrqeSTIQUQI` must never be activated as it stands: it polls every 10 minutes (about 4,300 runs a month, over the Starter quota); if it is ever needed, make it hourly on weekdays 08:00 to 18:00 first. Starter keeps only 7 days of executions and 1 day of workflow history, so export the workflow JSON to the box before every edit.
 
 ### E. Do not create
 - A second outreach agent in chat
@@ -307,24 +311,29 @@ n8n Cloud is Pro (Cloud Pro-1, £72/month incl. VAT; Ross confirmed 5 Oct 2026).
 
 ### F. Routine roster (Ross, 6 Oct 2026)
 
-Grok Bot routines only. n8n schedules (09:15 Branded Outreach, 10:10 Client Onboarding) are machines and are covered above. Everyone except CoS reports to CoS. CoS reports to Ross.
+Grok Bot routines only. n8n schedules (09:15 Branded Outreach, weekdays 10:10 Client Onboarding) are machines and are covered above. Everyone except CoS reports to CoS. CoS reports to Ross, on Saturdays and Sunday mornings only (§0A, 23 Oct 2026). CoS rows checked against its live routine list on 24 Oct 2026; other bots' rows are as they last reported.
 
 | Bot | Routine | Schedule (UK time) | Should be active | Reports to |
 |---|---|---|---|---|
-| CoS (Primary Bot) | OMNIREXIS 08:00 outreach queue guard | Weekdays 07:47 | Yes | Ross |
-| CoS (Primary Bot) | OMNIREXIS daily briefing | Daily 08:08 | Yes | Ross |
-| CoS (Primary Bot) | OMNIREXIS continuous improve | Daily 10:04 | Yes | Ross |
-| CoS (Primary Bot) | OMNIREXIS shipped digest (silent; feeds the afternoon update) | Weekdays 16:54 | Yes | Ross |
-| CoS (Primary Bot) | Daily X post pack for Ross (the combined afternoon update) | Daily 17:31 | Yes | Ross |
-| Primary Bot (CoS) | AI and SI news article, posted as an X Article; Brand & Social's 10:41 run then repurposes it for LinkedIn, Facebook, Instagram and YouTube Shorts (Ross's standing permission of 9 Oct 2026, also covered by his 13 Oct 2026 permission) | Weekdays 09:03 | Yes | Ross |
-| CoS (Primary Bot) | Omnirexis weekly promo video + social check | Mon 09:15 | Yes | Ross |
-| CoS (Primary Bot) | Omnirexis weekly Buffer schedule | Mon 09:49 | Yes | Ross |
-| CoS (Primary Bot) | OMNIREXIS weekly review | Fri 17:06 | Yes | Ross |
-| CoS (Primary Bot) | Omnirexis weekly Metricool schedule | Mon 10:00 (paused) | No | Ross |
-| CoS (Primary Bot) | SuperGrok renewal vs X Pass check | One-off, Fri 9 Oct 2026 10:13 | Yes | Ross |
+| CoS (Primary Bot) | OMNIREXIS 08:00 outreach queue guard | Weekdays 08:00 | Yes | CoS (weekday items held for the weekend) |
+| CoS (Primary Bot) | OMNIREXIS daily briefing | Sat and Sun 09:00 (weekend only from 23 Oct 2026) | Yes | Ross |
+| CoS (Primary Bot) | OMNIREXIS weekly review | Sat 10:00 | Yes | Ross |
+| CoS (Primary Bot) | OMNIREXIS continuous improve (shipped improvements batched into the weekend briefing) | Daily 10:04 | Yes | Ross |
+| CoS (Primary Bot) | OMNIREXIS shipped digest | Weekdays 17:00 (paused 23 Oct 2026) | No | Ross |
+| Primary Bot (CoS) | AI and SI news article, posted as an X Article (Ross's standing permission of 9 Oct 2026, also covered by his 13 Oct 2026 permission) | Mon 09:03 (weekly from 23 Oct 2026) | Yes | Ross |
+| CoS (Primary Bot) | Log the X Article to HQ | Mon 09:41 | Yes | CoS |
+| CoS (Primary Bot) | Omnirexis promo video + social check | Mon 07:58 (weekly from 23 Oct 2026) | Yes | Ross |
+| CoS (Primary Bot) | Omnirexis weekly Buffer schedule | Mon 10:00 | Yes | Ross |
+| CoS (Primary Bot) | Omnirexis weekly content factory | Mon 13:23 | Yes | Ross |
+| CoS (Primary Bot) | New video brief for Ross | Sun 10:41 | Yes | Ross |
+| CoS (Primary Bot) | Omnirexis HQ daily data push | Daily 07:37 | Yes | CoS |
+| CoS (Primary Bot) | Supabase Omnirexis PT keep-alive | Daily 06:23 | Yes | CoS |
+| CoS (Primary Bot) | Weekly disk check | Sun 11:37 | Yes | CoS |
+| CoS (Primary Bot) | Vercel deployment auto-prune | Mon 07:00 | Yes | CoS |
+| CoS (Primary Bot) | Daily X post pack, Metricool schedule, SuperGrok renewal check, Friday pub night | Retired | No | n/a |
 | Brand & Social | Omnirexis daily engagement | Weekdays 08:47 | Yes | CoS |
 | Brand & Social | Omnirexis LinkedIn lead list | Weekdays 09:19 | Yes | CoS |
-| Brand & Social | Daily article repurpose run (turns the 09:03 X Article into posts for LinkedIn and Facebook, an Instagram carousel and a YouTube Short) | Weekdays 10:41 | Yes | CoS |
+| Brand & Social | Article repurpose run (turns the X Article into posts for LinkedIn and Facebook, an Instagram carousel and a YouTube Short). The article is weekly on Mondays from 23 Oct 2026, so there is only a new article to repurpose on Mondays; posting must fit the Buffer free plan | Weekdays 10:41 (Mondays only have a new article) | Yes | CoS |
 | Sales & CRM | Next-day outreach pack builder | Sun to Thu 19:16 | Yes | CoS |
 | Sales & CRM | Business outreach morning run | Paused | No | CoS |
 | Automation & Systems | Weekly bounce and stop-reply report | Thu 15:51 | Yes | CoS |
@@ -482,6 +491,7 @@ SuperGrok runs no Omnirexis tasks unless Ross asks it directly. Everything runs 
 
 | When | What |
 |---|---|
+| 2026-10-24 10:30 | Continuous improve (CoS): master caught up with Ross's 23 Oct 2026 decisions, which every bot reads from here. §0A: Ross is contacted only on Saturdays and Sunday mornings (weekday items held and batched by CoS); cost-cut mode until at least Feb 2027 (Vercel and Zoom kept, Grok Premium, n8n Starter, Buffer, HubSpot and Supabase free, X Article and promo check weekly on Mondays); the old "n8n Cloud is Pro" line replaced with the Starter rules and the verified 23 Oct n8n prep (5 unused workflows off, 23 TEMP/old copies archived, Client Onboarding weekdays 10:10, PT Automatic Reply Stop must never go live at 10-minute polling). §4F: CoS rows rebuilt from the live routine list (weekend briefing, Sat review, Monday article and promo check, shipped digest paused, retired rows marked); Brand & Social repurpose row notes the article is Monday-only. Docs only; no site, n8n, cap or outreach change. |
 | 2026-10-23 10:15 | Continuous improve (CoS): n8n Queue Guard `XAjOcbgPF6FQBDHi` is now follow-up aware. Since §5 sends due follow-ups first, its 08:00 first-touch target is now the cap minus follow-ups due that day (same sheet rules as Branded Outreach FU Select Candidates; it can't see mailbox replies, so it may slightly overcount). Before, it always aimed at 20 Approved rows, so on Mon 26 Oct (about 20 follow-ups due from the Tue 20 Oct sends, so no first-touch room) it would have alerted short by 20 for nothing. Alert email now shows cap, follow-ups first and first-touch room. Live version `9c784d32`; v1 backup on the box at `/workspace/backups/n8n-queue-guard-XAjOcbgPF6FQBDHi-before-2026-10-23.json`. Checked against the 23 Oct 09:15 run (7 follow-ups plus 10 first touches sent; v2 logic gives 7 due, room 13, 3 short). No change to Branded Outreach, cap or copy. |
 | 2026-10-21 09:30 | Social (Ross, 21 Oct 2026): Facebook Stories dropped (0 views); Stories now Instagram only at 18:00. Facebook is reels-first. Facebook performance tracked as Views from Meta insights, not Buffer impressions or reach. Docs only. |
 | 2026-10-22 10:40 | Continuous improve (CoS): the 20 Oct deploy freeze batch had never deployed. GitHub started the 15:00/16:00 UTC crons at 19:03 to 20:46 UTC, so the exact 16:xx UK gate in `.github/workflows/daily-deploy.yml` skipped every run, leaving the 21 Oct free enquiry check section and FAQ on /lead-follow-up-automation (PR #122) unpublished and the 21 Oct social files (PRs #123, #124) returning 404. Gate now accepts any scheduled run at or after 16:00 UK (the existing "nothing new since the last [daily-deploy]" check stops a second batch). Commit `48f25e2` on main carried `[daily-deploy]`, so the pending batch built once: production `dpl_3G3mYcRjF6a9N38xsLu1v9eV2VbE` READY, rollback `dpl_3udugZCY8S5aCwD97mXUqe2MVXq2` (main `f764c13`). Verified live: free check FAQ in the page bundle, sitemap lastmod 2026-10-21, `ai-feels-nothing` Short 200 `video/mp4` and carousel PNGs 200, /, /gyms, /pt, /blog, /contact, /solutions 200. IndexNow resubmitted /lead-follow-up-automation (200). Freeze end date unchanged (27 Oct). No n8n, cap or outreach change. |
