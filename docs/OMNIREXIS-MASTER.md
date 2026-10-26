@@ -342,6 +342,12 @@ Grok Bot routines only. n8n schedules (09:15 Branded Outreach, weekdays 10:10 Cl
 | Client Delivery | New watch routines | Pending, being set up | Pending, being set up | CoS |
 | Finance & Quality | Omnirexis daily drift check (live since 6 Oct 2026; owner Finance & Quality since 13 Oct 2026, when Correction Bot merged into Finance & Quality with Ross's OK; docs PRs to docs/MISTAKES-LOG.md, never merges) | Weekdays 07:20 | Yes | CoS |
 
+#### Social cadence (CoS decisions, Mon 26 Oct 2026)
+
+1. Weekend clips are paused (Buffer Free trim, 23 Oct 2026). Clips go out on weekdays only: one post per weekday on Instagram, Facebook and LinkedIn. Each Buffer queue is kept at 10 posts or under.
+2. YouTube long-form is scheduled natively in YouTube Studio on @omnirexisuk, not through Buffer, from Wed 28 Oct 2026. X long-form is posted natively from the box browser. YouTube and X leave Buffer on 9 Nov 2026.
+3. The 13 unused clips fill empty weekdays. Long-form after 18 Nov 2026 comes from a new brief to Ross in the Sunday video brief.
+
 ---
 
 ## 5. Outreach rules (locked 14 Sep 2026, copy tightened 17 Sep 2026)
@@ -492,6 +498,7 @@ SuperGrok runs no Omnirexis tasks unless Ross asks it directly. Everything runs 
 
 | When | What |
 |---|---|
+| 2026-10-26 10:00 | CoS decisions (26 Oct 2026) added to §4F as Social cadence: weekend clips paused, weekday only on Instagram, Facebook and LinkedIn with each Buffer queue at 10 or under; YouTube long-form scheduled in YouTube Studio on @omnirexisuk from 28 Oct and X long-form posted natively, both leave Buffer on 9 Nov 2026; 13 unused clips fill empty weekdays and long-form after 18 Nov comes from the Sunday video brief. Docs only. |
 | 2026-10-25 10:20 | Continuous improve (CoS): §5 now carries next week's send plan from the live queue sheet: follow-ups due Mon to Fri 26 to 30 Oct (20, 9, 9, 10, 0) and the first-touch room left in the 20 a day cap (0, 11, 11, 10, 20, about 52 in total) against 0 Approved, 35 Needs Review and 15 Draft, so Sales & CRM knows how many rows to clear and when. Also verified the Zoom Scheduler booking page still takes bookings after the free version ended on 23 Oct (slots shown for Mon 26 Oct), and the PT signup, /pt, /contact, /api/enquiry validation, sitemap and apex redirect all answer correctly. Docs only; no site, n8n, cap or copy change. |
 | 2026-10-24 10:30 | Continuous improve (CoS): master caught up with Ross's 23 Oct 2026 decisions, which every bot reads from here. §0A: Ross is contacted only on Saturdays and Sunday mornings (weekday items held and batched by CoS); cost-cut mode until at least Feb 2027 (Vercel and Zoom kept, Grok Premium, n8n Starter, Buffer, HubSpot and Supabase free, X Article and promo check weekly on Mondays); the old "n8n Cloud is Pro" line replaced with the Starter rules and the verified 23 Oct n8n prep (5 unused workflows off, 23 TEMP/old copies archived, Client Onboarding weekdays 10:10, PT Automatic Reply Stop must never go live at 10-minute polling). §4F: CoS rows rebuilt from the live routine list (weekend briefing, Sat review, Monday article and promo check, shipped digest paused, retired rows marked); Brand & Social repurpose row notes the article is Monday-only. Docs only; no site, n8n, cap or outreach change. |
 | 2026-10-23 10:15 | Continuous improve (CoS): n8n Queue Guard `XAjOcbgPF6FQBDHi` is now follow-up aware. Since §5 sends due follow-ups first, its 08:00 first-touch target is now the cap minus follow-ups due that day (same sheet rules as Branded Outreach FU Select Candidates; it can't see mailbox replies, so it may slightly overcount). Before, it always aimed at 20 Approved rows, so on Mon 26 Oct (about 20 follow-ups due from the Tue 20 Oct sends, so no first-touch room) it would have alerted short by 20 for nothing. Alert email now shows cap, follow-ups first and first-touch room. Live version `9c784d32`; v1 backup on the box at `/workspace/backups/n8n-queue-guard-XAjOcbgPF6FQBDHi-before-2026-10-23.json`. Checked against the 23 Oct 09:15 run (7 follow-ups plus 10 first touches sent; v2 logic gives 7 due, room 13, 3 short). No change to Branded Outreach, cap or copy. |
