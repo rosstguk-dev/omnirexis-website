@@ -2,7 +2,11 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { pageSeo } from "@/lib/page-seo";
 import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { CtaBand } from "@/components/site/cta-band";
+import {
+  EnquiryCheckActions,
+  EnquiryCheckBand,
+  EnquiryCheckSection,
+} from "@/components/site/enquiry-check";
 import { SiteLayout } from "@/components/site/layout";
 import { PageHero } from "@/components/site/page-hero";
 
@@ -44,17 +48,31 @@ function LeisurePage() {
         title="A clearer day, for the whole team."
         lede="Practical checks, staff tasks, maintenance and reporting for gyms, spas and leisure clubs. Built from years on the floor, not from a generic ops template."
       >
-        <div className="mt-8 flex flex-wrap gap-3">
-          <Button asChild>
-            <Link to="/contact" search={{ intent: "leisure" }}>
-              Talk through a club
-              <ArrowUpRight />
-            </Link>
-          </Button>
-          <Button asChild variant="outline">
-            <Link to="/rapid-services">Operations documents</Link>
-          </Button>
-        </div>
+        <EnquiryCheckActions
+          extra={
+            <>
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="h-auto min-h-12 whitespace-normal py-3 text-center"
+              >
+                <Link to="/contact" search={{ intent: "leisure" }}>
+                  Talk through a club
+                  <ArrowUpRight />
+                </Link>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="h-auto min-h-12 whitespace-normal py-3 text-center"
+              >
+                <Link to="/rapid-services">Operations documents</Link>
+              </Button>
+            </>
+          }
+        />
       </PageHero>
 
       <section className="border-b border-line">
@@ -97,11 +115,11 @@ function LeisurePage() {
           </article>
         ))}
       </section>
-      <CtaBand
-        kicker="Gyms, spas, clubs"
-        title="Walk us through a typical day."
-        body="If the first project is a checklist, we will say so. If it is a full operating layer, we will scope it properly."
-      />
+
+      <div className="mx-auto max-w-6xl px-5 sm:px-8">
+        <EnquiryCheckSection actions />
+      </div>
+      <EnquiryCheckBand />
     </SiteLayout>
   );
 }

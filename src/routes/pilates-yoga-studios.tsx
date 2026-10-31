@@ -1,11 +1,14 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { CtaBand } from "@/components/site/cta-band";
 import { ContentSection, Points } from "@/components/site/content-section";
 import { FaqList } from "@/components/site/faq-list";
 import { GuidesRow } from "@/components/site/guides-row";
 import { SiteLayout } from "@/components/site/layout";
 import { PageHero } from "@/components/site/page-hero";
-import { ZoomCta } from "@/components/site/zoom-cta";
+import {
+  EnquiryCheckActions,
+  EnquiryCheckBand,
+  EnquiryCheckSection,
+} from "@/components/site/enquiry-check";
 import { BOOK_CALL, MISSION } from "@/lib/site";
 import { faqJsonLd, jsonLdGraph, pageSeo, SITE_URL } from "@/lib/page-seo";
 
@@ -77,10 +80,12 @@ function StudiosPage() {
         <p className="mt-5 max-w-2xl text-xl font-medium tracking-tight text-bone">
           The enquiry that arrived mid-class should not depend on someone remembering it.
         </p>
-        <ZoomCta />
+        <EnquiryCheckActions />
       </PageHero>
 
       <div className="mx-auto max-w-6xl px-5 py-4 sm:px-8">
+        <EnquiryCheckSection />
+
         <ContentSection title="Between the enquiry and the first class">
           <Points
             items={[
@@ -161,7 +166,7 @@ function StudiosPage() {
           </div>
         </section>
       </div>
-      <CtaBand />
+      <EnquiryCheckBand />
     </SiteLayout>
   );
 }

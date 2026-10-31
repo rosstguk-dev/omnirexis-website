@@ -1,7 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { CtaBand } from "@/components/site/cta-band";
+import {
+  EnquiryCheckActions,
+  EnquiryCheckBand,
+  EnquiryCheckSection,
+} from "@/components/site/enquiry-check";
 import { ContentSection, Points } from "@/components/site/content-section";
 import { FaqList } from "@/components/site/faq-list";
 import { GuidesRow } from "@/components/site/guides-row";
@@ -169,30 +172,18 @@ function GymsPage() {
           For independent UK gym owners who still work the floor. We connect
           n8n, HubSpot and Zoom around the tools you already use.
         </p>
-        <div className="mt-8 flex flex-wrap gap-3">
-          <Button
-            asChild
-            variant="solid"
-            size="lg"
-            className="h-auto min-h-12 whitespace-normal py-3 text-center"
-          >
-            <a href={BOOK_CALL} target="_blank" rel="noreferrer">
-              Book a free 30 minute Zoom strategy call
-              <ArrowUpRight />
-            </a>
-          </Button>
-          <Button
-            asChild
-            variant="outline"
-            size="lg"
-            className="h-auto min-h-12 whitespace-normal py-3 text-center"
-          >
-            <a href={PT_SIGNUP_URL}>Your PTs can start free</a>
-          </Button>
-        </div>
-        <p className="mt-5 font-mono text-xs tracking-wide text-subtle">
-          Free. 30 minutes. Zoom. No obligation.
-        </p>
+        <EnquiryCheckActions
+          extra={
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="h-auto min-h-12 whitespace-normal py-3 text-center"
+            >
+              <a href={PT_SIGNUP_URL}>Your PTs can start free</a>
+            </Button>
+          }
+        />
       </PageHero>
 
       <section className="border-b border-line">
@@ -236,6 +227,7 @@ function GymsPage() {
       </section>
 
       <div className="mx-auto max-w-6xl px-5 py-4 sm:px-8">
+        <EnquiryCheckSection actions />
         <ContentSection kicker="How we fix it" title="Tools set up to work together">
           <p>
             We set up and connect these tools for your gym, test the handoffs,
@@ -326,14 +318,7 @@ function GymsPage() {
           </div>
         </section>
       </div>
-      <CtaBand
-        kicker="For gym owners"
-        title="Book a free 30 minute Zoom strategy call."
-        body="Tell us where enquiries, trials and admin are slipping. We will talk through your tools and a sensible first move."
-        secondaryHref={PT_SIGNUP_URL}
-        secondaryLabel="Your PTs can start free"
-        secondaryExternal={false}
-      />
+      <EnquiryCheckBand />
     </SiteLayout>
   );
 }

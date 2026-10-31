@@ -3,7 +3,11 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SiteLayout } from "@/components/site/layout";
-import { CtaBand } from "@/components/site/cta-band";
+import {
+  EnquiryCheckActions,
+  EnquiryCheckBand,
+  EnquiryCheckSection,
+} from "@/components/site/enquiry-check";
 import {
   Accordion,
   AccordionContent,
@@ -11,7 +15,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { SectorGrid } from "@/components/site/sector-grid";
-import { BOOK_CALL, FAQS, PROCESS, ptSignup } from "@/lib/site";
+import { FAQS, PROCESS, ptSignup } from "@/lib/site";
 import { pageSeo } from "@/lib/page-seo";
 import { cn } from "@/lib/utils";
 
@@ -54,22 +58,7 @@ function Home() {
               made, so you can focus on your clients while your business keeps
               growing.
             </p>
-            <div className="mt-8">
-              <Button
-                asChild
-                variant="solid"
-                size="lg"
-                className="h-auto min-h-12 whitespace-normal py-3 text-center"
-              >
-                <a href={BOOK_CALL} target="_blank" rel="noreferrer">
-                  Book a free 30 minute Zoom strategy call
-                  <ArrowUpRight />
-                </a>
-              </Button>
-            </div>
-            <p className="mt-5 font-mono text-xs tracking-wide text-subtle">
-              Free. 30 minutes. Zoom. No obligation.
-            </p>
+            <EnquiryCheckActions />
             <p className="mt-4 text-sm">
               <Link
                 to="/lead-follow-up-automation"
@@ -102,6 +91,10 @@ function Home() {
           </aside>
         </div>
       </section>
+
+      <div className="mx-auto max-w-6xl px-5 sm:px-8">
+        <EnquiryCheckSection />
+      </div>
 
       <section className="border-b border-line bg-paper">
         <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-8 lg:grid-cols-12 lg:py-24">
@@ -322,7 +315,7 @@ function Home() {
         </div>
       </section>
 
-      <CtaBand />
+      <EnquiryCheckBand />
     </SiteLayout>
   );
 }
