@@ -12,6 +12,7 @@ export function CtaBand({
   secondaryHref,
   secondaryLabel,
   secondaryExternal = true,
+  note,
 }: {
   kicker?: string;
   title?: string;
@@ -22,6 +23,7 @@ export function CtaBand({
   secondaryHref?: string;
   secondaryLabel?: string;
   secondaryExternal?: boolean;
+  note?: string;
 }) {
   return (
     <section className="relative overflow-hidden border-t border-line bg-ink-2 text-bone">
@@ -74,9 +76,10 @@ export function CtaBand({
             </Button>
           ) : null}
           <p className="font-mono text-xs tracking-wide text-subtle">
-            {secondaryHref
-              ? "Free plan for your first two clients. Or book a call."
-              : "Free. 30 minutes. Zoom. No obligation."}
+            {note ??
+              (secondaryHref
+                ? "Free plan for your first two clients. Or book a call."
+                : "Free. 30 minutes. Zoom. No obligation.")}
           </p>
         </div>
       </div>

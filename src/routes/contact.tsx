@@ -5,6 +5,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import {
+  EnquiryCheckActions,
+  EnquiryCheckBand,
+  EnquiryCheckSection,
+} from "@/components/site/enquiry-check";
 import { SiteLayout } from "@/components/site/layout";
 import { PageHero } from "@/components/site/page-hero";
 import {
@@ -114,8 +119,14 @@ function ContactPage() {
       <PageHero
         kicker="Contact"
         title="Let’s make the work work better."
-        lede="Share a little about the business and where time is being lost. Or skip the form and take the 30-minute call."
-      />
+        lede="Share a little about the business and where time is being lost. Ask for the free enquiry follow-up check, or book the 30 minute call."
+      >
+        <EnquiryCheckActions />
+      </PageHero>
+
+      <div className="mx-auto max-w-6xl px-5 sm:px-8">
+        <EnquiryCheckSection />
+      </div>
 
       <div className="mx-auto grid max-w-6xl gap-16 px-5 py-16 sm:px-8 lg:grid-cols-12 lg:py-20">
         <div className="lg:col-span-7">
@@ -272,6 +283,7 @@ function ContactPage() {
           </dl>
         </aside>
       </div>
+      <EnquiryCheckBand />
     </SiteLayout>
   );
 }

@@ -5,8 +5,9 @@ import { FaqList } from "@/components/site/faq-list";
 import { GuidesRow } from "@/components/site/guides-row";
 import { SiteLayout } from "@/components/site/layout";
 import { PageHero } from "@/components/site/page-hero";
+import { EnquiryCheckSection } from "@/components/site/enquiry-check";
 import { ZoomCta } from "@/components/site/zoom-cta";
-import { BOOK_CALL, EMAIL, MISSION, PROCESS } from "@/lib/site";
+import { BOOK_CALL, MISSION, PROCESS } from "@/lib/site";
 import { faqJsonLd, jsonLdGraph, pageSeo, SITE_URL } from "@/lib/page-seo";
 
 // Brief 3.2 (docs/SEO-CONTENT-PLAN.md), Client Delivery PASSED 3 Oct 2026.
@@ -100,29 +101,7 @@ function LeadFollowUpPage() {
           />
         </ContentSection>
 
-        <ContentSection title="Free enquiry follow-up check">
-          <p className="text-bone">
-            Not sure where your enquiries slip? With your OK, Ross sends one
-            enquiry through your website form, email or WhatsApp, signed as
-            himself so you know it is the check, then follows what happens as
-            a new customer would.
-          </p>
-          <Points
-            items={[
-              "Within 2 working days you get one page covering eight points, from how easy it is to enquire to whether a second message ever arrives.",
-              "It ends with three fixes you can make yourself this week, with no new tools needed.",
-              "Outside view only: what any member of the public can see. No logins, no passwords, no access to your systems.",
-              "Free, and no obligation to book anything.",
-            ]}
-          />
-          <p>
-            Want one? Email{" "}
-            <a href={`mailto:${EMAIL}?subject=Free%20enquiry%20follow-up%20check`}>
-              {EMAIL}
-            </a>{" "}
-            with your business name, or ask on the free 30-minute Zoom.
-          </p>
-        </ContentSection>
+        <EnquiryCheckSection />
 
         <ContentSection title="What we set up">
           <p className="text-bone">
