@@ -12,6 +12,8 @@ import kahunasBody from "@/content/blog/kahunas-vs-my-pt-hub.md?raw";
 import kahunasFaq from "@/content/blog/kahunas-vs-my-pt-hub.faq.json";
 import gymRetentionBody from "@/content/blog/gym-member-retention-strategies.md?raw";
 import gymRetentionFaq from "@/content/blog/gym-member-retention-strategies.faq.json";
+import followUpLeadsBody from "@/content/blog/how-to-follow-up-gym-leads.md?raw";
+import followUpLeadsFaq from "@/content/blog/how-to-follow-up-gym-leads.faq.json";
 
 export type BlogAudience = "gyms" | "studios" | "pts";
 
@@ -124,6 +126,23 @@ export const POSTS: BlogPost[] = [
     sections: [],
     body: gymRetentionBody,
     faqJsonLd: gymRetentionFaq,
+  },
+  {
+    // P2 in docs/SEO-CONTENT-PLAN.md. X scan 26 Oct and 2 Nov 2026 and fact-check done; no statistics. F&Q PASS 2 Nov 2026 (content factory).
+    slug: "how-to-follow-up-gym-leads",
+    title: "How to follow up gym leads: a simple process for independent gyms",
+    metaTitle: "How to Follow Up Gym Leads: A Simple Process for Independent Gyms",
+    description:
+      "How to follow up gym leads: what to say in the first reply, a simple three message follow-up sequence, who owns a shared inbox and what to automate.",
+    excerpt:
+      "Most gyms don't have a lead problem. They have a reply problem. Here's a simple follow-up process an independent gym can run without new software or extra staff.",
+    audience: "gyms",
+    published: "2026-11-02",
+    linksTo: "/lead-follow-up-automation",
+    intro: "",
+    sections: [],
+    body: followUpLeadsBody,
+    faqJsonLd: followUpLeadsFaq,
   },
 ];
 

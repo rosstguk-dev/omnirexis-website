@@ -1,0 +1,46 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How quickly should a gym follow up a lead?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As soon as you reasonably can, ideally the same day. If you can't reply properly straight away, send a short holding reply from a person and then follow through. What matters most is that every enquiry gets a reply and a follow-up if they go quiet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many times should I follow up a gym enquiry?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For most enquiries, three messages over about a week is enough: the first reply, a short nudge the next day and a helpful last message at the end of the week. Then stop, and stop straight away if anyone says no thanks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should a gym's first reply to an enquiry say?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use their name and yours, answer the question they asked, ask one easy question and offer one clear next step, such as a visit or a taster session. Keep it short and easy to answer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who should follow up leads in a small gym?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "One named person each day, not the whole team. Give them a single list of open enquiries from every channel, a clear status for each one and a few minutes every morning to clear it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can follow-up for gym leads be automated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The repeatable parts can, like logging enquiries from your web form and email in one place, sending the next follow-up when someone hasn't replied and stopping when they do. Conversations and real questions should stay with a person. Omnirexis sets up follow-ups for enquiries by phone, web form or email around the tools you already use."
+      }
+    }
+  ]
+}
