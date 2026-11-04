@@ -1,0 +1,28 @@
+name: Master changelog stamp check
+
+# A stamp that claims a time later than the commit carrying it makes the record
+# claim work in the future. That happened on 4 Nov 2026 (15:53 written 15:44),
+# so the check runs on every push that touches the master instead of being a
+# thing someone remembers to do.
+
+on:
+  push:
+    paths:
+      - 'docs/OMNIREXIS-MASTER.md'
+  pull_request:
+    paths:
+      - 'docs/OMNIREXIS-MASTER.md'
+  workflow_dispatch:
+
+jobs:
+  stamps:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0        # blame needs full history
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Every stamp must match the commit that wrote it
+        run: python3 scripts/check-stamps.py .
