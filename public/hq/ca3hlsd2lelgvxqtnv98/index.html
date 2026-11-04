@@ -73,13 +73,13 @@ const cam=new THREE.PerspectiveCamera(38,1,0.1,200);cam.position.set(17,17,19);
 const ctl=new OrbitControls(cam,cv);ctl.target.set(0,0,0);ctl.enableDamping=true;ctl.minDistance=6;ctl.maxDistance=42;ctl.maxPolarAngle=1.25;ctl.minPolarAngle=0.35;ctl.autoRotate=true;ctl.autoRotateSpeed=0.25;ctl.enablePan=true;
 let lastUser=0;ctl.addEventListener('start',()=>{ctl.autoRotate=false;lastUser=performance.now()});
 // lights
-scene.add(new THREE.HemisphereLight(0xfff1dc,0x6b5a48,0.55));
-const sun=new THREE.DirectionalLight(0xffe2b8,2.6);sun.position.set(-14,20,-12);sun.castShadow=true;
+scene.add(new THREE.HemisphereLight(0xfff1dc,0x6b5a48,0.45));
+const sun=new THREE.DirectionalLight(0xffe2b8,2.9);sun.position.set(7,17,-18);sun.castShadow=true;
 const SM=mobile?1024:2048;sun.shadow.mapSize.set(SM,SM);Object.assign(sun.shadow.camera,{left:-16,right:16,top:14,bottom:-14,near:1,far:60});sun.shadow.bias=-0.0004;sun.shadow.normalBias=0.03;sun.shadow.radius=4;scene.add(sun);
 [[-6,3.2,-2],[4,3.2,2],[-6,3.2,5]].forEach(p=>{const l=new THREE.PointLight(0xffc98a,6,14,2);l.position.set(...p);scene.add(l)});
 // materials
 const M=(c,r=.6,m=0,o={})=>new THREE.MeshStandardMaterial(Object.assign({color:c,roughness:r,metalness:m},o));
-const mFloor=M(0x9c7a5b,.55),mWall=M(0xeae3d8,.9),mWood=M(0xb08a62,.45),mDark=M(0x2b2f36,.4,.3),mMetal=M(0xc9ccd1,.3,.9),mWhite=M(0xf6f6f4,.35),mFab=M(0x3e5a7a,.95),mFab2=M(0x8a5a3c,.9),mLeaf=M(0x3f8a4a,.7),mPot=M(0xd9cfc3,.6),mGlass=new THREE.MeshPhysicalMaterial({color:0xdfefff,roughness:.05,transmission:.0,transparent:true,opacity:.25,emissive:0xcfe6ff,emissiveIntensity:.6});
+const mFloor=M(0x9c7a5b,.55),mWall=M(0xeae3d8,.9),mWood=M(0xb08a62,.45),mDark=M(0x2b2f36,.4,.3),mMetal=M(0xc9ccd1,.3,.9),mWhite=M(0xf6f6f4,.35),mFab=M(0x3e5a7a,.95),mFab2=M(0x8a5a3c,.9),mLeaf=M(0x3f8a4a,.7),mPot=M(0xd9cfc3,.6),mGlass=new THREE.MeshPhysicalMaterial({color:0xdfefff,roughness:.05,transmission:.0,transparent:true,opacity:.12,emissive:0xcfe6ff,emissiveIntensity:.25,depthWrite:false});
 // floor tex (wood planks)
 {const c=document.createElement('canvas');c.width=c.height=512;const g=c.getContext('2d');for(let i=0;i<16;i++){g.fillStyle=`hsl(28,${35+(i*7%10)}%,${40+(i*13%9)}%)`;g.fillRect(0,i*32,512,32);g.fillStyle='rgba(0,0,0,.18)';g.fillRect(0,i*32,512,1.5);g.fillRect((i*137)%512,i*32,2,32)}for(let k=0;k<1500;k++){g.fillStyle=`rgba(60,30,10,${Math.random()*.06})`;g.fillRect(Math.random()*512,Math.random()*512,40*Math.random(),1)}
  const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;t.wrapS=t.wrapT=THREE.RepeatWrapping;t.repeat.set(4,3);t.anisotropy=8;mFloor.map=t;mFloor.color.set(0xffffff)}
@@ -90,7 +90,11 @@ const FW=26,FD=18;
 const fl=new THREE.Mesh(new THREE.PlaneGeometry(FW,FD),mFloor);fl.rotation.x=-Math.PI/2;fl.receiveShadow=true;scene.add(fl);
 box(FW,4,.3,mWall,0,2,-FD/2,scene,false);box(.3,4,FD,mWall,-FW/2,2,0,scene,false);
 // windows in back wall: cut look via glass panes + frames
-for(let i=0;i<6;i++){const x=-10+i*4;const g=new THREE.Mesh(new THREE.PlaneGeometry(2.8,2.2),mGlass);g.position.set(x,2.2,-FD/2+.16);scene.add(g);box(3,.08,.12,mDark,x,1.08,-FD/2+.2);box(3,.08,.12,mDark,x,3.32,-FD/2+.2);box(.08,2.3,.12,mDark,x,2.2,-FD/2+.2);box(.08,2.3,.12,mDark,x-1.45,2.2,-FD/2+.2);box(.08,2.3,.12,mDark,x+1.45,2.2,-FD/2+.2)}
+const mView=(()=>{const c=document.createElement('canvas');c.width=512;c.height=256;const g=c.getContext('2d'),gr=g.createLinearGradient(0,0,0,256);gr.addColorStop(0,'#6fa3e3');gr.addColorStop(.62,'#cfe2f5');gr.addColorStop(1,'#f3dfc4');g.fillStyle=gr;g.fillRect(0,0,512,256);
+ for(let k=0;k<7;k++){const cx=(k*173)%512,cy=30+(k*53)%70;g.fillStyle='rgba(255,255,255,.55)';[[0,0,38],[30,6,28],[-28,8,24],[10,-10,26]].forEach(b=>{g.beginPath();g.arc(cx+b[0],cy+b[1],b[2]*.7,0,7);g.fill()})}
+ let x=0;while(x<512){const w=18+(x*37)%34,h=40+(x*91)%80;g.fillStyle=`rgba(${90+(x%40)},${110+(x%30)},${140+(x%25)},.85)`;g.fillRect(x,256-h,w,h);g.fillStyle='rgba(255,236,170,.6)';for(let yy=256-h+6;yy<250;yy+=10)for(let xx=x+4;xx<x+w-4;xx+=8)if(((xx*7+yy*3)%5)<2)g.fillRect(xx,yy,3,4);x+=w+2}
+ const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;return new THREE.MeshBasicMaterial({map:t,fog:false})})();
+for(let i=0;i<6;i++){const x=-10+i*4;{const v=new THREE.Mesh(new THREE.PlaneGeometry(2.86,2.26),mView);v.position.set(x,2.2,-FD/2+.17);scene.add(v)}const g=new THREE.Mesh(new THREE.PlaneGeometry(2.8,2.2),mGlass);g.position.set(x,2.2,-FD/2+.19);scene.add(g);box(3,.08,.12,mDark,x,1.08,-FD/2+.2);box(3,.08,.12,mDark,x,3.32,-FD/2+.2);box(.08,2.3,.12,mDark,x,2.2,-FD/2+.2);box(.08,2.3,.12,mDark,x-1.45,2.2,-FD/2+.2);box(.08,2.3,.12,mDark,x+1.45,2.2,-FD/2+.2)}
 box(FW,.12,.05,mDark,0,.06,-FD/2+.17,scene,false);
 // rug
 {const r=new THREE.Mesh(new THREE.PlaneGeometry(7,5),M(0x6b4a6e,1));r.rotation.x=-Math.PI/2;r.position.set(8,.01,5.3);r.receiveShadow=true;scene.add(r)}
