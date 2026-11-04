@@ -34,7 +34,7 @@ export function GuidesRow({
       ) : (
         <p className="mt-4 text-base text-muted">
           Practical guides on this are on the way.{" "}
-          <Link to="/blog" className="inline-flex items-center gap-1 text-bone underline underline-offset-4">
+          <Link to="/blog" className="inline-flex items-center gap-1 text-bone underline underline-offset-4 max-md:min-h-11">
             Browse the guides
             <ArrowUpRight className="size-4" />
           </Link>
