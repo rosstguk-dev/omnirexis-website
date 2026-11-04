@@ -34,8 +34,8 @@ h1{font-size:18px;margin:0}h1 span{color:var(--accent)}#conn{font-size:12px;colo
 <div id="wrap"><canvas id="c"></canvas><div id="tags"></div><div id="card"></div><div id="tabs"><button data-v="all" class="on">Everyone</button><button data-v="lounge">Lounge</button><button data-v="kitchen">Kitchen</button><button data-v="offices">Offices</button><button data-v="desks">Desks</button><button data-v="meeting">Meeting</button><button data-v="outside">Outside</button></div><div id="hint">fixed view · drag if you want a different angle</div><div id="fade">opening the office…</div></div>
 <script type="module">
 
-/*HQ_FIXED_VIEWS_2026_11_04*/
 /*HQ_SPREAD_GROUND_2026_11_04*/
+/*HQ_LABEL_FIT_2026_11_04*/
 var TOPIC="hq-IDL7DXoYw-rxAk2P_fHi-wkK";
 // Real team: names, label colours and mascot shapes taken from each bot's own profile.
 var TEAM=[
@@ -887,7 +887,7 @@ function labels(){
    for(let j=0;j<items.length;j++){
     if(i===j)continue;const b2=items[j];
     const dx=Math.abs(a.x-b2.x);
-    if(dx>Math.min(a.w,b2.w)*.62)continue;
+    if(dx>(a.w+b2.w)*.5+3)continue;
     const dy=a.y-b2.y;
     if(Math.abs(dy)>=H_)continue;
     const push=(H_-Math.abs(dy))*(dy>=0?1:-1);
