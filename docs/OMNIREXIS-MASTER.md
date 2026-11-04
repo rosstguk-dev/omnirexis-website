@@ -342,6 +342,7 @@ Grok Bot routines only. n8n schedules (09:15 Branded Outreach, weekdays 10:10 Cl
 | CoS (Primary Bot) | HQ office usage push (Vercel usage % into the HQ page) | Every 4 hours, 09:00 to 21:00 | Yes | CoS |
 | CoS (Primary Bot) | Supabase Omnirexis PT keep-alive | Daily 06:23 | Yes | CoS |
 | CoS (Primary Bot) | Weekly disk check | Sun 11:37 | Yes | CoS |
+| CoS (Primary Bot) | OMNIREXIS weekly usage guard (reads the plan's usage position on weekdays, logs it, stays silent under 70%, tells Ross once the week passes the 85% stop line) | Weekdays 12:00 | Yes | CoS |
 | CoS (Primary Bot) | Vercel deployment auto-prune | Mon 07:00 | Yes | CoS |
 | CoS (Primary Bot) | Daily X post pack, Metricool schedule, SuperGrok renewal check, Friday pub night | Retired | No | n/a |
 | Brand & Social | Omnirexis daily engagement | Weekdays 08:47 | Yes | CoS |
