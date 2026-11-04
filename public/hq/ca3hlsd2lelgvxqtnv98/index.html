@@ -224,6 +224,8 @@ function frame(){const a=cam.aspect;cam.fov=a<1?THREE.MathUtils.lerp(52,38,Math.
  const tv=Math.tan(THREE.MathUtils.degToRad(cam.fov/2)),th=tv*a;const pt=a<1;const d=THREE.MathUtils.clamp(Math.max((pt?7.5:10.5)/tv,(pt?8.2:15)/th),pt?11:14,50);
  ctl.maxDistance=Math.max(42,d+8);scene.fog.near=d+8;scene.fog.far=d+48;
  if(!framed||!lastUser){if(pt)ctl.target.set(-4.6,.4,-1.2);else ctl.target.set(0,0,0);fo.copy(cam.position).sub(ctl.target).normalize();if(!framed)fo.set(17,17,19).normalize();cam.position.copy(ctl.target).addScaledVector(fo,d);framed=true}
+ // portrait: lift the picture so the team sits in the upper-middle and the empty sky band above the room shrinks
+ const w=cv.clientWidth,h=cv.clientHeight;if(pt&&w&&h)cam.setViewOffset(w,h,0,Math.round(h*.13),w,h);else cam.clearViewOffset();
  cam.updateProjectionMatrix()}
 function resize(){const w=cv.clientWidth,h=cv.clientHeight;if(!w||!h)return;R.setSize(w,h,false);cam.aspect=w/h;frame()}
 addEventListener('resize',resize);resize();
