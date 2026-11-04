@@ -327,6 +327,7 @@ Grok Bot routines only. n8n schedules (09:15 Branded Outreach, weekdays 10:10 Cl
 | CoS (Primary Bot) | Omnirexis weekly content factory | Mon 13:23 | Yes | Ross |
 | CoS (Primary Bot) | New video brief for Ross | Sun 10:41 | Yes | Ross |
 | CoS (Primary Bot) | Omnirexis HQ daily data push | Daily 07:37 | Yes | CoS |
+| CoS (Primary Bot) | OMNIREXIS 09:20 send count check (confirms the day's real send count from the 09:15 run; silent unless something needs a person) | Weekdays 09:20 | Yes | CoS |
 | CoS (Primary Bot) | HQ office daily refresh (keeps the 3D HQ page in step with the live team) | Daily 08:00 | Yes | CoS |
 | CoS (Primary Bot) | HQ office usage push (Vercel usage % into the HQ page) | Every 4 hours, 09:00 to 21:00 | Yes | CoS |
 | CoS (Primary Bot) | Supabase Omnirexis PT keep-alive | Daily 06:23 | Yes | CoS |
