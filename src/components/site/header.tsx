@@ -13,7 +13,7 @@ export function SiteHeader({ ink: _ink = false }: { ink?: boolean }) {
   return (
     <header className="sticky top-0 z-40 border-b border-line-on-ink bg-ink/80 text-bone backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
-        <Link to="/" aria-label="Omnirexis home" className="shrink-0">
+        <Link to="/" aria-label="Omnirexis home" className="shrink-0 max-md:flex max-md:min-h-11 max-md:items-center">
           <Wordmark />
         </Link>
 

@@ -33,7 +33,7 @@ export function SiteFooter() {
             <p className="font-mono text-xs font-medium tracking-mark text-subtle uppercase">
               Practice
             </p>
-            <ul className="mt-4 space-y-2.5 text-sm">
+            <ul className="mt-4 space-y-2.5 text-sm max-md:space-y-0 max-md:[&_a]:inline-block max-md:[&_a]:py-[13px]">
               <li>
                 <Link to="/solutions" className="text-bone/80 hover:text-bone">
                   Solutions
@@ -89,7 +89,7 @@ export function SiteFooter() {
             <p className="font-mono text-xs font-medium tracking-mark text-subtle uppercase">
               Firm
             </p>
-            <ul className="mt-4 space-y-2.5 text-sm">
+            <ul className="mt-4 space-y-2.5 text-sm max-md:space-y-0 max-md:[&_a]:inline-block max-md:[&_a]:py-[13px]">
               <li>
                 <Link to="/about" className="text-bone/80 hover:text-bone">
                   About
@@ -141,7 +141,7 @@ export function SiteFooter() {
             <p className="font-mono text-xs font-medium tracking-mark text-subtle uppercase">
               Contact
             </p>
-            <ul className="mt-4 space-y-2.5 text-sm text-bone/80">
+            <ul className="mt-4 space-y-2.5 text-sm text-bone/80 max-md:space-y-0 max-md:[&_a]:inline-block max-md:[&_a]:py-[13px]">
               <li>
                 <a href={`mailto:${EMAIL}`} className="hover:text-bone">
                   {EMAIL}
