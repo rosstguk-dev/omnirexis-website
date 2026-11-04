@@ -188,72 +188,76 @@ function PtPage() {
             Start lean. Upgrade when you grow.
           </h2>
           <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {PT_PLANS.map((plan) => (
-              <article
-                key={plan.id}
-                className={cn(
-                  "flex flex-col rounded-xl p-6",
-                  plan.featured
-                    ? "bg-ink-2 text-bone shadow-card ring-1 ring-pine"
-                    : "border border-line bg-paper",
-                )}
-              >
-                <p
+            {PT_PLANS.map((plan) => {
+              const isFeatured = plan.id === "free";
+              return (
+                <article
+                  key={plan.id}
                   className={cn(
-                    "text-xs font-medium tracking-mark uppercase",
-                    plan.featured ? "text-subtle" : "text-muted",
+                    "flex flex-col rounded-xl p-6",
+                    isFeatured
+                      ? "bg-ink-2 text-bone shadow-card ring-1 ring-pine"
+                      : "border border-line bg-paper",
                   )}
                 >
-                  {plan.audience}
-                </p>
-                <h3 className="mt-3 text-xl font-medium tracking-tight">
-                  {plan.name}
-                </h3>
-                <p className="mt-4 font-sans text-4xl tracking-tight tabular-nums">
-                  {plan.price}
-                  <span
+                  <p
                     className={cn(
-                      "ml-1 font-sans text-sm",
-                      plan.featured ? "text-subtle" : "text-muted",
+                      "text-xs font-medium tracking-mark uppercase",
+                      isFeatured ? "text-subtle" : "text-muted",
                     )}
                   >
-                    {plan.cadence}
-                  </span>
-                </p>
-                <p
-                  className={cn(
-                    "mt-3 text-sm leading-relaxed",
-                    plan.featured ? "text-bone/70" : "text-muted",
+                    {plan.audience}
+                  </p>
+                  <h3 className="mt-3 text-xl font-medium tracking-tight">
+                    {plan.name}
+                  </h3>
+                  <p className="mt-4 font-sans text-4xl tracking-tight tabular-nums">
+                    {plan.price}
+                    <span
+                      className={cn(
+                        "ml-1 font-sans text-sm",
+                        isFeatured ? "text-subtle" : "text-muted",
+                      )}
+                    >
+                      {plan.cadence}
+                    </span>
+                  </p>
+                  <p
+                    className={cn(
+                      "mt-3 text-sm leading-relaxed",
+                      isFeatured ? "text-bone/70" : "text-muted",
+                    )}
+                  >
+                    {plan.blurb}
+                  </p>
+                  <ul className="mt-6 flex-1 space-y-2.5">
+                    {plan.points.map((p) => (
+                      <li key={p} className="flex gap-2 text-sm">
+                        <Check className="mt-0.5 size-4 shrink-0" />
+                        {p}
+                      </li>
+                    ))}
+                  </ul>
+                  {isFeatured ? (
+                    <Button asChild className="mt-8" variant="paper">
+                      <a href={PT_SIGNUP_URL}>
+                        Start free
+                        <ArrowUpRight />
+                      </a>
+                    </Button>
+                  ) : (
+                    <p className="mt-8 flex h-11 items-center text-sm text-muted">
+                      Not on sale yet.
+                    </p>
                   )}
-                >
-                  {plan.blurb}
-                </p>
-                <ul className="mt-6 flex-1 space-y-2.5">
-                  {plan.points.map((p) => (
-                    <li key={p} className="flex gap-2 text-sm">
-                      <Check className="mt-0.5 size-4 shrink-0" />
-                      {p}
-                    </li>
-                  ))}
-                </ul>
-                <Button
-                  asChild
-                  className="mt-8"
-                  variant={plan.featured ? "paper" : "solid"}
-                >
-                  <a href={PT_SIGNUP_URL}>
-                    {plan.id === "free"
-                      ? "Start free"
-                      : `Sign up for ${plan.name}`}
-                    <ArrowUpRight />
-                  </a>
-                </Button>
-              </article>
-            ))}
+                </article>
+              );
+            })}
           </div>
           <p className="mt-8 text-sm text-muted">
-            Every account starts on Free. Choose a paid plan from Billing
-            inside the app when you need more clients. Questions first?{" "}
+            Every account starts on Free. Paid plans are shown for reference
+            and are not on sale yet. They will be chosen from Billing inside
+            the app once they open. Questions first?{" "}
             <Link
               to="/contact"
               search={{ intent: "pt-free" }}
@@ -261,7 +265,16 @@ function PtPage() {
             >
               Send an enquiry
             </Link>{" "}
-            or book a strategy call.
+            or{" "}
+            <a
+              href={BOOK_CALL}
+              target="_blank"
+              rel="noreferrer"
+              className="underline"
+            >
+              book a strategy call
+            </a>
+            .
           </p>
         </div>
       </section>
