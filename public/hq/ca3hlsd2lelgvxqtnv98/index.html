@@ -17,19 +17,24 @@ h1{font-size:18px;margin:0}h1 span{color:var(--accent)}#conn{font-size:12px;colo
 .tag .nm{font:600 10.5px system-ui;background:rgba(10,18,40,.78);color:#fff;padding:2px 7px;border-radius:10px;white-space:nowrap;backdrop-filter:blur(4px);box-shadow:0 2px 6px rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.14)}
 .tag .nm:before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:5px;vertical-align:1px;background:var(--dot,#4f8cff)}
 .tag.sel .nm{background:var(--accent);border-color:#fff}
-.tag .bb{font:500 10.5px system-ui;background:#fff;color:#123;padding:4px 8px;border-radius:10px;margin-bottom:4px;max-width:170px;text-align:center;box-shadow:0 3px 10px rgba(0,0,0,.3);position:relative}
-.tag .bb:after{content:"";position:absolute;left:calc(50% + var(--ax,0px));bottom:-5px;margin-left:-5px;border:5px solid transparent;border-bottom:0;border-top-color:inherit}
-.tag .bb.w{border-top-color:#fff}.tag .bb.q{background:#F59312;color:#fff;font-weight:800;font-size:15px;border-top-color:#F59312}.tag .bb.e{background:#E5484D;color:#fff;font-weight:800;font-size:15px;border-top-color:#E5484D}
+.bub{position:absolute;left:0;top:0;pointer-events:none;font:500 11px system-ui;background:#fff;color:#12203a;padding:5px 9px;border-radius:10px;max-width:190px;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.32);white-space:normal}
+.tag .nm.q{background:#F59312}.tag .nm.e{background:#E5484D}
 #card{position:absolute;left:10px;bottom:10px;width:min(340px,calc(100% - 20px));background:rgba(11,26,58,.95);border:1px solid var(--accent);border-radius:12px;padding:10px 12px;display:none;font-size:13px;z-index:2000}
 #card b{font-size:15px}#card .x{float:right;cursor:pointer;color:var(--mute)}#card ul{margin:4px 0;padding-left:16px;color:var(--mute);font-size:12px}#card a{color:var(--accent)}#card .mt{color:var(--mute);font-size:11px}
-.fb{padding:40px 20px;text-align:center;color:var(--mute)}#hint{position:absolute;right:10px;top:8px;font-size:11px;color:rgba(255,255,255,.75);text-shadow:0 1px 2px #000;pointer-events:none}
+.fb{padding:40px 20px;text-align:center;color:var(--mute)}#tabs{position:absolute;left:10px;top:8px;display:flex;flex-wrap:wrap;gap:6px;z-index:900;max-width:calc(100% - 20px)}
+#tabs button{font:600 12px system-ui;color:#cfe0ff;background:rgba(10,18,40,.72);border:1px solid rgba(255,255,255,.18);padding:6px 11px;border-radius:999px;cursor:pointer;backdrop-filter:blur(6px);transition:background .15s,color .15s}
+#tabs button:hover{background:rgba(30,52,110,.9);color:#fff}
+#tabs button.on{background:var(--accent);border-color:#fff;color:#fff}
+@media(max-width:640px){#tabs button{font-size:11px;padding:5px 9px}#tabs{gap:5px}}
+#hint{position:absolute;right:10px;top:8px;font-size:11px;color:rgba(255,255,255,.75);text-shadow:0 1px 2px #000;pointer-events:none}
 #fade{position:absolute;inset:0;background:#081229;opacity:1;transition:opacity .6s;pointer-events:none;z-index:1500;display:flex;align-items:center;justify-content:center;color:var(--mute);font-size:13px}
 </style></head><body>
 <header><h1>Omnirexis <span>HQ</span></h1><div id="conn">connecting…</div></header>
 <section id="usage"><b>Usage</b> <span id="upct">–</span> <span id="ureset" style="color:var(--mute);font-size:12px"></span><div class="bar"><i id="ubar"></i></div><div class="ulist" id="ulist"></div></section>
-<div id="wrap"><canvas id="c"></canvas><div id="tags"></div><div id="card"></div><div id="hint">drag to orbit · pinch/scroll to zoom</div><div id="fade">opening the office…</div></div>
+<div id="wrap"><canvas id="c"></canvas><div id="tags"></div><div id="card"></div><div id="tabs"><button data-v="all" class="on">Everyone</button><button data-v="lounge">Lounge</button><button data-v="kitchen">Kitchen</button><button data-v="offices">Offices</button><button data-v="desks">Desks</button><button data-v="meeting">Meeting</button><button data-v="outside">Outside</button></div><div id="hint">fixed view · drag if you want a different angle</div><div id="fade">opening the office…</div></div>
 <script type="module">
 
+/*HQ_FIXED_VIEWS_2026_11_04*/
 var TOPIC="hq-IDL7DXoYw-rxAk2P_fHi-wkK";
 // Real team: names, label colours and mascot shapes taken from each bot's own profile.
 var TEAM=[
@@ -79,7 +84,7 @@ function fail(m){$('wrap').innerHTML='<div class="fb">'+esc(m)+'</div>'}
 const cv=$('c');let R;
 try{R=new THREE.WebGLRenderer({canvas:cv,antialias:true,powerPreference:'high-performance'});}catch(e){fail('WebGL is not available on this device, so the 3D office cannot be shown. Live status still updates in the usage bar above.');throw e}
 const mobile=/Mobi|Android|iPhone|iPad/.test(navigator.userAgent)||Math.min(screen.width,screen.height)<700;
-let PR=Math.min(devicePixelRatio||1,mobile?1.5:2);R.setPixelRatio(PR);
+const PR=Math.min(devicePixelRatio||1,mobile?1.35:1.6);R.setPixelRatio(PR);
 R.outputColorSpace=THREE.SRGBColorSpace;R.toneMapping=THREE.ACESFilmicToneMapping;R.toneMappingExposure=1.02;
 R.shadowMap.enabled=true;R.shadowMap.type=THREE.PCFSoftShadowMap;
 const scene=new THREE.Scene();
@@ -89,14 +94,14 @@ const pm=new THREE.PMREMGenerator(R);scene.environment=pm.fromScene(new RoomEnvi
  gr.addColorStop(0,'#4a76b8');gr.addColorStop(.45,'#a9c6e6');gr.addColorStop(.78,'#e6e9ee');gr.addColorStop(1,'#f6efe6');
  g.fillStyle=gr;g.fillRect(0,0,4,256);const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;scene.background=t}
 scene.fog=new THREE.Fog(0xdfe6ee,120,260);
-const cam=new THREE.PerspectiveCamera(40,1,0.3,400);cam.position.set(34,34,40);
-const ctl=new OrbitControls(cam,cv);ctl.target.set(0,0,0);ctl.enableDamping=true;ctl.dampingFactor=.08;ctl.minDistance=8;ctl.maxDistance=130;ctl.maxPolarAngle=1.32;ctl.minPolarAngle=0.22;ctl.autoRotate=true;ctl.autoRotateSpeed=0.22;ctl.enablePan=true;ctl.screenSpacePanning=false;
-let lastUser=0;ctl.addEventListener('start',function(){ctl.autoRotate=false;lastUser=performance.now()});
+const cam=new THREE.PerspectiveCamera(40,1,0.9,420);cam.position.set(34,34,40);
+const ctl=new OrbitControls(cam,cv);ctl.target.set(0,0,0);ctl.enableDamping=false;ctl.minDistance=8;ctl.maxDistance=160;ctl.maxPolarAngle=1.32;ctl.minPolarAngle=0.22;ctl.autoRotate=false;ctl.enablePan=false;ctl.screenSpacePanning=false;
+let lastUser=0;ctl.addEventListener('start',function(){lastUser=performance.now()});
 // ---------- lights
 scene.add(new THREE.HemisphereLight(0xeaf1ff,0x6e5b48,0.55));
 const sun=new THREE.DirectionalLight(0xffe6c2,3.1);sun.position.set(16,34,-30);sun.castShadow=true;
 const SM=mobile?1024:2048;sun.shadow.mapSize.set(SM,SM);
-Object.assign(sun.shadow.camera,{left:-46,right:46,top:42,bottom:-42,near:1,far:150});sun.shadow.bias=-0.0005;sun.shadow.normalBias=0.04;sun.shadow.radius=3.5;scene.add(sun);
+Object.assign(sun.shadow.camera,{left:-46,right:46,top:42,bottom:-42,near:1,far:150});sun.shadow.bias=-0.00015;sun.shadow.normalBias=0.085;sun.shadow.radius=3;scene.add(sun);
 const fill=new THREE.DirectionalLight(0xdce8ff,0.5);fill.position.set(-22,18,24);scene.add(fill);
 [[-13,4.4,-6],[2,4.4,-9],[9,4.4,6],[-4,4.4,10]].forEach(function(p){const l=new THREE.PointLight(0xffcf9a,14,26,2);l.position.set(p[0],p[1],p[2]);scene.add(l)});
 // ---------- materials
@@ -324,8 +329,8 @@ for(let i=0;i<3;i++){const x=KX-2.2+i*1.9;
  const bulb=new THREE.Mesh(new THREE.SphereGeometry(.09,12,10),M(0xfff0cf,.4,0,{emissive:0xffd79a,emissiveIntensity:2.4}));bulb.position.set(x,2.6,KZ-1.0);scene.add(bulb)}
 // ================= LOUNGE (front left) =================
 const LG={x:-10.2,z:9.2};
-box(15.5,.02,7.6,mRug,LG.x,.012,LG.z,scene,false);
-box(13.4,.022,5.6,mRug2,LG.x,.014,LG.z,scene,false);
+box(15.5,.03,7.6,mRug,LG.x,.022,LG.z,scene,false);
+box(13.4,.034,5.6,mRug2,LG.x,.042,LG.z,scene,false);
 function sofa(x,z,ry,len){
  const g=new THREE.Group();g.position.set(x,0,z);g.rotation.y=ry;scene.add(g);
  const L=len||2.9,m=M(0x4b6b8f,.92),mc=M(0x5b7da3,.95);
@@ -568,21 +573,33 @@ for(let i=0;i<15;i++){const x=-21+i*2.9,z=FD/2+2.2;
  const mRender=M(0xe7e1d6,.9),mFascia=M(0x3b3733,.55),mBrick=M(0xcfc3b2,.92);
  // roof fascia: a thin continuous band round the whole footprint at wall height
  box(FW+.9,.34,.5,mFascia,0,WH-.02,-HD-.08,scene,false);
- box(FW+.9,.34,.5,mFascia,0,WH-.02,HD+.08,scene,false);
+ const nearFront=box(FW+.9,.34,.5,mFascia,0,WH-.02,HD+.08,scene,false);
  box(.5,.34,FD+.9,mFascia,-HW-.08,WH-.02,0,scene,false);
- box(.5,.34,FD+.9,mFascia,HW+.08,WH-.02,0,scene,false);
+ const nearRight=box(.5,.34,FD+.9,mFascia,HW+.08,WH-.02,0,scene,false);
  // corners
  [[-HW-.08,-HD-.08],[HW+.08,-HD-.08],[-HW-.08,HD+.08],[HW+.08,HD+.08]].forEach(function(c){
   box(.52,.36,.52,mFascia,c[0],WH-.02,c[1],scene,false)});
- // low cutaway walls: waist height, so you can still see in but it reads as a building
- box(FW,.95,.3,mWall,0,.475,HD+.05,scene,false);
- box(.3,.95,FD,mWall,HW+.05,.475,0,scene,false);
- // brick/render facing on the outside of those low walls
- box(FW,.95,.06,mBrick,0,.475,HD+.22,scene,false);
- box(.06,.95,FD,mBrick,HW+.22,.475,0,scene,false);
- // capping on the low walls
- box(FW+.14,.06,.42,mCap,0,.98,HD+.05,scene,false);
- box(.42,.06,FD+.14,mCap,HW+.05,.98,0,scene,false);
+ // front and right elevations are glass curtain walls: they read as a real office
+ // and let you see straight in (a solid low wall used to cut across the lounge and hide it)
+ (function(){
+  const mFrame=M(0x3a3f47,.42,.55);
+  const glass=new THREE.MeshPhysicalMaterial({color:0xdcecff,roughness:.08,metalness:0,transparent:true,opacity:.13,emissive:0xbfe0ff,emissiveIntensity:.1,depthWrite:false});
+  const groups=[];
+  function wall(x,z,len,rotY){
+   const g=new THREE.Group();g.position.set(x,0,z);g.rotation.y=rotY||0;scene.add(g);groups.push(g);
+   const pane=new THREE.Mesh(new THREE.PlaneGeometry(len,WH-.1),glass);pane.position.y=WH/2;g.add(pane);
+   // slim mullions, base rail and head rail
+   const n=Math.max(2,Math.round(len/2.4));
+   for(let i=0;i<=n;i++){const mx=-len/2+i*(len/n);
+    const b=new THREE.Mesh(new THREE.BoxGeometry(.07,WH,.09),mFrame);b.position.set(mx,WH/2,0);b.castShadow=false;g.add(b)}
+   [[.04],[WH-.06]].forEach(function(yy){
+    const r=new THREE.Mesh(new THREE.BoxGeometry(len,.1,.11),mFrame);r.position.set(0,yy[0],0);r.castShadow=false;g.add(r)})
+  }
+  wall(0,HD+.04,FW,0);
+  wall(HW+.04,0,FD,Math.PI/2);
+  window.__HQ_GLASS=groups;
+  window.__HQ_NEAR=[nearFront,nearRight];
+ })();
  // entrance canopy over Ross's door, on the outside of the left wall
  {const cx=DOOR.x-.9,cz=DOOR.z;
   box(1.9,.1,2.0,mWhite,cx,2.72,cz,scene,false);
@@ -708,15 +725,17 @@ function makeMascot(meta){
  // shadow blob
  const blob=new THREE.Mesh(new THREE.PlaneGeometry(1,1),new THREE.MeshBasicMaterial({map:blobT,transparent:true,depthWrite:false,opacity:.45}));
  blob.rotation.x=-Math.PI/2;blob.position.y=.015;scene.add(blob);
- // name tag
+ // name tag (bubble lives separately so it can be shown on demand only)
  const tag=document.createElement('div');tag.className='tag';
- tag.innerHTML='<div class="bb"></div><div class="nm"></div>';
+ tag.innerHTML='<div class="nm"></div>';
  tag.querySelector('.nm').textContent=meta.short;
  tag.querySelector('.nm').style.setProperty('--dot','#'+meta.colour);
  tag.onclick=function(){if(typeof showCard==='function')showCard(meta.id)};
  $('tags').appendChild(tag);
+ const bub=document.createElement('div');bub.className='bub';bub.style.display='none';
+ $('tags').appendChild(bub);
  let h=0;for(let i=0;i<meta.id.length;i++)h=(h*31+meta.id.charCodeAt(i))|0;
- return {b:meta.id,meta:meta,root:root,spin:spin,body:body,fg:fg,acc:acc,blob:blob,tag:tag,path:[],st:'idle',
+ return {b:meta.id,meta:meta,root:root,spin:spin,body:body,fg:fg,acc:acc,blob:blob,tag:tag,bub:bub,path:[],st:'idle',
   x:0,z:0,yaw:0,yawT:0,ph:Math.abs(h)%100/100,seat:null,area:'desk'};
 }
 const blobT=(function(){const c=document.createElement('canvas');c.width=c.height=64;const g=c.getContext('2d'),r=g.createRadialGradient(32,32,2,32,32,32);
@@ -820,33 +839,61 @@ function plan(){
  );
  for(let i=0;i<deskPos.length;i++){if(!bots.some(function(b){return DESK_OF[b]===i}))drawScreen(i,'',{status:'idle'})}}
 // ================= LABELS =================
-const v3=new THREE.Vector3();
+// Name pills are always on and get pushed apart so they never stack.
+// A speech bubble is shown only for the bot you pick or hover, so the view stays clean.
+const v3=new THREE.Vector3(),_p={};
 function labels(){
  const W=cv.clientWidth,H=cv.clientHeight,items=[];
- for(const b in C){const c=C[b];v3.set(c.x,1.42,c.z).project(cam);
-  if(v3.z>1){c.tag.style.display='none';continue}
+ const roomFor={lounge:'lounge',kitchen:'kitchen',offices:'office',desks:'desk',meeting:'meeting'};
+ const want=roomFor[viewName];
+ for(const b in C){const c=C[b];
+  if(want&&c.area!==want&&c.area!=='walking'){c.tag.style.display='none';c.bub.style.display='none';continue}
+  if(viewName==='outside'){c.tag.style.display='none';c.bub.style.display='none';continue}
+  v3.set(c.x,1.5,c.z).project(cam);
+  if(v3.z>1||v3.z<-1){c.tag.style.display='none';c.bub.style.display='none';continue}
+  const x=(v3.x*.5+.5)*W,y=(-v3.y*.5+.5)*H;
+  if(x<-80||x>W+80||y<-60||y>H+80){c.tag.style.display='none';c.bub.style.display='none';continue}
   c.tag.style.display='';
-  items.push({c:c,x:(v3.x*.5+.5)*W,y:(-v3.y*.5+.5)*H,d:v3.z})}
- items.sort(function(a,b){return a.y-b.y});
- for(const it of items)it.w=it.c.tag.offsetWidth||60;
- const placed=[];
+  items.push({c:c,x:x,y:y,d:v3.z})}
+ items.sort(function(a,b){return a.d-b.d});
+ for(const it of items)it.w=it.c.tag.offsetWidth||64;
+ // simple separation: one pass down then up, so pills spread instead of overlapping
+ const gap=17;
+ for(let pass=0;pass<3;pass++){
+  for(let i=0;i<items.length;i++){
+   const a=items[i];
+   for(let j=0;j<items.length;j++){
+    if(i===j)continue;const b2=items[j];
+    if(Math.abs(a.x-b2.x)>Math.min(a.w,b2.w)*.55+8)continue;
+    const dy=a.y-b2.y;
+    if(Math.abs(dy)<gap){a.y=b2.y+(dy>=0?gap:-gap)}}}}
  for(const it of items){
   const hw=it.w/2;
   const cx=W>2*hw+12?Math.min(Math.max(it.x,hw+6),W-hw-6):it.x;
   const ax=Math.max(-hw+12,Math.min(hw-12,it.x-cx));
   if(it.c.ax!==ax){it.c.ax=ax;it.c.tag.style.setProperty('--ax',ax.toFixed(0)+'px')}
-  let y=it.y;
-  for(let k=0;k<14;k++){const hit=placed.find(function(p){return Math.abs(p.x-cx)<70&&Math.abs(p.y-y)<19});if(!hit)break;y=hit.y-19}
-  placed.push({x:cx,y:y});
-  it.c.tag.style.transform='translate('+cx.toFixed(1)+'px,'+y.toFixed(1)+'px) translate(-50%,-100%)';
-  it.c.tag.style.zIndex=1000-Math.round(it.d*1000)}}
+  it.c.tag.style.transform='translate('+cx.toFixed(1)+'px,'+it.y.toFixed(1)+'px) translate(-50%,-100%)';
+  it.c.tag.style.zIndex=1000-Math.round(it.d*1000);
+  // bubble sits above the pill, only for the chosen bot
+  const showBub=(sel===it.c.b)&&it.c.bubText;
+  if(showBub){
+   it.c.bub.style.display='';
+   it.c.bub.style.transform='translate('+cx.toFixed(1)+'px,'+(it.y-24).toFixed(1)+'px) translate(-50%,-100%)';
+   it.c.bub.style.zIndex=1100}
+  else it.c.bub.style.display='none'}
+}
 function setBubble(c){
- const s=S.bots[c.b]||{},bb=c.tag.querySelector('.bb');let t='',cl='';
+ const s=S.bots[c.b]||{};let t='',cl='';
  const arrived=c.path.length===0;
- if(c.st==='working'&&arrived){t=s.step||'working';cl='w'}
- else if(c.st==='waiting_user'&&arrived){t='?';cl='q'}
- else if(c.st==='error'){t='!';cl='e'}
- if(bb._t!==t+cl){bb._t=t+cl;bb.textContent=t.length>44?t.slice(0,43)+'…':t;bb.className='bb '+cl;bb.style.display=t?'':'none'}
+ if(c.st==='working'&&arrived)t=s.step||'working';
+ else if(c.st==='waiting_user'&&arrived)cl='q';
+ else if(c.st==='error')cl='e';
+ c.bubText=(t&&t.length>2)?(t.length>60?t.slice(0,59)+'…':t):'';
+ const nm=c.tag.querySelector('.nm');
+ const flag=c.st==='error'?' !':(c.st==='waiting_user'?' ?':'');
+ const label=c.meta.short+flag;
+ if(nm._t!==label+cl){nm._t=label+cl;nm.textContent=label;nm.className='nm '+(cl||'')}
+ if(c.bub._t!==c.bubText){c.bub._t=c.bubText;c.bub.textContent=c.bubText}
  c.tag.classList.toggle('sel',sel===c.b)}
 // ================= LOOP =================
 const clock=new THREE.Clock();
@@ -857,7 +904,6 @@ window.__hqDBG=function(){return Object.keys(C).map(function(b){var c=C[b];retur
 var C={},sel=null;
 function tick(){
  const dt=Math.min(clock.getDelta(),.05),t=clock.elapsedTime;
- if(!ctl.autoRotate&&performance.now()-lastUser>9000)ctl.autoRotate=true;
  ctl.update();
  for(const b in C){
   const c=C[b];let moving=false;
@@ -880,37 +926,80 @@ function tick(){
   c.blob.position.set(c.x,.015,c.z);
   c.blob.scale.setScalar(moving?1.15:1);
   setBubble(c)}
+ if(tween){
+  const k=Math.min(1,(performance.now()-tween.t0)/tween.dur),e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;
+  cam.position.lerpVectors(tween.fp,tween.tp,e);ctl.target.lerpVectors(tween.ft,tween.tt,e);ctl.update();
+  if(k>=1){tween=null;scene.fog.near=Math.max(60,cam.position.distanceTo(ctl.target)*1.6);scene.fog.far=cam.position.distanceTo(ctl.target)*4.2}}
  R.render(scene,cam);
  labels();
  fr++;acc+=dt;
- if(acc>=1){fps=fr/acc;window.__hq.fps=Math.round(fps);fr=0;acc=0;
-  if(fps<45&&PR>.7){PR=Math.max(.7,PR-.25);R.setPixelRatio(PR);resize()}
-  else if(fps>57&&PR<Math.min(devicePixelRatio||1,mobile?1.5:2)){PR=Math.min(PR+.25,devicePixelRatio||1);R.setPixelRatio(PR);resize()}}
+ if(acc>=1){fps=fr/acc;window.__hq.fps=Math.round(fps);fr=0;acc=0}
  window.__hq.frames++}
-// ---------- framing
-let framed=false;const fo=new THREE.Vector3();
-function frame(){
+// ---------- camera views: fixed presets, no drifting, no re-framing loops ----------
+const VIEWS={
+ all:{t:[-1.2,0.2,-1.6],r:16.5,dir:[0.52,0.60,0.61]},
+ lounge:{t:[-10.2,0.7,8.6],r:9.2,dir:[0.40,0.66,0.64]},
+ kitchen:{t:[13.4,0.7,9.6],r:7.6,dir:[0.30,0.66,0.70]},
+ offices:{t:[14.8,0.8,-7.0],r:8.6,dir:[0.46,0.66,0.60]},
+ desks:{t:[-12.4,0.6,-5.6],r:8.4,dir:[0.46,0.68,0.58]},
+ meeting:{t:[5.0,0.7,-8.6],r:7.0,dir:[0.40,0.66,0.64]},
+ outside:{t:[-26,1.0,12.0],r:31.0,dir:[0.42,0.52,0.74]}
+};
+let viewName='all',framed=false;
+const dirV=new THREE.Vector3();
+let tween=null;
+function viewDist(v){
+ const tv=Math.tan(THREE.MathUtils.degToRad(cam.fov/2)),th=tv*cam.aspect;
+ return Math.max(v.r/tv, v.r/Math.max(.05,th));
+}
+function applyView(name,animate){
+ const v=VIEWS[name]||VIEWS.all;viewName=name;
  const a=cam.aspect;
- cam.fov=a<1?THREE.MathUtils.lerp(56,40,Math.max(0,(a-.45)/.55)):40;
- const tv=Math.tan(THREE.MathUtils.degToRad(cam.fov/2)),th=tv*a;
- const pt=a<1;
- // fit the whole floor plate
- const needH=(pt?18.5:20.0)/tv, needW=(pt?18.5:28.5)/th;
- const d=THREE.MathUtils.clamp(Math.max(needH,needW),pt?22:30,120);
- ctl.maxDistance=Math.max(150,d+40);
- scene.fog.near=d+40;scene.fog.far=d+160;
- if(!framed||!lastUser){
-  if(pt)ctl.target.set(-6.5,.2,1.5);else ctl.target.set(-7.5,-.2,-1.5);
-  fo.copy(cam.position).sub(ctl.target).normalize();
-  if(!framed)fo.set(34,34,40).normalize();
-  cam.position.copy(ctl.target).addScaledVector(fo,d);framed=true}
+ cam.fov=a<1?THREE.MathUtils.lerp(54,40,Math.max(0,(a-.45)/.55)):40;
+ cam.updateProjectionMatrix();
+ const d=viewDist(v);
+ ctl.maxDistance=Math.max(180,d+70);
+ ctl.target.set(v.t[0],v.t[1],v.t[2]);
+ dirV.set(v.dir[0],v.dir[1],v.dir[2]).normalize();
+ const p=new THREE.Vector3(v.t[0],v.t[1],v.t[2]).addScaledVector(dirV,d);
  const w=cv.clientWidth,h=cv.clientHeight;
- if(pt&&w&&h)cam.setViewOffset(w,h,0,Math.round(h*.06),w,h);else cam.clearViewOffset();
- cam.updateProjectionMatrix()}
-function resize(){const w=cv.clientWidth,h=cv.clientHeight;if(!w||!h)return;R.setSize(w,h,false);cam.aspect=w/h;frame()}
+ if(name==='all'&&a<1&&w&&h)cam.setViewOffset(w,h,0,Math.round(h*.05),w,h);else cam.clearViewOffset();
+ if(animate&&framed){
+  tween={t0:performance.now(),dur:620,fp:cam.position.clone(),ft:ctl.target.clone(),tp:p,tt:ctl.target.clone()};
+ }else{
+  tween=null;cam.position.copy(p);ctl.update();framed=true
+  scene.fog.near=Math.max(60,d*1.6);scene.fog.far=d*4.2
+ }
+}
+function resize(){const w=cv.clientWidth,h=cv.clientHeight;if(!w||!h)return;R.setSize(w,h,false);
+ // Never re-fit the camera on a mere resize. On phones the address bar sliding away fires this
+ // constantly, and re-framing every time is what made the whole picture jump about.
+ const a=w/h,was=cam.aspect;cam.aspect=a;cam.updateProjectionMatrix();
+ if(!framed||Math.abs(a-was)>0.35)applyView(viewName,false);
+}
+[].forEach.call(document.querySelectorAll('#tabs button'),function(b){
+ b.addEventListener('click',function(){
+  [].forEach.call(document.querySelectorAll('#tabs button'),function(x){x.classList.toggle('on',x===b)});
+  applyView(b.getAttribute('data-v'),true);
+  var hd=$('hint');if(hd)hd.style.opacity='0'})});
+window.__hqView=applyView;
 addEventListener('resize',resize);resize();
 document.addEventListener('visibilitychange',function(){R.setAnimationLoop(document.hidden?null:tick);clock.getDelta()});
 R.setAnimationLoop(tick);
+// ---------- near-side trim fades out so it never cuts across the view ----------
+(function(){
+ function fadeNear(){
+  var near=(window.__HQ_NEAR||[]);
+  near.forEach(function(m){if(!m)return;m.visible=(viewName==='outside')});
+  // cut the two near glass walls away in the room views, the way a dollhouse cutaway works,
+  // so no mullions or reflections sit between you and the team
+  var cut=(viewName!=='outside');
+  (window.__HQ_GLASS||[]).forEach(function(g){g.visible=!cut});
+ }
+ var _apply=applyView;
+ applyView=function(n,a){_apply(n,a);fadeNear()};
+ fadeNear();
+})();
 // ---------- picking
 const ray=new THREE.Raycaster(),mv=new THREE.Vector2();let down=null;
 cv.addEventListener('pointerdown',function(e){down=[e.clientX,e.clientY]});
@@ -935,8 +1024,8 @@ function showCard(b){
   (ok?'<a href="'+esc(ch)+'">Open chat →</a>':'');
  card.style.display='block';$('cx').onclick=function(){showCard(null)}}
 window.__hq.focus=function(b){const c=C[b];if(!c)return;
- ctl.autoRotate=false;lastUser=performance.now()+1e9;
- ctl.target.set(c.x,.8,c.z);cam.position.set(c.x+4.5,3.6,c.z+5.2);ctl.update()};
+ var p=new THREE.Vector3(c.x+5.2,4.3,c.z+6.0);
+ tween={t0:performance.now(),dur:520,fp:cam.position.clone(),ft:ctl.target.clone(),tp:p,tt:new THREE.Vector3(c.x,.8,c.z)}};
 function render(){
  plan();
  const u=S.usage;
