@@ -35,6 +35,7 @@ h1{font-size:18px;margin:0}h1 span{color:var(--accent)}#conn{font-size:12px;colo
 <script type="module">
 
 /*HQ_FIXED_VIEWS_2026_11_04*/
+/*HQ_SPREAD_GROUND_2026_11_04*/
 var TOPIC="hq-IDL7DXoYw-rxAk2P_fHi-wkK";
 // Real team: names, label colours and mascot shapes taken from each bot's own profile.
 var TEAM=[
@@ -429,27 +430,32 @@ const grassT=(function(){
  for(let i=0;i<16;i++){g.fillStyle='rgba(255,255,255,'+(i%2?.05:.02)+')';g.fillRect(0,i*32,512,32)}
  const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;t.wrapS=t.wrapT=THREE.RepeatWrapping;t.repeat.set(9,7);t.anisotropy=8;
  return t})();
-const ground=new THREE.Mesh(new THREE.PlaneGeometry(230,180),new THREE.MeshStandardMaterial({map:grassT,roughness:.95,metalness:0}));
+// The grass sits at GROUND_Y and everything laid on it is a few millimetres above. At this
+// scale that is thin enough to z-fight and make the whole lawn shimmer while the camera moves,
+// so the grass is pushed back in the depth buffer and the overlays are pushed forward.
+const ground=new THREE.Mesh(new THREE.PlaneGeometry(230,180),new THREE.MeshStandardMaterial({map:grassT,roughness:.95,metalness:0,
+ polygonOffset:true,polygonOffsetFactor:2,polygonOffsetUnits:4}));
 ground.rotation.x=-Math.PI/2;ground.position.y=GROUND_Y;ground.receiveShadow=true;scene.add(ground);
+function onGround(m){m.polygonOffset=true;m.polygonOffsetFactor=-2;m.polygonOffsetUnits=-4;return m}
 // building plinth sides (so the slab reads as a real base rather than a cut-out)
 const mSlab=M(0xb8b2a8,.85);
-box(FW+1.6,.5,FD+1.6,mSlab,0,-.25,0,scene,false);
+box(FW+1.6,.56,FD+1.6,mSlab,0,-.28,0,scene,false);
 // tarmac apron + car park
 const tarmacT=(function(){
  const c=document.createElement('canvas');c.width=c.height=256;const g=c.getContext('2d');
  g.fillStyle='#3c3f45';g.fillRect(0,0,256,256);
  for(let k=0;k<2600;k++){g.fillStyle='rgba('+(120+Math.random()*70|0)+','+(120+Math.random()*70|0)+','+(125+Math.random()*70|0)+','+(.05+Math.random()*.12)+')';g.fillRect(Math.random()*256,Math.random()*256,1+Math.random()*2,1+Math.random()*2)}
  const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;t.wrapS=t.wrapT=THREE.RepeatWrapping;t.repeat.set(8,6);return t})();
-const mTarmac=new THREE.MeshStandardMaterial({map:tarmacT,roughness:.92,metalness:.02});
+const mTarmac=onGround(new THREE.MeshStandardMaterial({map:tarmacT,roughness:.92,metalness:.02}));
 // car park: to the left of the building (front-left of the plot)
 const CPARK={x0:-74,x1:-24,z0:6,z1:34};
 {const w=CPARK.x1-CPARK.x0,d=CPARK.z1-CPARK.z0;
- const p=new THREE.Mesh(new THREE.PlaneGeometry(w,d),mTarmac);p.rotation.x=-Math.PI/2;p.position.set((CPARK.x0+CPARK.x1)/2,GROUND_Y+.012,(CPARK.z0+CPARK.z1)/2);p.receiveShadow=true;scene.add(p)}
+ const p=new THREE.Mesh(new THREE.PlaneGeometry(w,d),mTarmac);p.rotation.x=-Math.PI/2;p.position.set((CPARK.x0+CPARK.x1)/2,GROUND_Y+.03,(CPARK.z0+CPARK.z1)/2);p.receiveShadow=true;scene.add(p)}
 // entrance drive in front of the building + a walkway to the door
-{const p=new THREE.Mesh(new THREE.PlaneGeometry(26,20),mTarmac);p.rotation.x=-Math.PI/2;p.position.set(-8,GROUND_Y+.012,30);p.receiveShadow=true;scene.add(p)}
+{const p=new THREE.Mesh(new THREE.PlaneGeometry(26,20),mTarmac);p.rotation.x=-Math.PI/2;p.position.set(-8,GROUND_Y+.03,30);p.receiveShadow=true;scene.add(p)}
 // paving slabs from the car park to Ross's door
 (function(){
- const mPave=M(0xcfc9bd,.88);
+ const mPave=onGround(M(0xcfc9bd,.88));
  for(let i=0;i<16;i++){
   const x=-22.6-i*.95, z=10.2+Math.sin(i*.5)*.22;
   const s=new THREE.Mesh(new THREE.BoxGeometry(.82,.06,.82),mPave);s.position.set(x,GROUND_Y+.03,z);s.receiveShadow=true;scene.add(s)}
@@ -471,12 +477,12 @@ const CPARK={x0:-74,x1:-24,z0:6,z1:34};
  const bays=8,bw=(CPARK.x1-CPARK.x0)/bays;
  for(let i=0;i<=bays;i++){
   const x=CPARK.x0+i*bw;
-  const l=new THREE.Mesh(new THREE.BoxGeometry(.12,.02,4.6),mW);l.position.set(x,GROUND_Y+.02,CPARK.z0+2.6);scene.add(l);
-  const l2=new THREE.Mesh(new THREE.BoxGeometry(.12,.02,4.6),mW);l2.position.set(x,GROUND_Y+.02,CPARK.z1-2.6);scene.add(l2)}
- const mid=new THREE.Mesh(new THREE.BoxGeometry(CPARK.x1-CPARK.x0,.02,.12),mW);mid.position.set((CPARK.x0+CPARK.x1)/2,GROUND_Y+.02,(CPARK.z0+CPARK.z1)/2);scene.add(mid)})();
+  const l=new THREE.Mesh(new THREE.BoxGeometry(.12,.02,4.6),mW);l.position.set(x,GROUND_Y+.05,CPARK.z0+2.6);scene.add(l);
+  const l2=new THREE.Mesh(new THREE.BoxGeometry(.12,.02,4.6),mW);l2.position.set(x,GROUND_Y+.05,CPARK.z1-2.6);scene.add(l2)}
+ const mid=new THREE.Mesh(new THREE.BoxGeometry(CPARK.x1-CPARK.x0,.02,.12),mW);mid.position.set((CPARK.x0+CPARK.x1)/2,GROUND_Y+.05,(CPARK.z0+CPARK.z1)/2);scene.add(mid)})();
 // ---------- cars (chunky low-poly, instanced-ish) ----------
 function car(x,z,ry,col,tall){
- const g=new THREE.Group();g.position.set(x,GROUND_Y+.02,z);g.rotation.y=ry;scene.add(g);
+ const g=new THREE.Group();g.position.set(x,GROUND_Y+.05,z);g.rotation.y=ry;scene.add(g);
  const body=new THREE.Mesh(new THREE.BoxGeometry(tall?4.9:4.3,tall?.85:.7,1.85),M(col,.35,.45));body.position.y=tall?.85:.72;body.castShadow=true;g.add(body);
  const cabin=new THREE.Mesh(new THREE.BoxGeometry(tall?2.9:2.4,tall?.85:.62,1.7),M(0x2b3340,.25,.35));cabin.position.set(tall?.15:-.15,tall?1.66:1.34,0);cabin.castShadow=true;g.add(cabin);
  const gz=new THREE.Mesh(new THREE.BoxGeometry(tall?2.7:2.2,.5,1.74),new THREE.MeshPhysicalMaterial({color:0xbfe0ff,roughness:.08,metalness:0,transparent:true,opacity:.55}));gz.position.copy(cabin.position);gz.position.y+=.02;gz.scale.y=.9;g.add(gz);
@@ -758,14 +764,22 @@ const deskSlot=(function(){const m={};TEAM.forEach(function(t,i){
  return m})();
 function seatDesk(i){return deskPos[i%deskPos.length]}
 // idle seats: lounge (cushions, armchairs, beanbags), kitchen island
-const idleSeats=(function(){
- const a=[];
- loungeSeats.forEach(function(s){a.push({x:s.x,z:s.z,ry:s.ry,area:'lounge'})});
- beanSeats.forEach(function(s){a.push({x:s.x,z:s.z,ry:s.ry,area:'lounge'})});
- kitchenSeats.forEach(function(s){a.push({x:s.x,z:s.z+.05,ry:s.ry,area:'kitchen'})});
- return a})();
 const meetingSeats=(function(){const a=[];for(let i=0;i<8;i++){const an=(i/8)*Math.PI*2+.35;
  a.push({x:MTB.x+Math.cos(an)*2.85,z:MTB.z+Math.sin(an)*2.05,area:'meeting',ry:Math.atan2(-Math.cos(an),-Math.sin(an))})}return a})();
+// Ross wants anyone not working in the lounge, so the lounge stays the main idle room.
+// The clumping came from the old seat order: it handed out the four kitchen stools and then
+// the four beanbags in a row, which put everyone in two tight mobs with colliding name tags.
+// The pool now alternates sofa / beanbag / armchair / kitchen so nobody lands beside a twin.
+const idleSeats=(function(){
+ const sofaSeat=[],soft=[],bean=[],kitchen=[];
+ loungeSeats.forEach(function(s,k){(s.ry!==0&&Math.abs(s.ry)!==Math.PI?soft:sofaSeat).push({x:s.x,z:s.z,ry:s.ry,area:'lounge'})});
+ beanSeats.forEach(function(s){bean.push({x:s.x,z:s.z,ry:s.ry,area:'lounge'})});
+ kitchenSeats.forEach(function(s){kitchen.push({x:s.x,z:s.z+.05,ry:s.ry,area:'kitchen'})});
+ // lounge seats first and most numerous, then break the two tight rows apart
+ const a=[],pools=[sofaSeat,soft,bean,kitchen];
+ let more=true;
+ while(more){more=false;for(const pl of pools){if(pl.length){a.push(pl.shift());more=true}}}
+ return a})();
 // route: crude but reliable - go via the central corridor line, then to the target
 const CORRIDOR_Z=4.6,CORRIDOR_X=-1.0;
 // Room thresholds, so a mascot knows when it has actually entered a room.
@@ -813,8 +827,12 @@ function plan(){
  let meetSet={};
  for(const g of groups){const w=(S.groups[g]||[]).filter(function(b){return working.indexOf(b)>=0});
   if(w.length>=3){w.forEach(function(b,i){meetSet[b]=meetingSeats[i%meetingSeats.length]});break}}
- // idle seats are handed out once per bot so nobody fights over the same cushion
- let idleOrder=idleSeats.slice(),doorIdx=0;
+ // idle seats are handed out once per bot so nobody fights over the same cushion,
+ // and a bot never sits down at a desk its owner is already working at
+ let doorIdx=0;
+ const busyDesk={};
+ bots.forEach(function(b){const st=S.bots[b]||{};if(st.status==='working'||st.status==='error')busyDesk[DESK_OF[b]]=1});
+ let idleOrder=idleSeats.slice(),idleIdx=0;
  bots.forEach(function(b,i){
   let first=false,c=C[b];
   if(!c){c=C[b]=makeMascot(teamOf(b));first=true;c.area='desk';c.officeIdx=0}
@@ -830,7 +848,7 @@ function plan(){
   else if(s==='waiting_user'){t={x:DOOR.x+2.2+(doorIdx%3)*.95,z:DOOR.z-1.1+(doorIdx%3)*1.0,ry:-Math.PI/2,area:'desk'};doorIdx++}
   else if(base.area==='office'){const o=OFFS[base.officeIdx];
    t={x:(o.x0+o.x1)/2,z:(o.z0+o.z1)/2+.2,ry:Math.PI,area:'office',officeIdx:base.officeIdx}}
-  else{if(!c.seat)c.seat=idleOrder.length?idleOrder.pop():idleSeats[i%idleSeats.length];
+  else{if(!c.seat)c.seat=idleOrder[idleIdx++]||idleSeats[i%idleSeats.length];
    const sd=c.seat;t={x:sd.x,z:sd.z,ry:sd.ry,area:sd.area||'lounge'}}
   const key=(t.area||'desk')+'|'+t.x.toFixed(1)+'|'+t.z.toFixed(1);
   if(first){c.x=t.x;c.z=t.z;c.goalKey=key;c.path=[];c.area=t.area||'desk';
@@ -856,17 +874,25 @@ function labels(){
   c.tag.style.display='';
   items.push({c:c,x:x,y:y,d:v3.z})}
  items.sort(function(a,b){return a.d-b.d});
- for(const it of items)it.w=it.c.tag.offsetWidth||64;
+ for(const it of items){it.w=it.c.tag.offsetWidth||64;it.h=it.c.tag.offsetHeight||20}
  // simple separation: one pass down then up, so pills spread instead of overlapping
- const gap=17;
- for(let pass=0;pass<3;pass++){
+ const H_=(items[0]&&items[0].h?items[0].h:20)+6;
+ // Resolve for real: measure the boxes, and keep pushing a pill down (or up, if it is the
+ // lower one) until nothing overlaps. The old version only compared x and could still stack
+ // pills from different rooms on top of each other in the Everyone view.
+ for(let pass=0;pass<10;pass++){
+  let moved=false;
   for(let i=0;i<items.length;i++){
    const a=items[i];
    for(let j=0;j<items.length;j++){
     if(i===j)continue;const b2=items[j];
-    if(Math.abs(a.x-b2.x)>Math.min(a.w,b2.w)*.55+8)continue;
+    const dx=Math.abs(a.x-b2.x);
+    if(dx>Math.min(a.w,b2.w)*.62)continue;
     const dy=a.y-b2.y;
-    if(Math.abs(dy)<gap){a.y=b2.y+(dy>=0?gap:-gap)}}}}
+    if(Math.abs(dy)>=H_)continue;
+    const push=(H_-Math.abs(dy))*(dy>=0?1:-1);
+    a.y+=push*.55;b2.y-=push*.45;moved=true}}
+  if(!moved)break}
  for(const it of items){
   const hw=it.w/2;
   const cx=W>2*hw+12?Math.min(Math.max(it.x,hw+6),W-hw-6):it.x;
