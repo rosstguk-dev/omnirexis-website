@@ -63,8 +63,12 @@ def main():
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
     fix = "--fix" in sys.argv
     repo = args[0] if args else "."
-    git(["fetch", "-q", "origin"], repo)
-    rev = "origin/main"
+    try:
+        git(["fetch", "-q", "origin"], repo)
+    except SystemExit:
+        pass
+    refs = git(["for-each-ref", "--format=%(refname)", "refs/remotes/origin/main"], repo).split()
+    rev = "origin/main" if refs else "HEAD"
 
     owner, times = blame_map(repo, rev)
     lines = git(["show", f"{rev}:{PATH}"], repo).splitlines(True)
