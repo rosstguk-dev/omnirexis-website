@@ -36,6 +36,7 @@ h1{font-size:18px;margin:0}h1 span{color:var(--accent)}#conn{font-size:12px;colo
 
 /*HQ_SPREAD_GROUND_2026_11_04*/
 /*HQ_LABEL_FIT_2026_11_04*/
+/*HQ_CHAIR_CLEAR_2026_11_04*/
 var TOPIC="hq-IDL7DXoYw-rxAk2P_fHi-wkK";
 // Real team: names, label colours and mascot shapes taken from each bot's own profile.
 var TEAM=[
@@ -844,7 +845,11 @@ function plan(){
   else if(s==='working'||s==='error'){
    if(base.area==='office'){const o=OFFS[base.officeIdx];
     t={x:(o.x0+o.x1)/2,z:(o.z0+o.z1)/2+.5,ry:Math.PI,area:'office',officeIdx:base.officeIdx}}
-   else{const d=deskPos[DESK_OF[b]];t={x:d.x,z:d.z+.72,ry:Math.PI,area:'desk'}}}
+   else{const d=deskPos[DESK_OF[b]];const side=(DESK_OF[b]%2)?-.78:.78;
+    // Beside the chair, not in it. The chair occupies z+0.95 to z+1.55, so a bot standing on
+    // the desk line clipped straight through the seat and backrest. Offsetting it sideways
+    // leaves the chair readable and the bot clear of both it and the neighbouring desk.
+    t={x:d.x+side,z:d.z+1.15,ry:Math.PI,area:'desk'}}}
   else if(s==='waiting_user'){t={x:DOOR.x+2.2+(doorIdx%3)*.95,z:DOOR.z-1.1+(doorIdx%3)*1.0,ry:-Math.PI/2,area:'desk'};doorIdx++}
   else if(base.area==='office'){const o=OFFS[base.officeIdx];
    t={x:(o.x0+o.x1)/2,z:(o.z0+o.z1)/2+.2,ry:Math.PI,area:'office',officeIdx:base.officeIdx}}
