@@ -86,16 +86,21 @@ const mFloor=M(0x9c7a5b,.55),mWall=M(0xeae3d8,.9),mWood=M(0xb08a62,.45),mDark=M(
 const box=(w,h,d,m,x,y,z,p=scene,cs=true)=>{const o=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),m);o.position.set(x,y,z);o.castShadow=cs;o.receiveShadow=true;p.add(o);return o};
 const rbox=(w,h,d,r,m,x,y,z)=>{const s=new THREE.Shape(),a=w/2-r,b=d/2-r;s.absarc(a,b,r,0,Math.PI/2);s.absarc(-a,b,r,Math.PI/2,Math.PI);s.absarc(-a,-b,r,Math.PI,1.5*Math.PI);s.absarc(a,-b,r,1.5*Math.PI,2*Math.PI);const g=new THREE.ExtrudeGeometry(s,{depth:h,bevelEnabled:true,bevelSize:.03,bevelThickness:.03,bevelSegments:3,curveSegments:6});g.rotateX(-Math.PI/2);const o=new THREE.Mesh(g,m);o.position.set(x,y,z);o.castShadow=o.receiveShadow=true;scene.add(o);return o};
 // room 26x18
-const FW=26,FD=18;
+const FW=26,FD=18,DOOR_Z=6.8;
 const fl=new THREE.Mesh(new THREE.PlaneGeometry(FW,FD),mFloor);fl.rotation.x=-Math.PI/2;fl.receiveShadow=true;scene.add(fl);
 box(FW,4,.3,mWall,0,2,-FD/2,scene,false);box(.3,4,FD,mWall,-FW/2,2,0,scene,false);
+// wall finish: soft plaster gradient (darker toward the floor), white skirting, dark cutaway top cap
+{const c=document.createElement('canvas');c.width=64;c.height=256;const g=c.getContext('2d'),gr=g.createLinearGradient(0,0,0,256);gr.addColorStop(0,'#ffffff');gr.addColorStop(.55,'#f4f1ec');gr.addColorStop(.9,'#dcd6cc');gr.addColorStop(1,'#cfc8bc');g.fillStyle=gr;g.fillRect(0,0,64,256);for(let k=0;k<900;k++){g.fillStyle=`rgba(${k%2?255:120},${k%2?250:110},${k%2?240:95},${Math.random()*.035})`;g.fillRect(Math.random()*64,Math.random()*256,1+Math.random()*3,1+Math.random()*3)}
+ const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;mWall.map=t;mWall.needsUpdate=true;
+ const mSk=M(0xf7f5f0,.4),mCap=M(0x3a3430,.6);
+ box(FW-.2,.16,.05,mSk,.1,.08,-FD/2+.175,scene,false);box(.05,.16,DOOR_Z-.75+FD/2-.15,mSk,-FW/2+.175,.08,(-FD/2+.15+DOOR_Z-.75)/2,scene,false);box(.05,.16,FD/2-DOOR_Z-.75,mSk,-FW/2+.175,.08,(DOOR_Z+.75+FD/2)/2,scene,false);
+ box(FW+.04,.07,.34,mCap,.02,4.035,-FD/2,scene,false);box(.34,.07,FD+.04,mCap,-FW/2,4.035,.02,scene,false)}
 // windows in back wall: cut look via glass panes + frames
 const mView=(()=>{const c=document.createElement('canvas');c.width=512;c.height=256;const g=c.getContext('2d'),gr=g.createLinearGradient(0,0,0,256);gr.addColorStop(0,'#6fa3e3');gr.addColorStop(.62,'#cfe2f5');gr.addColorStop(1,'#f3dfc4');g.fillStyle=gr;g.fillRect(0,0,512,256);
  for(let k=0;k<7;k++){const cx=(k*173)%512,cy=30+(k*53)%70;g.fillStyle='rgba(255,255,255,.55)';[[0,0,38],[30,6,28],[-28,8,24],[10,-10,26]].forEach(b=>{g.beginPath();g.arc(cx+b[0],cy+b[1],b[2]*.7,0,7);g.fill()})}
  let x=0;while(x<512){const w=18+(x*37)%34,h=40+(x*91)%80;g.fillStyle=`rgba(${90+(x%40)},${110+(x%30)},${140+(x%25)},.85)`;g.fillRect(x,256-h,w,h);g.fillStyle='rgba(255,236,170,.6)';for(let yy=256-h+6;yy<250;yy+=10)for(let xx=x+4;xx<x+w-4;xx+=8)if(((xx*7+yy*3)%5)<2)g.fillRect(xx,yy,3,4);x+=w+2}
  const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;return new THREE.MeshBasicMaterial({map:t,fog:false})})();
 for(let i=0;i<6;i++){const x=-10+i*4;{const v=new THREE.Mesh(new THREE.PlaneGeometry(2.86,2.26),mView);v.position.set(x,2.2,-FD/2+.17);scene.add(v)}const g=new THREE.Mesh(new THREE.PlaneGeometry(2.8,2.2),mGlass);g.position.set(x,2.2,-FD/2+.19);scene.add(g);box(3,.08,.12,mDark,x,1.08,-FD/2+.2);box(3,.08,.12,mDark,x,3.32,-FD/2+.2);box(.08,2.3,.12,mDark,x,2.2,-FD/2+.2);box(.08,2.3,.12,mDark,x-1.45,2.2,-FD/2+.2);box(.08,2.3,.12,mDark,x+1.45,2.2,-FD/2+.2)}
-box(FW,.12,.05,mDark,0,.06,-FD/2+.17,scene,false);
 // rug
 {const r=new THREE.Mesh(new THREE.PlaneGeometry(7,5),M(0x6b4a6e,1));r.rotation.x=-Math.PI/2;r.position.set(8,.01,5.3);r.receiveShadow=true;scene.add(r)}
 // ---- instanced desks & chairs
