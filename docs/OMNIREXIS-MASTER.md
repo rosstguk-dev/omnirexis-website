@@ -438,6 +438,20 @@ Write like Ross messaging another operator, not like a sales sequence:
 
 ---
 
+### 6A. HQ dashboard and status feed (CoS, 3 to 4 Nov 2026)
+
+Built as a 3D office page at `public/hq/<slug>/index.html` in `rosstguk-dev/omnirexis-website`, plus a per-bot status block (the HQ STATUS rules in each Omnirexis bot profile) that posts `{"bot","status","step"}` to a public ntfy.sh topic.
+
+**It is not private.** The repo is public, so the 20-character slug is readable there and the page is reachable by anyone who looks. The ntfy topic is open: anyone who reads the topic from GitHub can read every bot's status line, and anyone can post a fake one. The page escapes incoming text, so a fake post can spoof a status but cannot run code. `robots.txt` disallows `/hq/`, which keeps search engines out but does not hide anything from the repo.
+
+**Rules until Ross decides (weekday items held for the weekend briefing):**
+- Status labels stay generic: max 60 characters, no names, emails, links, private numbers, file contents or secrets (already the rule in every bot's status block). Treat every status line as public.
+- Do not put anything in a status label you would not post publicly.
+- Batch dashboard changes into few pushes; the page went out in nine production pushes between 22:19 and 05:06 UK on 3 to 4 Nov 2026, which costs Vercel build minutes against the $20 credit. Edit the box copy, verify, then push once.
+- Weekend decision for Ross: keep the feed public with generic labels, or move it behind protection (an access-protected Vercel path, or a private ntfy topic with an access token). No cost change either way.
+
+---
+
 ## 7. Product truth
 
 | Offer | Status |
@@ -500,6 +514,7 @@ SuperGrok runs no Omnirexis tasks unless Ross asks it directly. Everything runs 
 
 | When | What |
 |---|---|
+| 2026-11-04 07:50 | CoS: HQ dashboard privacy recorded (finding from Finance & Quality drift check, 4 Nov 07:25). New §6A states plainly that the `public/hq/<slug>/` page and the ntfy status topic are public because the repo is public: the slug is readable, anyone can read the bots' status lines and anyone can post fake ones (text is escaped, so no code can run), and `robots.txt` keeps search engines out but hides nothing. Rules now in the master: status labels stay generic (max 60 characters, no names, emails, links, private numbers or secrets), and dashboard edits are batched into one push because nine production pushes on 3 to 4 Nov cost Vercel build minutes. Weekend decision for Ross: keep the feed public with generic labels, or protect it (access-protected Vercel path or private ntfy topic with a token). §4F already carries the HQ routines. Docs only; no site, n8n, cap, copy or send-path change. |
 | 2026-11-03 10:15 | Continuous improve (CoS): another same-day opt-out recorded. The Gym Dock (NW-FIT-392, sheet row 1455, info@thegymdock.com, Robert Campbell) replied STOP at 09:45 UK to today's 09:16 follow-up (first touch 28 Oct), while the row still read Sent / Clear. n8n `omnirexis_suppression` now has 43 rows (new id 43, opt-out) and row 1455 reads Do Not Contact, Do Not Contact Check "Opt-out - stop reply 3 Nov 2026", Follow-up Status "Sent - opted out", with a dated note. Verified by read-back; one-shot TEMP workflow `xe31D1hhR4d4jP2N` run, deactivated and archived. Backups `/workspace/ci-2026-11-03/suppression-before.json`, `row-before.json`. Today's 09:15 run (execution 3707) sent 15 of 20: 5 follow-ups and 10 first touches. Inbox since 2 Nov 09:30 UK has no other prospect replies or bounces. Blog post /blog/how-to-follow-up-gym-leads (PR #147) is live at 200 and in the sitemap. Also moved the 2 Nov change log entry, which had been written into the §0 copies table by mistake, down into §10. No cap, copy or Branded Outreach change. |
 | 2026-11-02 10:15 | Continuous improve (CoS): a same-day opt-out was sitting unrecorded. Unity 4 Performance (NW-FIT-405, sheet row 1468, hello@unity4performance.co.uk) replied STOP at 09:32 UK to today's 09:16 first touch, but the row still read Sent / Clear, so a later intake could have re-queued it. n8n `omnirexis_suppression` now has 42 rows (new id 42, opt-out) and Outreach Queue row 1468 is Do Not Contact, Do Not Contact Check "Opt-out - stop reply 2 Nov 2026", Follow-up Status Skipped - opted out, with a dated note. Verified by read-back; one-shot TEMP workflow `ZY0STGx8IK88mXMi` run, deactivated and archived. Backups `/workspace/ci-2026-11-02/suppression-before.json`, `row-before.json`. Also confirmed today's 09:15 run (execution 3685) sent 18 of 20: 7 follow-ups (Tue 27 Oct sends) and 11 first touches. Inbox since 29 Oct checked: the Runlates decline (id 41) and 6FIT auto-reply were already handled; Yoga Borne's reply today is an auto-reply, not a prospect reply. No cap, copy or Branded Outreach change. |
 | 2026-11-01 10:30 | Continuous improve (CoS): the free enquiry follow-up check is now the main ask on the homepage, /gyms, /pilates-yoga-studios, /leisure and /contact as well as /lead-follow-up-automation (website PR #143, merge b0636d2, 31 Oct; deployed in the 31 Oct daily batch and verified live on all six pages 1 Nov; Zoom Scheduler stays the next step, mailto hello@omnirexis.co.uk is the first step, no prices or PT links changed). Sitemap lastmod for those six pages set to 2026-10-31 (PR #144, merge 23cbeab; goes live with the next daily deploy batch) and the six URLs submitted to IndexNow (HTTP 200). Supersedes the 31 Oct note that the cloud agent for this had failed. |
