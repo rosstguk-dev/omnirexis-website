@@ -17,7 +17,7 @@ h1{font-size:18px;margin:0}h1 span{color:var(--accent)}#conn{font-size:12px;colo
 .tag .nm{font:600 11px system-ui;background:rgba(10,18,40,.72);color:#fff;padding:2px 7px;border-radius:10px;white-space:nowrap;backdrop-filter:blur(4px);box-shadow:0 2px 6px rgba(0,0,0,.25)}
 .tag.sel .nm{background:var(--accent)}
 .tag .bb{font:500 11px system-ui;background:#fff;color:#123;padding:4px 8px;border-radius:10px;margin-bottom:4px;max-width:180px;text-align:center;box-shadow:0 3px 10px rgba(0,0,0,.3);position:relative}
-.tag .bb:after{content:"";position:absolute;left:50%;bottom:-5px;margin-left:-5px;border:5px solid transparent;border-bottom:0;border-top-color:inherit}
+.tag .bb:after{content:"";position:absolute;left:calc(50% + var(--ax,0px));bottom:-5px;margin-left:-5px;border:5px solid transparent;border-bottom:0;border-top-color:inherit}
 .tag .bb.w{border-top-color:#fff}.tag .bb.q{background:#F59312;color:#fff;font-weight:800;font-size:15px;border-top-color:#F59312}.tag .bb.e{background:#E5484D;color:#fff;font-weight:800;font-size:15px;border-top-color:#E5484D}
 #card{position:absolute;left:10px;bottom:10px;width:min(340px,calc(100% - 20px));background:rgba(11,26,58,.95);border:1px solid var(--accent);border-radius:12px;padding:10px 12px;display:none;font-size:13px;z-index:2000}
 #card b{font-size:15px}#card .x{float:right;cursor:pointer;color:var(--mute)}#card ul{margin:4px 0;padding-left:16px;color:var(--mute);font-size:12px}#card a{color:var(--accent)}#card .mt{color:var(--mute);font-size:11px}
@@ -199,7 +199,7 @@ function plan(){if(!proto)return;const bots=allBots(),[mg,m]=meeting();meetGroup
 // labels overlap avoidance + update
 const v=new THREE.Vector3(),hp=new THREE.Vector3();
 function labels(){const W=cv.clientWidth,H=cv.clientHeight,items=[];for(const b in C){const c=C[b];v.set(c.x,1.05,c.z).project(cam);if(v.z>1){c.tag.style.display='none';continue}c.tag.style.display='';items.push({c,x:(v.x*.5+.5)*W,y:(-v.y*.5+.5)*H,d:v.z})}
- items.sort((a,b)=>a.y-b.y);const placed=[];for(const it of items){let y=it.y;for(let k=0;k<12;k++){const hit=placed.find(p=>Math.abs(p.x-it.x)<64&&Math.abs(p.y-y)<18);if(!hit)break;y=hit.y-18}placed.push({x:it.x,y});it.c.tag.style.transform=`translate(${it.x.toFixed(1)}px,${y.toFixed(1)}px) translate(-50%,-100%)`;it.c.tag.style.zIndex=1000-Math.round(it.d*1000)}}
+ items.sort((a,b)=>a.y-b.y);for(const it of items)it.w=it.c.tag.offsetWidth;const placed=[];for(const it of items){const hw=it.w/2,cx=W>2*hw+12?Math.min(Math.max(it.x,hw+6),W-hw-6):it.x,ax=Math.max(-hw+12,Math.min(hw-12,it.x-cx));if(it.c.ax!==ax){it.c.ax=ax;it.c.tag.style.setProperty('--ax',ax.toFixed(0)+'px')}let y=it.y;for(let k=0;k<12;k++){const hit=placed.find(p=>Math.abs(p.x-cx)<64&&Math.abs(p.y-y)<18);if(!hit)break;y=hit.y-18}placed.push({x:cx,y});it.c.tag.style.transform=`translate(${cx.toFixed(1)}px,${y.toFixed(1)}px) translate(-50%,-100%)`;it.c.tag.style.zIndex=1000-Math.round(it.d*1000)}}
 function setBubble(c){const s=S.bots[c.b]||{},bb=c.tag.querySelector('.bb');let t='',cl='';const arrived=!c.path.length;
  if(c.st==='working'&&arrived){t=s.step||'working';cl='w'}else if(c.st==='waiting_user'&&arrived){t='?';cl='q'}else if(c.st==='error'){t='!';cl='e'}
  if(bb._t!==t+cl){bb._t=t+cl;bb.textContent=t.length>46?t.slice(0,45)+'…':t;bb.className='bb '+cl;bb.style.display=t?'':'none'}
