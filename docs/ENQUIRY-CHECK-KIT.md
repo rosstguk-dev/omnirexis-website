@@ -126,5 +126,13 @@ The three fixes must be things they can do themselves for free (for example: add
 - HubSpot note: "Enquiry check sent DD Mon YYYY", close the task.
 - If they book the Zoom: Sales owns the call prep and the handover note (DELIVERY-KIT.md section 2).
 - If they reply with questions: draft the answer for Ross the same working day.
-- If no reply in 5 working days: one short, plain nudge drafted for Ross, then stop. It does not count against the n8n cap because Ross sends it one to one.
+- If no reply in 5 working days: one short, plain nudge drafted for Ross, then stop. It does not count against the n8n cap because Ross sends it one to one. Log it in section 11 the day the check is sent, with the nudge due date, so it cannot be missed. The CoS reads section 11 before every weekend briefing and puts any nudge that is due, drafted and ready to send, in that briefing.
 - Keep the filled check and screenshots in Drive under a per-prospect name so the Zoom can reference them.
+
+## 11. Warm-lead log (CoS, 20 Nov 2026)
+
+Every yes goes here the day it lands and stays until the lead books, declines or the one nudge has gone unanswered for 5 working days. Added after JB Fitness's nudge, due Tue 10 Nov 2026, was never drafted because nothing tracked it.
+
+| Prospect | Yes | Check sent | Nudge due | Nudge state | Next |
+|---|---|---|---|---|---|
+| NW-FIT-425 JB Fitness (Jamie Brown, enquiries@jbfitnessgym.com, sheet row 1488) | 3 Nov 2026 10:54 UK ("Please") | 3 Nov 2026 13:25 UK, in-thread, no test enquiry sent | Tue 10 Nov 2026 (overdue) | Drafted 20 Nov 2026 by CoS, held for Ross's weekend briefing (offers the missing test enquiry, one ask, no link) | Ross sends in-thread from ross@omnirexis.co.uk; then stop unless Jamie replies |
