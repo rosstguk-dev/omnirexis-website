@@ -1,0 +1,558 @@
+{
+  "updated_at": "2026-11-22T07:47:46+00:00",
+  "updated_label": "22 Nov 2026, 07:47 UK",
+  "social": {
+    "window": "Last 30 days: 23 Oct - 22 Nov 2026 (Buffer MCP aggregate)",
+    "source": "Buffer MCP aggregate",
+    "fetched_at": "2026-11-22T07:47:46+00:00",
+    "totals": {
+      "posts": 63,
+      "reactions": 12,
+      "comments": 0
+    },
+    "channels": [
+      {
+        "service": "instagram",
+        "name": "omnirexis",
+        "posts": 20,
+        "reactions": 11,
+        "comments": 0,
+        "shares": 4,
+        "engagement_rate_pct": 3.43,
+        "views": 964,
+        "reach": 759,
+        "impressions": null,
+        "clicks": null,
+        "followers": null,
+        "label": "Instagram"
+      },
+      {
+        "service": "facebook",
+        "name": "Omnirexis",
+        "posts": 23,
+        "reactions": 0,
+        "comments": 0,
+        "shares": 0,
+        "engagement_rate_pct": 0,
+        "views": null,
+        "reach": 342,
+        "impressions": 376,
+        "clicks": 0,
+        "followers": null,
+        "label": "Facebook"
+      },
+      {
+        "service": "linkedin",
+        "name": "omnirexis",
+        "posts": 20,
+        "reactions": 1,
+        "comments": 0,
+        "shares": 1,
+        "engagement_rate_pct": 2.75,
+        "views": 36,
+        "reach": 82,
+        "impressions": 109,
+        "clicks": null,
+        "followers": null,
+        "label": "LinkedIn"
+      },
+      {
+        "service": "youtube",
+        "name": "Omnirexis",
+        "posts": null,
+        "reactions": null,
+        "comments": null,
+        "shares": null,
+        "engagement_rate_pct": null,
+        "views": null,
+        "reach": null,
+        "impressions": null,
+        "clicks": null,
+        "followers": null,
+        "label": "YouTube"
+      },
+      {
+        "service": "twitter",
+        "name": "Omnirexis",
+        "posts": null,
+        "reactions": null,
+        "comments": null,
+        "shares": null,
+        "engagement_rate_pct": null,
+        "views": null,
+        "reach": null,
+        "impressions": null,
+        "clicks": null,
+        "followers": null,
+        "label": "X"
+      }
+    ],
+    "top_posts": [
+      {
+        "service": "instagram",
+        "date": "2026-11-18",
+        "text": "Month three. The routine has slipped, and a regular hasn't been in for a fortnight.",
+        "views": 249,
+        "reach": 223,
+        "impressions": null,
+        "reactions": 2,
+        "comments": null,
+        "shares": 1,
+        "clicks": null,
+        "engagement_rate_pct": 2.24
+      },
+      {
+        "service": "facebook",
+        "date": "2026-11-18",
+        "text": "Month three. The routine has slipped, and a regular hasn't been in for a fortnight.",
+        "views": null,
+        "reach": 10,
+        "impressions": 10,
+        "reactions": 0,
+        "comments": null,
+        "shares": null,
+        "clicks": null,
+        "engagement_rate_pct": 0
+      },
+      {
+        "service": "linkedin",
+        "date": "2026-11-18",
+        "text": "Month three. The first excitement has worn off, the routine has slipped, and a member who used to come in three times a week hasn't been in for a fortnight.",
+        "views": 5,
+        "reach": 3,
+        "impressions": 3,
+        "reactions": 0,
+        "comments": null,
+        "shares": null,
+        "clicks": null,
+        "engagement_rate_pct": 0
+      }
+    ],
+    "notes": [
+      "Followers are not returned by Buffer, so they are omitted.",
+      "YouTube and X are locked in Buffer, so their metrics are omitted this refresh.",
+      "This week's 3 posts (14-20 Nov 2026), the gym retention film posted to Instagram, Facebook and LinkedIn on 18 Nov. Ranked by reach. Not a 30-day re-rank; Buffer list of all 30-day posts was not re-scored."
+    ]
+  },
+  "website": {
+    "site": "omnirexis.co.uk",
+    "source": "Vercel Web Analytics",
+    "fetched_at": "2026-11-22T07:47:46+00:00",
+    "note": "Today is omitted until the day is complete. Top pages and referrers are from the last full-week snapshot.",
+    "latest_complete_day": {
+      "date": "2026-11-21",
+      "visitors": 1,
+      "pageviews": 1
+    },
+    "last7": {
+      "from": "2026-11-15",
+      "to": "2026-11-21",
+      "visitors": 12,
+      "pageviews": 20
+    },
+    "since_start": {
+      "from": "2026-10-10",
+      "to": "2026-11-21",
+      "visitors": 199,
+      "pageviews": 263
+    },
+    "days": [
+      {
+        "date": "2026-11-08",
+        "visitors": 0,
+        "pageviews": 0
+      },
+      {
+        "date": "2026-11-09",
+        "visitors": 0,
+        "pageviews": 0
+      },
+      {
+        "date": "2026-11-10",
+        "visitors": 7,
+        "pageviews": 8
+      },
+      {
+        "date": "2026-11-11",
+        "visitors": 13,
+        "pageviews": 14
+      },
+      {
+        "date": "2026-11-12",
+        "visitors": 1,
+        "pageviews": 1
+      },
+      {
+        "date": "2026-11-13",
+        "visitors": 2,
+        "pageviews": 2
+      },
+      {
+        "date": "2026-11-14",
+        "visitors": 4,
+        "pageviews": 4
+      },
+      {
+        "date": "2026-11-15",
+        "visitors": 6,
+        "pageviews": 6
+      },
+      {
+        "date": "2026-11-16",
+        "visitors": 1,
+        "pageviews": 1
+      },
+      {
+        "date": "2026-11-17",
+        "visitors": 1,
+        "pageviews": 1
+      },
+      {
+        "date": "2026-11-18",
+        "visitors": 0,
+        "pageviews": 0
+      },
+      {
+        "date": "2026-11-19",
+        "visitors": 2,
+        "pageviews": 10
+      },
+      {
+        "date": "2026-11-20",
+        "visitors": 1,
+        "pageviews": 1
+      },
+      {
+        "date": "2026-11-21",
+        "visitors": 1,
+        "pageviews": 1
+      }
+    ],
+    "top_pages": {
+      "window": "Sat 14 Nov to Fri 20 Nov 2026",
+      "items": [
+        {
+          "label": "/",
+          "count": 8
+        },
+        {
+          "label": "/blog",
+          "count": 2
+        },
+        {
+          "label": "/contact",
+          "count": 2
+        },
+        {
+          "label": "/process",
+          "count": 2
+        },
+        {
+          "label": "/pt",
+          "count": 2
+        },
+        {
+          "label": "/about",
+          "count": 1
+        },
+        {
+          "label": "/facts",
+          "count": 1
+        },
+        {
+          "label": "/gyms",
+          "count": 1
+        },
+        {
+          "label": "/leisure",
+          "count": 1
+        },
+        {
+          "label": "/privacy",
+          "count": 1
+        },
+        {
+          "label": "/rapid-services",
+          "count": 1
+        },
+        {
+          "label": "/terms",
+          "count": 1
+        }
+      ]
+    },
+    "referrers": {
+      "window": "Sat 14 Nov to Fri 20 Nov 2026",
+      "items": [
+        {
+          "label": "Direct / none",
+          "count": 20
+        },
+        {
+          "label": "google.com",
+          "count": 2
+        },
+        {
+          "label": "Facebook (m.facebook.com)",
+          "count": 1
+        }
+      ]
+    }
+  },
+  "affiliates": {
+    "counts": {
+      "live": 12,
+      "pending": 11,
+      "todo": 5,
+      "unavailable": 12
+    },
+    "programmes": [
+      {
+        "name": "ElevenLabs",
+        "status": "live",
+        "commission": "22% for 12 months",
+        "network": "PartnerStack"
+      },
+      {
+        "name": "Make",
+        "status": "live",
+        "commission": "35% for 12 months",
+        "network": "in-house dashboard"
+      },
+      {
+        "name": "Kahunas",
+        "status": "live",
+        "commission": "$49/referral after 60 days",
+        "network": "Rewardful"
+      },
+      {
+        "name": "myPTHub",
+        "status": "live",
+        "commission": "$25 Visa eGift monthly / $50 annual",
+        "network": "Referral Rock"
+      },
+      {
+        "name": "Systeme.io",
+        "status": "live",
+        "commission": "60% lifetime",
+        "network": "in-house"
+      },
+      {
+        "name": "GoHighLevel",
+        "status": "live",
+        "commission": "40% recurring",
+        "network": "FirstPromoter"
+      },
+      {
+        "name": "Fireflies",
+        "status": "live",
+        "commission": "10% recurring",
+        "network": "FirstPromoter"
+      },
+      {
+        "name": "HeyGen",
+        "status": "live",
+        "commission": "35-50% first 3 months",
+        "network": "Rewardful"
+      },
+      {
+        "name": "Exercise.com",
+        "status": "live",
+        "commission": "10%",
+        "network": "Refersion"
+      },
+      {
+        "name": "Synthesia",
+        "status": "live",
+        "commission": "25% 12mo",
+        "network": "Rewardful"
+      },
+      {
+        "name": "Kit",
+        "status": "live",
+        "commission": "50% for 12 months",
+        "network": "PartnerStack"
+      },
+      {
+        "name": "Tidio",
+        "status": "live",
+        "commission": "Up to 30%",
+        "network": "PartnerStack"
+      },
+      {
+        "name": "n8n",
+        "status": "pending",
+        "commission": "30% of net on Cloud Starter/Pro for 12 months",
+        "network": "PartnerStack"
+      },
+      {
+        "name": "Beehiiv",
+        "status": "pending",
+        "commission": "Up to 60% for 12 months; tiers, starting at Launch tier",
+        "network": "Dub"
+      },
+      {
+        "name": "Buffer",
+        "status": "pending",
+        "commission": "25% / 12 months",
+        "network": "Dub"
+      },
+      {
+        "name": "PartnerStack Network",
+        "status": "pending",
+        "commission": null,
+        "network": null
+      },
+      {
+        "name": "Trainerize",
+        "status": "pending",
+        "commission": "15% recurring for life of subscription, plans + add-ons",
+        "network": "PartnerStack"
+      },
+      {
+        "name": "Hostinger",
+        "status": "pending",
+        "commission": "From 40%, rises with volume",
+        "network": "in-house platform"
+      },
+      {
+        "name": "Everfit",
+        "status": "pending",
+        "commission": "10% for 2 years",
+        "network": "in-house"
+      },
+      {
+        "name": "Writesonic",
+        "status": "pending",
+        "commission": "20% recurring 12 mo",
+        "network": "FirstPromoter"
+      },
+      {
+        "name": "That Clean Life",
+        "status": "pending",
+        "commission": "$150/paying customer",
+        "network": "PartnerStack"
+      },
+      {
+        "name": "Otter.ai",
+        "status": "pending",
+        "commission": null,
+        "network": "unknown (Impact per 3rd party)"
+      },
+      {
+        "name": "CJ publisher account",
+        "status": "pending",
+        "commission": null,
+        "network": null
+      },
+      {
+        "name": "Metricool",
+        "status": "todo",
+        "commission": "25% of subscriptions up to $100/user (Associate); 50% up to $300 at 200+ paid",
+        "network": "in-house; payouts via Zexel"
+      },
+      {
+        "name": "Semrush",
+        "status": "todo",
+        "commission": "$100-300 per sale by product (SEO Toolkit $200, Semrush One $300) + $10 per trial; higher tiers",
+        "network": "Impact"
+      },
+      {
+        "name": "Shopify",
+        "status": "todo",
+        "commission": "Up to $150 per qualified referral; varies by location",
+        "network": "Impact"
+      },
+      {
+        "name": "Zoom",
+        "status": "todo",
+        "commission": null,
+        "network": "Impact"
+      },
+      {
+        "name": "GoDaddy",
+        "status": "todo",
+        "commission": null,
+        "network": "CJ"
+      },
+      {
+        "name": "Vercel v0",
+        "status": "unavailable",
+        "commission": null,
+        "network": "Dub"
+      },
+      {
+        "name": "HubSpot",
+        "status": "unavailable",
+        "commission": "30% recurring up to 12 months, Starter tier",
+        "network": "Impact"
+      },
+      {
+        "name": "Jasper",
+        "status": "unavailable",
+        "commission": "25% for 12 months, 30% at 100 leads; excludes Business",
+        "network": "in-house"
+      },
+      {
+        "name": "Zen Planner",
+        "status": "unavailable",
+        "commission": "15% first 5 referrals, 20% after, up to 12 months",
+        "network": "in-house (zenplannerengagement.com)"
+      },
+      {
+        "name": "Perplexity",
+        "status": "unavailable",
+        "commission": null,
+        "network": "Dub"
+      },
+      {
+        "name": "Arbox, Virtuagym, PushPress, Wodify",
+        "status": "unavailable",
+        "commission": null,
+        "network": null
+      },
+      {
+        "name": "Coach Catalyst",
+        "status": "unavailable",
+        "commission": null,
+        "network": null
+      },
+      {
+        "name": "Gymdesk",
+        "status": "unavailable",
+        "commission": "100% of first 3 payments",
+        "network": "in-house"
+      },
+      {
+        "name": "Descript",
+        "status": "unavailable",
+        "commission": "$25 one-time per subscriber",
+        "network": "PartnerStack"
+      },
+      {
+        "name": "Canva",
+        "status": "unavailable",
+        "commission": "80% monthly for first 2 months, or 25% one-time on annual",
+        "network": "Canvassador programme"
+      },
+      {
+        "name": "Notion",
+        "status": "unavailable",
+        "commission": "Up to $50 per signup + 20% first year",
+        "network": "PartnerStack"
+      },
+      {
+        "name": "Calendly",
+        "status": "unavailable",
+        "commission": null,
+        "network": null
+      }
+    ],
+    "stats": {
+      "clicks": null,
+      "signups": null,
+      "earnings_gbp": null,
+      "note": "Not tracked yet"
+    }
+  }
+}

@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#0a1324">
+<title>Omnirexis dashboard</title>
+<style>
+:root{--bg:#0a1324;--panel:#111d35;--panel2:#16254a;--line:#24365f;--ink:#eef2fb;
+--ink2:#b4c0da;--muted:#8394b8;--gold:#e3c27a;--live:#3ecf8e;--pending:#f2b84b;
+--todo:#6ea8ff;--na:#97a3bd}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:radial-gradient(1200px 600px at 10% -10%,#1a2b55 0%,transparent 60%),var(--bg);
+color:var(--ink);font:17px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+overflow-wrap:anywhere;word-break:break-word}
+.wrap{max-width:1080px;margin:0 auto;padding:24px 24px 48px}
+header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:12px;margin-bottom:18px}
+.brand{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600}
+h1{margin:4px 0 0;font-size:32px;line-height:1.2;font-weight:700}
+.sub{color:var(--ink2);margin:6px 0 0}
+h2{font-size:21px;margin:0 0 16px;display:flex;align-items:center;gap:10px}
+h2::before{content:"";width:4px;height:20px;border-radius:2px;background:var(--gold);flex:none}
+h3{margin:0;font-size:20px;line-height:1.3}
+section{margin-top:28px}
+.card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);
+border-radius:18px;padding:22px;box-shadow:0 10px 30px rgba(0,0,0,.25);min-width:0}
+.grid{display:grid;gap:16px}
+.stats{grid-template-columns:repeat(3,minmax(0,1fr))}
+.stats-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.stat .label{color:var(--ink2);font-size:15px;font-weight:600}
+.stat .value{font-size:44px;font-weight:700;line-height:1.1;margin-top:6px;font-variant-numeric:tabular-nums}
+.stat .value.small{font-size:22px;line-height:1.3}
+.stat .value.nodata{font-size:22px;color:var(--muted);font-weight:600}
+.stat .hint{color:var(--muted);font-size:14px;margin-top:6px}
+.stat.live .value{color:var(--live)}
+.stat.pending .value{color:var(--pending)}
+.stat.todo .value{color:var(--todo)}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:999px;font-size:14px;
+font-weight:700;white-space:nowrap;border:1px solid currentColor}
+.badge.live{color:var(--live);background:rgba(62,207,142,.12)}
+.badge.pending{color:var(--pending);background:rgba(242,184,75,.12)}
+.badge.todo{color:var(--todo);background:rgba(110,168,255,.12)}
+.badge.unavailable{color:var(--na);background:rgba(151,163,189,.10)}
+.nodata-text{color:var(--muted);font-style:italic;font-weight:500}
+.note{color:var(--muted);font-size:14px;margin:12px 0 0}
+.channels{grid-template-columns:repeat(2,minmax(0,1fr))}
+.chan-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 12px;margin-bottom:14px}
+.chan-head small{display:block;color:var(--muted);font-weight:500;font-size:14px}
+.metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 12px;margin:0}
+.metrics div{min-width:0}
+.metrics dt{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.metrics dd{margin:2px 0 0;font-size:22px;font-weight:700;font-variant-numeric:tabular-nums}
+.metrics dd .nodata-text{font-size:15px}
+.posts{margin:0;padding:0;list-style:none}
+.posts li{padding:16px 0;border-bottom:1px solid var(--line)}
+.posts li:first-child{padding-top:0}
+.posts li:last-child{border-bottom:0;padding-bottom:0}
+.post-meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;color:var(--muted);font-size:14px}
+.rank{color:var(--gold);font-weight:700;font-size:18px}
+.post-text{margin:8px 0;color:var(--ink);font-size:18px}
+.post-stats{display:flex;flex-wrap:wrap;gap:6px 18px;color:var(--ink2);font-size:15px}
+.post-stats b{color:var(--ink)}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);
+padding:0 12px 12px;border-bottom:1px solid var(--line)}
+td{padding:14px 12px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink2)}
+tr:last-child td{border-bottom:0}
+td.name{color:var(--ink);font-weight:700}
+td.name small{display:block;color:var(--muted);font-weight:500;font-size:14px}
+.lists{grid-template-columns:repeat(2,minmax(0,1fr))}
+.rowlist{margin:0;padding:0;list-style:none}
+.rowlist li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+.rowlist li:last-child{border-bottom:0}
+.rowlist .k{color:var(--ink)}
+.rowlist .v{font-weight:700;font-variant-numeric:tabular-nums}
+.chart{display:flex;align-items:flex-end;gap:6px;height:140px;margin-top:8px}
+.chart .col{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;height:100%;justify-content:flex-end}
+.chart .bar{width:100%;max-width:28px;background:linear-gradient(180deg,#5b8dff,var(--gold));border-radius:6px 6px 2px 2px;min-height:2px}
+.chart .dl{font-size:10px;color:var(--muted);margin-top:6px;white-space:nowrap}
+.tabs{position:sticky;top:0;z-index:20;display:flex;gap:8px;flex-wrap:wrap;padding:10px 0 14px;
+background:linear-gradient(180deg,rgba(10,19,36,.98) 70%,rgba(10,19,36,0));}
+.tabs button{font:600 14px/1.2 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:#cfe0ff;
+background:rgba(10,18,40,.72);border:1px solid rgba(255,255,255,.18);padding:10px 14px;border-radius:999px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--gold);border-color:#fff;color:#0a1324}
+.panel{display:none}
+.panel.on{display:block}
+#status{color:var(--muted);font-size:13px}
+footer{margin-top:36px;color:var(--muted);font-size:14px;text-align:center}
+@media (max-width:760px){
+  body{font-size:16px}
+  .wrap{padding:16px 14px 36px}
+  h1{font-size:26px}
+  .stats,.stats-4,.lists{grid-template-columns:1fr 1fr}
+  .channels{grid-template-columns:1fr}
+  .stat .value{font-size:36px}
+  .card{padding:18px}
+  table,thead,tbody,tr,td{display:block;width:100%}
+  thead{display:none}
+  tr{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);
+     border-radius:16px;padding:14px 16px;margin-bottom:12px}
+  td{border:0;padding:6px 0}
+  td[data-label]:not(.name)::before{content:attr(data-label);display:block;font-size:12px;
+     text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
+}
+@media (max-width:420px){
+  .stats,.stats-4{grid-template-columns:1fr}
+  .metrics{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div>
+    <div class="brand">Omnirexis</div>
+    <h1>Dashboard</h1>
+    <p class="sub" id="updated">Loading figures</p>
+  </div>
+  <div id="status"></div>
+</header>
+<nav class="tabs" role="tablist">
+  <button type="button" role="tab" id="tab-social" aria-controls="panel-social" aria-selected="true" data-tab="social">Social</button>
+  <button type="button" role="tab" id="tab-website" aria-controls="panel-website" aria-selected="false" data-tab="website">Website</button>
+  <button type="button" role="tab" id="tab-affiliates" aria-controls="panel-affiliates" aria-selected="false" data-tab="affiliates">Affiliates</button>
+</nav>
+<div id="panel-social" class="panel on" role="tabpanel"></div>
+<div id="panel-website" class="panel" role="tabpanel"></div>
+<div id="panel-affiliates" class="panel" role="tabpanel"></div>
+<footer>Aggregate figures only. This page does not ask you to log in. Figures refresh after the daily data pull.</footer>
+</div>
+<script id="fallback-data" type="application/json">{"updated_at":"2026-11-22T07:47:46+00:00","updated_label":"22 Nov 2026, 07:47 UK","social":{"window":"Last 30 days: 23 Oct - 22 Nov 2026 (Buffer MCP aggregate)","source":"Buffer MCP aggregate","fetched_at":"2026-11-22T07:47:46+00:00","totals":{"posts":63,"reactions":12,"comments":0},"channels":[{"service":"instagram","name":"omnirexis","posts":20,"reactions":11,"comments":0,"shares":4,"engagement_rate_pct":3.43,"views":964,"reach":759,"impressions":null,"clicks":null,"followers":null,"label":"Instagram"},{"service":"facebook","name":"Omnirexis","posts":23,"reactions":0,"comments":0,"shares":0,"engagement_rate_pct":0,"views":null,"reach":342,"impressions":376,"clicks":0,"followers":null,"label":"Facebook"},{"service":"linkedin","name":"omnirexis","posts":20,"reactions":1,"comments":0,"shares":1,"engagement_rate_pct":2.75,"views":36,"reach":82,"impressions":109,"clicks":null,"followers":null,"label":"LinkedIn"},{"service":"youtube","name":"Omnirexis","posts":null,"reactions":null,"comments":null,"shares":null,"engagement_rate_pct":null,"views":null,"reach":null,"impressions":null,"clicks":null,"followers":null,"label":"YouTube"},{"service":"twitter","name":"Omnirexis","posts":null,"reactions":null,"comments":null,"shares":null,"engagement_rate_pct":null,"views":null,"reach":null,"impressions":null,"clicks":null,"followers":null,"label":"X"}],"top_posts":[{"service":"instagram","date":"2026-11-18","text":"Month three. The routine has slipped, and a regular hasn't been in for a fortnight.","views":249,"reach":223,"impressions":null,"reactions":2,"comments":null,"shares":1,"clicks":null,"engagement_rate_pct":2.24},{"service":"facebook","date":"2026-11-18","text":"Month three. The routine has slipped, and a regular hasn't been in for a fortnight.","views":null,"reach":10,"impressions":10,"reactions":0,"comments":null,"shares":null,"clicks":null,"engagement_rate_pct":0},{"service":"linkedin","date":"2026-11-18","text":"Month three. The first excitement has worn off, the routine has slipped, and a member who used to come in three times a week hasn't been in for a fortnight.","views":5,"reach":3,"impressions":3,"reactions":0,"comments":null,"shares":null,"clicks":null,"engagement_rate_pct":0}],"notes":["Followers are not returned by Buffer, so they are omitted.","YouTube and X are locked in Buffer, so their metrics are omitted this refresh.","This week's 3 posts (14-20 Nov 2026), the gym retention film posted to Instagram, Facebook and LinkedIn on 18 Nov. Ranked by reach. Not a 30-day re-rank; Buffer list of all 30-day posts was not re-scored."]},"website":{"site":"omnirexis.co.uk","source":"Vercel Web Analytics","fetched_at":"2026-11-22T07:47:46+00:00","note":"Today is omitted until the day is complete. Top pages and referrers are from the last full-week snapshot.","latest_complete_day":{"date":"2026-11-21","visitors":1,"pageviews":1},"last7":{"from":"2026-11-15","to":"2026-11-21","visitors":12,"pageviews":20},"since_start":{"from":"2026-10-10","to":"2026-11-21","visitors":199,"pageviews":263},"days":[{"date":"2026-11-08","visitors":0,"pageviews":0},{"date":"2026-11-09","visitors":0,"pageviews":0},{"date":"2026-11-10","visitors":7,"pageviews":8},{"date":"2026-11-11","visitors":13,"pageviews":14},{"date":"2026-11-12","visitors":1,"pageviews":1},{"date":"2026-11-13","visitors":2,"pageviews":2},{"date":"2026-11-14","visitors":4,"pageviews":4},{"date":"2026-11-15","visitors":6,"pageviews":6},{"date":"2026-11-16","visitors":1,"pageviews":1},{"date":"2026-11-17","visitors":1,"pageviews":1},{"date":"2026-11-18","visitors":0,"pageviews":0},{"date":"2026-11-19","visitors":2,"pageviews":10},{"date":"2026-11-20","visitors":1,"pageviews":1},{"date":"2026-11-21","visitors":1,"pageviews":1}],"top_pages":{"window":"Sat 14 Nov to Fri 20 Nov 2026","items":[{"label":"/","count":8},{"label":"/blog","count":2},{"label":"/contact","count":2},{"label":"/process","count":2},{"label":"/pt","count":2},{"label":"/about","count":1},{"label":"/facts","count":1},{"label":"/gyms","count":1},{"label":"/leisure","count":1},{"label":"/privacy","count":1},{"label":"/rapid-services","count":1},{"label":"/terms","count":1}]},"referrers":{"window":"Sat 14 Nov to Fri 20 Nov 2026","items":[{"label":"Direct / none","count":20},{"label":"google.com","count":2},{"label":"Facebook (m.facebook.com)","count":1}]}},"affiliates":{"counts":{"live":12,"pending":11,"todo":5,"unavailable":12},"programmes":[{"name":"ElevenLabs","status":"live","commission":"22% for 12 months","network":"PartnerStack"},{"name":"Make","status":"live","commission":"35% for 12 months","network":"in-house dashboard"},{"name":"Kahunas","status":"live","commission":"$49/referral after 60 days","network":"Rewardful"},{"name":"myPTHub","status":"live","commission":"$25 Visa eGift monthly / $50 annual","network":"Referral Rock"},{"name":"Systeme.io","status":"live","commission":"60% lifetime","network":"in-house"},{"name":"GoHighLevel","status":"live","commission":"40% recurring","network":"FirstPromoter"},{"name":"Fireflies","status":"live","commission":"10% recurring","network":"FirstPromoter"},{"name":"HeyGen","status":"live","commission":"35-50% first 3 months","network":"Rewardful"},{"name":"Exercise.com","status":"live","commission":"10%","network":"Refersion"},{"name":"Synthesia","status":"live","commission":"25% 12mo","network":"Rewardful"},{"name":"Kit","status":"live","commission":"50% for 12 months","network":"PartnerStack"},{"name":"Tidio","status":"live","commission":"Up to 30%","network":"PartnerStack"},{"name":"n8n","status":"pending","commission":"30% of net on Cloud Starter/Pro for 12 months","network":"PartnerStack"},{"name":"Beehiiv","status":"pending","commission":"Up to 60% for 12 months; tiers, starting at Launch tier","network":"Dub"},{"name":"Buffer","status":"pending","commission":"25% / 12 months","network":"Dub"},{"name":"PartnerStack Network","status":"pending","commission":null,"network":null},{"name":"Trainerize","status":"pending","commission":"15% recurring for life of subscription, plans + add-ons","network":"PartnerStack"},{"name":"Hostinger","status":"pending","commission":"From 40%, rises with volume","network":"in-house platform"},{"name":"Everfit","status":"pending","commission":"10% for 2 years","network":"in-house"},{"name":"Writesonic","status":"pending","commission":"20% recurring 12 mo","network":"FirstPromoter"},{"name":"That Clean Life","status":"pending","commission":"$150/paying customer","network":"PartnerStack"},{"name":"Otter.ai","status":"pending","commission":null,"network":"unknown (Impact per 3rd party)"},{"name":"CJ publisher account","status":"pending","commission":null,"network":null},{"name":"Metricool","status":"todo","commission":"25% of subscriptions up to $100/user (Associate); 50% up to $300 at 200+ paid","network":"in-house; payouts via Zexel"},{"name":"Semrush","status":"todo","commission":"$100-300 per sale by product (SEO Toolkit $200, Semrush One $300) + $10 per trial; higher tiers","network":"Impact"},{"name":"Shopify","status":"todo","commission":"Up to $150 per qualified referral; varies by location","network":"Impact"},{"name":"Zoom","status":"todo","commission":null,"network":"Impact"},{"name":"GoDaddy","status":"todo","commission":null,"network":"CJ"},{"name":"Vercel v0","status":"unavailable","commission":null,"network":"Dub"},{"name":"HubSpot","status":"unavailable","commission":"30% recurring up to 12 months, Starter tier","network":"Impact"},{"name":"Jasper","status":"unavailable","commission":"25% for 12 months, 30% at 100 leads; excludes Business","network":"in-house"},{"name":"Zen Planner","status":"unavailable","commission":"15% first 5 referrals, 20% after, up to 12 months","network":"in-house (zenplannerengagement.com)"},{"name":"Perplexity","status":"unavailable","commission":null,"network":"Dub"},{"name":"Arbox, Virtuagym, PushPress, Wodify","status":"unavailable","commission":null,"network":null},{"name":"Coach Catalyst","status":"unavailable","commission":null,"network":null},{"name":"Gymdesk","status":"unavailable","commission":"100% of first 3 payments","network":"in-house"},{"name":"Descript","status":"unavailable","commission":"$25 one-time per subscriber","network":"PartnerStack"},{"name":"Canva","status":"unavailable","commission":"80% monthly for first 2 months, or 25% one-time on annual","network":"Canvassador programme"},{"name":"Notion","status":"unavailable","commission":"Up to $50 per signup + 20% first year","network":"PartnerStack"},{"name":"Calendly","status":"unavailable","commission":null,"network":null}],"stats":{"clicks":null,"signups":null,"earnings_gbp":null,"note":"Not tracked yet"}}}</script>
+<script>
+const LIVE_URL = "https://gist.githubusercontent.com/rosstguk-dev/f5f22fe4bda01d81e510a8e4ee51a2ca/raw/data.json";
+const ND = '<span class="nodata-text">No data yet</span>';
+const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const SERVICE = {instagram:"Instagram",facebook:"Facebook",linkedin:"LinkedIn",youtube:"YouTube",twitter:"X"};
+const STATUS_LABEL = {live:"Live",pending:"Pending",todo:"To do",unavailable:"Unavailable",to_do:"To do"};
+
+function esc(s){
+  return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]});
+}
+function fmtInt(v){
+  if(v==null || v==="") return ND;
+  var n=Number(v);
+  if(!isFinite(n)) return ND;
+  return n.toLocaleString("en-GB");
+}
+function fmtPct(v){
+  if(v==null || v==="") return ND;
+  var n=Number(v);
+  if(!isFinite(n)) return ND;
+  var t=Number.isInteger(n)?String(n):String(Math.round(n*100)/100);
+  return t+"%";
+}
+function dlabel(s){
+  if(!s) return "";
+  var p=String(s).split("-");
+  if(p.length<3) return esc(s);
+  return parseInt(p[2],10)+" "+MONTHS[parseInt(p[1],10)-1]+" "+p[0];
+}
+function shortD(s){
+  if(!s) return "";
+  var p=String(s).split("-");
+  return parseInt(p[2],10)+" "+MONTHS[parseInt(p[1],10)-1];
+}
+function val(kind,v){ return kind==="pct"?fmtPct(v):fmtInt(v); }
+function stat(label,value,hint,cls){
+  var klass="stat card"+(cls?" "+cls:"");
+  var vcls = (value==null || value==="" || value===ND) ? "value nodata" : "value";
+  return '<div class="'+klass+'"><div class="label">'+esc(label)+'</div><div class="'+vcls+'">'+value+'</div>'+(hint?'<div class="hint">'+esc(hint)+'</div>':'')+'</div>';
+}
+function badge(status){
+  var s=status||"";
+  return '<span class="badge '+esc(s)+'">'+esc(STATUS_LABEL[s]||s)+'</span>';
+}
+
+function renderSocial(s){
+  var totals=s.totals||{};
+  var html='';
+  html+='<section><h2>Headline numbers</h2><div class="grid stats">';
+  html+=stat("Posts",fmtInt(totals.posts),"All channels");
+  html+=stat("Reactions",fmtInt(totals.reactions),"All channels");
+  html+=stat("Comments",fmtInt(totals.comments),"All channels");
+  html+='</div><p class="note">'+esc(s.window||"")+(s.source? ". Source: "+s.source:"")+'</p></section>';
+  html+='<section><h2>Channels</h2><div class="grid channels">';
+  (s.channels||[]).forEach(function(c){
+    var name=c.label||SERVICE[c.service]||c.service;
+    var metrics=[
+      ["Followers",c.followers,"int"],
+      ["Posts",c.posts,"int"],
+      ["Reactions",c.reactions,"int"],
+      ["Comments",c.comments,"int"],
+      ["Shares",c.shares,"int"],
+      ["Engagement rate",c.engagement_rate_pct,"pct"],
+      ["Views",c.views,"int"],
+      ["Reach",c.reach,"int"],
+      ["Impressions",c.impressions,"int"]
+    ];
+    if(c.clicks!=null) metrics.push(["Clicks",c.clicks,"int"]);
+    html+='<div class="card"><div class="chan-head"><h3>'+esc(name)+'</h3><small>'+esc(c.name||"")+'</small></div><dl class="metrics">';
+    metrics.forEach(function(m){ html+='<div><dt>'+esc(m[0])+'</dt><dd>'+val(m[2],m[1])+'</dd></div>'; });
+    html+='</dl></div>';
+  });
+  html+='</div></section>';
+  if(s.top_posts && s.top_posts.length){
+    html+='<section><h2>Recent posts</h2><div class="card"><ul class="posts">';
+    s.top_posts.forEach(function(p,i){
+      var bits=[];
+      if(p.views!=null) bits.push("Views <b>"+fmtInt(p.views)+"</b>");
+      if(p.reach!=null) bits.push("Reach <b>"+fmtInt(p.reach)+"</b>");
+      if(p.impressions!=null) bits.push("Impressions <b>"+fmtInt(p.impressions)+"</b>");
+      if(p.reactions!=null) bits.push("Reactions <b>"+fmtInt(p.reactions)+"</b>");
+      if(p.comments!=null) bits.push("Comments <b>"+fmtInt(p.comments)+"</b>");
+      if(p.shares!=null) bits.push("Shares <b>"+fmtInt(p.shares)+"</b>");
+      if(p.engagement_rate_pct!=null) bits.push("Engagement <b>"+fmtPct(p.engagement_rate_pct)+"</b>");
+      html+='<li><div class="post-meta"><span class="rank">#'+(i+1)+'</span><span>'+esc(SERVICE[p.service]||p.service)+'</span><span>'+esc(dlabel(p.date))+'</span></div>';
+      html+='<p class="post-text">'+esc(p.text||"")+'</p>';
+      if(bits.length) html+='<div class="post-stats">'+bits.join(" · ")+'</div>';
+      html+='</li>';
+    });
+    html+='</ul></div></section>';
+  }
+  (s.notes||[]).forEach(function(n){ html+='<p class="note">'+esc(n)+'</p>'; });
+  return html;
+}
+
+function renderWebsite(w){
+  var last7=w.last7||{};
+  var since=w.since_start||{};
+  var latest=w.latest_complete_day||{};
+  var html='';
+  html+='<section><h2>Traffic</h2><div class="grid stats-4">';
+  html+=stat("Last 7 days",fmtInt(last7.visitors),(last7.from&&last7.to)?(dlabel(last7.from)+" to "+dlabel(last7.to)+", visitors"):"Visitors","live");
+  html+=stat("Pageviews",fmtInt(last7.pageviews),"Same 7 days");
+  html+=stat("Latest day",fmtInt(latest.visitors),(latest.date?dlabel(latest.date)+", visitors":"Visitors"));
+  html+=stat("Since 10 Oct",fmtInt(since.visitors),(since.to?("To "+dlabel(since.to)+", "+fmtInt(since.pageviews)+" pageviews"):"Visitors"));
+  html+='</div>';
+  if(w.days && w.days.length){
+    var max=Math.max.apply(null,w.days.map(function(d){return d.visitors||0;}))||1;
+    html+='<div class="card" style="margin-top:16px"><h3 style="margin-bottom:12px">Daily visitors</h3><div class="chart">';
+    w.days.forEach(function(d){
+      var h=Math.max(2,Math.round(((d.visitors||0)/max)*120));
+      html+='<div class="col" title="'+esc(dlabel(d.date)+": "+(d.visitors||0)+" visitors, "+(d.pageviews||0)+" pageviews")+'"><div class="bar" style="height:'+h+'px"></div><div class="dl">'+esc(shortD(d.date))+'</div></div>';
+    });
+    html+='</div><p class="note">'+esc(w.site||"omnirexis.co.uk")+". Source: "+esc(w.source||"Vercel Web Analytics")+". "+esc(w.note||"")+'</p></div>';
+  }
+  html+='</section>';
+  var pages=(w.top_pages&&w.top_pages.items)||[];
+  var refs=(w.referrers&&w.referrers.items)||[];
+  var pwin=(w.top_pages&&w.top_pages.window)||"";
+  html+='<section><h2>Top pages and referrers</h2><div class="grid lists">';
+  html+='<div class="card"><h3>Top pages</h3><p class="note">'+esc(pwin)+'</p><ul class="rowlist">';
+  if(!pages.length) html+='<li><span class="k">'+ND+'</span></li>';
+  pages.forEach(function(it){ html+='<li><span class="k">'+esc(it.label)+'</span><span class="v">'+fmtInt(it.count)+'</span></li>'; });
+  html+='</ul></div>';
+  html+='<div class="card"><h3>Referrers</h3><p class="note">'+esc((w.referrers&&w.referrers.window)||pwin)+'</p><ul class="rowlist">';
+  if(!refs.length) html+='<li><span class="k">'+ND+'</span></li>';
+  refs.forEach(function(it){ html+='<li><span class="k">'+esc(it.label)+'</span><span class="v">'+fmtInt(it.count)+'</span></li>'; });
+  html+='</ul></div></div></section>';
+  return html;
+}
+
+function renderAffiliates(a){
+  var c=a.counts||{};
+  var st=a.stats||{};
+  var html='';
+  html+='<section><h2>Headline numbers</h2><div class="grid stats-4">';
+  html+=stat("Programmes live",fmtInt(c.live),"Approved, links ready","live");
+  html+=stat("Pending",fmtInt(c.pending),"Applied, awaiting approval","pending");
+  html+=stat("To do",fmtInt(c.todo),"Not applied yet or blocked","todo");
+  html+=stat("Clicks",fmtInt(st.clicks),st.note||"Tracked clicks");
+  html+='</div>';
+  html+='<div class="grid stats" style="margin-top:16px">';
+  html+=stat("Sign-ups",fmtInt(st.signups),st.note||"");
+  html+=stat("Earnings",st.earnings_gbp==null?ND:("£"+Number(st.earnings_gbp).toLocaleString("en-GB")),st.note||"");
+  html+=stat("Unavailable",fmtInt(c.unavailable),"Closed, rejected or invite only");
+  html+='</div></section>';
+  html+='<section><h2>Programme status</h2><div class="card table-card"><table><thead><tr><th>Programme</th><th>Status</th><th>Commission</th><th>Network</th></tr></thead><tbody>';
+  (a.programmes||[]).forEach(function(p){
+    html+='<tr><td class="name" data-label="Programme">'+esc(p.name||"")+(p.network?'<small>'+esc(p.network)+'</small>':'')+'</td>';
+    html+='<td data-label="Status">'+badge(p.status)+'</td>';
+    html+='<td data-label="Commission">'+(p.commission?esc(p.commission):ND)+'</td>';
+    html+='<td data-label="Network">'+(p.network?esc(p.network):ND)+'</td></tr>';
+  });
+  html+='</tbody></table></div></section>';
+  return html;
+}
+
+function render(data, sourceLabel){
+  document.getElementById("updated").textContent = data.updated_label ? ("Updated "+data.updated_label) : "Updated time unknown";
+  document.getElementById("status").textContent = sourceLabel || "";
+  document.getElementById("panel-social").innerHTML = renderSocial(data.social||{});
+  document.getElementById("panel-website").innerHTML = renderWebsite(data.website||{});
+  document.getElementById("panel-affiliates").innerHTML = renderAffiliates(data.affiliates||{});
+}
+
+function showTab(name){
+  ["social","website","affiliates"].forEach(function(t){
+    var on=t===name;
+    document.getElementById("panel-"+t).classList.toggle("on", on);
+    var b=document.getElementById("tab-"+t);
+    b.setAttribute("aria-selected", on?"true":"false");
+  });
+  if(location.hash.replace("#","")!==name){
+    history.replaceState(null,"","#"+name);
+  }
+}
+
+document.querySelectorAll(".tabs button").forEach(function(b){
+  b.addEventListener("click", function(){ showTab(b.getAttribute("data-tab")); });
+});
+window.addEventListener("hashchange", function(){
+  var t=location.hash.replace("#","");
+  if(t==="social"||t==="website"||t==="affiliates") showTab(t);
+});
+(function(){
+  var t=location.hash.replace("#","");
+  if(t==="social"||t==="website"||t==="affiliates") showTab(t);
+})();
+
+function parseJson(text){ return JSON.parse(text); }
+
+async function load(){
+  var fallback=parseJson(document.getElementById("fallback-data").textContent);
+  render(fallback, "Showing bundled figures");
+  var bust="t="+Date.now();
+  var urls=[];
+  if(LIVE_URL && LIVE_URL.indexOf("__")===-1) urls.push(LIVE_URL+(LIVE_URL.indexOf("?")>=0?"&":"?")+bust);
+  urls.push("data.json?"+bust);
+  for(var i=0;i<urls.length;i++){
+    try{
+      var r=await fetch(urls[i], {cache:"no-store"});
+      if(!r.ok) throw new Error(String(r.status));
+      var data=await r.json();
+      if(!data || !data.social) throw new Error("bad payload");
+      var fromLive = (LIVE_URL && urls[i].indexOf(LIVE_URL.split("?")[0])===0);
+      render(data, fromLive ? "Live figures" : "Figures from this page");
+      return;
+    }catch(e){}
+  }
+  document.getElementById("status").textContent = "Showing bundled figures";
+}
+load();
+</script>
+</body>
+</html>
