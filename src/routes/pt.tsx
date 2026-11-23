@@ -283,6 +283,8 @@ function PtPage() {
           <GuidesRow
             title="Guides for PTs"
             slugs={[
+              "kahunas-vs-my-pt-hub",
+              "make-vs-n8n-for-gyms",
               "personal-trainer-client-tracking-spreadsheet",
               "personal-trainer-check-in-form",
               "what-app-do-personal-trainers-use",
