@@ -119,6 +119,7 @@ The three fixes must be things they can do themselves for free (for example: add
 - [ ] No claims about results, other clients or numbers we did not measure
 - [ ] One link at most (Zoom), PT link only for solo PTs or PT-led businesses
 - [ ] Their business name, first name and route are right
+- [ ] Any "doesn't link to" or "can't find" claim was checked against every rendered menu item on desktop and phone, including script-added and mobile-menu links (Stoa, 25 Nov 2026: a draft said the homepage did not link to the kids page when the top menu did)
 - [ ] Fits on one page
 
 ## 10. After sending
@@ -136,3 +137,4 @@ Every yes goes here the day it lands and stays until the lead books, declines or
 | Prospect | Yes | Check sent | Nudge due | Nudge state | Next |
 |---|---|---|---|---|---|
 | NW-FIT-425 JB Fitness (Jamie Brown, enquiries@jbfitnessgym.com, sheet row 1488) | 3 Nov 2026 10:54 UK ("Please") | 3 Nov 2026 13:25 UK, in-thread, no test enquiry sent | Tue 10 Nov 2026 (overdue) | Drafted 20 Nov 2026 by CoS, held for Ross's weekend briefing (offers the missing test enquiry, one ask, no link) | Ross sends in-thread from ross@omnirexis.co.uk; then stop unless Jamie replies |
+| NW-FIT-586 Stoa Grappling (Igor, info@stoagrappling.com, sheet row 1643) | 24 Nov 2026 09:26 UK ("Yep, that sounds interesting") | 25 Nov 2026 04:11 UK, in-thread from ross@omnirexis.co.uk, check pasted in with the Zoom link, no test enquiry sent (the check says so) | Wed 2 Dec 2026 | Not due. Draft it on Wed 2 Dec if no reply, held for the Sat 5 Dec briefing | HubSpot notes (yes 24 Nov, check sent 25 Nov) prepared by Sales, waiting on Ross's OK for HubSpot writes |
