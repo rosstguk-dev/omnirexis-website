@@ -46,6 +46,8 @@ export type BlogPost = {
   body?: string;
   /** Extra JSON-LD for this post only (e.g. FAQPage). Its answers must match FAQ text visible in `body`. */
   faqJsonLd?: Record<string, unknown>;
+  /** Other hub sections this post is also listed under (only when its own title or text addresses that audience). */
+  alsoFor?: BlogAudience[];
   /** URL prefixes in this post that are affiliate links (rendered rel="sponsored nofollow"), on top of the general patterns in markdown-body. */
   affiliateLinks?: string[];
 };
@@ -61,6 +63,7 @@ export const POSTS: BlogPost[] = [
   {
     // Source: /workspace/si-campaign/blog-ai-or-si.md. F&Q re-QC PASS 4 Oct 2026 12:20; Ross approved 4 Oct 2026 13:57.
     slug: "ai-or-si-super-intelligence-gyms",
+    alsoFor: ["studios"],
     title: "AI or SI? What the super intelligence buzz actually means for gym and studio owners",
     metaTitle: "AI or SI? What the Super Intelligence Buzz Means for Gyms",
     description:
@@ -77,6 +80,7 @@ export const POSTS: BlogPost[] = [
   {
     // Source: /workspace/side-income/posts/make-vs-n8n.md (Money Machine, via CoS). Needs F&Q sign-off before merge.
     slug: "make-vs-n8n-for-gyms",
+    alsoFor: ["studios"],
     title: "Make vs n8n: which automation tool should a gym or PT business pick?",
     metaTitle: "Make vs n8n for Gyms and PTs: Which Should You Pick?",
     description:

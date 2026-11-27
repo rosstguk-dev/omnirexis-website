@@ -54,7 +54,7 @@ function BlogHub() {
 
       <div className="mx-auto max-w-6xl px-5 py-4 sm:px-8">
         {BLOG_AUDIENCES.map((a) => {
-          const list = posts.filter((p) => p.audience === a.id);
+          const list = posts.filter((p) => p.audience === a.id || p.alsoFor?.includes(a.id));
           return (
             <section
               key={a.id}
